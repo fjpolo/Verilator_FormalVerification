@@ -1,0 +1,10 @@
+[
+ {
+  "InstFile" : "C:/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/04paritycheck/src/paritycheck.v",
+  "InstLine" : 4,
+  "InstName" : "paritycheck",
+  "ModuleFile" : "C:/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/04paritycheck/src/paritycheck.v",
+  "ModuleLine" : 4,
+  "ModuleName" : "paritycheck"
+ }
+]

@@ -1,0 +1,12 @@
+# DESCRIPTION: Verilator output: Timestamp data for --skip-identical.  Delete at will.
+C "-Wall -cc interruptdetector.v"
+S   7484256   523629  1698233540   623578748  1581264640           0 "/usr/bin/verilator_bin"
+S       250 29554872555880928  1698241382   391913500  1698241382   391913500 "interruptdetector.v"
+T      5197 5066549582683232  1698241389   835838500  1698241389   835838500 "obj_dir/Vinterruptdetector.cpp"
+T      2331 11258999070317660  1698241389   829384500  1698241389   829384500 "obj_dir/Vinterruptdetector.h"
+T      1524 10696049116896356  1698241389   845839500  1698241389   845839500 "obj_dir/Vinterruptdetector.mk"
+T       599 14918173767556110  1698241389   817664600  1698241389   817664600 "obj_dir/Vinterruptdetector__Syms.cpp"
+T       865 17451448557952091  1698241389   824400400  1698241389   824400400 "obj_dir/Vinterruptdetector__Syms.h"
+T       304 16044073674399330  1698241389   850793700  1698241389   850793700 "obj_dir/Vinterruptdetector__ver.d"
+T         0        0  1698241389   884149000  1698241389   884149000 "obj_dir/Vinterruptdetector__verFiles.dat"
+T      1277 15199648744266849  1698241389   840838200  1698241389   840838200 "obj_dir/Vinterruptdetector_classes.mk"

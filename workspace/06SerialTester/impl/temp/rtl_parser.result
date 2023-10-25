@@ -1,0 +1,10 @@
+[
+ {
+  "InstFile" : "C:/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/06SerialTester/src/serialtester.v",
+  "InstLine" : 4,
+  "InstName" : "serialtester",
+  "ModuleFile" : "C:/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/06SerialTester/src/serialtester.v",
+  "ModuleLine" : 4,
+  "ModuleName" : "serialtester"
+ }
+]

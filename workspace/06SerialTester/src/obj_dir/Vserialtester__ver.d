@@ -1,0 +1,1 @@
+obj_dir/Vserialtester.cpp obj_dir/Vserialtester.h obj_dir/Vserialtester.mk obj_dir/Vserialtester__Syms.cpp obj_dir/Vserialtester__Syms.h obj_dir/Vserialtester__ver.d obj_dir/Vserialtester_classes.mk  : /usr/bin/verilator_bin /usr/bin/verilator_bin serialtester.v 

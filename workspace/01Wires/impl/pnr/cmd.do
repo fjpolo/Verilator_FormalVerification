@@ -1,0 +1,13 @@
+-d C:\Workspace\NES\NESTang\Verilator_FormalVerification\workspace\01Wires\impl\gwsynthesis\blink_led.vg
+-p GW2AR-18C-QFN88-8
+-pn GW2AR-LV18QN88C8/I7
+-cst C:\Workspace\NES\NESTang\Verilator_FormalVerification\workspace\01Wires\src\thruwire.cst
+-cfg C:\Workspace\NES\NESTang\Verilator_FormalVerification\workspace\01Wires\impl\pnr\device.cfg
+-sdc C:\Workspace\NES\NESTang\Verilator_FormalVerification\workspace\01Wires\src\thruwire.sdc
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-correct_hold 1
+-route_maxfan 23

@@ -1,0 +1,36 @@
+//
+//Written by GowinSynthesis
+//Product Version "V1.9.9 Beta-4 Education"
+//Wed Oct 25 14:37:00 2023
+
+//Source file index table:
+//file0 "\C:/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/01Wires/src/thruwire.v"
+`pragma protect begin_protected
+`pragma protect version="2.3"
+`pragma protect author="default"
+`pragma protect author_info="default"
+`pragma protect encrypt_agent="GOWIN"
+`pragma protect encrypt_agent_info="GOWIN Encrypt Version 2.3"
+
+`pragma protect encoding=(enctype="base64", line_length=76, bytes=256)
+`pragma protect key_keyowner="GOWIN",key_keyname="GWK2023-09",key_method="rsa"
+`pragma protect key_block
+AIMMrlsPJ07EvwfCGRj4jHwEXfkkzNQzCBasP3K+HBvIZysXLis+LP0aksi3+pUpp6V6U8YDJJ+n
+PW7MUzTHLokAPYMfsapYMqvQo0asVgoesvVLNicLcq0DL/7ZXAE4NOZ4NGFtRSHhdaQSjzTWzMHf
+yUtZR2mFEcZ+IEkdD1SnYiwOMs6g0/xmfuhMG4+2OtYi/xrSnvJXyyn/hHjm6pWBYvPiefYOWCPG
+Xu+QZ+5iGkoke66uL29D+UdL56flVDhJKvrWlX0ekAqiN8sC4vj4TKQ1hm9D7yW6GkLx3NEwmJu2
+CwgAALUgnynx/IpdYPvEF2RkjEjaMNg+4yGBJQ==
+
+`pragma protect encoding=(enctype="base64", line_length=76, bytes=368)
+`pragma protect data_keyowner="default-ip-vendor"
+`pragma protect data_keyname="default-ip-key"
+`pragma protect data_method="aes128-cfb"
+`pragma protect data_block
+ZViIiMl3jZtzDz9YAF+wHXw84AY35ocvCgf1hXs4m5HafIMRJkMaw+tvUFJbhS/s634vKndIjp8e
+BzvGW/ak7aScmu2TmN9MmSWxXp3RquiV+WgvsvOiDeDIJxFAR41UpUyDmq+asAD3Sk7c2r5h/45i
+96h6WiyrTa4enUluvU0jq1P7pimyR0m8QasnLPvbqCISrk6G7JuL8qvoZlqWw3LVV4RKRu+N1js3
+IkW/d8Yt3xjjk8SkMxkoRZCc82qC7iPPc5mYjpws1yPf1O8LZ5b2s6BZRD2LwW6b4bfmrDbOAc7w
+B/hoRfQStTXMue48g0GyWc2gUlygCKtr1UpTcpsmsunGeW8pZ5iS8G8c0DYoHu+xXCLAsXUAvh69
+g3FxhC27mDcIemxmi4KwgfkC41lyAawDts7NWme9QnSW+Pe3C0gQSPbIdFJeBApE7i+cpML9PfcH
+m1HohQxOID6OJ07Kf/ze2BVTLk+pqRM7Y00=
+`pragma protect end_protected

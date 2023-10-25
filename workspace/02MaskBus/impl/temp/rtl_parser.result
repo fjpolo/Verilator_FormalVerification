@@ -1,0 +1,10 @@
+[
+ {
+  "InstFile" : "C:/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/02MaskBus/src/maskbus.v",
+  "InstLine" : 4,
+  "InstName" : "maskbus",
+  "ModuleFile" : "C:/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/02MaskBus/src/maskbus.v",
+  "ModuleLine" : 4,
+  "ModuleName" : "maskbus"
+ }
+]

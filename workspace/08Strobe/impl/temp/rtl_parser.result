@@ -1,0 +1,10 @@
+[
+ {
+  "InstFile" : "C:/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/08Strobe/src/strobe.v",
+  "InstLine" : 6,
+  "InstName" : "strobe",
+  "ModuleFile" : "C:/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/08Strobe/src/strobe.v",
+  "ModuleLine" : 6,
+  "ModuleName" : "strobe"
+ }
+]

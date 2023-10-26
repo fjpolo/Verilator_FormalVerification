@@ -1,0 +1,10 @@
+[
+ {
+  "InstFile" : "C:/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/10Dimmer/src/dimmer.v",
+  "InstLine" : 4,
+  "InstName" : "dimmer",
+  "ModuleFile" : "C:/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/10Dimmer/src/dimmer.v",
+  "ModuleLine" : 4,
+  "ModuleName" : "dimmer"
+ }
+]

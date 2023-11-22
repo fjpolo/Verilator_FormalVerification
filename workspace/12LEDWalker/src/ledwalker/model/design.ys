@@ -1,0 +1,8 @@
+# running in ledwalker/src/
+
+read -formal ledwalker.v
+prep -top ledwalker
+
+hierarchy -smtcheck
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

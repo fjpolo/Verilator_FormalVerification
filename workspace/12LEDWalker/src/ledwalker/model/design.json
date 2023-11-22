@@ -1,0 +1,721 @@
+{
+  "$schema": "https://raw.githubusercontent.com/YosysHQ/yosys/master/misc/jny.schema.json",
+  "generator": "Yosys 0.35+36 (git sha1 c95298225, clang 10.0.0-4ubuntu1 -fPIC -Os)",
+  "version": "0.0.1",
+  "invocation": "write_jny -no-connections ../model/design.json ",
+  "features": ["attributes", "properties"],
+  "modules": [
+      {
+        "name": "ledwalker",
+        "cell_sorts": [
+          {
+            "type": "$dff",
+            "ports": [
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procdff$74",
+                  "attributes": {
+                    "src": "ledwalker.v:106.5-107.46"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$75",
+                  "attributes": {
+                    "src": "ledwalker.v:106.5-107.46"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$76",
+                  "attributes": {
+                    "src": "ledwalker.v:103.5-104.49"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$78",
+                  "attributes": {
+                    "src": "ledwalker.v:70.2-91.8"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procdff$79",
+                  "attributes": {
+                    "src": "ledwalker.v:61.5-68.8"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procdff$80",
+                  "attributes": {
+                    "src": "ledwalker.v:54.5-59.8"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$procdff$81",
+                  "attributes": {
+                    "src": "ledwalker.v:47.5-52.8"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$gt",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$gt$ledwalker.v:63$12",
+                  "attributes": {
+                    "src": "ledwalker.v:63.17-63.34"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_not",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$eq$ledwalker.v:101$22",
+                  "attributes": {
+                    "src": "ledwalker.v:101.15-101.29"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$ledwalker.v:107$30",
+                  "attributes": {
+                    "src": "ledwalker.v:107.25-107.42"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$sub",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [32, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$sub$ledwalker.v:58$10",
+                  "attributes": {
+                    "src": "ledwalker.v:58.29-58.48"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000100000"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$cover",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$cover$ledwalker.v:100$36",
+                  "attributes": {
+                    "src": "ledwalker.v:100.16-101.30"
+                  },
+                  "parameters": {
+
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$mux",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "S",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procmux$53",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "ledwalker.v:0.0-0.0|ledwalker.v:121.3-130.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$64",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "ledwalker.v:63.17-63.34|ledwalker.v:63.13-66.47"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$66",
+                  "attributes": {
+                    "src": "ledwalker.v:62.12-62.15|ledwalker.v:62.9-67.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$69",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "ledwalker.v:55.12-55.29|ledwalker.v:55.9-58.49"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$procmux$72",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "ledwalker.v:48.12-48.29|ledwalker.v:48.9-51.25"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$le",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [10, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$le$ledwalker.v:104$26",
+                  "attributes": {
+                    "src": "ledwalker.v:104.16-104.47"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000001010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$le$ledwalker.v:98$18",
+                  "attributes": {
+                    "src": "ledwalker.v:98.10-98.28"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$mem_v2",
+            "ports": [
+                {
+                  "name": "RD_ADDR",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "RD_ARST",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "RD_CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "RD_DATA",
+                  "direction": "",
+                  "range": [8, 0]
+                },
+                {
+                  "name": "RD_EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "RD_SRST",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "WR_ADDR",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "WR_CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "WR_DATA",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "WR_EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$auto$proc_rom.cc:150:do_switch$49",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "ledwalker.v:71.9-90.13"
+                  },
+                  "parameters": {
+                    "ABITS": "00000000000000000000000000000100",
+                    "INIT": "00000001000000010000001000000100000010000001000000100000010000001000000001000000001000000001000000001000000001000000001000000001",
+                    "MEMID": "$auto$proc_rom.cc:150:do_switch$49",
+                    "OFFSET": "00000000000000000000000000000000",
+                    "RD_ARST_VALUE": "xxxxxxxx",
+                    "RD_CE_OVER_SRST": "0",
+                    "RD_CLK_ENABLE": "0",
+                    "RD_CLK_POLARITY": "1",
+                    "RD_COLLISION_X_MASK": "0",
+                    "RD_INIT_VALUE": "xxxxxxxx",
+                    "RD_PORTS": "00000000000000000000000000000001",
+                    "RD_SRST_VALUE": "xxxxxxxx",
+                    "RD_TRANSPARENCY_MASK": "0",
+                    "RD_WIDE_CONTINUATION": "0",
+                    "SIZE": "00000000000000000000000000010000",
+                    "WIDTH": "00000000000000000000000000001000",
+                    "WR_CLK_ENABLE": "0",
+                    "WR_CLK_POLARITY": "0",
+                    "WR_PORTS": "00000000000000000000000000000000",
+                    "WR_PRIORITY_MASK": "0",
+                    "WR_WIDE_CONTINUATION": "0"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$reduce_or",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [8, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$auto$opt_reduce.cc:128:opt_pmux$82",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$eq",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$eq$ledwalker.v:107$31",
+                  "attributes": {
+                    "src": "ledwalker.v:107.17-107.43"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$54_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "ledwalker.v:0.0-0.0|ledwalker.v:121.3-130.10"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000001000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$55_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "ledwalker.v:0.0-0.0|ledwalker.v:121.3-130.10"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000111",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$56_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "ledwalker.v:0.0-0.0|ledwalker.v:121.3-130.10"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000110",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$57_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "ledwalker.v:0.0-0.0|ledwalker.v:121.3-130.10"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000101",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$58_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "ledwalker.v:0.0-0.0|ledwalker.v:121.3-130.10"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$59_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "ledwalker.v:0.0-0.0|ledwalker.v:121.3-130.10"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$60_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "ledwalker.v:0.0-0.0|ledwalker.v:121.3-130.10"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$61_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "ledwalker.v:0.0-0.0|ledwalker.v:121.3-130.10"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$assert",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$assert$ledwalker.v:103$37",
+                  "attributes": {
+                    "src": "ledwalker.v:103.28-104.48"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$ledwalker.v:106$38",
+                  "attributes": {
+                    "src": "ledwalker.v:106.28-107.45"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$ledwalker.v:130$39",
+                  "attributes": {
+                    "src": "ledwalker.v:130.10-132.25"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$ledwalker.v:97$35",
+                  "attributes": {
+                    "src": "ledwalker.v:97.13-98.29"
+                  },
+                  "parameters": {
+
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$add",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [4, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$add$ledwalker.v:66$13",
+                  "attributes": {
+                    "src": "ledwalker.v:66.30-66.46"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000100"
+                  }
+                }
+            ]
+          }
+        ],
+        "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "hdlname": "\\ledwalker",
+            "top": "00000000000000000000000000000001",
+            "src": "ledwalker.v:32.1-142.10"
+        }
+      }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+ {
+  "InstFile" : "C:/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/11ShiftRegister/src/walker.v",
+  "InstLine" : 4,
+  "InstName" : "walker",
+  "ModuleFile" : "C:/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/11ShiftRegister/src/walker.v",
+  "ModuleLine" : 4,
+  "ModuleName" : "walker"
+ }
+]

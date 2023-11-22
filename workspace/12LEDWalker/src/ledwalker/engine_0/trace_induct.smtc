@@ -1,0 +1,612 @@
+initial
+assume (= [$formal$ledwalker.v:106$4_EN] false)
+assume (= [_witness_.anyinit_procdff_74] false)
+assume (= [_witness_.anyinit_procdff_76] false)
+assume (= [led_index] #b0111)
+assume (= [o_led] #b00000001)
+assume (= [stb] false)
+assume (= [wait_counter] #b00000000000000000000000011000111)
+assume (= (select [$auto$proc_rom.cc:150:do_switch$49] #b0111) #b00000001)
+
+state 0
+assume (= [i_clk] false)
+
+state 1
+assume (= [i_clk] false)
+
+state 2
+assume (= [i_clk] false)
+
+state 3
+assume (= [i_clk] false)
+
+state 4
+assume (= [i_clk] false)
+
+state 5
+assume (= [i_clk] false)
+
+state 6
+assume (= [i_clk] false)
+
+state 7
+assume (= [i_clk] false)
+
+state 8
+assume (= [i_clk] false)
+
+state 9
+assume (= [i_clk] false)
+
+state 10
+assume (= [i_clk] false)
+
+state 11
+assume (= [i_clk] false)
+
+state 12
+assume (= [i_clk] false)
+
+state 13
+assume (= [i_clk] false)
+
+state 14
+assume (= [i_clk] false)
+
+state 15
+assume (= [i_clk] false)
+
+state 16
+assume (= [i_clk] false)
+
+state 17
+assume (= [i_clk] false)
+
+state 18
+assume (= [i_clk] false)
+
+state 19
+assume (= [i_clk] false)
+
+state 20
+assume (= [i_clk] false)
+
+state 21
+assume (= [i_clk] false)
+
+state 22
+assume (= [i_clk] false)
+
+state 23
+assume (= [i_clk] false)
+
+state 24
+assume (= [i_clk] false)
+
+state 25
+assume (= [i_clk] false)
+
+state 26
+assume (= [i_clk] false)
+
+state 27
+assume (= [i_clk] false)
+
+state 28
+assume (= [i_clk] false)
+
+state 29
+assume (= [i_clk] false)
+
+state 30
+assume (= [i_clk] false)
+
+state 31
+assume (= [i_clk] false)
+
+state 32
+assume (= [i_clk] false)
+
+state 33
+assume (= [i_clk] false)
+
+state 34
+assume (= [i_clk] false)
+
+state 35
+assume (= [i_clk] false)
+
+state 36
+assume (= [i_clk] false)
+
+state 37
+assume (= [i_clk] false)
+
+state 38
+assume (= [i_clk] false)
+
+state 39
+assume (= [i_clk] false)
+
+state 40
+assume (= [i_clk] false)
+
+state 41
+assume (= [i_clk] false)
+
+state 42
+assume (= [i_clk] false)
+
+state 43
+assume (= [i_clk] false)
+
+state 44
+assume (= [i_clk] false)
+
+state 45
+assume (= [i_clk] false)
+
+state 46
+assume (= [i_clk] false)
+
+state 47
+assume (= [i_clk] false)
+
+state 48
+assume (= [i_clk] false)
+
+state 49
+assume (= [i_clk] false)
+
+state 50
+assume (= [i_clk] false)
+
+state 51
+assume (= [i_clk] false)
+
+state 52
+assume (= [i_clk] false)
+
+state 53
+assume (= [i_clk] false)
+
+state 54
+assume (= [i_clk] false)
+
+state 55
+assume (= [i_clk] false)
+
+state 56
+assume (= [i_clk] false)
+
+state 57
+assume (= [i_clk] false)
+
+state 58
+assume (= [i_clk] false)
+
+state 59
+assume (= [i_clk] false)
+
+state 60
+assume (= [i_clk] false)
+
+state 61
+assume (= [i_clk] false)
+
+state 62
+assume (= [i_clk] false)
+
+state 63
+assume (= [i_clk] false)
+
+state 64
+assume (= [i_clk] false)
+
+state 65
+assume (= [i_clk] false)
+
+state 66
+assume (= [i_clk] false)
+
+state 67
+assume (= [i_clk] false)
+
+state 68
+assume (= [i_clk] false)
+
+state 69
+assume (= [i_clk] false)
+
+state 70
+assume (= [i_clk] false)
+
+state 71
+assume (= [i_clk] false)
+
+state 72
+assume (= [i_clk] false)
+
+state 73
+assume (= [i_clk] false)
+
+state 74
+assume (= [i_clk] false)
+
+state 75
+assume (= [i_clk] false)
+
+state 76
+assume (= [i_clk] false)
+
+state 77
+assume (= [i_clk] false)
+
+state 78
+assume (= [i_clk] false)
+
+state 79
+assume (= [i_clk] false)
+
+state 80
+assume (= [i_clk] false)
+
+state 81
+assume (= [i_clk] false)
+
+state 82
+assume (= [i_clk] false)
+
+state 83
+assume (= [i_clk] false)
+
+state 84
+assume (= [i_clk] false)
+
+state 85
+assume (= [i_clk] false)
+
+state 86
+assume (= [i_clk] false)
+
+state 87
+assume (= [i_clk] false)
+
+state 88
+assume (= [i_clk] false)
+
+state 89
+assume (= [i_clk] false)
+
+state 90
+assume (= [i_clk] false)
+
+state 91
+assume (= [i_clk] false)
+
+state 92
+assume (= [i_clk] false)
+
+state 93
+assume (= [i_clk] false)
+
+state 94
+assume (= [i_clk] false)
+
+state 95
+assume (= [i_clk] false)
+
+state 96
+assume (= [i_clk] false)
+
+state 97
+assume (= [i_clk] false)
+
+state 98
+assume (= [i_clk] false)
+
+state 99
+assume (= [i_clk] false)
+
+state 100
+assume (= [i_clk] false)
+
+state 101
+assume (= [i_clk] false)
+
+state 102
+assume (= [i_clk] false)
+
+state 103
+assume (= [i_clk] false)
+
+state 104
+assume (= [i_clk] false)
+
+state 105
+assume (= [i_clk] false)
+
+state 106
+assume (= [i_clk] false)
+
+state 107
+assume (= [i_clk] false)
+
+state 108
+assume (= [i_clk] false)
+
+state 109
+assume (= [i_clk] false)
+
+state 110
+assume (= [i_clk] false)
+
+state 111
+assume (= [i_clk] false)
+
+state 112
+assume (= [i_clk] false)
+
+state 113
+assume (= [i_clk] false)
+
+state 114
+assume (= [i_clk] false)
+
+state 115
+assume (= [i_clk] false)
+
+state 116
+assume (= [i_clk] false)
+
+state 117
+assume (= [i_clk] false)
+
+state 118
+assume (= [i_clk] false)
+
+state 119
+assume (= [i_clk] false)
+
+state 120
+assume (= [i_clk] false)
+
+state 121
+assume (= [i_clk] false)
+
+state 122
+assume (= [i_clk] false)
+
+state 123
+assume (= [i_clk] false)
+
+state 124
+assume (= [i_clk] false)
+
+state 125
+assume (= [i_clk] false)
+
+state 126
+assume (= [i_clk] false)
+
+state 127
+assume (= [i_clk] false)
+
+state 128
+assume (= [i_clk] false)
+
+state 129
+assume (= [i_clk] false)
+
+state 130
+assume (= [i_clk] false)
+
+state 131
+assume (= [i_clk] false)
+
+state 132
+assume (= [i_clk] false)
+
+state 133
+assume (= [i_clk] false)
+
+state 134
+assume (= [i_clk] false)
+
+state 135
+assume (= [i_clk] false)
+
+state 136
+assume (= [i_clk] false)
+
+state 137
+assume (= [i_clk] false)
+
+state 138
+assume (= [i_clk] false)
+
+state 139
+assume (= [i_clk] false)
+
+state 140
+assume (= [i_clk] false)
+
+state 141
+assume (= [i_clk] false)
+
+state 142
+assume (= [i_clk] false)
+
+state 143
+assume (= [i_clk] false)
+
+state 144
+assume (= [i_clk] false)
+
+state 145
+assume (= [i_clk] false)
+
+state 146
+assume (= [i_clk] false)
+
+state 147
+assume (= [i_clk] false)
+
+state 148
+assume (= [i_clk] false)
+
+state 149
+assume (= [i_clk] false)
+
+state 150
+assume (= [i_clk] false)
+
+state 151
+assume (= [i_clk] false)
+
+state 152
+assume (= [i_clk] false)
+
+state 153
+assume (= [i_clk] false)
+
+state 154
+assume (= [i_clk] false)
+
+state 155
+assume (= [i_clk] false)
+
+state 156
+assume (= [i_clk] false)
+
+state 157
+assume (= [i_clk] false)
+
+state 158
+assume (= [i_clk] false)
+
+state 159
+assume (= [i_clk] false)
+
+state 160
+assume (= [i_clk] false)
+
+state 161
+assume (= [i_clk] false)
+
+state 162
+assume (= [i_clk] false)
+
+state 163
+assume (= [i_clk] false)
+
+state 164
+assume (= [i_clk] false)
+
+state 165
+assume (= [i_clk] false)
+
+state 166
+assume (= [i_clk] false)
+
+state 167
+assume (= [i_clk] false)
+
+state 168
+assume (= [i_clk] false)
+
+state 169
+assume (= [i_clk] false)
+
+state 170
+assume (= [i_clk] false)
+
+state 171
+assume (= [i_clk] false)
+
+state 172
+assume (= [i_clk] false)
+
+state 173
+assume (= [i_clk] false)
+
+state 174
+assume (= [i_clk] false)
+
+state 175
+assume (= [i_clk] false)
+
+state 176
+assume (= [i_clk] false)
+
+state 177
+assume (= [i_clk] false)
+
+state 178
+assume (= [i_clk] false)
+
+state 179
+assume (= [i_clk] false)
+
+state 180
+assume (= [i_clk] false)
+
+state 181
+assume (= [i_clk] false)
+
+state 182
+assume (= [i_clk] false)
+
+state 183
+assume (= [i_clk] false)
+
+state 184
+assume (= [i_clk] false)
+
+state 185
+assume (= [i_clk] false)
+
+state 186
+assume (= [i_clk] false)
+
+state 187
+assume (= [i_clk] false)
+
+state 188
+assume (= [i_clk] false)
+
+state 189
+assume (= [i_clk] false)
+
+state 190
+assume (= [i_clk] false)
+
+state 191
+assume (= [i_clk] false)
+
+state 192
+assume (= [i_clk] false)
+
+state 193
+assume (= [i_clk] false)
+
+state 194
+assume (= [i_clk] false)
+
+state 195
+assume (= [i_clk] false)
+
+state 196
+assume (= [i_clk] false)
+
+state 197
+assume (= [i_clk] false)
+
+state 198
+assume (= [i_clk] false)
+
+state 199
+assume (= [i_clk] false)
+
+state 200
+assume (= [i_clk] false)

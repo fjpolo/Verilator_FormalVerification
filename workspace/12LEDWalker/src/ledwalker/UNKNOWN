@@ -1,0 +1,6 @@
+Elapsed clock time [H:MM:SS (secs)]: 0:00:01 (1)
+Elapsed process time [H:MM:SS (secs)]: 0:00:01 (1)
+engine_0 (smtbmc) returned pass for basecase
+engine_0 (smtbmc) returned FAIL for induction
+counterexample trace [induction]: engine_0/trace_induct.vcd
+  failed assertion ledwalker.$assert$ledwalker.v:106$38 at ledwalker.v:106.28-107.45 in step 0

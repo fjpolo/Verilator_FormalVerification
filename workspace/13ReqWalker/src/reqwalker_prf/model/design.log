@@ -1,0 +1,618 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.35+36 (git sha1 c95298225, clang 10.0.0-4ubuntu1 -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: reqwalker.v
+Parsing formal SystemVerilog input from `reqwalker.v' to AST representation.
+Storing AST representation for module `$abstract\reqwalker'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\reqwalker'.
+Generating RTLIL representation for module `\reqwalker'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \reqwalker
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \reqwalker
+Removing unused module `$abstract\reqwalker'.
+Removed 1 unused modules.
+Module reqwalker directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$reqwalker.v:53$62 in module reqwalker.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 57 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$312'.
+  Set init value: $formal$reqwalker.v:202$61_EN = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$310'.
+  Set init value: $formal$reqwalker.v:198$60_EN = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$308'.
+  Set init value: $formal$reqwalker.v:193$59_EN = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$306'.
+  Set init value: $formal$reqwalker.v:191$58_EN = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$304'.
+  Set init value: $formal$reqwalker.v:190$57_EN = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$302'.
+  Set init value: $formal$reqwalker.v:188$56_EN = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$300'.
+  Set init value: $formal$reqwalker.v:184$55_EN = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$298'.
+  Set init value: $formal$reqwalker.v:170$51_EN = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$296'.
+  Set init value: $formal$reqwalker.v:166$50_EN = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$294'.
+  Set init value: $formal$reqwalker.v:161$49_EN = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$292'.
+  Set init value: $formal$reqwalker.v:160$48_EN = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$290'.
+  Set init value: $formal$reqwalker.v:124$33_EN = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$288'.
+  Set init value: $formal$reqwalker.v:119$32_EN = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$286'.
+  Set init value: $formal$reqwalker.v:117$31_EN = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$284'.
+  Set init value: $formal$reqwalker.v:116$30_EN = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$282'.
+  Set init value: $formal$reqwalker.v:115$29_EN = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$280'.
+  Set init value: $formal$reqwalker.v:110$28_EN = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$271'.
+  Set init value: \f_past_valid = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$270'.
+  Set init value: \o_ack = 1'0
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$269'.
+  Set init value: \state = 4'0000
+Found init rule in `\reqwalker.$proc$reqwalker.v:0$268'.
+  Set init value: \o_led = 6'000000
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~19 debug messages>
+
+2.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$312'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$310'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$308'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$306'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$304'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$302'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$300'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$298'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$296'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$294'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$292'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$290'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$288'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$286'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$284'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$282'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$280'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$276'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$272'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$271'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$270'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$269'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:0$268'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:201$227'.
+     1/2: $0$formal$reqwalker.v:202$61_EN[0:0]$230
+     2/2: $0$formal$reqwalker.v:202$61_CHECK[0:0]$229
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:197$219'.
+     1/2: $0$formal$reqwalker.v:198$60_EN[0:0]$223
+     2/2: $0$formal$reqwalker.v:198$60_CHECK[0:0]$222
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:187$200'.
+     1/8: $0$formal$reqwalker.v:188$56_EN[0:0]$207
+     2/8: $0$formal$reqwalker.v:188$56_CHECK[0:0]$206
+     3/8: $0$formal$reqwalker.v:190$57_EN[0:0]$209
+     4/8: $0$formal$reqwalker.v:190$57_CHECK[0:0]$208
+     5/8: $0$formal$reqwalker.v:191$58_EN[0:0]$211
+     6/8: $0$formal$reqwalker.v:191$58_CHECK[0:0]$210
+     7/8: $0$formal$reqwalker.v:193$59_EN[0:0]$213
+     8/8: $0$formal$reqwalker.v:193$59_CHECK[0:0]$212
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:183$195'.
+     1/2: $0$formal$reqwalker.v:184$55_EN[0:0]$198
+     2/2: $0$formal$reqwalker.v:184$55_CHECK[0:0]$197
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:178$190'.
+     1/2: $0$formal$reqwalker.v:179$54_EN[0:0]$192
+     2/2: $0$formal$reqwalker.v:179$54_CHECK[0:0]$191
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:169$184'.
+     1/2: $0$formal$reqwalker.v:170$51_EN[0:0]$187
+     2/2: $0$formal$reqwalker.v:170$51_CHECK[0:0]$186
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:165$173'.
+     1/2: $0$formal$reqwalker.v:166$50_EN[0:0]$178
+     2/2: $0$formal$reqwalker.v:166$50_CHECK[0:0]$177
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:159$160'.
+     1/4: $0$formal$reqwalker.v:160$48_EN[0:0]$165
+     2/4: $0$formal$reqwalker.v:160$48_CHECK[0:0]$164
+     3/4: $0$formal$reqwalker.v:161$49_EN[0:0]$167
+     4/4: $0$formal$reqwalker.v:161$49_CHECK[0:0]$166
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:156$156'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:153$151'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:135$117'.
+     1/22: $0$formal$reqwalker.v:138$35_EN[0:0]$119
+     2/22: $0$formal$reqwalker.v:138$35_CHECK[0:0]$118
+     3/22: $0$formal$reqwalker.v:139$36_EN[0:0]$121
+     4/22: $0$formal$reqwalker.v:139$36_CHECK[0:0]$120
+     5/22: $0$formal$reqwalker.v:140$37_EN[0:0]$123
+     6/22: $0$formal$reqwalker.v:140$37_CHECK[0:0]$122
+     7/22: $0$formal$reqwalker.v:141$38_EN[0:0]$125
+     8/22: $0$formal$reqwalker.v:141$38_CHECK[0:0]$124
+     9/22: $0$formal$reqwalker.v:142$39_EN[0:0]$127
+    10/22: $0$formal$reqwalker.v:142$39_CHECK[0:0]$126
+    11/22: $0$formal$reqwalker.v:143$40_EN[0:0]$129
+    12/22: $0$formal$reqwalker.v:143$40_CHECK[0:0]$128
+    13/22: $0$formal$reqwalker.v:144$41_EN[0:0]$131
+    14/22: $0$formal$reqwalker.v:144$41_CHECK[0:0]$130
+    15/22: $0$formal$reqwalker.v:145$42_EN[0:0]$133
+    16/22: $0$formal$reqwalker.v:145$42_CHECK[0:0]$132
+    17/22: $0$formal$reqwalker.v:146$43_EN[0:0]$135
+    18/22: $0$formal$reqwalker.v:146$43_CHECK[0:0]$134
+    19/22: $0$formal$reqwalker.v:147$44_EN[0:0]$137
+    20/22: $0$formal$reqwalker.v:147$44_CHECK[0:0]$136
+    21/22: $0$formal$reqwalker.v:148$45_EN[0:0]$139
+    22/22: $0$formal$reqwalker.v:148$45_CHECK[0:0]$138
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:131$113'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:123$105'.
+     1/2: $0$formal$reqwalker.v:124$33_EN[0:0]$109
+     2/2: $0$formal$reqwalker.v:124$33_CHECK[0:0]$108
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:113$87'.
+     1/8: $0$formal$reqwalker.v:115$29_EN[0:0]$94
+     2/8: $0$formal$reqwalker.v:115$29_CHECK[0:0]$93
+     3/8: $0$formal$reqwalker.v:116$30_EN[0:0]$96
+     4/8: $0$formal$reqwalker.v:116$30_CHECK[0:0]$95
+     5/8: $0$formal$reqwalker.v:117$31_EN[0:0]$98
+     6/8: $0$formal$reqwalker.v:117$31_CHECK[0:0]$97
+     7/8: $0$formal$reqwalker.v:119$32_EN[0:0]$100
+     8/8: $0$formal$reqwalker.v:119$32_CHECK[0:0]$99
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:109$81'.
+     1/2: $0$formal$reqwalker.v:110$28_EN[0:0]$84
+     2/2: $0$formal$reqwalker.v:110$28_CHECK[0:0]$83
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:103$76'.
+     1/2: $0$formal$reqwalker.v:104$27_EN[0:0]$78
+     2/2: $0$formal$reqwalker.v:104$27_CHECK[0:0]$77
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:93$75'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:79$71'.
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:61$69'.
+     1/1: $0\o_led[5:0]
+Creating decoders for process `\reqwalker.$proc$reqwalker.v:53$62'.
+     1/1: $0\state[3:0]
+
+2.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:175$52_CHECK' from process `\reqwalker.$proc$reqwalker.v:0$276'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:175$52_EN' from process `\reqwalker.$proc$reqwalker.v:0$276'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:100$25_CHECK' from process `\reqwalker.$proc$reqwalker.v:0$272'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:100$25_EN' from process `\reqwalker.$proc$reqwalker.v:0$272'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:179$54_CHECK' from process `\reqwalker.$proc$reqwalker.v:178$190'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:179$54_EN' from process `\reqwalker.$proc$reqwalker.v:178$190'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:156$47_CHECK' from process `\reqwalker.$proc$reqwalker.v:156$156'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:156$47_EN' from process `\reqwalker.$proc$reqwalker.v:156$156'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:153$46_CHECK' from process `\reqwalker.$proc$reqwalker.v:153$151'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:153$46_EN' from process `\reqwalker.$proc$reqwalker.v:153$151'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:138$35_CHECK' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:138$35_EN' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:139$36_CHECK' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:139$36_EN' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:140$37_CHECK' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:140$37_EN' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:141$38_CHECK' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:141$38_EN' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:142$39_CHECK' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:142$39_EN' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:143$40_CHECK' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:143$40_EN' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:144$41_CHECK' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:144$41_EN' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:145$42_CHECK' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:145$42_EN' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:146$43_CHECK' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:146$43_EN' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:147$44_CHECK' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:147$44_EN' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:148$45_CHECK' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:148$45_EN' from process `\reqwalker.$proc$reqwalker.v:135$117'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:131$34_CHECK' from process `\reqwalker.$proc$reqwalker.v:131$113'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:131$34_EN' from process `\reqwalker.$proc$reqwalker.v:131$113'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:104$27_CHECK' from process `\reqwalker.$proc$reqwalker.v:103$76'.
+No latch inferred for signal `\reqwalker.$formal$reqwalker.v:104$27_EN' from process `\reqwalker.$proc$reqwalker.v:103$76'.
+Latch inferred for signal `\reqwalker.\o_led' from process `\reqwalker.$proc$reqwalker.v:61$69': $auto$proc_dlatch.cc:427:proc_dlatch$572
+
+2.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\reqwalker.$past$reqwalker.v:203$24$0' using process `\reqwalker.$proc$reqwalker.v:201$227'.
+  created $dff cell `$procdff$643' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:202$61_CHECK' using process `\reqwalker.$proc$reqwalker.v:201$227'.
+  created $dff cell `$procdff$644' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:202$61_EN' using process `\reqwalker.$proc$reqwalker.v:201$227'.
+  created $dff cell `$procdff$645' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:198$22$0' using process `\reqwalker.$proc$reqwalker.v:197$219'.
+  created $dff cell `$procdff$646' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:198$23$0' using process `\reqwalker.$proc$reqwalker.v:197$219'.
+  created $dff cell `$procdff$647' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:198$60_CHECK' using process `\reqwalker.$proc$reqwalker.v:197$219'.
+  created $dff cell `$procdff$648' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:198$60_EN' using process `\reqwalker.$proc$reqwalker.v:197$219'.
+  created $dff cell `$procdff$649' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:188$17$0' using process `\reqwalker.$proc$reqwalker.v:187$200'.
+  created $dff cell `$procdff$650' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:188$18$0' using process `\reqwalker.$proc$reqwalker.v:187$200'.
+  created $dff cell `$procdff$651' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:191$19$0' using process `\reqwalker.$proc$reqwalker.v:187$200'.
+  created $dff cell `$procdff$652' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:192$20$0' using process `\reqwalker.$proc$reqwalker.v:187$200'.
+  created $dff cell `$procdff$653' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:194$21$0' using process `\reqwalker.$proc$reqwalker.v:187$200'.
+  created $dff cell `$procdff$654' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:188$56_CHECK' using process `\reqwalker.$proc$reqwalker.v:187$200'.
+  created $dff cell `$procdff$655' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:188$56_EN' using process `\reqwalker.$proc$reqwalker.v:187$200'.
+  created $dff cell `$procdff$656' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:190$57_CHECK' using process `\reqwalker.$proc$reqwalker.v:187$200'.
+  created $dff cell `$procdff$657' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:190$57_EN' using process `\reqwalker.$proc$reqwalker.v:187$200'.
+  created $dff cell `$procdff$658' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:191$58_CHECK' using process `\reqwalker.$proc$reqwalker.v:187$200'.
+  created $dff cell `$procdff$659' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:191$58_EN' using process `\reqwalker.$proc$reqwalker.v:187$200'.
+  created $dff cell `$procdff$660' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:193$59_CHECK' using process `\reqwalker.$proc$reqwalker.v:187$200'.
+  created $dff cell `$procdff$661' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:193$59_EN' using process `\reqwalker.$proc$reqwalker.v:187$200'.
+  created $dff cell `$procdff$662' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:184$16$0' using process `\reqwalker.$proc$reqwalker.v:183$195'.
+  created $dff cell `$procdff$663' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:184$55_CHECK' using process `\reqwalker.$proc$reqwalker.v:183$195'.
+  created $dff cell `$procdff$664' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:184$55_EN' using process `\reqwalker.$proc$reqwalker.v:183$195'.
+  created $dff cell `$procdff$665' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:171$15$0' using process `\reqwalker.$proc$reqwalker.v:169$184'.
+  created $dff cell `$procdff$666' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:170$51_CHECK' using process `\reqwalker.$proc$reqwalker.v:169$184'.
+  created $dff cell `$procdff$667' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:170$51_EN' using process `\reqwalker.$proc$reqwalker.v:169$184'.
+  created $dff cell `$procdff$668' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:166$12$0' using process `\reqwalker.$proc$reqwalker.v:165$173'.
+  created $dff cell `$procdff$669' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:166$13$0' using process `\reqwalker.$proc$reqwalker.v:165$173'.
+  created $dff cell `$procdff$670' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:167$14$0' using process `\reqwalker.$proc$reqwalker.v:165$173'.
+  created $dff cell `$procdff$671' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:166$50_CHECK' using process `\reqwalker.$proc$reqwalker.v:165$173'.
+  created $dff cell `$procdff$672' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:166$50_EN' using process `\reqwalker.$proc$reqwalker.v:165$173'.
+  created $dff cell `$procdff$673' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:160$9$0' using process `\reqwalker.$proc$reqwalker.v:159$160'.
+  created $dff cell `$procdff$674' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:160$10$0' using process `\reqwalker.$proc$reqwalker.v:159$160'.
+  created $dff cell `$procdff$675' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:160$11$0' using process `\reqwalker.$proc$reqwalker.v:159$160'.
+  created $dff cell `$procdff$676' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:160$48_CHECK' using process `\reqwalker.$proc$reqwalker.v:159$160'.
+  created $dff cell `$procdff$677' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:160$48_EN' using process `\reqwalker.$proc$reqwalker.v:159$160'.
+  created $dff cell `$procdff$678' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:161$49_CHECK' using process `\reqwalker.$proc$reqwalker.v:159$160'.
+  created $dff cell `$procdff$679' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:161$49_EN' using process `\reqwalker.$proc$reqwalker.v:159$160'.
+  created $dff cell `$procdff$680' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:124$7$0' using process `\reqwalker.$proc$reqwalker.v:123$105'.
+  created $dff cell `$procdff$681' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:124$8$0' using process `\reqwalker.$proc$reqwalker.v:123$105'.
+  created $dff cell `$procdff$682' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:124$33_CHECK' using process `\reqwalker.$proc$reqwalker.v:123$105'.
+  created $dff cell `$procdff$683' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:124$33_EN' using process `\reqwalker.$proc$reqwalker.v:123$105'.
+  created $dff cell `$procdff$684' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:114$2$0' using process `\reqwalker.$proc$reqwalker.v:113$87'.
+  created $dff cell `$procdff$685' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:114$3$0' using process `\reqwalker.$proc$reqwalker.v:113$87'.
+  created $dff cell `$procdff$686' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:117$4$0' using process `\reqwalker.$proc$reqwalker.v:113$87'.
+  created $dff cell `$procdff$687' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:118$5$0' using process `\reqwalker.$proc$reqwalker.v:113$87'.
+  created $dff cell `$procdff$688' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:120$6$0' using process `\reqwalker.$proc$reqwalker.v:113$87'.
+  created $dff cell `$procdff$689' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:115$29_CHECK' using process `\reqwalker.$proc$reqwalker.v:113$87'.
+  created $dff cell `$procdff$690' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:115$29_EN' using process `\reqwalker.$proc$reqwalker.v:113$87'.
+  created $dff cell `$procdff$691' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:116$30_CHECK' using process `\reqwalker.$proc$reqwalker.v:113$87'.
+  created $dff cell `$procdff$692' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:116$30_EN' using process `\reqwalker.$proc$reqwalker.v:113$87'.
+  created $dff cell `$procdff$693' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:117$31_CHECK' using process `\reqwalker.$proc$reqwalker.v:113$87'.
+  created $dff cell `$procdff$694' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:117$31_EN' using process `\reqwalker.$proc$reqwalker.v:113$87'.
+  created $dff cell `$procdff$695' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:119$32_CHECK' using process `\reqwalker.$proc$reqwalker.v:113$87'.
+  created $dff cell `$procdff$696' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:119$32_EN' using process `\reqwalker.$proc$reqwalker.v:113$87'.
+  created $dff cell `$procdff$697' with positive edge clock.
+Creating register for signal `\reqwalker.$past$reqwalker.v:110$1$0' using process `\reqwalker.$proc$reqwalker.v:109$81'.
+  created $dff cell `$procdff$698' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:110$28_CHECK' using process `\reqwalker.$proc$reqwalker.v:109$81'.
+  created $dff cell `$procdff$699' with positive edge clock.
+Creating register for signal `\reqwalker.$formal$reqwalker.v:110$28_EN' using process `\reqwalker.$proc$reqwalker.v:109$81'.
+  created $dff cell `$procdff$700' with positive edge clock.
+Creating register for signal `\reqwalker.\f_past_valid' using process `\reqwalker.$proc$reqwalker.v:93$75'.
+  created $dff cell `$procdff$701' with positive edge clock.
+Creating register for signal `\reqwalker.\o_ack' using process `\reqwalker.$proc$reqwalker.v:79$71'.
+  created $dff cell `$procdff$702' with positive edge clock.
+Creating register for signal `\reqwalker.\state' using process `\reqwalker.$proc$reqwalker.v:53$62'.
+  created $dff cell `$procdff$703' with positive edge clock.
+
+2.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `reqwalker.$proc$reqwalker.v:0$312'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$310'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$308'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$306'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$304'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$302'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$300'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$298'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$296'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$294'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$292'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$290'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$288'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$286'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$284'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$282'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$280'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$276'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$272'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$271'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$270'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$269'.
+Removing empty process `reqwalker.$proc$reqwalker.v:0$268'.
+Found and cleaned up 1 empty switch in `\reqwalker.$proc$reqwalker.v:201$227'.
+Removing empty process `reqwalker.$proc$reqwalker.v:201$227'.
+Found and cleaned up 1 empty switch in `\reqwalker.$proc$reqwalker.v:197$219'.
+Removing empty process `reqwalker.$proc$reqwalker.v:197$219'.
+Found and cleaned up 2 empty switches in `\reqwalker.$proc$reqwalker.v:187$200'.
+Removing empty process `reqwalker.$proc$reqwalker.v:187$200'.
+Found and cleaned up 1 empty switch in `\reqwalker.$proc$reqwalker.v:183$195'.
+Removing empty process `reqwalker.$proc$reqwalker.v:183$195'.
+Found and cleaned up 1 empty switch in `\reqwalker.$proc$reqwalker.v:178$190'.
+Removing empty process `reqwalker.$proc$reqwalker.v:178$190'.
+Found and cleaned up 1 empty switch in `\reqwalker.$proc$reqwalker.v:169$184'.
+Removing empty process `reqwalker.$proc$reqwalker.v:169$184'.
+Found and cleaned up 1 empty switch in `\reqwalker.$proc$reqwalker.v:165$173'.
+Removing empty process `reqwalker.$proc$reqwalker.v:165$173'.
+Found and cleaned up 1 empty switch in `\reqwalker.$proc$reqwalker.v:159$160'.
+Removing empty process `reqwalker.$proc$reqwalker.v:159$160'.
+Removing empty process `reqwalker.$proc$reqwalker.v:156$156'.
+Removing empty process `reqwalker.$proc$reqwalker.v:153$151'.
+Found and cleaned up 1 empty switch in `\reqwalker.$proc$reqwalker.v:135$117'.
+Removing empty process `reqwalker.$proc$reqwalker.v:135$117'.
+Removing empty process `reqwalker.$proc$reqwalker.v:131$113'.
+Found and cleaned up 1 empty switch in `\reqwalker.$proc$reqwalker.v:123$105'.
+Removing empty process `reqwalker.$proc$reqwalker.v:123$105'.
+Found and cleaned up 2 empty switches in `\reqwalker.$proc$reqwalker.v:113$87'.
+Removing empty process `reqwalker.$proc$reqwalker.v:113$87'.
+Found and cleaned up 1 empty switch in `\reqwalker.$proc$reqwalker.v:109$81'.
+Removing empty process `reqwalker.$proc$reqwalker.v:109$81'.
+Found and cleaned up 1 empty switch in `\reqwalker.$proc$reqwalker.v:103$76'.
+Removing empty process `reqwalker.$proc$reqwalker.v:103$76'.
+Removing empty process `reqwalker.$proc$reqwalker.v:93$75'.
+Removing empty process `reqwalker.$proc$reqwalker.v:79$71'.
+Found and cleaned up 1 empty switch in `\reqwalker.$proc$reqwalker.v:61$69'.
+Removing empty process `reqwalker.$proc$reqwalker.v:61$69'.
+Found and cleaned up 3 empty switches in `\reqwalker.$proc$reqwalker.v:53$62'.
+Removing empty process `reqwalker.$proc$reqwalker.v:53$62'.
+Cleaned up 19 empty switches.
+
+2.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reqwalker.
+<suppressed ~21 debug messages>
+
+2.4. Executing FUTURE pass.
+
+2.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reqwalker.
+
+2.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \reqwalker..
+Removed 3 unused cells and 218 unused wires.
+<suppressed ~4 debug messages>
+
+2.7. Executing CHECK pass (checking for obvious problems).
+Checking module reqwalker...
+Found and reported 0 problems.
+
+2.8. Executing OPT pass (performing simple optimizations).
+
+2.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reqwalker.
+
+2.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\reqwalker'.
+<suppressed ~112 debug messages>
+Removed a total of 38 cells.
+
+2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \reqwalker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~62 debug messages>
+
+2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \reqwalker.
+    New ctrl vector for $pmux cell $procmux$552: { $procmux$472_CMP $auto$opt_reduce.cc:134:opt_pmux$711 $auto$opt_reduce.cc:134:opt_pmux$709 $auto$opt_reduce.cc:134:opt_pmux$707 $auto$opt_reduce.cc:134:opt_pmux$705 }
+  Optimizing cells in module \reqwalker.
+Performed a total of 1 changes.
+
+2.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\reqwalker'.
+<suppressed ~47 debug messages>
+Removed a total of 16 cells.
+
+2.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \reqwalker..
+Removed 0 unused cells and 51 unused wires.
+<suppressed ~1 debug messages>
+
+2.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reqwalker.
+
+2.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \reqwalker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~55 debug messages>
+
+2.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \reqwalker.
+Performed a total of 0 changes.
+
+2.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\reqwalker'.
+Removed a total of 0 cells.
+
+2.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \reqwalker..
+
+2.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reqwalker.
+
+2.8.14. Finished OPT passes. (There is nothing left to do.)
+
+2.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 5 bits (of 6) from port B of cell reqwalker.$eq$reqwalker.v:138$140 ($eq).
+Removed top 4 bits (of 6) from port B of cell reqwalker.$eq$reqwalker.v:139$141 ($eq).
+Removed top 3 bits (of 6) from port B of cell reqwalker.$eq$reqwalker.v:140$142 ($eq).
+Removed top 2 bits (of 6) from port B of cell reqwalker.$eq$reqwalker.v:141$143 ($eq).
+Removed top 1 bits (of 6) from port B of cell reqwalker.$eq$reqwalker.v:142$144 ($eq).
+Removed top 3 bits (of 4) from port B of cell reqwalker.$eq$reqwalker.v:161$171 ($eq).
+Removed top 31 bits (of 32) from port B of cell reqwalker.$add$reqwalker.v:167$181 ($add).
+Removed top 27 bits (of 32) from port Y of cell reqwalker.$add$reqwalker.v:167$181 ($add).
+Removed top 27 bits (of 32) from port B of cell reqwalker.$eq$reqwalker.v:167$182 ($eq).
+Removed top 2 bits (of 4) from port B of cell reqwalker.$procmux$400_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell reqwalker.$procmux$421_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell reqwalker.$procmux$440_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell reqwalker.$procmux$457_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell reqwalker.$procmux$472_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell reqwalker.$procmux$485_CMP0 ($eq).
+Removed top 27 bits (of 32) from wire reqwalker.$add$reqwalker.v:167$181_Y.
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \reqwalker..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reqwalker.
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\reqwalker'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \reqwalker..
+
+2.12.4. Finished fast OPT passes.
+
+2.13. Printing statistics.
+
+=== reqwalker ===
+
+   Number of wires:                208
+   Number of wire bits:            397
+   Number of public wires:          14
+   Number of public wire bits:     117
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                232
+     $add                            2
+     $and                           10
+     $assert                        18
+     $assume                        12
+     $cover                          2
+     $dff                           55
+     $dlatch                         1
+     $eq                            24
+     $ge                             1
+     $initstate                      1
+     $le                             1
+     $logic_and                     20
+     $logic_not                      8
+     $lt                             1
+     $mux                           58
+     $ne                             1
+     $not                           11
+     $pmux                           1
+     $reduce_bool                    1
+     $reduce_or                      4
+
+2.14. Executing CHECK pass (checking for obvious problems).
+Checking module reqwalker...
+Found and reported 0 problems.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \reqwalker
+
+3.2. Analyzing design hierarchy..
+Top module:  \reqwalker
+Removed 0 unused modules.
+Module reqwalker directly or indirectly contains formal properties -> setting "keep" attribute.
+
+4. Executing jny backend.
+
+5. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 65f19768cf, CPU: user 0.06s system 0.00s, MEM: 13.00 MB peak
+Yosys 0.35+36 (git sha1 c95298225, clang 10.0.0-4ubuntu1 -fPIC -Os)
+Time spent: 16% 5x opt_clean (0 sec), 16% 6x opt_expr (0 sec), ...

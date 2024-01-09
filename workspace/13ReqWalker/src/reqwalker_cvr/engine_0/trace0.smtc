@@ -1,0 +1,161 @@
+initial
+assume (= [$auto$async2sync.cc:205:execute$713] #b000000)
+assume (= [$formal$reqwalker.v:124$33_EN] false)
+assume (= [$formal$reqwalker.v:160$48_EN] false)
+assume (= [$formal$reqwalker.v:166$50_EN] false)
+assume (= [$formal$reqwalker.v:198$60_EN] false)
+assume (= [$formal$reqwalker.v:202$61_EN] false)
+assume (= [_witness_.anyinit_procdff_643] false)
+assume (= [_witness_.anyinit_procdff_644] false)
+assume (= [_witness_.anyinit_procdff_646] false)
+assume (= [_witness_.anyinit_procdff_647] false)
+assume (= [_witness_.anyinit_procdff_648] false)
+assume (= [_witness_.anyinit_procdff_650] false)
+assume (= [_witness_.anyinit_procdff_651] false)
+assume (= [_witness_.anyinit_procdff_652] true)
+assume (= [_witness_.anyinit_procdff_653] true)
+assume (= [_witness_.anyinit_procdff_654] #b10000000000000000000000000000000)
+assume (= [_witness_.anyinit_procdff_663] false)
+assume (= [_witness_.anyinit_procdff_666] false)
+assume (= [_witness_.anyinit_procdff_667] false)
+assume (= [_witness_.anyinit_procdff_669] false)
+assume (= [_witness_.anyinit_procdff_670] false)
+assume (= [_witness_.anyinit_procdff_671] #b0000)
+assume (= [_witness_.anyinit_procdff_672] false)
+assume (= [_witness_.anyinit_procdff_674] false)
+assume (= [_witness_.anyinit_procdff_675] false)
+assume (= [_witness_.anyinit_procdff_676] false)
+assume (= [_witness_.anyinit_procdff_677] false)
+assume (= [_witness_.anyinit_procdff_679] false)
+assume (= [_witness_.anyinit_procdff_681] false)
+assume (= [_witness_.anyinit_procdff_682] false)
+assume (= [_witness_.anyinit_procdff_683] false)
+assume (= [_witness_.anyinit_procdff_685] false)
+assume (= [_witness_.anyinit_procdff_686] false)
+assume (= [_witness_.anyinit_procdff_687] true)
+assume (= [_witness_.anyinit_procdff_688] true)
+assume (= [_witness_.anyinit_procdff_689] #b10000000000000000000000000000000)
+assume (= [_witness_.anyinit_procdff_698] false)
+assume (= [f_past_valid] false)
+assume (= [o_ack] false)
+assume (= [state] #b0000)
+
+state 0
+assume (= [i_addr] false)
+assume (= [i_clk] false)
+assume (= [i_cyc] false)
+assume (= [i_data] #b00000000000000000000000000000000)
+assume (= [i_stb] false)
+assume (= [i_we] false)
+
+state 1
+assume (= [i_addr] false)
+assume (= [i_clk] false)
+assume (= [i_cyc] true)
+assume (= [i_data] #b00000000000000000000000000000000)
+assume (= [i_stb] true)
+assume (= [i_we] true)
+
+state 2
+assume (= [i_addr] false)
+assume (= [i_clk] false)
+assume (= [i_cyc] true)
+assume (= [i_data] #b00000000000000000000000000000000)
+assume (= [i_stb] true)
+assume (= [i_we] false)
+
+state 3
+assume (= [i_addr] false)
+assume (= [i_clk] false)
+assume (= [i_cyc] false)
+assume (= [i_data] #b00000000000000000000000000000000)
+assume (= [i_stb] false)
+assume (= [i_we] true)
+
+state 4
+assume (= [i_addr] false)
+assume (= [i_clk] false)
+assume (= [i_cyc] false)
+assume (= [i_data] #b00000000000000000000000000000000)
+assume (= [i_stb] false)
+assume (= [i_we] true)
+
+state 5
+assume (= [i_addr] false)
+assume (= [i_clk] false)
+assume (= [i_cyc] false)
+assume (= [i_data] #b00000000000000000000000000000000)
+assume (= [i_stb] false)
+assume (= [i_we] true)
+
+state 6
+assume (= [i_addr] false)
+assume (= [i_clk] false)
+assume (= [i_cyc] false)
+assume (= [i_data] #b00000000000000000000000000000000)
+assume (= [i_stb] false)
+assume (= [i_we] true)
+
+state 7
+assume (= [i_addr] false)
+assume (= [i_clk] false)
+assume (= [i_cyc] false)
+assume (= [i_data] #b00000000000000000000000000000000)
+assume (= [i_stb] false)
+assume (= [i_we] true)
+
+state 8
+assume (= [i_addr] false)
+assume (= [i_clk] false)
+assume (= [i_cyc] false)
+assume (= [i_data] #b00000000000000000000000000000000)
+assume (= [i_stb] false)
+assume (= [i_we] false)
+
+state 9
+assume (= [i_addr] false)
+assume (= [i_clk] false)
+assume (= [i_cyc] true)
+assume (= [i_data] #b00000000000000000000000000000000)
+assume (= [i_stb] true)
+assume (= [i_we] false)
+
+state 10
+assume (= [i_addr] false)
+assume (= [i_clk] false)
+assume (= [i_cyc] false)
+assume (= [i_data] #b00000000000000000000000000000000)
+assume (= [i_stb] false)
+assume (= [i_we] true)
+
+state 11
+assume (= [i_addr] false)
+assume (= [i_clk] false)
+assume (= [i_cyc] true)
+assume (= [i_data] #b00000000000000000000000000000000)
+assume (= [i_stb] true)
+assume (= [i_we] false)
+
+state 12
+assume (= [i_addr] false)
+assume (= [i_clk] false)
+assume (= [i_cyc] true)
+assume (= [i_data] #b00000000000000000000000000000000)
+assume (= [i_stb] true)
+assume (= [i_we] true)
+
+state 13
+assume (= [i_addr] false)
+assume (= [i_clk] false)
+assume (= [i_cyc] true)
+assume (= [i_data] #b00000000000000000000000000000000)
+assume (= [i_stb] true)
+assume (= [i_we] true)
+
+state 14
+assume (= [i_addr] false)
+assume (= [i_clk] false)
+assume (= [i_cyc] false)
+assume (= [i_data] #b00000000000000000000000000000000)
+assume (= [i_stb] false)
+assume (= [i_we] false)

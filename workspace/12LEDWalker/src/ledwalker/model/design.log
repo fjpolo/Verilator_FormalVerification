@@ -310,6 +310,6 @@ Module ledwalker directly or indirectly contains formal properties -> setting "k
 5. Executing RTLIL backend.
 Output filename: ../model/design.il
 
-End of script. Logfile hash: 8de8a83e7d, CPU: user 0.01s system 0.02s, MEM: 11.21 MB peak
+End of script. Logfile hash: 8de8a83e7d, CPU: user 0.02s system 0.00s, MEM: 11.20 MB peak
 Yosys 0.35+36 (git sha1 c95298225, clang 10.0.0-4ubuntu1 -fPIC -Os)
-Time spent: 18% 5x opt_clean (0 sec), 17% 6x opt_expr (0 sec), ...
+Time spent: 23% 6x opt_expr (0 sec), 18% 5x opt_clean (0 sec), ...

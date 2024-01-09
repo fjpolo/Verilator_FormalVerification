@@ -203,7 +203,7 @@
 ##   0:00:00  Temporal induction failed!
 ##   0:00:00  Assert failed in ledwalker: ledwalker.v:106.28-107.45 ($assert$ledwalker.v:106$38)
 ##   0:00:00  Writing trace to VCD file: engine_0/trace_induct.vcd
-##   0:00:01  Writing trace to Verilog testbench: engine_0/trace_induct_tb.v
+##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_induct_tb.v
 ##   0:00:01  Writing trace to constraints file: engine_0/trace_induct.smtc
 ##   0:00:01  Writing trace to Yosys witness file: engine_0/trace_induct.yw
 ##   0:00:01  Status: failed

@@ -1,0 +1,7 @@
+# running in reqwalker_cvr/src/
+read -formal reqwalker.v
+prep -top reqwalker
+
+hierarchy -smtcheck
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

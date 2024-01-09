@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2023-12-06T14:47:55" hostname="DESKTOP-T1I841S" package="reqwalker" id="0" name="cvr" tests="20" errors="0" failures="0" time="0" skipped="18">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="PASS"/>
+</properties>
+<testcase classname="cvr" name="build execution" time="0">
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:124.56-125.16" time="0" type="ASSERT" location="reqwalker.v:124.56-125.16" id="$assert$reqwalker.v:124$240">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:131.13-132.25" time="0" type="ASSERT" location="reqwalker.v:131.13-132.25" id="$assert$reqwalker.v:131$241">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:138.8-138.36" time="0" type="ASSERT" location="reqwalker.v:138.8-138.36" id="$assert$reqwalker.v:138$242">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:139.8-139.36" time="0" type="ASSERT" location="reqwalker.v:139.8-139.36" id="$assert$reqwalker.v:139$243">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:140.8-140.36" time="0" type="ASSERT" location="reqwalker.v:140.8-140.36" id="$assert$reqwalker.v:140$244">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:141.8-141.36" time="0" type="ASSERT" location="reqwalker.v:141.8-141.36" id="$assert$reqwalker.v:141$245">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:142.8-142.36" time="0" type="ASSERT" location="reqwalker.v:142.8-142.36" id="$assert$reqwalker.v:142$246">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:143.8-143.36" time="0" type="ASSERT" location="reqwalker.v:143.8-143.36" id="$assert$reqwalker.v:143$247">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:144.8-144.36" time="0" type="ASSERT" location="reqwalker.v:144.8-144.36" id="$assert$reqwalker.v:144$248">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:145.8-145.36" time="0" type="ASSERT" location="reqwalker.v:145.8-145.36" id="$assert$reqwalker.v:145$249">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:146.8-146.36" time="0" type="ASSERT" location="reqwalker.v:146.8-146.36" id="$assert$reqwalker.v:146$250">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:147.8-147.36" time="0" type="ASSERT" location="reqwalker.v:147.8-147.36" id="$assert$reqwalker.v:147$251">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:148.8-148.36" time="0" type="ASSERT" location="reqwalker.v:148.8-148.36" id="$assert$reqwalker.v:148$252">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:153.13-154.31" time="0" type="ASSERT" location="reqwalker.v:153.13-154.31" id="$assert$reqwalker.v:153$253">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:160.84-161.22" time="0" type="ASSERT" location="reqwalker.v:160.84-161.22" id="$assert$reqwalker.v:160$255">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:161.23-162.16" time="0" type="ASSERT" location="reqwalker.v:161.23-162.16" id="$assert$reqwalker.v:161$256">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:166.64-167.35" time="0" type="ASSERT" location="reqwalker.v:166.64-167.35" id="$assert$reqwalker.v:166$257">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in reqwalker at reqwalker.v:198.62-199.17" time="0" type="ASSERT" location="reqwalker.v:198.62-199.17" id="$assert$reqwalker.v:198$266">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property COVER in reqwalker at reqwalker.v:170.20-171.33" time="0" type="COVER" location="reqwalker.v:170.20-171.33" id="$cover$reqwalker.v:170$258" tracefile="engine_0/trace0.vcd">
+</testcase>
+<testcase classname="cvr" name="Property COVER in reqwalker at reqwalker.v:202.19-203.37" time="0" type="COVER" location="reqwalker.v:202.19-203.37" id="$cover$reqwalker.v:202$267" tracefile="engine_0/trace0.vcd">
+</testcase>
+<system-out>SBY 14:47:55 [reqwalker_cvr] Removing directory '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/13ReqWalker/src/reqwalker_cvr'.
+SBY 14:47:55 [reqwalker_cvr] Copy '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/13ReqWalker/src/reqwalker.v' to '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/13ReqWalker/src/reqwalker_cvr/src/reqwalker.v'.
+SBY 14:47:55 [reqwalker_cvr] engine_0: smtbmc
+SBY 14:47:55 [reqwalker_cvr] base: starting process &quot;cd reqwalker_cvr/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 14:47:55 [reqwalker_cvr] base: finished (returncode=0)
+SBY 14:47:55 [reqwalker_cvr] prep: starting process &quot;cd reqwalker_cvr/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 14:47:55 [reqwalker_cvr] prep: finished (returncode=0)
+SBY 14:47:55 [reqwalker_cvr] smt2: starting process &quot;cd reqwalker_cvr/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 14:47:55 [reqwalker_cvr] smt2: finished (returncode=0)
+SBY 14:47:55 [reqwalker_cvr] engine_0: starting process &quot;cd reqwalker_cvr; yosys-smtbmc --presat --unroll -c --noprogress -t 20  --append 0 --dump-vcd engine_0/trace%.vcd --dump-yw engine_0/trace%.yw --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2&quot;
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Solver: yices
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 1..
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 2..
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 3..
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 4..
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 5..
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 6..
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 7..
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 8..
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 9..
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 10..
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 11..
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 12..
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 13..
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 14..
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Reached cover statement at reqwalker.v:202.19-203.37 ($cover$reqwalker.v:202$267) in step 14.
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Reached cover statement at reqwalker.v:170.20-171.33 ($cover$reqwalker.v:170$258) in step 14.
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace0.yw
+SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Status: passed
+SBY 14:47:55 [reqwalker_cvr] engine_0: finished (returncode=0)
+SBY 14:47:55 [reqwalker_cvr] engine_0: Status returned by engine: pass
+SBY 14:47:55 [reqwalker_cvr] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 14:47:55 [reqwalker_cvr] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 14:47:55 [reqwalker_cvr] summary: engine_0 (smtbmc) returned pass
+SBY 14:47:55 [reqwalker_cvr] summary: cover trace: reqwalker_cvr/engine_0/trace0.vcd
+SBY 14:47:55 [reqwalker_cvr] summary:   reached cover statement reqwalker.$cover$reqwalker.v:170$258 at reqwalker.v:170.20-171.33 in step 14
+SBY 14:47:55 [reqwalker_cvr] summary:   reached cover statement reqwalker.$cover$reqwalker.v:202$267 at reqwalker.v:202.19-203.37 in step 14
+SBY 14:47:55 [reqwalker_cvr] DONE (PASS, rc=0)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

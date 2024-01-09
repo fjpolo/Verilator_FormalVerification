@@ -1,0 +1,12 @@
+[options]
+mode cover
+
+[engines]
+smtbmc
+
+[script]
+read -formal reqwalker.v
+prep -top reqwalker
+
+[files]
+reqwalker.v

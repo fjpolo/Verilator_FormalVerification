@@ -75,6 +75,6 @@ Module ledwalker directly or indirectly contains formal properties -> setting "k
 6.2. Executing DEMUXMAP pass.
 Creating SMT-LIBv2 representation of module ledwalker.
 
-End of script. Logfile hash: fc1ba57cf0, CPU: user 0.01s system 0.00s, MEM: 10.48 MB peak
+End of script. Logfile hash: fc1ba57cf0, CPU: user 0.01s system 0.00s, MEM: 10.57 MB peak
 Yosys 0.35+36 (git sha1 c95298225, clang 10.0.0-4ubuntu1 -fPIC -Os)
-Time spent: 52% 2x write_smt2 (0 sec), 25% 2x read_ilang (0 sec), ...
+Time spent: 37% 2x write_smt2 (0 sec), 36% 2x read_ilang (0 sec), ...

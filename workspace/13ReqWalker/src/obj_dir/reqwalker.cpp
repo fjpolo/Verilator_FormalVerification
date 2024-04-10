@@ -33,7 +33,7 @@ int	tickcount = 0;
 Vreqwalker	*tb;
 VerilatedVcdC	*tfp;
 
-void	tick(void) {
+void tick(void) {
 	tickcount++;
 
 	tb->eval();
@@ -50,7 +50,6 @@ void	tick(void) {
 		tfp->flush();
 	}
 }
-
 unsigned wb_read(unsigned a) {
 	tb->i_cyc = tb->i_stb = 1;
 	tb->i_we  = 0;
@@ -68,7 +67,6 @@ unsigned wb_read(unsigned a) {
 	tb->i_cyc = 0;
 	return tb->o_data;
 }
-
 void wb_write(unsigned a, unsigned v) {
 	tb->i_cyc = tb->i_stb = 1;
 	tb->i_we  = 1;

@@ -90,6 +90,7 @@ void Vreqwalker::_initial__TOP__1(Vreqwalker__Syms* __restrict vlSymsp) {
     Vreqwalker* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     vlTOPp->o_ack = 0U;
+    vlTOPp->o_led = 0U;
     vlTOPp->reqwalker__DOT__state = 0U;
 }
 
@@ -97,13 +98,10 @@ VL_INLINE_OPT void Vreqwalker::_sequent__TOP__2(Vreqwalker__Syms* __restrict vlS
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vreqwalker::_sequent__TOP__2\n"); );
     Vreqwalker* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Variables
-    CData/*3:0*/ __Vtableidx1;
     CData/*3:0*/ __Vdly__reqwalker__DOT__state;
     // Body
     __Vdly__reqwalker__DOT__state = vlTOPp->reqwalker__DOT__state;
     vlTOPp->o_ack = ((IData)(vlTOPp->i_stb) & (~ (IData)(vlTOPp->o_stall)));
-    __Vtableidx1 = vlTOPp->reqwalker__DOT__state;
-    vlTOPp->o_led = vlTOPp->__Vtable1_o_led[__Vtableidx1];
     if ((((IData)(vlTOPp->i_stb) & (IData)(vlTOPp->i_we)) 
          & (~ (IData)(vlTOPp->o_stall)))) {
         __Vdly__reqwalker__DOT__state = 1U;
@@ -120,6 +118,10 @@ VL_INLINE_OPT void Vreqwalker::_sequent__TOP__2(Vreqwalker__Syms* __restrict vlS
     }
     vlTOPp->reqwalker__DOT__state = __Vdly__reqwalker__DOT__state;
     vlTOPp->o_data = vlTOPp->reqwalker__DOT__state;
+    vlTOPp->__Vtableidx1 = vlTOPp->reqwalker__DOT__state;
+    if (vlTOPp->__Vtablechg1[vlTOPp->__Vtableidx1]) {
+        vlTOPp->o_led = vlTOPp->__Vtable1_o_led[vlTOPp->__Vtableidx1];
+    }
 }
 
 void Vreqwalker::_settle__TOP__3(Vreqwalker__Syms* __restrict vlSymsp) {
@@ -129,6 +131,10 @@ void Vreqwalker::_settle__TOP__3(Vreqwalker__Syms* __restrict vlSymsp) {
     vlTOPp->o_data = vlTOPp->reqwalker__DOT__state;
     vlTOPp->o_stall = ((0U != (IData)(vlTOPp->reqwalker__DOT__state)) 
                        & (IData)(vlTOPp->i_we));
+    vlTOPp->__Vtableidx1 = vlTOPp->reqwalker__DOT__state;
+    if (vlTOPp->__Vtablechg1[vlTOPp->__Vtableidx1]) {
+        vlTOPp->o_led = vlTOPp->__Vtable1_o_led[vlTOPp->__Vtableidx1];
+    }
 }
 
 VL_INLINE_OPT void Vreqwalker::_combo__TOP__4(Vreqwalker__Syms* __restrict vlSymsp) {
@@ -215,6 +221,23 @@ void Vreqwalker::_ctor_var_reset() {
     o_data = VL_RAND_RESET_I(32);
     o_led = VL_RAND_RESET_I(6);
     reqwalker__DOT__state = VL_RAND_RESET_I(4);
+    __Vtableidx1 = 0;
+    __Vtablechg1[0] = 0U;
+    __Vtablechg1[1] = 1U;
+    __Vtablechg1[2] = 1U;
+    __Vtablechg1[3] = 1U;
+    __Vtablechg1[4] = 1U;
+    __Vtablechg1[5] = 1U;
+    __Vtablechg1[6] = 1U;
+    __Vtablechg1[7] = 1U;
+    __Vtablechg1[8] = 1U;
+    __Vtablechg1[9] = 1U;
+    __Vtablechg1[10] = 1U;
+    __Vtablechg1[11] = 1U;
+    __Vtablechg1[12] = 0U;
+    __Vtablechg1[13] = 0U;
+    __Vtablechg1[14] = 0U;
+    __Vtablechg1[15] = 0U;
     __Vtable1_o_led[0] = 0U;
     __Vtable1_o_led[1] = 1U;
     __Vtable1_o_led[2] = 2U;

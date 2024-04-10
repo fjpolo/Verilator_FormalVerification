@@ -41,8 +41,10 @@ VL_MODULE(Vreqwalker) {
     
     // LOCAL VARIABLES
     // Internals; generally not touched by application code
+    CData/*3:0*/ __Vtableidx1;
     CData/*0:0*/ __Vclklast__TOP__i_clk;
     IData/*31:0*/ __Vm_traceActivity;
+    CData/*0:0*/ __Vtablechg1[16];
     static CData/*5:0*/ __Vtable1_o_led[16];
     
     // INTERNAL VARIABLES

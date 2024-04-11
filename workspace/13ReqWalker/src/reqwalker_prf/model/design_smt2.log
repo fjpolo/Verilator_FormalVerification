@@ -81,6 +81,6 @@ Module reqwalker directly or indirectly contains formal properties -> setting "k
 6.2. Executing DEMUXMAP pass.
 Creating SMT-LIBv2 representation of module reqwalker.
 
-End of script. Logfile hash: 0e909edbf5, CPU: user 0.01s system 0.00s, MEM: 11.00 MB peak
+End of script. Logfile hash: 0e909edbf5, CPU: user 0.01s system 0.00s, MEM: 11.31 MB peak
 Yosys 0.35+36 (git sha1 c95298225, clang 10.0.0-4ubuntu1 -fPIC -Os)
-Time spent: 51% 2x write_smt2 (0 sec), 35% 2x read_ilang (0 sec), ...
+Time spent: 56% 2x write_smt2 (0 sec), 35% 2x read_ilang (0 sec), ...

@@ -1,42 +1,42 @@
-SBY 14:47:55 [reqwalker_cvr] Removing directory '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/13ReqWalker/src/reqwalker_cvr'.
-SBY 14:47:55 [reqwalker_cvr] Copy '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/13ReqWalker/src/reqwalker.v' to '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/13ReqWalker/src/reqwalker_cvr/src/reqwalker.v'.
-SBY 14:47:55 [reqwalker_cvr] engine_0: smtbmc
-SBY 14:47:55 [reqwalker_cvr] base: starting process "cd reqwalker_cvr/src; yosys -ql ../model/design.log ../model/design.ys"
-SBY 14:47:55 [reqwalker_cvr] base: finished (returncode=0)
-SBY 14:47:55 [reqwalker_cvr] prep: starting process "cd reqwalker_cvr/model; yosys -ql design_prep.log design_prep.ys"
-SBY 14:47:55 [reqwalker_cvr] prep: finished (returncode=0)
-SBY 14:47:55 [reqwalker_cvr] smt2: starting process "cd reqwalker_cvr/model; yosys -ql design_smt2.log design_smt2.ys"
-SBY 14:47:55 [reqwalker_cvr] smt2: finished (returncode=0)
-SBY 14:47:55 [reqwalker_cvr] engine_0: starting process "cd reqwalker_cvr; yosys-smtbmc --presat --unroll -c --noprogress -t 20  --append 0 --dump-vcd engine_0/trace%.vcd --dump-yw engine_0/trace%.yw --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2"
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Solver: yices
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 0..
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 1..
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 2..
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 3..
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 4..
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 5..
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 6..
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 7..
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 8..
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 9..
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 10..
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 11..
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 12..
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 13..
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 14..
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Reached cover statement at reqwalker.v:202.19-203.37 ($cover$reqwalker.v:202$267) in step 14.
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Reached cover statement at reqwalker.v:170.20-171.33 ($cover$reqwalker.v:170$258) in step 14.
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace0.yw
-SBY 14:47:55 [reqwalker_cvr] engine_0: ##   0:00:00  Status: passed
-SBY 14:47:55 [reqwalker_cvr] engine_0: finished (returncode=0)
-SBY 14:47:55 [reqwalker_cvr] engine_0: Status returned by engine: pass
-SBY 14:47:55 [reqwalker_cvr] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
-SBY 14:47:55 [reqwalker_cvr] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
-SBY 14:47:55 [reqwalker_cvr] summary: engine_0 (smtbmc) returned pass
-SBY 14:47:55 [reqwalker_cvr] summary: cover trace: reqwalker_cvr/engine_0/trace0.vcd
-SBY 14:47:55 [reqwalker_cvr] summary:   reached cover statement reqwalker.$cover$reqwalker.v:170$258 at reqwalker.v:170.20-171.33 in step 14
-SBY 14:47:55 [reqwalker_cvr] summary:   reached cover statement reqwalker.$cover$reqwalker.v:202$267 at reqwalker.v:202.19-203.37 in step 14
-SBY 14:47:55 [reqwalker_cvr] DONE (PASS, rc=0)
+SBY 16:01:07 [reqwalker_cvr] Removing directory '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/13ReqWalker/src/reqwalker_cvr'.
+SBY 16:01:07 [reqwalker_cvr] Copy '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/13ReqWalker/src/reqwalker.v' to '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/13ReqWalker/src/reqwalker_cvr/src/reqwalker.v'.
+SBY 16:01:07 [reqwalker_cvr] engine_0: smtbmc
+SBY 16:01:07 [reqwalker_cvr] base: starting process "cd reqwalker_cvr/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 16:01:07 [reqwalker_cvr] base: finished (returncode=0)
+SBY 16:01:07 [reqwalker_cvr] prep: starting process "cd reqwalker_cvr/model; yosys -ql design_prep.log design_prep.ys"
+SBY 16:01:07 [reqwalker_cvr] prep: finished (returncode=0)
+SBY 16:01:07 [reqwalker_cvr] smt2: starting process "cd reqwalker_cvr/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 16:01:07 [reqwalker_cvr] smt2: finished (returncode=0)
+SBY 16:01:07 [reqwalker_cvr] engine_0: starting process "cd reqwalker_cvr; yosys-smtbmc --presat --unroll -c --noprogress -t 20  --append 0 --dump-vcd engine_0/trace%.vcd --dump-yw engine_0/trace%.yw --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2"
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Solver: yices
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 1..
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 2..
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 3..
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 4..
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 5..
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 6..
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 7..
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 8..
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 9..
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 10..
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 11..
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 12..
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 13..
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Checking cover reachability in step 14..
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Reached cover statement at reqwalker.v:205.19-206.37 ($cover$reqwalker.v:205$267) in step 14.
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Reached cover statement at reqwalker.v:173.20-174.33 ($cover$reqwalker.v:173$258) in step 14.
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace0.yw
+SBY 16:01:07 [reqwalker_cvr] engine_0: ##   0:00:00  Status: passed
+SBY 16:01:07 [reqwalker_cvr] engine_0: finished (returncode=0)
+SBY 16:01:07 [reqwalker_cvr] engine_0: Status returned by engine: pass
+SBY 16:01:07 [reqwalker_cvr] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 16:01:07 [reqwalker_cvr] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 16:01:07 [reqwalker_cvr] summary: engine_0 (smtbmc) returned pass
+SBY 16:01:07 [reqwalker_cvr] summary: cover trace: reqwalker_cvr/engine_0/trace0.vcd
+SBY 16:01:07 [reqwalker_cvr] summary:   reached cover statement reqwalker.$cover$reqwalker.v:173$258 at reqwalker.v:173.20-174.33 in step 14
+SBY 16:01:07 [reqwalker_cvr] summary:   reached cover statement reqwalker.$cover$reqwalker.v:205$267 at reqwalker.v:205.19-206.37 in step 14
+SBY 16:01:07 [reqwalker_cvr] DONE (PASS, rc=0)

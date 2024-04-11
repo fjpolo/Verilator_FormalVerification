@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2024-04-11T15:42:59" hostname="DESKTOP-T1I841S" package="helloworld" id="0" name="default" tests="35" errors="1" failures="0" time="0" skipped="35">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="ERROR"/>
+</properties>
+<testcase classname="default" name="build execution" time="0">
+<error type="ERROR"/>
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:134.8-134.31" time="0" type="ASSERT" location="helloworld.v:134.8-134.31" id="$assert$helloworld.v:134$122">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:135.8-135.31" time="0" type="ASSERT" location="helloworld.v:135.8-135.31" id="$assert$helloworld.v:135$123">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:136.8-136.31" time="0" type="ASSERT" location="helloworld.v:136.8-136.31" id="$assert$helloworld.v:136$124">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:137.8-137.31" time="0" type="ASSERT" location="helloworld.v:137.8-137.31" id="$assert$helloworld.v:137$125">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:139.8-139.31" time="0" type="ASSERT" location="helloworld.v:139.8-139.31" id="$assert$helloworld.v:139$126">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:140.8-140.31" time="0" type="ASSERT" location="helloworld.v:140.8-140.31" id="$assert$helloworld.v:140$127">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:141.8-141.31" time="0" type="ASSERT" location="helloworld.v:141.8-141.31" id="$assert$helloworld.v:141$128">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:142.8-142.31" time="0" type="ASSERT" location="helloworld.v:142.8-142.31" id="$assert$helloworld.v:142$129">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:144.8-144.31" time="0" type="ASSERT" location="helloworld.v:144.8-144.31" id="$assert$helloworld.v:144$130">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:145.8-145.31" time="0" type="ASSERT" location="helloworld.v:145.8-145.31" id="$assert$helloworld.v:145$131">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:146.8-146.31" time="0" type="ASSERT" location="helloworld.v:146.8-146.31" id="$assert$helloworld.v:146$132">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:147.8-147.31" time="0" type="ASSERT" location="helloworld.v:147.8-147.31" id="$assert$helloworld.v:147$133">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:149.8-149.31" time="0" type="ASSERT" location="helloworld.v:149.8-149.31" id="$assert$helloworld.v:149$134">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:150.8-150.31" time="0" type="ASSERT" location="helloworld.v:150.8-150.31" id="$assert$helloworld.v:150$135">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:151.8-151.32" time="0" type="ASSERT" location="helloworld.v:151.8-151.32" id="$assert$helloworld.v:151$136">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:152.8-152.32" time="0" type="ASSERT" location="helloworld.v:152.8-152.32" id="$assert$helloworld.v:152$137">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:158.43-160.39" time="0" type="ASSERT" location="helloworld.v:158.43-160.39" id="$assert$helloworld.v:158$138">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:161.24-163.44" time="0" type="ASSERT" location="helloworld.v:161.24-163.44" id="$assert$helloworld.v:161$139">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld at helloworld.v:166.23-167.17" time="0" type="ASSERT" location="helloworld.v:166.23-167.17" id="$assert$helloworld.v:166$140">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld/transmitter at txuart.v:224.7-224.34" time="0" type="ASSERT" location="txuart.v:224.7-224.34" id="$assert$txuart.v:224$454">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld/transmitter at txuart.v:225.8-225.35" time="0" type="ASSERT" location="txuart.v:225.8-225.35" id="$assert$txuart.v:225$455">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld/transmitter at txuart.v:226.11-226.43" time="0" type="ASSERT" location="txuart.v:226.11-226.43" id="$assert$txuart.v:226$456">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld/transmitter at txuart.v:227.10-227.42" time="0" type="ASSERT" location="txuart.v:227.10-227.42" id="$assert$txuart.v:227$457">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld/transmitter at txuart.v:228.10-228.42" time="0" type="ASSERT" location="txuart.v:228.10-228.42" id="$assert$txuart.v:228$458">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld/transmitter at txuart.v:229.12-229.44" time="0" type="ASSERT" location="txuart.v:229.12-229.44" id="$assert$txuart.v:229$459">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld/transmitter at txuart.v:230.11-230.43" time="0" type="ASSERT" location="txuart.v:230.11-230.43" id="$assert$txuart.v:230$460">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld/transmitter at txuart.v:231.11-231.43" time="0" type="ASSERT" location="txuart.v:231.11-231.43" id="$assert$txuart.v:231$461">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld/transmitter at txuart.v:232.10-232.42" time="0" type="ASSERT" location="txuart.v:232.10-232.42" id="$assert$txuart.v:232$462">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld/transmitter at txuart.v:233.12-233.44" time="0" type="ASSERT" location="txuart.v:233.12-233.44" id="$assert$txuart.v:233$463">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld/transmitter at txuart.v:234.10-234.20" time="0" type="ASSERT" location="txuart.v:234.10-234.20" id="$assert$txuart.v:234$464">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld/transmitter at txuart.v:239.9-239.38" time="0" type="ASSERT" location="txuart.v:239.9-239.38" id="$assert$txuart.v:239$465">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld/transmitter at txuart.v:266.25-267.37" time="0" type="ASSERT" location="txuart.v:266.25-267.37" id="$assert$txuart.v:266$466">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld/transmitter at txuart.v:271.44-272.43" time="0" type="ASSERT" location="txuart.v:271.44-272.43" id="$assert$txuart.v:271$467">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld/transmitter at txuart.v:275.25-276.36" time="0" type="ASSERT" location="txuart.v:275.25-276.36" id="$assert$txuart.v:275$468">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in helloworld/transmitter at txuart.v:280.16-281.17" time="0" type="ASSERT" location="txuart.v:280.16-281.17" id="$assert$txuart.v:280$469">
+<skipped />
+</testcase>
+<system-out>SBY 15:42:58 [helloworld] Removing directory '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/14HelloWorld/src/helloworld'.
+SBY 15:42:58 [helloworld] Copy '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/14HelloWorld/src/txuart.v' to '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/14HelloWorld/src/helloworld/src/txuart.v'.
+SBY 15:42:58 [helloworld] Copy '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/14HelloWorld/src/helloworld.v' to '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/14HelloWorld/src/helloworld/src/helloworld.v'.
+SBY 15:42:58 [helloworld] engine_0: smtbmc yices
+SBY 15:42:58 [helloworld] base: starting process &quot;cd helloworld/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 15:42:58 [helloworld] base: finished (returncode=0)
+SBY 15:42:58 [helloworld] prep: starting process &quot;cd helloworld/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 15:42:58 [helloworld] prep: finished (returncode=0)
+SBY 15:42:58 [helloworld] smt2: starting process &quot;cd helloworld/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 15:42:58 [helloworld] smt2: finished (returncode=0)
+SBY 15:42:58 [helloworld] engine_0.basecase: starting process &quot;cd helloworld; yosys-smtbmc -s yices --presat --unroll --noprogress -t 90  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 15:42:58 [helloworld] engine_0.induction: starting process &quot;cd helloworld; yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 90  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Solver: yices
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Solver: yices
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 90..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 89..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 88..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 87..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 86..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 85..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 84..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 83..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 82..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 81..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 80..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 8..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 8..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 79..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 9..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 9..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 78..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 77..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 10..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 10..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 76..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 11..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 11..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 75..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 12..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 12..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 74..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 13..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 13..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 73..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 72..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 14..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 14..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 71..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 15..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 15..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 70..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 16..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 16..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 69..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 68..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 17..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 17..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 67..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 18..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 18..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 66..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 65..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 19..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 19..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 64..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 20..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 20..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 63..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 21..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 21..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 62..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 22..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 22..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 61..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 23..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 23..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 60..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 59..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 24..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 24..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 58..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 25..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Assumptions are unsatisfiable!
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Status: PREUNSAT
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 57..
+SBY 15:42:59 [helloworld] engine_0.basecase: finished (returncode=1)
+SBY 15:42:59 [helloworld] engine_0.basecase: Status returned by engine for basecase: ERROR
+SBY 15:42:59 [helloworld] engine_0.induction: terminating process
+SBY 15:42:59 [helloworld] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 15:42:59 [helloworld] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 15:42:59 [helloworld] summary: engine_0 (smtbmc yices) returned ERROR for basecase
+SBY 15:42:59 [helloworld] summary: engine_0 did not produce any traces
+SBY 15:42:59 [helloworld] DONE (ERROR, rc=16)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

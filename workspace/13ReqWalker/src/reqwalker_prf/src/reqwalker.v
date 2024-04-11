@@ -58,6 +58,7 @@ module	reqwalker(i_clk,
 	else if (state != 0)
 		state <= state + 1'b1;
 
+	/* verilator lint_off COMBDLY */
 	always @(*)
 		case(state)
 			4'h1: o_led <= 6'b00_0001;
@@ -71,7 +72,9 @@ module	reqwalker(i_clk,
 			4'h9: o_led <= 6'b00_0100;
 			4'ha: o_led <= 6'b00_0010;
 			4'hb: o_led <= 6'b00_0001;
+			default:;
 	endcase
+	/* verilator lint_on COMBDLY */
 
 	assign	busy = (state != 0);
 

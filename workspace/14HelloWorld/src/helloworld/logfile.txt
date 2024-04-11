@@ -1,0 +1,109 @@
+SBY 15:42:58 [helloworld] Removing directory '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/14HelloWorld/src/helloworld'.
+SBY 15:42:58 [helloworld] Copy '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/14HelloWorld/src/txuart.v' to '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/14HelloWorld/src/helloworld/src/txuart.v'.
+SBY 15:42:58 [helloworld] Copy '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/14HelloWorld/src/helloworld.v' to '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/14HelloWorld/src/helloworld/src/helloworld.v'.
+SBY 15:42:58 [helloworld] engine_0: smtbmc yices
+SBY 15:42:58 [helloworld] base: starting process "cd helloworld/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 15:42:58 [helloworld] base: finished (returncode=0)
+SBY 15:42:58 [helloworld] prep: starting process "cd helloworld/model; yosys -ql design_prep.log design_prep.ys"
+SBY 15:42:58 [helloworld] prep: finished (returncode=0)
+SBY 15:42:58 [helloworld] smt2: starting process "cd helloworld/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 15:42:58 [helloworld] smt2: finished (returncode=0)
+SBY 15:42:58 [helloworld] engine_0.basecase: starting process "cd helloworld; yosys-smtbmc -s yices --presat --unroll --noprogress -t 90  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 15:42:58 [helloworld] engine_0.induction: starting process "cd helloworld; yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 90  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Solver: yices
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Solver: yices
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 90..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 89..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 88..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 87..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 86..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 85..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 84..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 83..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 82..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 81..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 80..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 8..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 8..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 79..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 9..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 9..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 78..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 77..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 10..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 10..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 76..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 11..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 11..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 75..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 12..
+SBY 15:42:58 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 12..
+SBY 15:42:58 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 74..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 13..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 13..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 73..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 72..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 14..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 14..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 71..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 15..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 15..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 70..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 16..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 16..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 69..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 68..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 17..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 17..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 67..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 18..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 18..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 66..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 65..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 19..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 19..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 64..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 20..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 20..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 63..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 21..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 21..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 62..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 22..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 22..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 61..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 23..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 23..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 60..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 59..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 24..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assertions in step 24..
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 58..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Checking assumptions in step 25..
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Assumptions are unsatisfiable!
+SBY 15:42:59 [helloworld] engine_0.basecase: ##   0:00:00  Status: PREUNSAT
+SBY 15:42:59 [helloworld] engine_0.induction: ##   0:00:00  Trying induction in step 57..
+SBY 15:42:59 [helloworld] engine_0.basecase: finished (returncode=1)
+SBY 15:42:59 [helloworld] engine_0.basecase: Status returned by engine for basecase: ERROR
+SBY 15:42:59 [helloworld] engine_0.induction: terminating process
+SBY 15:42:59 [helloworld] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 15:42:59 [helloworld] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 15:42:59 [helloworld] summary: engine_0 (smtbmc yices) returned ERROR for basecase
+SBY 15:42:59 [helloworld] summary: engine_0 did not produce any traces
+SBY 15:42:59 [helloworld] DONE (ERROR, rc=16)

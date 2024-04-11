@@ -14,8 +14,8 @@
 ##   0:00:00  Checking cover reachability in step 12..
 ##   0:00:00  Checking cover reachability in step 13..
 ##   0:00:00  Checking cover reachability in step 14..
-##   0:00:00  Reached cover statement at reqwalker.v:202.19-203.37 ($cover$reqwalker.v:202$267) in step 14.
-##   0:00:00  Reached cover statement at reqwalker.v:170.20-171.33 ($cover$reqwalker.v:170$258) in step 14.
+##   0:00:00  Reached cover statement at reqwalker.v:205.19-206.37 ($cover$reqwalker.v:205$267) in step 14.
+##   0:00:00  Reached cover statement at reqwalker.v:173.20-174.33 ($cover$reqwalker.v:173$258) in step 14.
 ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
 ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
 ##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc

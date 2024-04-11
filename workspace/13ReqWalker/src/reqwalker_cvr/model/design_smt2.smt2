@@ -32,7 +32,7 @@
 (define-fun |reqwalker#18| ((state |reqwalker_s|)) (_ BitVec 6) (ite (|reqwalker#17| state) #b100000 (ite (|reqwalker#16| state) #b010000 (ite (|reqwalker#13| state) #b001000 (ite (|reqwalker#10| state) #b000100 (ite (|reqwalker#7| state) #b000010 #b000001)))))) ; $0\o_led[5:0]
 ; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:205:execute$713"], "smtname": 19, "smtoffset": 0, "type": "reg", "width": 6}
 (declare-fun |reqwalker#19| (|reqwalker_s|) (_ BitVec 6)) ; $auto$async2sync.cc:205:execute$713
-(define-fun |reqwalker#20| ((state |reqwalker_s|)) Bool (= (|reqwalker#1| state) #b0001)) ; $eq$reqwalker.v:161$171_Y
+(define-fun |reqwalker#20| ((state |reqwalker_s|)) Bool (= (|reqwalker#1| state) #b0001)) ; $eq$reqwalker.v:164$171_Y
 (define-fun |reqwalker#21| ((state |reqwalker_s|)) (_ BitVec 1) (bvnot (ite (|reqwalker#20| state) #b1 #b0))) ; $auto$rtlil.cc:2461:Not$575
 (define-fun |reqwalker#22| ((state |reqwalker_s|)) (_ BitVec 1) (bvnot (ite (|reqwalker#5| state) #b1 #b0))) ; $auto$rtlil.cc:2461:Not$577
 (define-fun |reqwalker#23| ((state |reqwalker_s|)) (_ BitVec 1) (bvnot (ite (|reqwalker#8| state) #b1 #b0))) ; $auto$rtlil.cc:2461:Not$579
@@ -258,378 +258,378 @@
 (declare-fun |reqwalker#78| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyseq_auto_setundef_cc_533_execute_718
 ; yosys-smt2-wire _witness_.anyseq_auto_setundef_cc_533_execute_718 1
 (define-fun |reqwalker_n _witness_.anyseq_auto_setundef_cc_533_execute_718| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#78| state)) #b1))
-; yosys-smt2-anyinit reqwalker#79 1 reqwalker.v:109.2-111.17
+; yosys-smt2-anyinit reqwalker#79 1 reqwalker.v:112.2-114.17
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_698"], "smtname": 79, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#79| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_698
 ; yosys-smt2-register _witness_.anyinit_procdff_698 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_698 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_698| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#79| state)) #b1))
-; yosys-smt2-anyinit reqwalker#80 32 reqwalker.v:113.2-121.5
+; yosys-smt2-anyinit reqwalker#80 32 reqwalker.v:116.2-124.5
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_689"], "smtname": 80, "smtoffset": 0, "type": "init", "width": 32}
 (declare-fun |reqwalker#80| (|reqwalker_s|) (_ BitVec 32)) ; \_witness_.anyinit_procdff_689
 ; yosys-smt2-register _witness_.anyinit_procdff_689 32
 ; yosys-smt2-wire _witness_.anyinit_procdff_689 32
 (define-fun |reqwalker_n _witness_.anyinit_procdff_689| ((state |reqwalker_s|)) (_ BitVec 32) (|reqwalker#80| state))
-; yosys-smt2-anyinit reqwalker#81 1 reqwalker.v:113.2-121.5
+; yosys-smt2-anyinit reqwalker#81 1 reqwalker.v:116.2-124.5
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_688"], "smtname": 81, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#81| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_688
 ; yosys-smt2-register _witness_.anyinit_procdff_688 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_688 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_688| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#81| state)) #b1))
-; yosys-smt2-anyinit reqwalker#82 1 reqwalker.v:113.2-121.5
+; yosys-smt2-anyinit reqwalker#82 1 reqwalker.v:116.2-124.5
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_687"], "smtname": 82, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#82| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_687
 ; yosys-smt2-register _witness_.anyinit_procdff_687 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_687 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_687| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#82| state)) #b1))
-; yosys-smt2-anyinit reqwalker#83 1 reqwalker.v:113.2-121.5
+; yosys-smt2-anyinit reqwalker#83 1 reqwalker.v:116.2-124.5
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_686"], "smtname": 83, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#83| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_686
 ; yosys-smt2-register _witness_.anyinit_procdff_686 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_686 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_686| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#83| state)) #b1))
-; yosys-smt2-anyinit reqwalker#84 1 reqwalker.v:113.2-121.5
+; yosys-smt2-anyinit reqwalker#84 1 reqwalker.v:116.2-124.5
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_685"], "smtname": 84, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#84| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_685
 ; yosys-smt2-register _witness_.anyinit_procdff_685 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_685 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_685| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#84| state)) #b1))
-; yosys-smt2-anyinit reqwalker#85 1 reqwalker.v:123.2-125.17
+; yosys-smt2-anyinit reqwalker#85 1 reqwalker.v:126.2-128.17
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_683"], "smtname": 85, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#85| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_683
 ; yosys-smt2-register _witness_.anyinit_procdff_683 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_683 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_683| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#85| state)) #b1))
-; yosys-smt2-anyinit reqwalker#86 1 reqwalker.v:123.2-125.17
+; yosys-smt2-anyinit reqwalker#86 1 reqwalker.v:126.2-128.17
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_682"], "smtname": 86, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#86| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_682
 ; yosys-smt2-register _witness_.anyinit_procdff_682 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_682 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_682| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#86| state)) #b1))
-; yosys-smt2-anyinit reqwalker#87 1 reqwalker.v:123.2-125.17
+; yosys-smt2-anyinit reqwalker#87 1 reqwalker.v:126.2-128.17
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_681"], "smtname": 87, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#87| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_681
 ; yosys-smt2-register _witness_.anyinit_procdff_681 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_681 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_681| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#87| state)) #b1))
-; yosys-smt2-anyinit reqwalker#88 1 reqwalker.v:159.2-163.6
+; yosys-smt2-anyinit reqwalker#88 1 reqwalker.v:162.2-166.6
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_679"], "smtname": 88, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#88| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_679
 ; yosys-smt2-register _witness_.anyinit_procdff_679 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_679 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_679| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#88| state)) #b1))
-; yosys-smt2-anyinit reqwalker#89 1 reqwalker.v:159.2-163.6
+; yosys-smt2-anyinit reqwalker#89 1 reqwalker.v:162.2-166.6
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_677"], "smtname": 89, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#89| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_677
 ; yosys-smt2-register _witness_.anyinit_procdff_677 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_677 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_677| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#89| state)) #b1))
-; yosys-smt2-anyinit reqwalker#90 1 reqwalker.v:159.2-163.6
+; yosys-smt2-anyinit reqwalker#90 1 reqwalker.v:162.2-166.6
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_676"], "smtname": 90, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#90| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_676
 ; yosys-smt2-register _witness_.anyinit_procdff_676 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_676 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_676| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#90| state)) #b1))
-; yosys-smt2-anyinit reqwalker#91 1 reqwalker.v:159.2-163.6
+; yosys-smt2-anyinit reqwalker#91 1 reqwalker.v:162.2-166.6
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_675"], "smtname": 91, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#91| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_675
 ; yosys-smt2-register _witness_.anyinit_procdff_675 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_675 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_675| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#91| state)) #b1))
-; yosys-smt2-anyinit reqwalker#92 1 reqwalker.v:159.2-163.6
+; yosys-smt2-anyinit reqwalker#92 1 reqwalker.v:162.2-166.6
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_674"], "smtname": 92, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#92| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_674
 ; yosys-smt2-register _witness_.anyinit_procdff_674 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_674 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_674| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#92| state)) #b1))
-; yosys-smt2-anyinit reqwalker#93 1 reqwalker.v:165.2-167.36
+; yosys-smt2-anyinit reqwalker#93 1 reqwalker.v:168.2-170.36
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_672"], "smtname": 93, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#93| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_672
 ; yosys-smt2-register _witness_.anyinit_procdff_672 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_672 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_672| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#93| state)) #b1))
-; yosys-smt2-anyinit reqwalker#94 4 reqwalker.v:165.2-167.36
+; yosys-smt2-anyinit reqwalker#94 4 reqwalker.v:168.2-170.36
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_671"], "smtname": 94, "smtoffset": 0, "type": "init", "width": 4}
 (declare-fun |reqwalker#94| (|reqwalker_s|) (_ BitVec 4)) ; \_witness_.anyinit_procdff_671
 ; yosys-smt2-register _witness_.anyinit_procdff_671 4
 ; yosys-smt2-wire _witness_.anyinit_procdff_671 4
 (define-fun |reqwalker_n _witness_.anyinit_procdff_671| ((state |reqwalker_s|)) (_ BitVec 4) (|reqwalker#94| state))
-; yosys-smt2-anyinit reqwalker#95 1 reqwalker.v:165.2-167.36
+; yosys-smt2-anyinit reqwalker#95 1 reqwalker.v:168.2-170.36
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_670"], "smtname": 95, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#95| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_670
 ; yosys-smt2-register _witness_.anyinit_procdff_670 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_670 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_670| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#95| state)) #b1))
-; yosys-smt2-anyinit reqwalker#96 1 reqwalker.v:165.2-167.36
+; yosys-smt2-anyinit reqwalker#96 1 reqwalker.v:168.2-170.36
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_669"], "smtname": 96, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#96| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_669
 ; yosys-smt2-register _witness_.anyinit_procdff_669 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_669 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_669| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#96| state)) #b1))
-; yosys-smt2-anyinit reqwalker#97 1 reqwalker.v:169.2-171.34
+; yosys-smt2-anyinit reqwalker#97 1 reqwalker.v:172.2-174.34
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_667"], "smtname": 97, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#97| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_667
 ; yosys-smt2-register _witness_.anyinit_procdff_667 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_667 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_667| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#97| state)) #b1))
-; yosys-smt2-anyinit reqwalker#98 1 reqwalker.v:169.2-171.34
+; yosys-smt2-anyinit reqwalker#98 1 reqwalker.v:172.2-174.34
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_666"], "smtname": 98, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#98| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_666
 ; yosys-smt2-register _witness_.anyinit_procdff_666 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_666 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_666| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#98| state)) #b1))
-; yosys-smt2-anyinit reqwalker#99 1 reqwalker.v:183.2-185.18
+; yosys-smt2-anyinit reqwalker#99 1 reqwalker.v:186.2-188.18
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_663"], "smtname": 99, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#99| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_663
 ; yosys-smt2-register _witness_.anyinit_procdff_663 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_663 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_663| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#99| state)) #b1))
-; yosys-smt2-anyinit reqwalker#100 32 reqwalker.v:187.2-195.6
+; yosys-smt2-anyinit reqwalker#100 32 reqwalker.v:190.2-198.6
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_654"], "smtname": 100, "smtoffset": 0, "type": "init", "width": 32}
 (declare-fun |reqwalker#100| (|reqwalker_s|) (_ BitVec 32)) ; \_witness_.anyinit_procdff_654
 ; yosys-smt2-register _witness_.anyinit_procdff_654 32
 ; yosys-smt2-wire _witness_.anyinit_procdff_654 32
 (define-fun |reqwalker_n _witness_.anyinit_procdff_654| ((state |reqwalker_s|)) (_ BitVec 32) (|reqwalker#100| state))
-; yosys-smt2-anyinit reqwalker#101 1 reqwalker.v:187.2-195.6
+; yosys-smt2-anyinit reqwalker#101 1 reqwalker.v:190.2-198.6
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_653"], "smtname": 101, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#101| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_653
 ; yosys-smt2-register _witness_.anyinit_procdff_653 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_653 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_653| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#101| state)) #b1))
-; yosys-smt2-anyinit reqwalker#102 1 reqwalker.v:187.2-195.6
+; yosys-smt2-anyinit reqwalker#102 1 reqwalker.v:190.2-198.6
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_652"], "smtname": 102, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#102| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_652
 ; yosys-smt2-register _witness_.anyinit_procdff_652 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_652 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_652| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#102| state)) #b1))
-; yosys-smt2-anyinit reqwalker#103 1 reqwalker.v:187.2-195.6
+; yosys-smt2-anyinit reqwalker#103 1 reqwalker.v:190.2-198.6
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_651"], "smtname": 103, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#103| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_651
 ; yosys-smt2-register _witness_.anyinit_procdff_651 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_651 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_651| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#103| state)) #b1))
-; yosys-smt2-anyinit reqwalker#104 1 reqwalker.v:187.2-195.6
+; yosys-smt2-anyinit reqwalker#104 1 reqwalker.v:190.2-198.6
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_650"], "smtname": 104, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#104| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_650
 ; yosys-smt2-register _witness_.anyinit_procdff_650 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_650 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_650| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#104| state)) #b1))
-; yosys-smt2-anyinit reqwalker#105 1 reqwalker.v:197.2-199.18
+; yosys-smt2-anyinit reqwalker#105 1 reqwalker.v:200.2-202.18
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_648"], "smtname": 105, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#105| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_648
 ; yosys-smt2-register _witness_.anyinit_procdff_648 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_648 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_648| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#105| state)) #b1))
-; yosys-smt2-anyinit reqwalker#106 1 reqwalker.v:197.2-199.18
+; yosys-smt2-anyinit reqwalker#106 1 reqwalker.v:200.2-202.18
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_647"], "smtname": 106, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#106| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_647
 ; yosys-smt2-register _witness_.anyinit_procdff_647 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_647 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_647| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#106| state)) #b1))
-; yosys-smt2-anyinit reqwalker#107 1 reqwalker.v:197.2-199.18
+; yosys-smt2-anyinit reqwalker#107 1 reqwalker.v:200.2-202.18
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_646"], "smtname": 107, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#107| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_646
 ; yosys-smt2-register _witness_.anyinit_procdff_646 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_646 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_646| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#107| state)) #b1))
-; yosys-smt2-anyinit reqwalker#108 1 reqwalker.v:201.2-203.38
+; yosys-smt2-anyinit reqwalker#108 1 reqwalker.v:204.2-206.38
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_644"], "smtname": 108, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#108| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_644
 ; yosys-smt2-register _witness_.anyinit_procdff_644 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_644 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_644| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#108| state)) #b1))
-; yosys-smt2-anyinit reqwalker#109 1 reqwalker.v:201.2-203.38
+; yosys-smt2-anyinit reqwalker#109 1 reqwalker.v:204.2-206.38
 ; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_643"], "smtname": 109, "smtoffset": 0, "type": "init", "width": 1}
 (declare-fun |reqwalker#109| (|reqwalker_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_643
 ; yosys-smt2-register _witness_.anyinit_procdff_643 1
 ; yosys-smt2-wire _witness_.anyinit_procdff_643 1
 (define-fun |reqwalker_n _witness_.anyinit_procdff_643| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#109| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$formal$reqwalker.v:202$61_EN"], "smtname": 110, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |reqwalker#110| (|reqwalker_s|) (_ BitVec 1)) ; $formal$reqwalker.v:202$61_EN
-; yosys-smt2-register $formal$reqwalker.v:202$61_EN 1
-(define-fun |reqwalker_n $formal$reqwalker.v:202$61_EN| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#110| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$formal$reqwalker.v:198$60_EN"], "smtname": 111, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |reqwalker#111| (|reqwalker_s|) (_ BitVec 1)) ; $formal$reqwalker.v:198$60_EN
-; yosys-smt2-register $formal$reqwalker.v:198$60_EN 1
-(define-fun |reqwalker_n $formal$reqwalker.v:198$60_EN| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#111| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$formal$reqwalker.v:166$50_EN"], "smtname": 112, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |reqwalker#112| (|reqwalker_s|) (_ BitVec 1)) ; $formal$reqwalker.v:166$50_EN
-; yosys-smt2-register $formal$reqwalker.v:166$50_EN 1
-(define-fun |reqwalker_n $formal$reqwalker.v:166$50_EN| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#112| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$formal$reqwalker.v:160$48_EN"], "smtname": 113, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |reqwalker#113| (|reqwalker_s|) (_ BitVec 1)) ; $formal$reqwalker.v:160$48_EN
-; yosys-smt2-register $formal$reqwalker.v:160$48_EN 1
-(define-fun |reqwalker_n $formal$reqwalker.v:160$48_EN| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#113| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$formal$reqwalker.v:124$33_EN"], "smtname": 114, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |reqwalker#114| (|reqwalker_s|) (_ BitVec 1)) ; $formal$reqwalker.v:124$33_EN
-; yosys-smt2-register $formal$reqwalker.v:124$33_EN 1
-(define-fun |reqwalker_n $formal$reqwalker.v:124$33_EN| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#114| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$formal$reqwalker.v:205$61_EN"], "smtname": 110, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |reqwalker#110| (|reqwalker_s|) (_ BitVec 1)) ; $formal$reqwalker.v:205$61_EN
+; yosys-smt2-register $formal$reqwalker.v:205$61_EN 1
+(define-fun |reqwalker_n $formal$reqwalker.v:205$61_EN| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#110| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$formal$reqwalker.v:201$60_EN"], "smtname": 111, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |reqwalker#111| (|reqwalker_s|) (_ BitVec 1)) ; $formal$reqwalker.v:201$60_EN
+; yosys-smt2-register $formal$reqwalker.v:201$60_EN 1
+(define-fun |reqwalker_n $formal$reqwalker.v:201$60_EN| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#111| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$formal$reqwalker.v:169$50_EN"], "smtname": 112, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |reqwalker#112| (|reqwalker_s|) (_ BitVec 1)) ; $formal$reqwalker.v:169$50_EN
+; yosys-smt2-register $formal$reqwalker.v:169$50_EN 1
+(define-fun |reqwalker_n $formal$reqwalker.v:169$50_EN| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#112| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$formal$reqwalker.v:163$48_EN"], "smtname": 113, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |reqwalker#113| (|reqwalker_s|) (_ BitVec 1)) ; $formal$reqwalker.v:163$48_EN
+; yosys-smt2-register $formal$reqwalker.v:163$48_EN 1
+(define-fun |reqwalker_n $formal$reqwalker.v:163$48_EN| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#113| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$formal$reqwalker.v:127$33_EN"], "smtname": 114, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |reqwalker#114| (|reqwalker_s|) (_ BitVec 1)) ; $formal$reqwalker.v:127$33_EN
+; yosys-smt2-register $formal$reqwalker.v:127$33_EN 1
+(define-fun |reqwalker_n $formal$reqwalker.v:127$33_EN| ((state |reqwalker_s|)) Bool (= ((_ extract 0 0) (|reqwalker#114| state)) #b1))
 ; yosys-smt2-register $auto$async2sync.cc:205:execute$713 6
 (define-fun |reqwalker_n $auto$async2sync.cc:205:execute$713| ((state |reqwalker_s|)) (_ BitVec 6) (|reqwalker#19| state))
 (define-fun |reqwalker#115| ((state |reqwalker_s|)) (_ BitVec 1) (bvnot (ite (|reqwalker#46| state) #b1 #b0))) ; $auto$rtlil.cc:2461:Not$781
 ; yosys-smt2-assume 0 $auto$formalff.cc:758:execute$782
 (define-fun |reqwalker_u 0| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#115| state)) #b1) (not true))) ; $auto$formalff.cc:758:execute$782
-; yosys-smt2-cover 0 $cover$reqwalker.v:202$267 reqwalker.v:202.19-203.37
-(define-fun |reqwalker_c 0| ((state |reqwalker_s|)) Bool (and (= ((_ extract 0 0) (|reqwalker#108| state)) #b1) (= ((_ extract 0 0) (|reqwalker#110| state)) #b1))) ; $cover$reqwalker.v:202$267
-; yosys-smt2-cover 1 $cover$reqwalker.v:170$258 reqwalker.v:170.20-171.33
-(define-fun |reqwalker_c 1| ((state |reqwalker_s|)) Bool (and (= ((_ extract 0 0) (|reqwalker#97| state)) #b1) (= ((_ extract 0 0) (|reqwalker#110| state)) #b1))) ; $cover$reqwalker.v:170$258
-(define-fun |reqwalker#116| ((state |reqwalker_s|)) Bool (= ((_ extract 31 0) (|reqwalker#0| state)) (|reqwalker#100| state))) ; $eq$reqwalker.v:194$218_Y
+; yosys-smt2-cover 0 $cover$reqwalker.v:205$267 reqwalker.v:205.19-206.37
+(define-fun |reqwalker_c 0| ((state |reqwalker_s|)) Bool (and (= ((_ extract 0 0) (|reqwalker#108| state)) #b1) (= ((_ extract 0 0) (|reqwalker#110| state)) #b1))) ; $cover$reqwalker.v:205$267
+; yosys-smt2-cover 1 $cover$reqwalker.v:173$258 reqwalker.v:173.20-174.33
+(define-fun |reqwalker_c 1| ((state |reqwalker_s|)) Bool (and (= ((_ extract 0 0) (|reqwalker#97| state)) #b1) (= ((_ extract 0 0) (|reqwalker#110| state)) #b1))) ; $cover$reqwalker.v:173$258
+(define-fun |reqwalker#116| ((state |reqwalker_s|)) Bool (= ((_ extract 31 0) (|reqwalker#0| state)) (|reqwalker#100| state))) ; $eq$reqwalker.v:197$218_Y
 (define-fun |reqwalker#117| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#3| state) (ite (|reqwalker#116| state) #b1 #b0) (|reqwalker#73| state))) ; $procmux$338_Y
-(define-fun |reqwalker#118| ((state |reqwalker_s|)) Bool (and (or  (= ((_ extract 0 0) (|reqwalker#47| state)) #b1) false) (or  (= ((_ extract 0 0) (|reqwalker#104| state)) #b1) false))) ; $logic_and$reqwalker.v:188$214_Y
-(define-fun |reqwalker#119| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#118| state) false) (or  (= ((_ extract 0 0) (|reqwalker#103| state)) #b1) false))) ; $logic_and$reqwalker.v:188$215_Y
-(define-fun |reqwalker#120| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#119| state) (|reqwalker#117| state) (|reqwalker#72| state))) ; $0$formal$reqwalker.v:193$59_CHECK[0:0]$212
+(define-fun |reqwalker#118| ((state |reqwalker_s|)) Bool (and (or  (= ((_ extract 0 0) (|reqwalker#47| state)) #b1) false) (or  (= ((_ extract 0 0) (|reqwalker#104| state)) #b1) false))) ; $logic_and$reqwalker.v:191$214_Y
+(define-fun |reqwalker#119| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#118| state) false) (or  (= ((_ extract 0 0) (|reqwalker#103| state)) #b1) false))) ; $logic_and$reqwalker.v:191$215_Y
+(define-fun |reqwalker#120| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#119| state) (|reqwalker#117| state) (|reqwalker#72| state))) ; $0$formal$reqwalker.v:196$59_CHECK[0:0]$212
 (define-fun |reqwalker#121| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#3| state) #b1 #b0)) ; $procmux$334_Y
-(define-fun |reqwalker#122| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#119| state) (|reqwalker#121| state) #b0)) ; $0$formal$reqwalker.v:193$59_EN[0:0]$213
-; yosys-smt2-assume 1 $assume$reqwalker.v:193$265 reqwalker.v:193.12-194.36
-(define-fun |reqwalker_u 1| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#120| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#122| state)) #b1)))) ; $assume$reqwalker.v:193$265
-(define-fun |reqwalker#123| ((state |reqwalker_s|)) Bool (= ((_ extract 32 32) (|reqwalker#0| state)) (|reqwalker#101| state))) ; $eq$reqwalker.v:192$217_Y
-(define-fun |reqwalker#124| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#119| state) (ite (|reqwalker#123| state) #b1 #b0) (|reqwalker#74| state))) ; $0$formal$reqwalker.v:191$58_CHECK[0:0]$210
-(define-fun |reqwalker#125| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#119| state) #b1 #b0)) ; $0$formal$reqwalker.v:188$56_EN[0:0]$207
-; yosys-smt2-assume 2 $assume$reqwalker.v:191$264 reqwalker.v:191.32-192.35
-(define-fun |reqwalker_u 2| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#124| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#125| state)) #b1)))) ; $assume$reqwalker.v:191$264
-(define-fun |reqwalker#126| ((state |reqwalker_s|)) Bool (= (ite (|reqwalker#3| state) #b1 #b0) (|reqwalker#102| state))) ; $eq$reqwalker.v:191$216_Y
-(define-fun |reqwalker#127| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#119| state) (ite (|reqwalker#126| state) #b1 #b0) (|reqwalker#75| state))) ; $0$formal$reqwalker.v:190$57_CHECK[0:0]$208
-; yosys-smt2-assume 3 $assume$reqwalker.v:190$263 reqwalker.v:190.18-191.31
-(define-fun |reqwalker_u 3| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#127| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#125| state)) #b1)))) ; $assume$reqwalker.v:190$263
-(define-fun |reqwalker#128| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#119| state) (ite (|reqwalker#45| state) #b1 #b0) (|reqwalker#76| state))) ; $0$formal$reqwalker.v:188$56_CHECK[0:0]$206
-; yosys-smt2-assume 4 $assume$reqwalker.v:188$262 reqwalker.v:188.67-190.17
-(define-fun |reqwalker_u 4| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#128| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#125| state)) #b1)))) ; $assume$reqwalker.v:188$262
-(define-fun |reqwalker#129| ((state |reqwalker_s|)) Bool (and (or  (= ((_ extract 0 0) (|reqwalker#99| state)) #b1) false) (or  (= ((_ extract 33 33) (|reqwalker#0| state)) #b1) false))) ; $logic_and$reqwalker.v:184$199_Y
-(define-fun |reqwalker#130| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#129| state) (ite (|reqwalker#45| state) #b1 #b0) (|reqwalker#71| state))) ; $0$formal$reqwalker.v:184$55_CHECK[0:0]$197
-(define-fun |reqwalker#131| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#129| state) #b1 #b0)) ; $0$formal$reqwalker.v:184$55_EN[0:0]$198
-; yosys-smt2-assume 5 $assume$reqwalker.v:184$261 reqwalker.v:184.32-185.17
-(define-fun |reqwalker_u 5| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#130| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#131| state)) #b1)))) ; $assume$reqwalker.v:184$261
-(define-fun |reqwalker#132| ((state |reqwalker_s|)) Bool (= ((_ extract 31 0) (|reqwalker#0| state)) (|reqwalker#80| state))) ; $eq$reqwalker.v:120$104_Y
+(define-fun |reqwalker#122| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#119| state) (|reqwalker#121| state) #b0)) ; $0$formal$reqwalker.v:196$59_EN[0:0]$213
+; yosys-smt2-assume 1 $assume$reqwalker.v:196$265 reqwalker.v:196.12-197.36
+(define-fun |reqwalker_u 1| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#120| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#122| state)) #b1)))) ; $assume$reqwalker.v:196$265
+(define-fun |reqwalker#123| ((state |reqwalker_s|)) Bool (= ((_ extract 32 32) (|reqwalker#0| state)) (|reqwalker#101| state))) ; $eq$reqwalker.v:195$217_Y
+(define-fun |reqwalker#124| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#119| state) (ite (|reqwalker#123| state) #b1 #b0) (|reqwalker#74| state))) ; $0$formal$reqwalker.v:194$58_CHECK[0:0]$210
+(define-fun |reqwalker#125| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#119| state) #b1 #b0)) ; $0$formal$reqwalker.v:191$56_EN[0:0]$207
+; yosys-smt2-assume 2 $assume$reqwalker.v:194$264 reqwalker.v:194.32-195.35
+(define-fun |reqwalker_u 2| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#124| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#125| state)) #b1)))) ; $assume$reqwalker.v:194$264
+(define-fun |reqwalker#126| ((state |reqwalker_s|)) Bool (= (ite (|reqwalker#3| state) #b1 #b0) (|reqwalker#102| state))) ; $eq$reqwalker.v:194$216_Y
+(define-fun |reqwalker#127| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#119| state) (ite (|reqwalker#126| state) #b1 #b0) (|reqwalker#75| state))) ; $0$formal$reqwalker.v:193$57_CHECK[0:0]$208
+; yosys-smt2-assume 3 $assume$reqwalker.v:193$263 reqwalker.v:193.18-194.31
+(define-fun |reqwalker_u 3| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#127| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#125| state)) #b1)))) ; $assume$reqwalker.v:193$263
+(define-fun |reqwalker#128| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#119| state) (ite (|reqwalker#45| state) #b1 #b0) (|reqwalker#76| state))) ; $0$formal$reqwalker.v:191$56_CHECK[0:0]$206
+; yosys-smt2-assume 4 $assume$reqwalker.v:191$262 reqwalker.v:191.67-193.17
+(define-fun |reqwalker_u 4| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#128| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#125| state)) #b1)))) ; $assume$reqwalker.v:191$262
+(define-fun |reqwalker#129| ((state |reqwalker_s|)) Bool (and (or  (= ((_ extract 0 0) (|reqwalker#99| state)) #b1) false) (or  (= ((_ extract 33 33) (|reqwalker#0| state)) #b1) false))) ; $logic_and$reqwalker.v:187$199_Y
+(define-fun |reqwalker#130| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#129| state) (ite (|reqwalker#45| state) #b1 #b0) (|reqwalker#71| state))) ; $0$formal$reqwalker.v:187$55_CHECK[0:0]$197
+(define-fun |reqwalker#131| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#129| state) #b1 #b0)) ; $0$formal$reqwalker.v:187$55_EN[0:0]$198
+; yosys-smt2-assume 5 $assume$reqwalker.v:187$261 reqwalker.v:187.32-188.17
+(define-fun |reqwalker_u 5| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#130| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#131| state)) #b1)))) ; $assume$reqwalker.v:187$261
+(define-fun |reqwalker#132| ((state |reqwalker_s|)) Bool (= ((_ extract 31 0) (|reqwalker#0| state)) (|reqwalker#80| state))) ; $eq$reqwalker.v:123$104_Y
 (define-fun |reqwalker#133| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#3| state) (ite (|reqwalker#132| state) #b1 #b0) (|reqwalker#50| state))) ; $procmux$540_Y
-(define-fun |reqwalker#134| ((state |reqwalker_s|)) Bool (and (or  (= ((_ extract 0 0) (|reqwalker#84| state)) #b1) false) (or  (= ((_ extract 0 0) (|reqwalker#83| state)) #b1) false))) ; $logic_and$reqwalker.v:114$101_Y
-(define-fun |reqwalker#135| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#134| state) (|reqwalker#133| state) (|reqwalker#49| state))) ; $0$formal$reqwalker.v:119$32_CHECK[0:0]$99
-(define-fun |reqwalker#136| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#134| state) (|reqwalker#121| state) #b0)) ; $0$formal$reqwalker.v:119$32_EN[0:0]$100
-; yosys-smt2-assume 6 $assume$reqwalker.v:119$239 reqwalker.v:119.12-120.35
-(define-fun |reqwalker_u 6| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#135| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#136| state)) #b1)))) ; $assume$reqwalker.v:119$239
-(define-fun |reqwalker#137| ((state |reqwalker_s|)) Bool (= ((_ extract 32 32) (|reqwalker#0| state)) (|reqwalker#81| state))) ; $eq$reqwalker.v:118$103_Y
-(define-fun |reqwalker#138| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#134| state) (ite (|reqwalker#137| state) #b1 #b0) (|reqwalker#51| state))) ; $0$formal$reqwalker.v:117$31_CHECK[0:0]$97
-(define-fun |reqwalker#139| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#134| state) #b1 #b0)) ; $0$formal$reqwalker.v:115$29_EN[0:0]$94
-; yosys-smt2-assume 7 $assume$reqwalker.v:117$238 reqwalker.v:117.31-118.34
-(define-fun |reqwalker_u 7| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#138| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#139| state)) #b1)))) ; $assume$reqwalker.v:117$238
-(define-fun |reqwalker#140| ((state |reqwalker_s|)) Bool (= (ite (|reqwalker#3| state) #b1 #b0) (|reqwalker#82| state))) ; $eq$reqwalker.v:117$102_Y
-(define-fun |reqwalker#141| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#134| state) (ite (|reqwalker#140| state) #b1 #b0) (|reqwalker#52| state))) ; $0$formal$reqwalker.v:116$30_CHECK[0:0]$95
-; yosys-smt2-assume 8 $assume$reqwalker.v:116$237 reqwalker.v:116.17-117.30
-(define-fun |reqwalker_u 8| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#141| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#139| state)) #b1)))) ; $assume$reqwalker.v:116$237
-(define-fun |reqwalker#142| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#134| state) (ite (|reqwalker#45| state) #b1 #b0) (|reqwalker#53| state))) ; $0$formal$reqwalker.v:115$29_CHECK[0:0]$93
-; yosys-smt2-assume 9 $assume$reqwalker.v:115$236 reqwalker.v:115.7-116.16
-(define-fun |reqwalker_u 9| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#142| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#139| state)) #b1)))) ; $assume$reqwalker.v:115$236
-(define-fun |reqwalker#143| ((state |reqwalker_s|)) Bool (not (or  (= ((_ extract 0 0) (|reqwalker#79| state)) #b1) false))) ; $logic_not$reqwalker.v:110$85_Y
-(define-fun |reqwalker#144| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#143| state) false) (or  (= ((_ extract 33 33) (|reqwalker#0| state)) #b1) false))) ; $logic_and$reqwalker.v:110$86_Y
-(define-fun |reqwalker#145| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#144| state) (ite (|reqwalker#45| state) #b1 #b0) (|reqwalker#48| state))) ; $0$formal$reqwalker.v:110$28_CHECK[0:0]$83
-(define-fun |reqwalker#146| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#144| state) #b1 #b0)) ; $0$formal$reqwalker.v:110$28_EN[0:0]$84
-; yosys-smt2-assume 10 $assume$reqwalker.v:110$235 reqwalker.v:110.31-111.16
-(define-fun |reqwalker_u 10| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#145| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#146| state)) #b1)))) ; $assume$reqwalker.v:110$235
-(define-fun |reqwalker#147| ((state |reqwalker_s|)) Bool (not (or  (|reqwalker#45| state) false))) ; $logic_not$reqwalker.v:105$80_Y
-(define-fun |reqwalker#148| ((state |reqwalker_s|)) (_ BitVec 1) (ite (= ((_ extract 33 33) (|reqwalker#0| state)) #b1) (|reqwalker#70| state) (ite (|reqwalker#147| state) #b1 #b0))) ; $0$formal$reqwalker.v:104$27_CHECK[0:0]$77
-(define-fun |reqwalker#149| ((state |reqwalker_s|)) (_ BitVec 1) (ite (= ((_ extract 33 33) (|reqwalker#0| state)) #b1) #b0 #b1)) ; $0$formal$reqwalker.v:104$27_EN[0:0]$78
-; yosys-smt2-assume 11 $assume$reqwalker.v:104$234 reqwalker.v:104.13-105.17
-(define-fun |reqwalker_u 11| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#148| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#149| state)) #b1)))) ; $assume$reqwalker.v:104$234
-(define-fun |reqwalker#150| ((state |reqwalker_s|)) Bool (not (or  (= ((_ extract 33 33) (|reqwalker#0| state)) #b1) false))) ; $0$formal$reqwalker.v:100$25_CHECK[0:0]$273
-(define-fun |reqwalker#151| ((state |reqwalker_s|)) Bool (|reqwalker_is| state)) ; $0$formal$reqwalker.v:100$25_EN[0:0]$274
-; yosys-smt2-assume 12 $assume$reqwalker.v:100$233 reqwalker.v:100.9-100.24
-(define-fun |reqwalker_u 12| ((state |reqwalker_s|)) Bool (or (|reqwalker#150| state) (not (|reqwalker#151| state)))) ; $assume$reqwalker.v:100$233
-; yosys-smt2-assert 0 $assert$reqwalker.v:198$266 reqwalker.v:198.62-199.17
-(define-fun |reqwalker_a 0| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#105| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#111| state)) #b1)))) ; $assert$reqwalker.v:198$266
-; yosys-smt2-assert 1 $assert$reqwalker.v:166$257 reqwalker.v:166.64-167.35
-(define-fun |reqwalker_a 1| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#93| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#112| state)) #b1)))) ; $assert$reqwalker.v:166$257
-; yosys-smt2-assert 2 $assert$reqwalker.v:161$256 reqwalker.v:161.23-162.16
-(define-fun |reqwalker_a 2| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#88| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#113| state)) #b1)))) ; $assert$reqwalker.v:161$256
-; yosys-smt2-assert 3 $assert$reqwalker.v:160$255 reqwalker.v:160.84-161.22
-(define-fun |reqwalker_a 3| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#89| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#113| state)) #b1)))) ; $assert$reqwalker.v:160$255
-(define-fun |reqwalker#152| ((state |reqwalker_s|)) Bool (not (or  (= ((_ extract 0 0) (|reqwalker#1| state)) #b1) (= ((_ extract 1 1) (|reqwalker#1| state)) #b1) (= ((_ extract 2 2) (|reqwalker#1| state)) #b1) (= ((_ extract 3 3) (|reqwalker#1| state)) #b1)))) ; $eq$reqwalker.v:154$154_Y
-(define-fun |reqwalker#153| ((state |reqwalker_s|)) Bool (distinct (ite (|reqwalker#2| state) #b1 #b0) (ite (|reqwalker#152| state) #b1 #b0))) ; $0$formal$reqwalker.v:153$46_CHECK[0:0]$152
-; yosys-smt2-assert 4 $assert$reqwalker.v:153$253 reqwalker.v:153.13-154.31
-(define-fun |reqwalker_a 4| ((state |reqwalker_s|)) Bool (or (|reqwalker#153| state) (not true))) ; $assert$reqwalker.v:153$253
-(define-fun |reqwalker#154| ((state |reqwalker_s|)) Bool (= (|reqwalker#43| state) #b000001)) ; $eq$reqwalker.v:138$140_Y
-(define-fun |reqwalker#155| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#31| state) (ite (|reqwalker#154| state) #b1 #b0) (|reqwalker#55| state))) ; $0$formal$reqwalker.v:148$45_CHECK[0:0]$138
-(define-fun |reqwalker#156| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#31| state) #b1 #b0)) ; $0$formal$reqwalker.v:148$45_EN[0:0]$139
-; yosys-smt2-assert 5 $assert$reqwalker.v:148$252 reqwalker.v:148.8-148.36
-(define-fun |reqwalker_a 5| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#155| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#156| state)) #b1)))) ; $assert$reqwalker.v:148$252
-(define-fun |reqwalker#157| ((state |reqwalker_s|)) Bool (= (|reqwalker#43| state) #b000010)) ; $eq$reqwalker.v:139$141_Y
-(define-fun |reqwalker#158| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#6| state) (ite (|reqwalker#157| state) #b1 #b0) (|reqwalker#56| state))) ; $0$formal$reqwalker.v:147$44_CHECK[0:0]$136
-(define-fun |reqwalker#159| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#6| state) #b1 #b0)) ; $0$formal$reqwalker.v:147$44_EN[0:0]$137
-; yosys-smt2-assert 6 $assert$reqwalker.v:147$251 reqwalker.v:147.8-147.36
-(define-fun |reqwalker_a 6| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#158| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#159| state)) #b1)))) ; $assert$reqwalker.v:147$251
-(define-fun |reqwalker#160| ((state |reqwalker_s|)) Bool (= (|reqwalker#43| state) #b000100)) ; $eq$reqwalker.v:140$142_Y
-(define-fun |reqwalker#161| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#9| state) (ite (|reqwalker#160| state) #b1 #b0) (|reqwalker#57| state))) ; $0$formal$reqwalker.v:146$43_CHECK[0:0]$134
-(define-fun |reqwalker#162| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#9| state) #b1 #b0)) ; $0$formal$reqwalker.v:146$43_EN[0:0]$135
-; yosys-smt2-assert 7 $assert$reqwalker.v:146$250 reqwalker.v:146.8-146.36
-(define-fun |reqwalker_a 7| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#161| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#162| state)) #b1)))) ; $assert$reqwalker.v:146$250
-(define-fun |reqwalker#163| ((state |reqwalker_s|)) Bool (= (|reqwalker#43| state) #b001000)) ; $eq$reqwalker.v:141$143_Y
-(define-fun |reqwalker#164| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#12| state) (ite (|reqwalker#163| state) #b1 #b0) (|reqwalker#58| state))) ; $0$formal$reqwalker.v:145$42_CHECK[0:0]$132
-(define-fun |reqwalker#165| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#12| state) #b1 #b0)) ; $0$formal$reqwalker.v:145$42_EN[0:0]$133
-; yosys-smt2-assert 8 $assert$reqwalker.v:145$249 reqwalker.v:145.8-145.36
-(define-fun |reqwalker_a 8| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#164| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#165| state)) #b1)))) ; $assert$reqwalker.v:145$249
-(define-fun |reqwalker#166| ((state |reqwalker_s|)) Bool (= (|reqwalker#43| state) #b010000)) ; $eq$reqwalker.v:142$144_Y
-(define-fun |reqwalker#167| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#15| state) (ite (|reqwalker#166| state) #b1 #b0) (|reqwalker#59| state))) ; $0$formal$reqwalker.v:144$41_CHECK[0:0]$130
-(define-fun |reqwalker#168| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#15| state) #b1 #b0)) ; $0$formal$reqwalker.v:144$41_EN[0:0]$131
-; yosys-smt2-assert 9 $assert$reqwalker.v:144$248 reqwalker.v:144.8-144.36
-(define-fun |reqwalker_a 9| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#167| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#168| state)) #b1)))) ; $assert$reqwalker.v:144$248
-(define-fun |reqwalker#169| ((state |reqwalker_s|)) Bool (= (|reqwalker#43| state) #b100000)) ; $eq$reqwalker.v:143$145_Y
-(define-fun |reqwalker#170| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#17| state) (ite (|reqwalker#169| state) #b1 #b0) (|reqwalker#60| state))) ; $0$formal$reqwalker.v:143$40_CHECK[0:0]$128
-(define-fun |reqwalker#171| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#17| state) #b1 #b0)) ; $0$formal$reqwalker.v:143$40_EN[0:0]$129
-; yosys-smt2-assert 10 $assert$reqwalker.v:143$247 reqwalker.v:143.8-143.36
-(define-fun |reqwalker_a 10| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#170| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#171| state)) #b1)))) ; $assert$reqwalker.v:143$247
-(define-fun |reqwalker#172| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#14| state) (ite (|reqwalker#166| state) #b1 #b0) (|reqwalker#61| state))) ; $0$formal$reqwalker.v:142$39_CHECK[0:0]$126
-(define-fun |reqwalker#173| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#14| state) #b1 #b0)) ; $0$formal$reqwalker.v:142$39_EN[0:0]$127
-; yosys-smt2-assert 11 $assert$reqwalker.v:142$246 reqwalker.v:142.8-142.36
-(define-fun |reqwalker_a 11| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#172| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#173| state)) #b1)))) ; $assert$reqwalker.v:142$246
-(define-fun |reqwalker#174| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#11| state) (ite (|reqwalker#163| state) #b1 #b0) (|reqwalker#62| state))) ; $0$formal$reqwalker.v:141$38_CHECK[0:0]$124
-(define-fun |reqwalker#175| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#11| state) #b1 #b0)) ; $0$formal$reqwalker.v:141$38_EN[0:0]$125
-; yosys-smt2-assert 12 $assert$reqwalker.v:141$245 reqwalker.v:141.8-141.36
-(define-fun |reqwalker_a 12| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#174| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#175| state)) #b1)))) ; $assert$reqwalker.v:141$245
-(define-fun |reqwalker#176| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#8| state) (ite (|reqwalker#160| state) #b1 #b0) (|reqwalker#63| state))) ; $0$formal$reqwalker.v:140$37_CHECK[0:0]$122
-(define-fun |reqwalker#177| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#8| state) #b1 #b0)) ; $0$formal$reqwalker.v:140$37_EN[0:0]$123
-; yosys-smt2-assert 13 $assert$reqwalker.v:140$244 reqwalker.v:140.8-140.36
-(define-fun |reqwalker_a 13| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#176| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#177| state)) #b1)))) ; $assert$reqwalker.v:140$244
-(define-fun |reqwalker#178| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#5| state) (ite (|reqwalker#157| state) #b1 #b0) (|reqwalker#64| state))) ; $0$formal$reqwalker.v:139$36_CHECK[0:0]$120
-(define-fun |reqwalker#179| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#5| state) #b1 #b0)) ; $0$formal$reqwalker.v:139$36_EN[0:0]$121
-; yosys-smt2-assert 14 $assert$reqwalker.v:139$243 reqwalker.v:139.8-139.36
-(define-fun |reqwalker_a 14| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#178| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#179| state)) #b1)))) ; $assert$reqwalker.v:139$243
-(define-fun |reqwalker#180| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#20| state) (ite (|reqwalker#154| state) #b1 #b0) (|reqwalker#65| state))) ; $0$formal$reqwalker.v:138$35_CHECK[0:0]$118
-(define-fun |reqwalker#181| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#20| state) #b1 #b0)) ; $0$formal$reqwalker.v:138$35_EN[0:0]$119
-; yosys-smt2-assert 15 $assert$reqwalker.v:138$242 reqwalker.v:138.8-138.36
-(define-fun |reqwalker_a 15| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#180| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#181| state)) #b1)))) ; $assert$reqwalker.v:138$242
-(define-fun |reqwalker#182| ((state |reqwalker_s|)) Bool (bvule (|reqwalker#1| state) #b1011)) ; $0$formal$reqwalker.v:131$34_CHECK[0:0]$114
-; yosys-smt2-assert 16 $assert$reqwalker.v:131$241 reqwalker.v:131.13-132.25
-(define-fun |reqwalker_a 16| ((state |reqwalker_s|)) Bool (or (|reqwalker#182| state) (not true))) ; $assert$reqwalker.v:131$241
-; yosys-smt2-assert 17 $assert$reqwalker.v:124$240 reqwalker.v:124.56-125.16
-(define-fun |reqwalker_a 17| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#85| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#114| state)) #b1)))) ; $assert$reqwalker.v:124$240
-(define-fun |reqwalker#183| ((state |reqwalker_s|)) Bool (and (or  (= ((_ extract 0 0) (|reqwalker#47| state)) #b1) false) (or  (= ((_ extract 0 0) (|reqwalker#87| state)) #b1) false))) ; $logic_and$reqwalker.v:124$110_Y
-(define-fun |reqwalker#184| ((state |reqwalker_s|)) Bool (not (or  (= ((_ extract 0 0) (|reqwalker#86| state)) #b1) false))) ; $logic_not$reqwalker.v:124$111_Y
-(define-fun |reqwalker#185| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#183| state) false) (or  (|reqwalker#184| state) false))) ; $logic_and$reqwalker.v:124$112_Y
-(define-fun |reqwalker#186| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#185| state) #b1 #b0)) ; $0$formal$reqwalker.v:124$33_EN[0:0]$109
-(define-fun |reqwalker#187| ((state |reqwalker_s|)) Bool (and (or  (= ((_ extract 0 0) (|reqwalker#47| state)) #b1) false) (or  (= ((_ extract 0 0) (|reqwalker#92| state)) #b1) false))) ; $logic_and$reqwalker.v:160$168_Y
-(define-fun |reqwalker#188| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#187| state) false) (or  (= ((_ extract 0 0) (|reqwalker#91| state)) #b1) false))) ; $logic_and$reqwalker.v:160$169_Y
-(define-fun |reqwalker#189| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#188| state) false) (or  (= ((_ extract 0 0) (|reqwalker#90| state)) #b1) false))) ; $logic_and$reqwalker.v:160$170_Y
-(define-fun |reqwalker#190| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#189| state) #b1 #b0)) ; $0$formal$reqwalker.v:160$48_EN[0:0]$165
-(define-fun |reqwalker#191| ((state |reqwalker_s|)) Bool (and (or  (= ((_ extract 0 0) (|reqwalker#47| state)) #b1) false) (or  (= ((_ extract 0 0) (|reqwalker#96| state)) #b1) false))) ; $logic_and$reqwalker.v:166$179_Y
-(define-fun |reqwalker#192| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#191| state) false) (or  (= ((_ extract 0 0) (|reqwalker#95| state)) #b1) false))) ; $logic_and$reqwalker.v:166$180_Y
-(define-fun |reqwalker#193| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#192| state) #b1 #b0)) ; $0$formal$reqwalker.v:166$50_EN[0:0]$178
-(define-fun |reqwalker#194| ((state |reqwalker_s|)) Bool (and (or  (= ((_ extract 0 0) (|reqwalker#47| state)) #b1) false) (or  (= ((_ extract 0 0) (|reqwalker#107| state)) #b1) false))) ; $logic_and$reqwalker.v:198$224_Y
-(define-fun |reqwalker#195| ((state |reqwalker_s|)) Bool (not (or  (= ((_ extract 0 0) (|reqwalker#106| state)) #b1) false))) ; $logic_not$reqwalker.v:198$225_Y
-(define-fun |reqwalker#196| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#194| state) false) (or  (|reqwalker#195| state) false))) ; $logic_and$reqwalker.v:198$226_Y
-(define-fun |reqwalker#197| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#196| state) #b1 #b0)) ; $0$formal$reqwalker.v:198$60_EN[0:0]$223
-(define-fun |reqwalker#198| ((state |reqwalker_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|reqwalker#47| state)) #b1) #b1 #b0)) ; $0$formal$reqwalker.v:170$51_EN[0:0]$187
-(define-fun |reqwalker#199| ((state |reqwalker_s|)) Bool (not (or  (|reqwalker#2| state) false))) ; $logic_not$reqwalker.v:171$188_Y
-(define-fun |reqwalker#200| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#199| state) false) (or  (= ((_ extract 0 0) (|reqwalker#109| state)) #b1) false))) ; $logic_and$reqwalker.v:203$232_Y
-(define-fun |reqwalker#201| ((state |reqwalker_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|reqwalker#47| state)) #b1) (ite (|reqwalker#200| state) #b1 #b0) (|reqwalker#78| state))) ; $0$formal$reqwalker.v:202$61_CHECK[0:0]$229
-(define-fun |reqwalker#202| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#196| state) (|reqwalker#44| state) (|reqwalker#77| state))) ; $0$formal$reqwalker.v:198$60_CHECK[0:0]$222
-(define-fun |reqwalker#203| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#199| state) false) (or  (= ((_ extract 0 0) (|reqwalker#98| state)) #b1) false))) ; $logic_and$reqwalker.v:171$189_Y
-(define-fun |reqwalker#204| ((state |reqwalker_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|reqwalker#47| state)) #b1) (ite (|reqwalker#203| state) #b1 #b0) (|reqwalker#69| state))) ; $0$formal$reqwalker.v:170$51_CHECK[0:0]$186
-(define-fun |reqwalker#205| ((state |reqwalker_s|)) Bool (bvult (|reqwalker#1| state) #b1011)) ; $0$past$reqwalker.v:166$13$0[0:0]$175
-(define-fun |reqwalker#206| ((state |reqwalker_s|)) (_ BitVec 5) (bvadd (concat #b0 (|reqwalker#94| state)) #b00001)) ; $add$reqwalker.v:167$181_Y
-(define-fun |reqwalker#207| ((state |reqwalker_s|)) Bool (= (concat #b0 (|reqwalker#1| state)) (|reqwalker#206| state))) ; $eq$reqwalker.v:167$182_Y
-(define-fun |reqwalker#208| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#192| state) (ite (|reqwalker#207| state) #b1 #b0) (|reqwalker#68| state))) ; $0$formal$reqwalker.v:166$50_CHECK[0:0]$177
-(define-fun |reqwalker#209| ((state |reqwalker_s|)) Bool (not (or  (|reqwalker#4| state) false))) ; $0$past$reqwalker.v:160$11$0[0:0]$163
-(define-fun |reqwalker#210| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#189| state) (ite (|reqwalker#20| state) #b1 #b0) (|reqwalker#67| state))) ; $0$formal$reqwalker.v:160$48_CHECK[0:0]$164
-(define-fun |reqwalker#211| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#189| state) (ite (|reqwalker#2| state) #b1 #b0) (|reqwalker#66| state))) ; $0$formal$reqwalker.v:161$49_CHECK[0:0]$166
-(define-fun |reqwalker#212| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#185| state) (|reqwalker#44| state) (|reqwalker#54| state))) ; $0$formal$reqwalker.v:124$33_CHECK[0:0]$108
+(define-fun |reqwalker#134| ((state |reqwalker_s|)) Bool (and (or  (= ((_ extract 0 0) (|reqwalker#84| state)) #b1) false) (or  (= ((_ extract 0 0) (|reqwalker#83| state)) #b1) false))) ; $logic_and$reqwalker.v:117$101_Y
+(define-fun |reqwalker#135| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#134| state) (|reqwalker#133| state) (|reqwalker#49| state))) ; $0$formal$reqwalker.v:122$32_CHECK[0:0]$99
+(define-fun |reqwalker#136| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#134| state) (|reqwalker#121| state) #b0)) ; $0$formal$reqwalker.v:122$32_EN[0:0]$100
+; yosys-smt2-assume 6 $assume$reqwalker.v:122$239 reqwalker.v:122.12-123.35
+(define-fun |reqwalker_u 6| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#135| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#136| state)) #b1)))) ; $assume$reqwalker.v:122$239
+(define-fun |reqwalker#137| ((state |reqwalker_s|)) Bool (= ((_ extract 32 32) (|reqwalker#0| state)) (|reqwalker#81| state))) ; $eq$reqwalker.v:121$103_Y
+(define-fun |reqwalker#138| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#134| state) (ite (|reqwalker#137| state) #b1 #b0) (|reqwalker#51| state))) ; $0$formal$reqwalker.v:120$31_CHECK[0:0]$97
+(define-fun |reqwalker#139| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#134| state) #b1 #b0)) ; $0$formal$reqwalker.v:118$29_EN[0:0]$94
+; yosys-smt2-assume 7 $assume$reqwalker.v:120$238 reqwalker.v:120.31-121.34
+(define-fun |reqwalker_u 7| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#138| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#139| state)) #b1)))) ; $assume$reqwalker.v:120$238
+(define-fun |reqwalker#140| ((state |reqwalker_s|)) Bool (= (ite (|reqwalker#3| state) #b1 #b0) (|reqwalker#82| state))) ; $eq$reqwalker.v:120$102_Y
+(define-fun |reqwalker#141| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#134| state) (ite (|reqwalker#140| state) #b1 #b0) (|reqwalker#52| state))) ; $0$formal$reqwalker.v:119$30_CHECK[0:0]$95
+; yosys-smt2-assume 8 $assume$reqwalker.v:119$237 reqwalker.v:119.17-120.30
+(define-fun |reqwalker_u 8| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#141| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#139| state)) #b1)))) ; $assume$reqwalker.v:119$237
+(define-fun |reqwalker#142| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#134| state) (ite (|reqwalker#45| state) #b1 #b0) (|reqwalker#53| state))) ; $0$formal$reqwalker.v:118$29_CHECK[0:0]$93
+; yosys-smt2-assume 9 $assume$reqwalker.v:118$236 reqwalker.v:118.7-119.16
+(define-fun |reqwalker_u 9| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#142| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#139| state)) #b1)))) ; $assume$reqwalker.v:118$236
+(define-fun |reqwalker#143| ((state |reqwalker_s|)) Bool (not (or  (= ((_ extract 0 0) (|reqwalker#79| state)) #b1) false))) ; $logic_not$reqwalker.v:113$85_Y
+(define-fun |reqwalker#144| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#143| state) false) (or  (= ((_ extract 33 33) (|reqwalker#0| state)) #b1) false))) ; $logic_and$reqwalker.v:113$86_Y
+(define-fun |reqwalker#145| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#144| state) (ite (|reqwalker#45| state) #b1 #b0) (|reqwalker#48| state))) ; $0$formal$reqwalker.v:113$28_CHECK[0:0]$83
+(define-fun |reqwalker#146| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#144| state) #b1 #b0)) ; $0$formal$reqwalker.v:113$28_EN[0:0]$84
+; yosys-smt2-assume 10 $assume$reqwalker.v:113$235 reqwalker.v:113.31-114.16
+(define-fun |reqwalker_u 10| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#145| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#146| state)) #b1)))) ; $assume$reqwalker.v:113$235
+(define-fun |reqwalker#147| ((state |reqwalker_s|)) Bool (not (or  (|reqwalker#45| state) false))) ; $logic_not$reqwalker.v:108$80_Y
+(define-fun |reqwalker#148| ((state |reqwalker_s|)) (_ BitVec 1) (ite (= ((_ extract 33 33) (|reqwalker#0| state)) #b1) (|reqwalker#70| state) (ite (|reqwalker#147| state) #b1 #b0))) ; $0$formal$reqwalker.v:107$27_CHECK[0:0]$77
+(define-fun |reqwalker#149| ((state |reqwalker_s|)) (_ BitVec 1) (ite (= ((_ extract 33 33) (|reqwalker#0| state)) #b1) #b0 #b1)) ; $0$formal$reqwalker.v:107$27_EN[0:0]$78
+; yosys-smt2-assume 11 $assume$reqwalker.v:107$234 reqwalker.v:107.13-108.17
+(define-fun |reqwalker_u 11| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#148| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#149| state)) #b1)))) ; $assume$reqwalker.v:107$234
+(define-fun |reqwalker#150| ((state |reqwalker_s|)) Bool (not (or  (= ((_ extract 33 33) (|reqwalker#0| state)) #b1) false))) ; $0$formal$reqwalker.v:103$25_CHECK[0:0]$273
+(define-fun |reqwalker#151| ((state |reqwalker_s|)) Bool (|reqwalker_is| state)) ; $0$formal$reqwalker.v:103$25_EN[0:0]$274
+; yosys-smt2-assume 12 $assume$reqwalker.v:103$233 reqwalker.v:103.9-103.24
+(define-fun |reqwalker_u 12| ((state |reqwalker_s|)) Bool (or (|reqwalker#150| state) (not (|reqwalker#151| state)))) ; $assume$reqwalker.v:103$233
+; yosys-smt2-assert 0 $assert$reqwalker.v:201$266 reqwalker.v:201.62-202.17
+(define-fun |reqwalker_a 0| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#105| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#111| state)) #b1)))) ; $assert$reqwalker.v:201$266
+; yosys-smt2-assert 1 $assert$reqwalker.v:169$257 reqwalker.v:169.64-170.35
+(define-fun |reqwalker_a 1| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#93| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#112| state)) #b1)))) ; $assert$reqwalker.v:169$257
+; yosys-smt2-assert 2 $assert$reqwalker.v:164$256 reqwalker.v:164.23-165.16
+(define-fun |reqwalker_a 2| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#88| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#113| state)) #b1)))) ; $assert$reqwalker.v:164$256
+; yosys-smt2-assert 3 $assert$reqwalker.v:163$255 reqwalker.v:163.84-164.22
+(define-fun |reqwalker_a 3| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#89| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#113| state)) #b1)))) ; $assert$reqwalker.v:163$255
+(define-fun |reqwalker#152| ((state |reqwalker_s|)) Bool (not (or  (= ((_ extract 0 0) (|reqwalker#1| state)) #b1) (= ((_ extract 1 1) (|reqwalker#1| state)) #b1) (= ((_ extract 2 2) (|reqwalker#1| state)) #b1) (= ((_ extract 3 3) (|reqwalker#1| state)) #b1)))) ; $eq$reqwalker.v:157$154_Y
+(define-fun |reqwalker#153| ((state |reqwalker_s|)) Bool (distinct (ite (|reqwalker#2| state) #b1 #b0) (ite (|reqwalker#152| state) #b1 #b0))) ; $0$formal$reqwalker.v:156$46_CHECK[0:0]$152
+; yosys-smt2-assert 4 $assert$reqwalker.v:156$253 reqwalker.v:156.13-157.31
+(define-fun |reqwalker_a 4| ((state |reqwalker_s|)) Bool (or (|reqwalker#153| state) (not true))) ; $assert$reqwalker.v:156$253
+(define-fun |reqwalker#154| ((state |reqwalker_s|)) Bool (= (|reqwalker#43| state) #b000001)) ; $eq$reqwalker.v:141$140_Y
+(define-fun |reqwalker#155| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#31| state) (ite (|reqwalker#154| state) #b1 #b0) (|reqwalker#55| state))) ; $0$formal$reqwalker.v:151$45_CHECK[0:0]$138
+(define-fun |reqwalker#156| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#31| state) #b1 #b0)) ; $0$formal$reqwalker.v:151$45_EN[0:0]$139
+; yosys-smt2-assert 5 $assert$reqwalker.v:151$252 reqwalker.v:151.8-151.36
+(define-fun |reqwalker_a 5| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#155| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#156| state)) #b1)))) ; $assert$reqwalker.v:151$252
+(define-fun |reqwalker#157| ((state |reqwalker_s|)) Bool (= (|reqwalker#43| state) #b000010)) ; $eq$reqwalker.v:142$141_Y
+(define-fun |reqwalker#158| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#6| state) (ite (|reqwalker#157| state) #b1 #b0) (|reqwalker#56| state))) ; $0$formal$reqwalker.v:150$44_CHECK[0:0]$136
+(define-fun |reqwalker#159| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#6| state) #b1 #b0)) ; $0$formal$reqwalker.v:150$44_EN[0:0]$137
+; yosys-smt2-assert 6 $assert$reqwalker.v:150$251 reqwalker.v:150.8-150.36
+(define-fun |reqwalker_a 6| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#158| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#159| state)) #b1)))) ; $assert$reqwalker.v:150$251
+(define-fun |reqwalker#160| ((state |reqwalker_s|)) Bool (= (|reqwalker#43| state) #b000100)) ; $eq$reqwalker.v:143$142_Y
+(define-fun |reqwalker#161| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#9| state) (ite (|reqwalker#160| state) #b1 #b0) (|reqwalker#57| state))) ; $0$formal$reqwalker.v:149$43_CHECK[0:0]$134
+(define-fun |reqwalker#162| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#9| state) #b1 #b0)) ; $0$formal$reqwalker.v:149$43_EN[0:0]$135
+; yosys-smt2-assert 7 $assert$reqwalker.v:149$250 reqwalker.v:149.8-149.36
+(define-fun |reqwalker_a 7| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#161| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#162| state)) #b1)))) ; $assert$reqwalker.v:149$250
+(define-fun |reqwalker#163| ((state |reqwalker_s|)) Bool (= (|reqwalker#43| state) #b001000)) ; $eq$reqwalker.v:144$143_Y
+(define-fun |reqwalker#164| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#12| state) (ite (|reqwalker#163| state) #b1 #b0) (|reqwalker#58| state))) ; $0$formal$reqwalker.v:148$42_CHECK[0:0]$132
+(define-fun |reqwalker#165| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#12| state) #b1 #b0)) ; $0$formal$reqwalker.v:148$42_EN[0:0]$133
+; yosys-smt2-assert 8 $assert$reqwalker.v:148$249 reqwalker.v:148.8-148.36
+(define-fun |reqwalker_a 8| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#164| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#165| state)) #b1)))) ; $assert$reqwalker.v:148$249
+(define-fun |reqwalker#166| ((state |reqwalker_s|)) Bool (= (|reqwalker#43| state) #b010000)) ; $eq$reqwalker.v:145$144_Y
+(define-fun |reqwalker#167| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#15| state) (ite (|reqwalker#166| state) #b1 #b0) (|reqwalker#59| state))) ; $0$formal$reqwalker.v:147$41_CHECK[0:0]$130
+(define-fun |reqwalker#168| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#15| state) #b1 #b0)) ; $0$formal$reqwalker.v:147$41_EN[0:0]$131
+; yosys-smt2-assert 9 $assert$reqwalker.v:147$248 reqwalker.v:147.8-147.36
+(define-fun |reqwalker_a 9| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#167| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#168| state)) #b1)))) ; $assert$reqwalker.v:147$248
+(define-fun |reqwalker#169| ((state |reqwalker_s|)) Bool (= (|reqwalker#43| state) #b100000)) ; $eq$reqwalker.v:146$145_Y
+(define-fun |reqwalker#170| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#17| state) (ite (|reqwalker#169| state) #b1 #b0) (|reqwalker#60| state))) ; $0$formal$reqwalker.v:146$40_CHECK[0:0]$128
+(define-fun |reqwalker#171| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#17| state) #b1 #b0)) ; $0$formal$reqwalker.v:146$40_EN[0:0]$129
+; yosys-smt2-assert 10 $assert$reqwalker.v:146$247 reqwalker.v:146.8-146.36
+(define-fun |reqwalker_a 10| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#170| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#171| state)) #b1)))) ; $assert$reqwalker.v:146$247
+(define-fun |reqwalker#172| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#14| state) (ite (|reqwalker#166| state) #b1 #b0) (|reqwalker#61| state))) ; $0$formal$reqwalker.v:145$39_CHECK[0:0]$126
+(define-fun |reqwalker#173| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#14| state) #b1 #b0)) ; $0$formal$reqwalker.v:145$39_EN[0:0]$127
+; yosys-smt2-assert 11 $assert$reqwalker.v:145$246 reqwalker.v:145.8-145.36
+(define-fun |reqwalker_a 11| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#172| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#173| state)) #b1)))) ; $assert$reqwalker.v:145$246
+(define-fun |reqwalker#174| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#11| state) (ite (|reqwalker#163| state) #b1 #b0) (|reqwalker#62| state))) ; $0$formal$reqwalker.v:144$38_CHECK[0:0]$124
+(define-fun |reqwalker#175| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#11| state) #b1 #b0)) ; $0$formal$reqwalker.v:144$38_EN[0:0]$125
+; yosys-smt2-assert 12 $assert$reqwalker.v:144$245 reqwalker.v:144.8-144.36
+(define-fun |reqwalker_a 12| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#174| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#175| state)) #b1)))) ; $assert$reqwalker.v:144$245
+(define-fun |reqwalker#176| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#8| state) (ite (|reqwalker#160| state) #b1 #b0) (|reqwalker#63| state))) ; $0$formal$reqwalker.v:143$37_CHECK[0:0]$122
+(define-fun |reqwalker#177| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#8| state) #b1 #b0)) ; $0$formal$reqwalker.v:143$37_EN[0:0]$123
+; yosys-smt2-assert 13 $assert$reqwalker.v:143$244 reqwalker.v:143.8-143.36
+(define-fun |reqwalker_a 13| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#176| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#177| state)) #b1)))) ; $assert$reqwalker.v:143$244
+(define-fun |reqwalker#178| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#5| state) (ite (|reqwalker#157| state) #b1 #b0) (|reqwalker#64| state))) ; $0$formal$reqwalker.v:142$36_CHECK[0:0]$120
+(define-fun |reqwalker#179| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#5| state) #b1 #b0)) ; $0$formal$reqwalker.v:142$36_EN[0:0]$121
+; yosys-smt2-assert 14 $assert$reqwalker.v:142$243 reqwalker.v:142.8-142.36
+(define-fun |reqwalker_a 14| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#178| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#179| state)) #b1)))) ; $assert$reqwalker.v:142$243
+(define-fun |reqwalker#180| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#20| state) (ite (|reqwalker#154| state) #b1 #b0) (|reqwalker#65| state))) ; $0$formal$reqwalker.v:141$35_CHECK[0:0]$118
+(define-fun |reqwalker#181| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#20| state) #b1 #b0)) ; $0$formal$reqwalker.v:141$35_EN[0:0]$119
+; yosys-smt2-assert 15 $assert$reqwalker.v:141$242 reqwalker.v:141.8-141.36
+(define-fun |reqwalker_a 15| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#180| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#181| state)) #b1)))) ; $assert$reqwalker.v:141$242
+(define-fun |reqwalker#182| ((state |reqwalker_s|)) Bool (bvule (|reqwalker#1| state) #b1011)) ; $0$formal$reqwalker.v:134$34_CHECK[0:0]$114
+; yosys-smt2-assert 16 $assert$reqwalker.v:134$241 reqwalker.v:134.13-135.25
+(define-fun |reqwalker_a 16| ((state |reqwalker_s|)) Bool (or (|reqwalker#182| state) (not true))) ; $assert$reqwalker.v:134$241
+; yosys-smt2-assert 17 $assert$reqwalker.v:127$240 reqwalker.v:127.56-128.16
+(define-fun |reqwalker_a 17| ((state |reqwalker_s|)) Bool (or (= ((_ extract 0 0) (|reqwalker#85| state)) #b1) (not (= ((_ extract 0 0) (|reqwalker#114| state)) #b1)))) ; $assert$reqwalker.v:127$240
+(define-fun |reqwalker#183| ((state |reqwalker_s|)) Bool (and (or  (= ((_ extract 0 0) (|reqwalker#47| state)) #b1) false) (or  (= ((_ extract 0 0) (|reqwalker#87| state)) #b1) false))) ; $logic_and$reqwalker.v:127$110_Y
+(define-fun |reqwalker#184| ((state |reqwalker_s|)) Bool (not (or  (= ((_ extract 0 0) (|reqwalker#86| state)) #b1) false))) ; $logic_not$reqwalker.v:127$111_Y
+(define-fun |reqwalker#185| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#183| state) false) (or  (|reqwalker#184| state) false))) ; $logic_and$reqwalker.v:127$112_Y
+(define-fun |reqwalker#186| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#185| state) #b1 #b0)) ; $0$formal$reqwalker.v:127$33_EN[0:0]$109
+(define-fun |reqwalker#187| ((state |reqwalker_s|)) Bool (and (or  (= ((_ extract 0 0) (|reqwalker#47| state)) #b1) false) (or  (= ((_ extract 0 0) (|reqwalker#92| state)) #b1) false))) ; $logic_and$reqwalker.v:163$168_Y
+(define-fun |reqwalker#188| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#187| state) false) (or  (= ((_ extract 0 0) (|reqwalker#91| state)) #b1) false))) ; $logic_and$reqwalker.v:163$169_Y
+(define-fun |reqwalker#189| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#188| state) false) (or  (= ((_ extract 0 0) (|reqwalker#90| state)) #b1) false))) ; $logic_and$reqwalker.v:163$170_Y
+(define-fun |reqwalker#190| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#189| state) #b1 #b0)) ; $0$formal$reqwalker.v:163$48_EN[0:0]$165
+(define-fun |reqwalker#191| ((state |reqwalker_s|)) Bool (and (or  (= ((_ extract 0 0) (|reqwalker#47| state)) #b1) false) (or  (= ((_ extract 0 0) (|reqwalker#96| state)) #b1) false))) ; $logic_and$reqwalker.v:169$179_Y
+(define-fun |reqwalker#192| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#191| state) false) (or  (= ((_ extract 0 0) (|reqwalker#95| state)) #b1) false))) ; $logic_and$reqwalker.v:169$180_Y
+(define-fun |reqwalker#193| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#192| state) #b1 #b0)) ; $0$formal$reqwalker.v:169$50_EN[0:0]$178
+(define-fun |reqwalker#194| ((state |reqwalker_s|)) Bool (and (or  (= ((_ extract 0 0) (|reqwalker#47| state)) #b1) false) (or  (= ((_ extract 0 0) (|reqwalker#107| state)) #b1) false))) ; $logic_and$reqwalker.v:201$224_Y
+(define-fun |reqwalker#195| ((state |reqwalker_s|)) Bool (not (or  (= ((_ extract 0 0) (|reqwalker#106| state)) #b1) false))) ; $logic_not$reqwalker.v:201$225_Y
+(define-fun |reqwalker#196| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#194| state) false) (or  (|reqwalker#195| state) false))) ; $logic_and$reqwalker.v:201$226_Y
+(define-fun |reqwalker#197| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#196| state) #b1 #b0)) ; $0$formal$reqwalker.v:201$60_EN[0:0]$223
+(define-fun |reqwalker#198| ((state |reqwalker_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|reqwalker#47| state)) #b1) #b1 #b0)) ; $0$formal$reqwalker.v:173$51_EN[0:0]$187
+(define-fun |reqwalker#199| ((state |reqwalker_s|)) Bool (not (or  (|reqwalker#2| state) false))) ; $logic_not$reqwalker.v:174$188_Y
+(define-fun |reqwalker#200| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#199| state) false) (or  (= ((_ extract 0 0) (|reqwalker#109| state)) #b1) false))) ; $logic_and$reqwalker.v:206$232_Y
+(define-fun |reqwalker#201| ((state |reqwalker_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|reqwalker#47| state)) #b1) (ite (|reqwalker#200| state) #b1 #b0) (|reqwalker#78| state))) ; $0$formal$reqwalker.v:205$61_CHECK[0:0]$229
+(define-fun |reqwalker#202| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#196| state) (|reqwalker#44| state) (|reqwalker#77| state))) ; $0$formal$reqwalker.v:201$60_CHECK[0:0]$222
+(define-fun |reqwalker#203| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#199| state) false) (or  (= ((_ extract 0 0) (|reqwalker#98| state)) #b1) false))) ; $logic_and$reqwalker.v:174$189_Y
+(define-fun |reqwalker#204| ((state |reqwalker_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|reqwalker#47| state)) #b1) (ite (|reqwalker#203| state) #b1 #b0) (|reqwalker#69| state))) ; $0$formal$reqwalker.v:173$51_CHECK[0:0]$186
+(define-fun |reqwalker#205| ((state |reqwalker_s|)) Bool (bvult (|reqwalker#1| state) #b1011)) ; $0$past$reqwalker.v:169$13$0[0:0]$175
+(define-fun |reqwalker#206| ((state |reqwalker_s|)) (_ BitVec 5) (bvadd (concat #b0 (|reqwalker#94| state)) #b00001)) ; $add$reqwalker.v:170$181_Y
+(define-fun |reqwalker#207| ((state |reqwalker_s|)) Bool (= (concat #b0 (|reqwalker#1| state)) (|reqwalker#206| state))) ; $eq$reqwalker.v:170$182_Y
+(define-fun |reqwalker#208| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#192| state) (ite (|reqwalker#207| state) #b1 #b0) (|reqwalker#68| state))) ; $0$formal$reqwalker.v:169$50_CHECK[0:0]$177
+(define-fun |reqwalker#209| ((state |reqwalker_s|)) Bool (not (or  (|reqwalker#4| state) false))) ; $0$past$reqwalker.v:163$11$0[0:0]$163
+(define-fun |reqwalker#210| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#189| state) (ite (|reqwalker#20| state) #b1 #b0) (|reqwalker#67| state))) ; $0$formal$reqwalker.v:163$48_CHECK[0:0]$164
+(define-fun |reqwalker#211| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#189| state) (ite (|reqwalker#2| state) #b1 #b0) (|reqwalker#66| state))) ; $0$formal$reqwalker.v:164$49_CHECK[0:0]$166
+(define-fun |reqwalker#212| ((state |reqwalker_s|)) (_ BitVec 1) (ite (|reqwalker#185| state) (|reqwalker#44| state) (|reqwalker#54| state))) ; $0$formal$reqwalker.v:127$33_CHECK[0:0]$108
 (define-fun |reqwalker#213| ((state |reqwalker_s|)) Bool (and (or  (|reqwalker#45| state) false) (or  (|reqwalker#209| state) false))) ; $0\o_ack[0:0]
 (define-fun |reqwalker#214| ((state |reqwalker_s|)) (_ BitVec 4) (bvadd (|reqwalker#1| state) #b0001)) ; $add$reqwalker.v:59$68_Y
 (define-fun |reqwalker#215| ((state |reqwalker_s|)) (_ BitVec 4) (ite (|reqwalker#2| state) (|reqwalker#214| state) (|reqwalker#1| state))) ; $procmux$564_Y
@@ -677,20 +677,20 @@
   (= (|reqwalker#1| state) #b0000) ; state
   (= (= ((_ extract 0 0) (|reqwalker#44| state)) #b1) false) ; o_ack
   (= (= ((_ extract 0 0) (|reqwalker#47| state)) #b1) false) ; f_past_valid
-  (= (= ((_ extract 0 0) (|reqwalker#110| state)) #b1) false) ; $formal$reqwalker.v:202$61_EN
-  (= (= ((_ extract 0 0) (|reqwalker#111| state)) #b1) false) ; $formal$reqwalker.v:198$60_EN
-  (= (= ((_ extract 0 0) (|reqwalker#112| state)) #b1) false) ; $formal$reqwalker.v:166$50_EN
-  (= (= ((_ extract 0 0) (|reqwalker#113| state)) #b1) false) ; $formal$reqwalker.v:160$48_EN
-  (= (= ((_ extract 0 0) (|reqwalker#114| state)) #b1) false) ; $formal$reqwalker.v:124$33_EN
+  (= (= ((_ extract 0 0) (|reqwalker#110| state)) #b1) false) ; $formal$reqwalker.v:205$61_EN
+  (= (= ((_ extract 0 0) (|reqwalker#111| state)) #b1) false) ; $formal$reqwalker.v:201$60_EN
+  (= (= ((_ extract 0 0) (|reqwalker#112| state)) #b1) false) ; $formal$reqwalker.v:169$50_EN
+  (= (= ((_ extract 0 0) (|reqwalker#113| state)) #b1) false) ; $formal$reqwalker.v:163$48_EN
+  (= (= ((_ extract 0 0) (|reqwalker#114| state)) #b1) false) ; $formal$reqwalker.v:127$33_EN
   (= (|reqwalker#19| state) #b000000) ; $auto$async2sync.cc:205:execute$713
 ))
 (define-fun |reqwalker_h| ((state |reqwalker_s|)) Bool true)
 (define-fun |reqwalker_t| ((state |reqwalker_s|) (next_state |reqwalker_s|)) Bool (and
-  (= (|reqwalker#186| state) (|reqwalker#114| next_state)) ; $procdff$684 $formal$reqwalker.v:124$33_EN
-  (= (|reqwalker#190| state) (|reqwalker#113| next_state)) ; $procdff$678 $formal$reqwalker.v:160$48_EN
-  (= (|reqwalker#193| state) (|reqwalker#112| next_state)) ; $procdff$673 $formal$reqwalker.v:166$50_EN
-  (= (|reqwalker#197| state) (|reqwalker#111| next_state)) ; $procdff$649 $formal$reqwalker.v:198$60_EN
-  (= (|reqwalker#198| state) (|reqwalker#110| next_state)) ; $procdff$645 $formal$reqwalker.v:202$61_EN
+  (= (|reqwalker#186| state) (|reqwalker#114| next_state)) ; $procdff$684 $formal$reqwalker.v:127$33_EN
+  (= (|reqwalker#190| state) (|reqwalker#113| next_state)) ; $procdff$678 $formal$reqwalker.v:163$48_EN
+  (= (|reqwalker#193| state) (|reqwalker#112| next_state)) ; $procdff$673 $formal$reqwalker.v:169$50_EN
+  (= (|reqwalker#197| state) (|reqwalker#111| next_state)) ; $procdff$649 $formal$reqwalker.v:201$60_EN
+  (= (|reqwalker#198| state) (|reqwalker#110| next_state)) ; $procdff$645 $formal$reqwalker.v:205$61_EN
   (= (ite (|reqwalker#2| state) #b1 #b0) (|reqwalker#109| next_state)) ; $procdff$643 \_witness_.anyinit_procdff_643
   (= (|reqwalker#201| state) (|reqwalker#108| next_state)) ; $procdff$644 \_witness_.anyinit_procdff_644
   (= (ite (|reqwalker#45| state) #b1 #b0) (|reqwalker#107| next_state)) ; $procdff$646 \_witness_.anyinit_procdff_646

@@ -1,0 +1,1 @@
+obj_dir/Vhelloworld.cpp obj_dir/Vhelloworld.h obj_dir/Vhelloworld.mk obj_dir/Vhelloworld__Syms.cpp obj_dir/Vhelloworld__Syms.h obj_dir/Vhelloworld__Trace.cpp obj_dir/Vhelloworld__Trace__Slow.cpp obj_dir/Vhelloworld__ver.d obj_dir/Vhelloworld_classes.mk  : /usr/bin/verilator_bin /usr/bin/verilator_bin helloworld.v txuart.v 

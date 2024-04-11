@@ -1,0 +1,813 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.35+36 (git sha1 c95298225, clang 10.0.0-4ubuntu1 -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: helloworld.v
+Parsing formal Verilog input from `helloworld.v' to AST representation.
+Generating RTLIL representation for module `\helloworld'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: txuart.v
+Parsing formal Verilog input from `txuart.v' to AST representation.
+Generating RTLIL representation for module `\txuart'.
+Successfully finished Verilog frontend.
+
+3. Executing PREP pass.
+
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1.1. Analyzing design hierarchy..
+Top module:  \helloworld
+Used module:     \txuart
+Parameter 1 (\CLOCKS_PER_BAUD) = 24'000000000000001101100100
+
+3.1.2. Executing AST frontend in derive mode using pre-parsed AST for module `\txuart'.
+Parameter 1 (\CLOCKS_PER_BAUD) = 24'000000000000001101100100
+Generating RTLIL representation for module `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100'.
+
+3.1.3. Analyzing design hierarchy..
+Top module:  \helloworld
+Used module:     $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100
+
+3.1.4. Analyzing design hierarchy..
+Top module:  \helloworld
+Used module:     $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100
+Removing unused module `\txuart'.
+Removed 1 unused modules.
+Module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100 directly or indirectly contains formal properties -> setting "keep" attribute.
+Module helloworld directly or indirectly contains formal properties -> setting "keep" attribute.
+Mapping positional arguments of cell helloworld.transmitter ($paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100).
+
+3.2. Executing PROC pass (convert processes to netlists).
+
+3.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$txuart.v:222$392 in module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.
+Marked 2 switch rules as full_case in process $proc$txuart.v:165$368 in module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.
+Marked 1 switch rules as full_case in process $proc$txuart.v:108$365 in module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.
+Marked 3 switch rules as full_case in process $proc$txuart.v:81$359 in module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.
+Marked 1 switch rules as full_case in process $proc$helloworld.v:157$95 in module helloworld.
+Marked 1 switch rules as full_case in process $proc$helloworld.v:130$44 in module helloworld.
+Marked 1 switch rules as full_case in process $proc$helloworld.v:112$37 in module helloworld.
+Marked 1 switch rules as full_case in process $proc$helloworld.v:86$36 in module helloworld.
+Marked 1 switch rules as full_case in process $proc$helloworld.v:63$27 in module helloworld.
+Removed a total of 0 dead cases.
+
+3.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 53 assignments to connections.
+
+3.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$512'.
+  Set init value: $formal$txuart.v:280$358_EN = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$510'.
+  Set init value: $formal$txuart.v:275$357_EN = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$508'.
+  Set init value: $formal$txuart.v:271$356_EN = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$506'.
+  Set init value: $formal$txuart.v:266$355_EN = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$504'.
+  Set init value: $formal$txuart.v:234$353_EN = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$502'.
+  Set init value: $formal$txuart.v:233$352_EN = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$500'.
+  Set init value: $formal$txuart.v:232$351_EN = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$498'.
+  Set init value: $formal$txuart.v:231$350_EN = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$496'.
+  Set init value: $formal$txuart.v:230$349_EN = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$494'.
+  Set init value: $formal$txuart.v:229$348_EN = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$492'.
+  Set init value: $formal$txuart.v:228$347_EN = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$490'.
+  Set init value: $formal$txuart.v:227$346_EN = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$488'.
+  Set init value: $formal$txuart.v:226$345_EN = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$486'.
+  Set init value: $formal$txuart.v:225$344_EN = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$484'.
+  Set init value: $formal$txuart.v:224$343_EN = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$482'.
+  Set init value: $formal$txuart.v:207$342_EN = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$480'.
+  Set init value: $formal$txuart.v:206$341_EN = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$475'.
+  Set init value: \f_past_valid = 1'0
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$474'.
+  Set init value: \counter = 24'000000000000000000000000
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$473'.
+  Set init value: \baud_stb = 1'1
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$472'.
+  Set init value: \lcl_data = 9'111111111
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$471'.
+  Set init value: \state = 4'1111
+Found init rule in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$470'.
+  Set init value: \o_busy = 1'0
+Found init rule in `\helloworld.$proc$helloworld.v:0$150'.
+  Set init value: $formal$helloworld.v:166$26_EN = 1'0
+Found init rule in `\helloworld.$proc$helloworld.v:0$148'.
+  Set init value: $formal$helloworld.v:161$25_EN = 1'0
+Found init rule in `\helloworld.$proc$helloworld.v:0$146'.
+  Set init value: $formal$helloworld.v:158$24_EN = 1'0
+Found init rule in `\helloworld.$proc$helloworld.v:0$145'.
+  Set init value: \f_past_valid = 1'0
+Found init rule in `\helloworld.$proc$helloworld.v:0$144'.
+  Set init value: \tx_stb = 1'0
+Found init rule in `\helloworld.$proc$helloworld.v:0$143'.
+  Set init value: \tx_index = 4'0000
+Found init rule in `\helloworld.$proc$helloworld.v:0$142'.
+  Set init value: \tx_restart = 1'0
+Found init rule in `\helloworld.$proc$helloworld.v:0$141'.
+  Set init value: \hz_counter = 28'0000000000000000000000010110
+
+3.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 1 switch.
+<suppressed ~24 debug messages>
+
+3.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$512'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$510'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$508'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$506'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$504'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$502'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$500'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$498'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$496'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$494'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$492'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$490'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$488'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$486'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$484'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$482'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$480'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$476'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$475'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$474'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$473'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$472'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$471'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$470'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:279$447'.
+     1/2: $0$formal$txuart.v:280$358_EN[0:0]$449
+     2/2: $0$formal$txuart.v:280$358_CHECK[0:0]$448
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:275$443'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:270$434'.
+     1/2: $0$formal$txuart.v:271$356_EN[0:0]$438
+     2/2: $0$formal$txuart.v:271$356_CHECK[0:0]$437
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:266$429'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:237$425'.
+     1/2: $0$formal$txuart.v:239$354_EN[0:0]$427
+     2/2: $0$formal$txuart.v:239$354_CHECK[0:0]$426
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+     1/22: $0$formal$txuart.v:224$343_EN[0:0]$394
+     2/22: $0$formal$txuart.v:224$343_CHECK[0:0]$393
+     3/22: $0$formal$txuart.v:225$344_EN[0:0]$396
+     4/22: $0$formal$txuart.v:225$344_CHECK[0:0]$395
+     5/22: $0$formal$txuart.v:226$345_EN[0:0]$398
+     6/22: $0$formal$txuart.v:226$345_CHECK[0:0]$397
+     7/22: $0$formal$txuart.v:227$346_EN[0:0]$400
+     8/22: $0$formal$txuart.v:227$346_CHECK[0:0]$399
+     9/22: $0$formal$txuart.v:228$347_EN[0:0]$402
+    10/22: $0$formal$txuart.v:228$347_CHECK[0:0]$401
+    11/22: $0$formal$txuart.v:229$348_EN[0:0]$404
+    12/22: $0$formal$txuart.v:229$348_CHECK[0:0]$403
+    13/22: $0$formal$txuart.v:230$349_EN[0:0]$406
+    14/22: $0$formal$txuart.v:230$349_CHECK[0:0]$405
+    15/22: $0$formal$txuart.v:231$350_EN[0:0]$408
+    16/22: $0$formal$txuart.v:231$350_CHECK[0:0]$407
+    17/22: $0$formal$txuart.v:232$351_EN[0:0]$410
+    18/22: $0$formal$txuart.v:232$351_CHECK[0:0]$409
+    19/22: $0$formal$txuart.v:233$352_EN[0:0]$412
+    20/22: $0$formal$txuart.v:233$352_CHECK[0:0]$411
+    21/22: $0$formal$txuart.v:234$353_EN[0:0]$414
+    22/22: $0$formal$txuart.v:234$353_CHECK[0:0]$413
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:218$389'.
+     1/1: $0\fv_data[7:0]
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:205$376'.
+     1/4: $0$formal$txuart.v:206$341_EN[0:0]$382
+     2/4: $0$formal$txuart.v:206$341_CHECK[0:0]$381
+     3/4: $0$formal$txuart.v:207$342_EN[0:0]$384
+     4/4: $0$formal$txuart.v:207$342_CHECK[0:0]$383
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:199$375'.
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:165$368'.
+     1/2: $0\baud_stb[0:0]
+     2/2: $0\counter[23:0]
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:108$365'.
+     1/1: $0\lcl_data[8:0]
+Creating decoders for process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:81$359'.
+     1/2: $0\o_busy[0:0]
+     2/2: $0\state[3:0]
+Creating decoders for process `\helloworld.$proc$helloworld.v:0$150'.
+Creating decoders for process `\helloworld.$proc$helloworld.v:0$148'.
+Creating decoders for process `\helloworld.$proc$helloworld.v:0$146'.
+Creating decoders for process `\helloworld.$proc$helloworld.v:0$145'.
+Creating decoders for process `\helloworld.$proc$helloworld.v:0$144'.
+Creating decoders for process `\helloworld.$proc$helloworld.v:0$143'.
+Creating decoders for process `\helloworld.$proc$helloworld.v:0$142'.
+Creating decoders for process `\helloworld.$proc$helloworld.v:0$141'.
+Creating decoders for process `\helloworld.$proc$helloworld.v:165$118'.
+     1/2: $0$formal$helloworld.v:166$26_EN[0:0]$120
+     2/2: $0$formal$helloworld.v:166$26_CHECK[0:0]$119
+Creating decoders for process `\helloworld.$proc$helloworld.v:157$95'.
+     1/4: $0$formal$helloworld.v:158$24_EN[0:0]$104
+     2/4: $0$formal$helloworld.v:158$24_CHECK[0:0]$103
+     3/4: $0$formal$helloworld.v:161$25_EN[0:0]$106
+     4/4: $0$formal$helloworld.v:161$25_CHECK[0:0]$105
+Creating decoders for process `\helloworld.$proc$helloworld.v:130$44'.
+     1/32: $0$formal$helloworld.v:134$8_EN[0:0]$46
+     2/32: $0$formal$helloworld.v:134$8_CHECK[0:0]$45
+     3/32: $0$formal$helloworld.v:135$9_EN[0:0]$48
+     4/32: $0$formal$helloworld.v:135$9_CHECK[0:0]$47
+     5/32: $0$formal$helloworld.v:136$10_EN[0:0]$50
+     6/32: $0$formal$helloworld.v:136$10_CHECK[0:0]$49
+     7/32: $0$formal$helloworld.v:137$11_EN[0:0]$52
+     8/32: $0$formal$helloworld.v:137$11_CHECK[0:0]$51
+     9/32: $0$formal$helloworld.v:139$12_EN[0:0]$54
+    10/32: $0$formal$helloworld.v:139$12_CHECK[0:0]$53
+    11/32: $0$formal$helloworld.v:140$13_EN[0:0]$56
+    12/32: $0$formal$helloworld.v:140$13_CHECK[0:0]$55
+    13/32: $0$formal$helloworld.v:141$14_EN[0:0]$58
+    14/32: $0$formal$helloworld.v:141$14_CHECK[0:0]$57
+    15/32: $0$formal$helloworld.v:142$15_EN[0:0]$60
+    16/32: $0$formal$helloworld.v:142$15_CHECK[0:0]$59
+    17/32: $0$formal$helloworld.v:144$16_EN[0:0]$62
+    18/32: $0$formal$helloworld.v:144$16_CHECK[0:0]$61
+    19/32: $0$formal$helloworld.v:145$17_EN[0:0]$64
+    20/32: $0$formal$helloworld.v:145$17_CHECK[0:0]$63
+    21/32: $0$formal$helloworld.v:146$18_EN[0:0]$66
+    22/32: $0$formal$helloworld.v:146$18_CHECK[0:0]$65
+    23/32: $0$formal$helloworld.v:147$19_EN[0:0]$68
+    24/32: $0$formal$helloworld.v:147$19_CHECK[0:0]$67
+    25/32: $0$formal$helloworld.v:149$20_EN[0:0]$70
+    26/32: $0$formal$helloworld.v:149$20_CHECK[0:0]$69
+    27/32: $0$formal$helloworld.v:150$21_EN[0:0]$72
+    28/32: $0$formal$helloworld.v:150$21_CHECK[0:0]$71
+    29/32: $0$formal$helloworld.v:151$22_EN[0:0]$74
+    30/32: $0$formal$helloworld.v:151$22_CHECK[0:0]$73
+    31/32: $0$formal$helloworld.v:152$23_EN[0:0]$76
+    32/32: $0$formal$helloworld.v:152$23_CHECK[0:0]$75
+Creating decoders for process `\helloworld.$proc$helloworld.v:127$43'.
+Creating decoders for process `\helloworld.$proc$helloworld.v:112$37'.
+     1/1: $0\tx_stb[0:0]
+Creating decoders for process `\helloworld.$proc$helloworld.v:86$36'.
+     1/1: $0\tx_data[7:0]
+Creating decoders for process `\helloworld.$proc$helloworld.v:82$32'.
+     1/1: $0\tx_index[3:0]
+Creating decoders for process `\helloworld.$proc$helloworld.v:70$30'.
+Creating decoders for process `\helloworld.$proc$helloworld.v:63$27'.
+     1/1: $0\hz_counter[27:0]
+
+3.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:204$339_CHECK' from process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$476'.
+No latch inferred for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:204$339_EN' from process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$476'.
+No latch inferred for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:239$354_CHECK' from process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:237$425'.
+No latch inferred for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:239$354_EN' from process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:237$425'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:134$8_CHECK' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:134$8_EN' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:135$9_CHECK' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:135$9_EN' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:136$10_CHECK' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:136$10_EN' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:137$11_CHECK' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:137$11_EN' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:139$12_CHECK' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:139$12_EN' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:140$13_CHECK' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:140$13_EN' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:141$14_CHECK' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:141$14_EN' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:142$15_CHECK' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:142$15_EN' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:144$16_CHECK' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:144$16_EN' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:145$17_CHECK' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:145$17_EN' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:146$18_CHECK' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:146$18_EN' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:147$19_CHECK' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:147$19_EN' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:149$20_CHECK' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:149$20_EN' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:150$21_CHECK' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:150$21_EN' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:151$22_CHECK' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:151$22_EN' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:152$23_CHECK' from process `\helloworld.$proc$helloworld.v:130$44'.
+No latch inferred for signal `\helloworld.$formal$helloworld.v:152$23_EN' from process `\helloworld.$proc$helloworld.v:130$44'.
+
+3.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:280$358_CHECK' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:279$447'.
+  created $dff cell `$procdff$1155' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:280$358_EN' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:279$447'.
+  created $dff cell `$procdff$1156' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:275$357_CHECK' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:275$443'.
+  created $dff cell `$procdff$1157' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:275$357_EN' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:275$443'.
+  created $dff cell `$procdff$1158' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$past$txuart.v:271$337$0' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:270$434'.
+  created $dff cell `$procdff$1159' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$past$txuart.v:272$338$0' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:270$434'.
+  created $dff cell `$procdff$1160' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:271$356_CHECK' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:270$434'.
+  created $dff cell `$procdff$1161' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:271$356_EN' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:270$434'.
+  created $dff cell `$procdff$1162' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:266$355_CHECK' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:266$429'.
+  created $dff cell `$procdff$1163' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:266$355_EN' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:266$429'.
+  created $dff cell `$procdff$1164' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:224$343_CHECK' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1165' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:224$343_EN' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1166' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:225$344_CHECK' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1167' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:225$344_EN' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1168' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:226$345_CHECK' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1169' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:226$345_EN' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1170' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:227$346_CHECK' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1171' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:227$346_EN' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1172' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:228$347_CHECK' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1173' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:228$347_EN' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1174' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:229$348_CHECK' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1175' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:229$348_EN' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1176' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:230$349_CHECK' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1177' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:230$349_EN' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1178' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:231$350_CHECK' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1179' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:231$350_EN' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1180' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:232$351_CHECK' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1181' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:232$351_EN' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1182' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:233$352_CHECK' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1183' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:233$352_EN' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1184' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:234$353_CHECK' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1185' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:234$353_EN' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+  created $dff cell `$procdff$1186' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.\fv_data' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:218$389'.
+  created $dff cell `$procdff$1187' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$past$txuart.v:206$333$0' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:205$376'.
+  created $dff cell `$procdff$1188' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$past$txuart.v:206$334$0' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:205$376'.
+  created $dff cell `$procdff$1189' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$past$txuart.v:207$335$0' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:205$376'.
+  created $dff cell `$procdff$1190' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$past$txuart.v:208$336$0' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:205$376'.
+  created $dff cell `$procdff$1191' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:206$341_CHECK' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:205$376'.
+  created $dff cell `$procdff$1192' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:206$341_EN' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:205$376'.
+  created $dff cell `$procdff$1193' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:207$342_CHECK' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:205$376'.
+  created $dff cell `$procdff$1194' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$formal$txuart.v:207$342_EN' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:205$376'.
+  created $dff cell `$procdff$1195' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.\f_past_valid' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:199$375'.
+  created $dff cell `$procdff$1196' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.\counter' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:165$368'.
+  created $dff cell `$procdff$1197' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.\baud_stb' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:165$368'.
+  created $dff cell `$procdff$1198' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.\lcl_data' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:108$365'.
+  created $dff cell `$procdff$1199' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.\o_busy' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:81$359'.
+  created $dff cell `$procdff$1200' with positive edge clock.
+Creating register for signal `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.\state' using process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:81$359'.
+  created $dff cell `$procdff$1201' with positive edge clock.
+Creating register for signal `\helloworld.$formal$helloworld.v:166$26_CHECK' using process `\helloworld.$proc$helloworld.v:165$118'.
+  created $dff cell `$procdff$1202' with positive edge clock.
+Creating register for signal `\helloworld.$formal$helloworld.v:166$26_EN' using process `\helloworld.$proc$helloworld.v:165$118'.
+  created $dff cell `$procdff$1203' with positive edge clock.
+Creating register for signal `\helloworld.$past$helloworld.v:158$1$0' using process `\helloworld.$proc$helloworld.v:157$95'.
+  created $dff cell `$procdff$1204' with positive edge clock.
+Creating register for signal `\helloworld.$past$helloworld.v:159$2$0' using process `\helloworld.$proc$helloworld.v:157$95'.
+  created $dff cell `$procdff$1205' with positive edge clock.
+Creating register for signal `\helloworld.$past$helloworld.v:159$3$0' using process `\helloworld.$proc$helloworld.v:157$95'.
+  created $dff cell `$procdff$1206' with positive edge clock.
+Creating register for signal `\helloworld.$past$helloworld.v:160$4$0' using process `\helloworld.$proc$helloworld.v:157$95'.
+  created $dff cell `$procdff$1207' with positive edge clock.
+Creating register for signal `\helloworld.$past$helloworld.v:162$5$0' using process `\helloworld.$proc$helloworld.v:157$95'.
+  created $dff cell `$procdff$1208' with positive edge clock.
+Creating register for signal `\helloworld.$past$helloworld.v:163$6$0' using process `\helloworld.$proc$helloworld.v:157$95'.
+  created $dff cell `$procdff$1209' with positive edge clock.
+Creating register for signal `\helloworld.$past$helloworld.v:163$7$0' using process `\helloworld.$proc$helloworld.v:157$95'.
+  created $dff cell `$procdff$1210' with positive edge clock.
+Creating register for signal `\helloworld.$formal$helloworld.v:158$24_CHECK' using process `\helloworld.$proc$helloworld.v:157$95'.
+  created $dff cell `$procdff$1211' with positive edge clock.
+Creating register for signal `\helloworld.$formal$helloworld.v:158$24_EN' using process `\helloworld.$proc$helloworld.v:157$95'.
+  created $dff cell `$procdff$1212' with positive edge clock.
+Creating register for signal `\helloworld.$formal$helloworld.v:161$25_CHECK' using process `\helloworld.$proc$helloworld.v:157$95'.
+  created $dff cell `$procdff$1213' with positive edge clock.
+Creating register for signal `\helloworld.$formal$helloworld.v:161$25_EN' using process `\helloworld.$proc$helloworld.v:157$95'.
+  created $dff cell `$procdff$1214' with positive edge clock.
+Creating register for signal `\helloworld.\f_past_valid' using process `\helloworld.$proc$helloworld.v:127$43'.
+  created $dff cell `$procdff$1215' with positive edge clock.
+Creating register for signal `\helloworld.\tx_stb' using process `\helloworld.$proc$helloworld.v:112$37'.
+  created $dff cell `$procdff$1216' with positive edge clock.
+Creating register for signal `\helloworld.\tx_data' using process `\helloworld.$proc$helloworld.v:86$36'.
+  created $dff cell `$procdff$1217' with positive edge clock.
+Creating register for signal `\helloworld.\tx_index' using process `\helloworld.$proc$helloworld.v:82$32'.
+  created $dff cell `$procdff$1218' with positive edge clock.
+Creating register for signal `\helloworld.\tx_restart' using process `\helloworld.$proc$helloworld.v:70$30'.
+  created $dff cell `$procdff$1219' with positive edge clock.
+Creating register for signal `\helloworld.\hz_counter' using process `\helloworld.$proc$helloworld.v:63$27'.
+  created $dff cell `$procdff$1220' with positive edge clock.
+
+3.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$512'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$510'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$508'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$506'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$504'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$502'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$500'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$498'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$496'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$494'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$492'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$490'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$488'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$486'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$484'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$482'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$480'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$476'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$475'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$474'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$473'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$472'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$471'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:0$470'.
+Found and cleaned up 1 empty switch in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:279$447'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:279$447'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:275$443'.
+Found and cleaned up 1 empty switch in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:270$434'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:270$434'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:266$429'.
+Found and cleaned up 1 empty switch in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:237$425'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:237$425'.
+Found and cleaned up 1 empty switch in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:222$392'.
+Found and cleaned up 1 empty switch in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:218$389'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:218$389'.
+Found and cleaned up 1 empty switch in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:205$376'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:205$376'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:199$375'.
+Found and cleaned up 3 empty switches in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:165$368'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:165$368'.
+Found and cleaned up 2 empty switches in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:108$365'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:108$365'.
+Found and cleaned up 4 empty switches in `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:81$359'.
+Removing empty process `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$proc$txuart.v:81$359'.
+Removing empty process `helloworld.$proc$helloworld.v:0$150'.
+Removing empty process `helloworld.$proc$helloworld.v:0$148'.
+Removing empty process `helloworld.$proc$helloworld.v:0$146'.
+Removing empty process `helloworld.$proc$helloworld.v:0$145'.
+Removing empty process `helloworld.$proc$helloworld.v:0$144'.
+Removing empty process `helloworld.$proc$helloworld.v:0$143'.
+Removing empty process `helloworld.$proc$helloworld.v:0$142'.
+Removing empty process `helloworld.$proc$helloworld.v:0$141'.
+Found and cleaned up 1 empty switch in `\helloworld.$proc$helloworld.v:165$118'.
+Removing empty process `helloworld.$proc$helloworld.v:165$118'.
+Found and cleaned up 2 empty switches in `\helloworld.$proc$helloworld.v:157$95'.
+Removing empty process `helloworld.$proc$helloworld.v:157$95'.
+Found and cleaned up 2 empty switches in `\helloworld.$proc$helloworld.v:130$44'.
+Removing empty process `helloworld.$proc$helloworld.v:130$44'.
+Removing empty process `helloworld.$proc$helloworld.v:127$43'.
+Found and cleaned up 2 empty switches in `\helloworld.$proc$helloworld.v:112$37'.
+Removing empty process `helloworld.$proc$helloworld.v:112$37'.
+Found and cleaned up 1 empty switch in `\helloworld.$proc$helloworld.v:86$36'.
+Removing empty process `helloworld.$proc$helloworld.v:86$36'.
+Found and cleaned up 1 empty switch in `\helloworld.$proc$helloworld.v:82$32'.
+Removing empty process `helloworld.$proc$helloworld.v:82$32'.
+Removing empty process `helloworld.$proc$helloworld.v:70$30'.
+Found and cleaned up 1 empty switch in `\helloworld.$proc$helloworld.v:63$27'.
+Removing empty process `helloworld.$proc$helloworld.v:63$27'.
+Cleaned up 25 empty switches.
+
+3.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.
+<suppressed ~12 debug messages>
+Optimizing module helloworld.
+<suppressed ~5 debug messages>
+
+3.3. Executing FUTURE pass.
+
+3.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.
+Optimizing module helloworld.
+
+3.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100..
+Finding unused cells or wires in module \helloworld..
+Removed 2 unused cells and 241 unused wires.
+<suppressed ~4 debug messages>
+
+3.6. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100...
+Checking module helloworld...
+Found and reported 0 problems.
+
+3.7. Executing OPT pass (performing simple optimizations).
+
+3.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.
+Optimizing module helloworld.
+
+3.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100'.
+<suppressed ~126 debug messages>
+Finding identical cells in module `\helloworld'.
+<suppressed ~75 debug messages>
+Removed a total of 67 cells.
+
+3.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$714: \baud_stb -> 1'1
+  Analyzing evaluation results.
+Running muxtree optimizer on module \helloworld..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~79 debug messages>
+
+3.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.
+    New ctrl vector for $pmux cell $procmux$681: $auto$opt_reduce.cc:134:opt_pmux$1222
+    New ctrl vector for $pmux cell $procmux$693: $auto$opt_reduce.cc:134:opt_pmux$1224
+  Optimizing cells in module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.
+  Optimizing cells in module \helloworld.
+Performed a total of 2 changes.
+
+3.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100'.
+<suppressed ~12 debug messages>
+Finding identical cells in module `\helloworld'.
+Removed a total of 4 cells.
+
+3.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100..
+Finding unused cells or wires in module \helloworld..
+Removed 0 unused cells and 71 unused wires.
+<suppressed ~2 debug messages>
+
+3.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.
+Optimizing module helloworld.
+
+3.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \helloworld..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~77 debug messages>
+
+3.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.
+  Optimizing cells in module \helloworld.
+Performed a total of 0 changes.
+
+3.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100'.
+Finding identical cells in module `\helloworld'.
+Removed a total of 0 cells.
+
+3.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100..
+Finding unused cells or wires in module \helloworld..
+
+3.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.
+Optimizing module helloworld.
+
+3.7.14. Finished OPT passes. (There is nothing left to do.)
+
+3.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 4) from port B of cell $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$procmux$669_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$procmux$660_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$procmux$649_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$procmux$636_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$procmux$621_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$procmux$604_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$procmux$585_CMP0 ($eq).
+Removed top 23 bits (of 24) from port B of cell $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$eq$txuart.v:172$372 ($eq).
+Removed top 14 bits (of 24) from port B of cell $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.$lt$txuart.v:276$446 ($lt).
+Removed top 28 address bits (of 32) from memory init port helloworld.$auto$mem.cc:328:emit$517 ($auto$proc_rom.cc:150:do_switch$515).
+Removed top 27 bits (of 28) from port B of cell helloworld.$eq$helloworld.v:71$31 ($eq).
+Removed top 1 bits (of 8) from port B of cell helloworld.$le$helloworld.v:134$79 ($le).
+Removed top 1 bits (of 8) from port B of cell helloworld.$le$helloworld.v:135$80 ($le).
+Removed top 1 bits (of 8) from port B of cell helloworld.$le$helloworld.v:136$81 ($le).
+Removed top 1 bits (of 8) from port B of cell helloworld.$le$helloworld.v:139$83 ($le).
+Removed top 2 bits (of 8) from port B of cell helloworld.$le$helloworld.v:140$84 ($le).
+Removed top 2 bits (of 8) from port B of cell helloworld.$le$helloworld.v:141$85 ($le).
+Removed top 1 bits (of 8) from port B of cell helloworld.$le$helloworld.v:142$86 ($le).
+Removed top 1 bits (of 8) from port B of cell helloworld.$le$helloworld.v:145$88 ($le).
+Removed top 1 bits (of 8) from port B of cell helloworld.$le$helloworld.v:147$90 ($le).
+Removed top 2 bits (of 8) from port B of cell helloworld.$le$helloworld.v:149$91 ($le).
+Removed top 4 bits (of 8) from port B of cell helloworld.$le$helloworld.v:151$93 ($le).
+Removed top 4 bits (of 8) from port B of cell helloworld.$le$helloworld.v:152$94 ($le).
+Removed top 31 bits (of 32) from port B of cell helloworld.$add$helloworld.v:160$111 ($add).
+Removed top 27 bits (of 32) from port Y of cell helloworld.$add$helloworld.v:160$111 ($add).
+Removed top 27 bits (of 32) from port B of cell helloworld.$eq$helloworld.v:160$112 ($eq).
+Removed top 3 bits (of 4) from port B of cell helloworld.$procmux$829_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell helloworld.$procmux$864_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell helloworld.$procmux$897_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell helloworld.$procmux$928_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell helloworld.$procmux$957_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell helloworld.$procmux$984_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell helloworld.$procmux$1009_CMP0 ($eq).
+Removed top 27 bits (of 32) from wire helloworld.$add$helloworld.v:160$111_Y.
+
+3.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100..
+Finding unused cells or wires in module \helloworld..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+3.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.11. Executing OPT pass (performing simple optimizations).
+
+3.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100.
+Optimizing module helloworld.
+
+3.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100'.
+Finding identical cells in module `\helloworld'.
+Removed a total of 0 cells.
+
+3.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100..
+Finding unused cells or wires in module \helloworld..
+
+3.11.4. Finished fast OPT passes.
+
+3.12. Printing statistics.
+
+=== $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100 ===
+
+   Number of wires:                134
+   Number of wire bits:            342
+   Number of public wires:          11
+   Number of public wire bits:      59
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                149
+     $add                            1
+     $assert                        16
+     $assume                         3
+     $dff                           44
+     $eq                            23
+     $initstate                      1
+     $logic_and                      4
+     $logic_not                      4
+     $lt                             2
+     $mux                           46
+     $ne                             1
+     $not                            1
+     $reduce_bool                    1
+     $reduce_or                      1
+     $sub                            1
+
+=== helloworld ===
+
+   Number of wires:                146
+   Number of wire bits:            263
+   Number of public wires:           9
+   Number of public wire bits:      46
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                163
+     $add                            2
+     $assert                        19
+     $dff                           19
+     $eq                            18
+     $le                            12
+     $logic_and                      6
+     $logic_not                      5
+     $logic_or                       1
+     $mem_v2                         1
+     $mux                           76
+     $ne                             1
+     $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100      1
+     $reduce_bool                    1
+     $sub                            1
+
+=== design hierarchy ===
+
+   helloworld                        1
+     $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100      1
+
+   Number of wires:                280
+   Number of wire bits:            605
+   Number of public wires:          20
+   Number of public wire bits:     105
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                311
+     $add                            3
+     $assert                        35
+     $assume                         3
+     $dff                           63
+     $eq                            41
+     $initstate                      1
+     $le                            12
+     $logic_and                     10
+     $logic_not                      9
+     $logic_or                       1
+     $lt                             2
+     $mem_v2                         1
+     $mux                          122
+     $ne                             2
+     $not                            1
+     $reduce_bool                    2
+     $reduce_or                      1
+     $sub                            2
+
+3.13. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100...
+Checking module helloworld...
+Found and reported 0 problems.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \helloworld
+Used module:     $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100
+
+4.2. Analyzing design hierarchy..
+Top module:  \helloworld
+Used module:     $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100
+Removed 0 unused modules.
+Module $paramod\txuart\CLOCKS_PER_BAUD=24'000000000000001101100100 directly or indirectly contains formal properties -> setting "keep" attribute.
+Module helloworld directly or indirectly contains formal properties -> setting "keep" attribute.
+
+5. Executing jny backend.
+
+6. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 7deb78b235, CPU: user 0.06s system 0.00s, MEM: 13.63 MB peak
+Yosys 0.35+36 (git sha1 c95298225, clang 10.0.0-4ubuntu1 -fPIC -Os)
+Time spent: 18% 6x opt_expr (0 sec), 15% 5x opt_clean (0 sec), ...

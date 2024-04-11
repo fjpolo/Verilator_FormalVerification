@@ -3,131 +3,131 @@ autoidx 713
 attribute \keep 1
 attribute \hdlname "\\reqwalker"
 attribute \top 1
-attribute \src "reqwalker.v:30.1-207.10"
+attribute \src "reqwalker.v:30.1-210.10"
 module \reqwalker
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $0$formal$reqwalker.v:100$25_CHECK[0:0]$273
+  wire $0$formal$reqwalker.v:103$25_CHECK[0:0]$273
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $0$formal$reqwalker.v:100$25_EN[0:0]$274
-  attribute \src "reqwalker.v:103.2-105.18"
-  wire $0$formal$reqwalker.v:104$27_CHECK[0:0]$77
-  attribute \src "reqwalker.v:103.2-105.18"
-  wire $0$formal$reqwalker.v:104$27_EN[0:0]$78
-  attribute \src "reqwalker.v:109.2-111.17"
-  wire $0$formal$reqwalker.v:110$28_CHECK[0:0]$83
-  attribute \src "reqwalker.v:109.2-111.17"
-  wire $0$formal$reqwalker.v:110$28_EN[0:0]$84
-  attribute \src "reqwalker.v:113.2-121.5"
-  wire $0$formal$reqwalker.v:115$29_CHECK[0:0]$93
-  attribute \src "reqwalker.v:113.2-121.5"
-  wire $0$formal$reqwalker.v:115$29_EN[0:0]$94
-  attribute \src "reqwalker.v:113.2-121.5"
-  wire $0$formal$reqwalker.v:116$30_CHECK[0:0]$95
-  attribute \src "reqwalker.v:113.2-121.5"
-  wire $0$formal$reqwalker.v:117$31_CHECK[0:0]$97
-  attribute \src "reqwalker.v:113.2-121.5"
-  wire $0$formal$reqwalker.v:119$32_CHECK[0:0]$99
-  attribute \src "reqwalker.v:113.2-121.5"
-  wire $0$formal$reqwalker.v:119$32_EN[0:0]$100
-  attribute \src "reqwalker.v:123.2-125.17"
-  wire $0$formal$reqwalker.v:124$33_CHECK[0:0]$108
-  attribute \src "reqwalker.v:123.2-125.17"
-  wire $0$formal$reqwalker.v:124$33_EN[0:0]$109
-  attribute \src "reqwalker.v:131.2-132.26"
-  wire $0$formal$reqwalker.v:131$34_CHECK[0:0]$114
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:138$35_CHECK[0:0]$118
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:138$35_EN[0:0]$119
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:139$36_CHECK[0:0]$120
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:139$36_EN[0:0]$121
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:140$37_CHECK[0:0]$122
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:140$37_EN[0:0]$123
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:141$38_CHECK[0:0]$124
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:141$38_EN[0:0]$125
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:142$39_CHECK[0:0]$126
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:142$39_EN[0:0]$127
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:143$40_CHECK[0:0]$128
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:143$40_EN[0:0]$129
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:144$41_CHECK[0:0]$130
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:144$41_EN[0:0]$131
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:145$42_CHECK[0:0]$132
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:145$42_EN[0:0]$133
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:146$43_CHECK[0:0]$134
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:146$43_EN[0:0]$135
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:147$44_CHECK[0:0]$136
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:147$44_EN[0:0]$137
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:148$45_CHECK[0:0]$138
-  attribute \src "reqwalker.v:135.2-150.5"
-  wire $0$formal$reqwalker.v:148$45_EN[0:0]$139
-  attribute \src "reqwalker.v:153.2-154.32"
-  wire $0$formal$reqwalker.v:153$46_CHECK[0:0]$152
-  attribute \src "reqwalker.v:159.2-163.6"
-  wire $0$formal$reqwalker.v:160$48_CHECK[0:0]$164
-  attribute \src "reqwalker.v:159.2-163.6"
-  wire $0$formal$reqwalker.v:160$48_EN[0:0]$165
-  attribute \src "reqwalker.v:159.2-163.6"
-  wire $0$formal$reqwalker.v:161$49_CHECK[0:0]$166
-  attribute \src "reqwalker.v:165.2-167.36"
-  wire $0$formal$reqwalker.v:166$50_CHECK[0:0]$177
-  attribute \src "reqwalker.v:165.2-167.36"
-  wire $0$formal$reqwalker.v:166$50_EN[0:0]$178
-  attribute \src "reqwalker.v:169.2-171.34"
-  wire $0$formal$reqwalker.v:170$51_CHECK[0:0]$186
-  attribute \src "reqwalker.v:169.2-171.34"
-  wire $0$formal$reqwalker.v:170$51_EN[0:0]$187
-  attribute \src "reqwalker.v:183.2-185.18"
-  wire $0$formal$reqwalker.v:184$55_CHECK[0:0]$197
-  attribute \src "reqwalker.v:183.2-185.18"
-  wire $0$formal$reqwalker.v:184$55_EN[0:0]$198
-  attribute \src "reqwalker.v:187.2-195.6"
-  wire $0$formal$reqwalker.v:188$56_CHECK[0:0]$206
-  attribute \src "reqwalker.v:187.2-195.6"
-  wire $0$formal$reqwalker.v:188$56_EN[0:0]$207
-  attribute \src "reqwalker.v:187.2-195.6"
-  wire $0$formal$reqwalker.v:190$57_CHECK[0:0]$208
-  attribute \src "reqwalker.v:187.2-195.6"
-  wire $0$formal$reqwalker.v:191$58_CHECK[0:0]$210
-  attribute \src "reqwalker.v:187.2-195.6"
-  wire $0$formal$reqwalker.v:193$59_CHECK[0:0]$212
-  attribute \src "reqwalker.v:187.2-195.6"
-  wire $0$formal$reqwalker.v:193$59_EN[0:0]$213
-  attribute \src "reqwalker.v:197.2-199.18"
-  wire $0$formal$reqwalker.v:198$60_CHECK[0:0]$222
-  attribute \src "reqwalker.v:197.2-199.18"
-  wire $0$formal$reqwalker.v:198$60_EN[0:0]$223
-  attribute \src "reqwalker.v:201.2-203.38"
-  wire $0$formal$reqwalker.v:202$61_CHECK[0:0]$229
-  attribute \src "reqwalker.v:159.2-163.6"
-  wire $0$past$reqwalker.v:160$11$0[0:0]$163
-  attribute \src "reqwalker.v:165.2-167.36"
-  wire $0$past$reqwalker.v:166$13$0[0:0]$175
-  attribute \src "reqwalker.v:79.2-80.32"
+  wire $0$formal$reqwalker.v:103$25_EN[0:0]$274
+  attribute \src "reqwalker.v:106.2-108.18"
+  wire $0$formal$reqwalker.v:107$27_CHECK[0:0]$77
+  attribute \src "reqwalker.v:106.2-108.18"
+  wire $0$formal$reqwalker.v:107$27_EN[0:0]$78
+  attribute \src "reqwalker.v:112.2-114.17"
+  wire $0$formal$reqwalker.v:113$28_CHECK[0:0]$83
+  attribute \src "reqwalker.v:112.2-114.17"
+  wire $0$formal$reqwalker.v:113$28_EN[0:0]$84
+  attribute \src "reqwalker.v:116.2-124.5"
+  wire $0$formal$reqwalker.v:118$29_CHECK[0:0]$93
+  attribute \src "reqwalker.v:116.2-124.5"
+  wire $0$formal$reqwalker.v:118$29_EN[0:0]$94
+  attribute \src "reqwalker.v:116.2-124.5"
+  wire $0$formal$reqwalker.v:119$30_CHECK[0:0]$95
+  attribute \src "reqwalker.v:116.2-124.5"
+  wire $0$formal$reqwalker.v:120$31_CHECK[0:0]$97
+  attribute \src "reqwalker.v:116.2-124.5"
+  wire $0$formal$reqwalker.v:122$32_CHECK[0:0]$99
+  attribute \src "reqwalker.v:116.2-124.5"
+  wire $0$formal$reqwalker.v:122$32_EN[0:0]$100
+  attribute \src "reqwalker.v:126.2-128.17"
+  wire $0$formal$reqwalker.v:127$33_CHECK[0:0]$108
+  attribute \src "reqwalker.v:126.2-128.17"
+  wire $0$formal$reqwalker.v:127$33_EN[0:0]$109
+  attribute \src "reqwalker.v:134.2-135.26"
+  wire $0$formal$reqwalker.v:134$34_CHECK[0:0]$114
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:141$35_CHECK[0:0]$118
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:141$35_EN[0:0]$119
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:142$36_CHECK[0:0]$120
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:142$36_EN[0:0]$121
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:143$37_CHECK[0:0]$122
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:143$37_EN[0:0]$123
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:144$38_CHECK[0:0]$124
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:144$38_EN[0:0]$125
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:145$39_CHECK[0:0]$126
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:145$39_EN[0:0]$127
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:146$40_CHECK[0:0]$128
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:146$40_EN[0:0]$129
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:147$41_CHECK[0:0]$130
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:147$41_EN[0:0]$131
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:148$42_CHECK[0:0]$132
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:148$42_EN[0:0]$133
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:149$43_CHECK[0:0]$134
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:149$43_EN[0:0]$135
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:150$44_CHECK[0:0]$136
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:150$44_EN[0:0]$137
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:151$45_CHECK[0:0]$138
+  attribute \src "reqwalker.v:138.2-153.5"
+  wire $0$formal$reqwalker.v:151$45_EN[0:0]$139
+  attribute \src "reqwalker.v:156.2-157.32"
+  wire $0$formal$reqwalker.v:156$46_CHECK[0:0]$152
+  attribute \src "reqwalker.v:162.2-166.6"
+  wire $0$formal$reqwalker.v:163$48_CHECK[0:0]$164
+  attribute \src "reqwalker.v:162.2-166.6"
+  wire $0$formal$reqwalker.v:163$48_EN[0:0]$165
+  attribute \src "reqwalker.v:162.2-166.6"
+  wire $0$formal$reqwalker.v:164$49_CHECK[0:0]$166
+  attribute \src "reqwalker.v:168.2-170.36"
+  wire $0$formal$reqwalker.v:169$50_CHECK[0:0]$177
+  attribute \src "reqwalker.v:168.2-170.36"
+  wire $0$formal$reqwalker.v:169$50_EN[0:0]$178
+  attribute \src "reqwalker.v:172.2-174.34"
+  wire $0$formal$reqwalker.v:173$51_CHECK[0:0]$186
+  attribute \src "reqwalker.v:172.2-174.34"
+  wire $0$formal$reqwalker.v:173$51_EN[0:0]$187
+  attribute \src "reqwalker.v:186.2-188.18"
+  wire $0$formal$reqwalker.v:187$55_CHECK[0:0]$197
+  attribute \src "reqwalker.v:186.2-188.18"
+  wire $0$formal$reqwalker.v:187$55_EN[0:0]$198
+  attribute \src "reqwalker.v:190.2-198.6"
+  wire $0$formal$reqwalker.v:191$56_CHECK[0:0]$206
+  attribute \src "reqwalker.v:190.2-198.6"
+  wire $0$formal$reqwalker.v:191$56_EN[0:0]$207
+  attribute \src "reqwalker.v:190.2-198.6"
+  wire $0$formal$reqwalker.v:193$57_CHECK[0:0]$208
+  attribute \src "reqwalker.v:190.2-198.6"
+  wire $0$formal$reqwalker.v:194$58_CHECK[0:0]$210
+  attribute \src "reqwalker.v:190.2-198.6"
+  wire $0$formal$reqwalker.v:196$59_CHECK[0:0]$212
+  attribute \src "reqwalker.v:190.2-198.6"
+  wire $0$formal$reqwalker.v:196$59_EN[0:0]$213
+  attribute \src "reqwalker.v:200.2-202.18"
+  wire $0$formal$reqwalker.v:201$60_CHECK[0:0]$222
+  attribute \src "reqwalker.v:200.2-202.18"
+  wire $0$formal$reqwalker.v:201$60_EN[0:0]$223
+  attribute \src "reqwalker.v:204.2-206.38"
+  wire $0$formal$reqwalker.v:205$61_CHECK[0:0]$229
+  attribute \src "reqwalker.v:162.2-166.6"
+  wire $0$past$reqwalker.v:163$11$0[0:0]$163
+  attribute \src "reqwalker.v:168.2-170.36"
+  wire $0$past$reqwalker.v:169$13$0[0:0]$175
+  attribute \src "reqwalker.v:82.2-83.32"
   wire $0\o_ack[0:0]
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   wire width 6 $0\o_led[5:0]
   attribute \src "reqwalker.v:53.2-59.25"
   wire width 4 $0\state[3:0]
-  wire width 5 $add$reqwalker.v:167$181_Y
+  wire width 5 $add$reqwalker.v:170$181_Y
   attribute \src "reqwalker.v:59.12-59.24"
   wire width 4 $add$reqwalker.v:59$68_Y
   wire $auto$opt_reduce.cc:134:opt_pmux$705
@@ -155,199 +155,199 @@ module \reqwalker
   wire $auto$rtlil.cc:2465:ReduceOr$633
   wire $auto$rtlil.cc:2465:ReduceOr$637
   wire $auto$rtlil.cc:2465:ReduceOr$641
-  attribute \src "reqwalker.v:117.10-117.29"
-  wire $eq$reqwalker.v:117$102_Y
-  attribute \src "reqwalker.v:118.10-118.33"
-  wire $eq$reqwalker.v:118$103_Y
-  attribute \src "reqwalker.v:120.11-120.34"
-  wire $eq$reqwalker.v:120$104_Y
-  attribute \src "reqwalker.v:138.16-138.35"
-  wire $eq$reqwalker.v:138$140_Y
-  attribute \src "reqwalker.v:139.16-139.35"
-  wire $eq$reqwalker.v:139$141_Y
-  attribute \src "reqwalker.v:140.16-140.35"
-  wire $eq$reqwalker.v:140$142_Y
+  attribute \src "reqwalker.v:120.10-120.29"
+  wire $eq$reqwalker.v:120$102_Y
+  attribute \src "reqwalker.v:121.10-121.33"
+  wire $eq$reqwalker.v:121$103_Y
+  attribute \src "reqwalker.v:123.11-123.34"
+  wire $eq$reqwalker.v:123$104_Y
   attribute \src "reqwalker.v:141.16-141.35"
-  wire $eq$reqwalker.v:141$143_Y
+  wire $eq$reqwalker.v:141$140_Y
   attribute \src "reqwalker.v:142.16-142.35"
-  wire $eq$reqwalker.v:142$144_Y
+  wire $eq$reqwalker.v:142$141_Y
   attribute \src "reqwalker.v:143.16-143.35"
-  wire $eq$reqwalker.v:143$145_Y
-  attribute \src "reqwalker.v:154.19-154.29"
-  wire $eq$reqwalker.v:154$154_Y
-  attribute \src "reqwalker.v:161.11-161.21"
-  wire $eq$reqwalker.v:161$171_Y
-  attribute \src "reqwalker.v:167.11-167.34"
-  wire $eq$reqwalker.v:167$182_Y
-  attribute \src "reqwalker.v:191.11-191.30"
-  wire $eq$reqwalker.v:191$216_Y
-  attribute \src "reqwalker.v:192.11-192.34"
-  wire $eq$reqwalker.v:192$217_Y
-  attribute \src "reqwalker.v:194.12-194.35"
-  wire $eq$reqwalker.v:194$218_Y
+  wire $eq$reqwalker.v:143$142_Y
+  attribute \src "reqwalker.v:144.16-144.35"
+  wire $eq$reqwalker.v:144$143_Y
+  attribute \src "reqwalker.v:145.16-145.35"
+  wire $eq$reqwalker.v:145$144_Y
+  attribute \src "reqwalker.v:146.16-146.35"
+  wire $eq$reqwalker.v:146$145_Y
+  attribute \src "reqwalker.v:157.19-157.29"
+  wire $eq$reqwalker.v:157$154_Y
+  attribute \src "reqwalker.v:164.11-164.21"
+  wire $eq$reqwalker.v:164$171_Y
+  attribute \src "reqwalker.v:170.11-170.34"
+  wire $eq$reqwalker.v:170$182_Y
+  attribute \src "reqwalker.v:194.11-194.30"
+  wire $eq$reqwalker.v:194$216_Y
+  attribute \src "reqwalker.v:195.11-195.34"
+  wire $eq$reqwalker.v:195$217_Y
+  attribute \src "reqwalker.v:197.12-197.35"
+  wire $eq$reqwalker.v:197$218_Y
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:110$28_CHECK
+  wire $formal$reqwalker.v:113$28_CHECK
   attribute \init 1'0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:110$28_EN
+  wire $formal$reqwalker.v:113$28_EN
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:115$29_CHECK
+  wire $formal$reqwalker.v:118$29_CHECK
   attribute \init 1'0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:115$29_EN
+  wire $formal$reqwalker.v:118$29_EN
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:116$30_CHECK
+  wire $formal$reqwalker.v:119$30_CHECK
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:117$31_CHECK
+  wire $formal$reqwalker.v:120$31_CHECK
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:119$32_CHECK
+  wire $formal$reqwalker.v:122$32_CHECK
   attribute \init 1'0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:119$32_EN
+  wire $formal$reqwalker.v:122$32_EN
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:124$33_CHECK
+  wire $formal$reqwalker.v:127$33_CHECK
   attribute \init 1'0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:124$33_EN
+  wire $formal$reqwalker.v:127$33_EN
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:160$48_CHECK
+  wire $formal$reqwalker.v:163$48_CHECK
   attribute \init 1'0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:160$48_EN
+  wire $formal$reqwalker.v:163$48_EN
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:161$49_CHECK
+  wire $formal$reqwalker.v:164$49_CHECK
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:166$50_CHECK
+  wire $formal$reqwalker.v:169$50_CHECK
   attribute \init 1'0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:166$50_EN
+  wire $formal$reqwalker.v:169$50_EN
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:170$51_CHECK
+  wire $formal$reqwalker.v:173$51_CHECK
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:184$55_CHECK
+  wire $formal$reqwalker.v:187$55_CHECK
   attribute \init 1'0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:184$55_EN
+  wire $formal$reqwalker.v:187$55_EN
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:188$56_CHECK
+  wire $formal$reqwalker.v:191$56_CHECK
   attribute \init 1'0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:188$56_EN
+  wire $formal$reqwalker.v:191$56_EN
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:190$57_CHECK
+  wire $formal$reqwalker.v:193$57_CHECK
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:191$58_CHECK
+  wire $formal$reqwalker.v:194$58_CHECK
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:193$59_CHECK
+  wire $formal$reqwalker.v:196$59_CHECK
   attribute \init 1'0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:193$59_EN
+  wire $formal$reqwalker.v:196$59_EN
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:198$60_CHECK
+  wire $formal$reqwalker.v:201$60_CHECK
   attribute \init 1'0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:198$60_EN
+  wire $formal$reqwalker.v:201$60_EN
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:202$61_CHECK
+  wire $formal$reqwalker.v:205$61_CHECK
   attribute \init 1'0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $formal$reqwalker.v:202$61_EN
+  wire $formal$reqwalker.v:205$61_EN
   attribute \src "reqwalker.v:56.11-56.25"
   wire $ge$reqwalker.v:56$66_Y
-  attribute \src "reqwalker.v:110.6-110.30"
-  wire $logic_and$reqwalker.v:110$86_Y
-  attribute \src "reqwalker.v:114.6-114.38"
-  wire $logic_and$reqwalker.v:114$101_Y
-  attribute \src "reqwalker.v:124.6-124.36"
-  wire $logic_and$reqwalker.v:124$110_Y
-  attribute \src "reqwalker.v:124.6-124.55"
-  wire $logic_and$reqwalker.v:124$112_Y
-  attribute \src "reqwalker.v:160.7-160.39"
-  wire $logic_and$reqwalker.v:160$168_Y
-  attribute \src "reqwalker.v:160.7-160.56"
-  wire $logic_and$reqwalker.v:160$169_Y
-  attribute \src "reqwalker.v:160.7-160.77"
-  wire $logic_and$reqwalker.v:160$170_Y
-  attribute \src "reqwalker.v:166.7-166.38"
-  wire $logic_and$reqwalker.v:166$179_Y
-  attribute \src "reqwalker.v:166.7-166.63"
-  wire $logic_and$reqwalker.v:166$180_Y
-  attribute \src "reqwalker.v:171.10-171.32"
-  wire $logic_and$reqwalker.v:171$189_Y
-  attribute \src "reqwalker.v:184.6-184.31"
-  wire $logic_and$reqwalker.v:184$199_Y
-  attribute \src "reqwalker.v:188.7-188.39"
-  wire $logic_and$reqwalker.v:188$214_Y
-  attribute \src "reqwalker.v:188.7-188.59"
-  wire $logic_and$reqwalker.v:188$215_Y
-  attribute \src "reqwalker.v:198.7-198.39"
-  wire $logic_and$reqwalker.v:198$224_Y
-  attribute \src "reqwalker.v:198.7-198.60"
-  wire $logic_and$reqwalker.v:198$226_Y
-  attribute \src "reqwalker.v:203.11-203.35"
-  wire $logic_and$reqwalker.v:203$232_Y
+  attribute \src "reqwalker.v:113.6-113.30"
+  wire $logic_and$reqwalker.v:113$86_Y
+  attribute \src "reqwalker.v:117.6-117.38"
+  wire $logic_and$reqwalker.v:117$101_Y
+  attribute \src "reqwalker.v:127.6-127.36"
+  wire $logic_and$reqwalker.v:127$110_Y
+  attribute \src "reqwalker.v:127.6-127.55"
+  wire $logic_and$reqwalker.v:127$112_Y
+  attribute \src "reqwalker.v:163.7-163.39"
+  wire $logic_and$reqwalker.v:163$168_Y
+  attribute \src "reqwalker.v:163.7-163.56"
+  wire $logic_and$reqwalker.v:163$169_Y
+  attribute \src "reqwalker.v:163.7-163.77"
+  wire $logic_and$reqwalker.v:163$170_Y
+  attribute \src "reqwalker.v:169.7-169.38"
+  wire $logic_and$reqwalker.v:169$179_Y
+  attribute \src "reqwalker.v:169.7-169.63"
+  wire $logic_and$reqwalker.v:169$180_Y
+  attribute \src "reqwalker.v:174.10-174.32"
+  wire $logic_and$reqwalker.v:174$189_Y
+  attribute \src "reqwalker.v:187.6-187.31"
+  wire $logic_and$reqwalker.v:187$199_Y
+  attribute \src "reqwalker.v:191.7-191.39"
+  wire $logic_and$reqwalker.v:191$214_Y
+  attribute \src "reqwalker.v:191.7-191.59"
+  wire $logic_and$reqwalker.v:191$215_Y
+  attribute \src "reqwalker.v:201.7-201.39"
+  wire $logic_and$reqwalker.v:201$224_Y
+  attribute \src "reqwalker.v:201.7-201.60"
+  wire $logic_and$reqwalker.v:201$226_Y
+  attribute \src "reqwalker.v:206.11-206.35"
+  wire $logic_and$reqwalker.v:206$232_Y
   attribute \src "reqwalker.v:54.7-54.24"
   wire $logic_and$reqwalker.v:54$63_Y
   attribute \src "reqwalker.v:54.7-54.38"
   wire $logic_and$reqwalker.v:54$65_Y
-  attribute \src "reqwalker.v:105.10-105.16"
-  wire $logic_not$reqwalker.v:105$80_Y
-  attribute \src "reqwalker.v:110.7-110.20"
-  wire $logic_not$reqwalker.v:110$85_Y
-  attribute \src "reqwalker.v:124.39-124.54"
-  wire $logic_not$reqwalker.v:124$111_Y
-  attribute \src "reqwalker.v:171.11-171.16"
-  wire $logic_not$reqwalker.v:171$188_Y
-  attribute \src "reqwalker.v:198.44-198.59"
-  wire $logic_not$reqwalker.v:198$225_Y
+  attribute \src "reqwalker.v:108.10-108.16"
+  wire $logic_not$reqwalker.v:108$80_Y
+  attribute \src "reqwalker.v:113.7-113.20"
+  wire $logic_not$reqwalker.v:113$85_Y
+  attribute \src "reqwalker.v:127.39-127.54"
+  wire $logic_not$reqwalker.v:127$111_Y
+  attribute \src "reqwalker.v:174.11-174.16"
+  wire $logic_not$reqwalker.v:174$188_Y
+  attribute \src "reqwalker.v:201.44-201.59"
+  wire $logic_not$reqwalker.v:201$225_Y
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:110$1$0
+  wire $past$reqwalker.v:113$1$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:114$2$0
+  wire $past$reqwalker.v:117$2$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:114$3$0
+  wire $past$reqwalker.v:117$3$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:117$4$0
+  wire $past$reqwalker.v:120$4$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:118$5$0
+  wire $past$reqwalker.v:121$5$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire width 32 $past$reqwalker.v:120$6$0
+  wire width 32 $past$reqwalker.v:123$6$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:124$7$0
+  wire $past$reqwalker.v:127$7$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:124$8$0
+  wire $past$reqwalker.v:127$8$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:160$10$0
+  wire $past$reqwalker.v:163$10$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:160$11$0
+  wire $past$reqwalker.v:163$11$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:160$9$0
+  wire $past$reqwalker.v:163$9$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:166$12$0
+  wire $past$reqwalker.v:169$12$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:166$13$0
+  wire $past$reqwalker.v:169$13$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire width 4 $past$reqwalker.v:167$14$0
+  wire width 4 $past$reqwalker.v:170$14$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:171$15$0
+  wire $past$reqwalker.v:174$15$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:184$16$0
+  wire $past$reqwalker.v:187$16$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:188$17$0
+  wire $past$reqwalker.v:191$17$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:188$18$0
+  wire $past$reqwalker.v:191$18$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:191$19$0
+  wire $past$reqwalker.v:194$19$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:192$20$0
+  wire $past$reqwalker.v:195$20$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire width 32 $past$reqwalker.v:194$21$0
+  wire width 32 $past$reqwalker.v:197$21$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:198$22$0
+  wire $past$reqwalker.v:201$22$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:198$23$0
+  wire $past$reqwalker.v:201$23$0
   attribute \src "reqwalker.v:0.0-0.0"
-  wire $past$reqwalker.v:203$24$0
+  wire $past$reqwalker.v:206$24$0
   wire $procmux$334_Y
   wire $procmux$338_Y
   wire $procmux$400_CMP
@@ -366,7 +366,7 @@ module \reqwalker
   attribute \src "reqwalker.v:49.8-49.12"
   wire \busy
   attribute \init 1'0
-  attribute \src "reqwalker.v:91.6-91.18"
+  attribute \src "reqwalker.v:94.6-94.18"
   wire \f_past_valid
   attribute \src "reqwalker.v:38.15-38.21"
   wire input 5 \i_addr
@@ -393,18 +393,18 @@ module \reqwalker
   attribute \init 4'0000
   attribute \src "reqwalker.v:50.12-50.17"
   wire width 4 \state
-  attribute \src "reqwalker.v:86.14-86.20"
+  attribute \src "reqwalker.v:89.14-89.20"
   wire width 34 \unused
-  attribute \src "reqwalker.v:167.20-167.34"
-  cell $add $add$reqwalker.v:167$181
+  attribute \src "reqwalker.v:170.20-170.34"
+  cell $add $add$reqwalker.v:170$181
     parameter \A_SIGNED 0
     parameter \A_WIDTH 4
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 5
-    connect \A $past$reqwalker.v:167$14$0
+    connect \A $past$reqwalker.v:170$14$0
     connect \B 1'1
-    connect \Y $add$reqwalker.v:167$181_Y
+    connect \Y $add$reqwalker.v:170$181_Y
   end
   attribute \src "reqwalker.v:59.12-59.24"
   cell $add $add$reqwalker.v:59$68
@@ -417,155 +417,155 @@ module \reqwalker
     connect \B 1'1
     connect \Y $add$reqwalker.v:59$68_Y
   end
-  attribute \src "reqwalker.v:124.56-125.16"
-  cell $assert $assert$reqwalker.v:124$240
-    connect \A $formal$reqwalker.v:124$33_CHECK
-    connect \EN $formal$reqwalker.v:124$33_EN
+  attribute \src "reqwalker.v:127.56-128.16"
+  cell $assert $assert$reqwalker.v:127$240
+    connect \A $formal$reqwalker.v:127$33_CHECK
+    connect \EN $formal$reqwalker.v:127$33_EN
   end
-  attribute \src "reqwalker.v:131.13-132.25"
-  cell $assert $assert$reqwalker.v:131$241
-    connect \A $0$formal$reqwalker.v:131$34_CHECK[0:0]$114
+  attribute \src "reqwalker.v:134.13-135.25"
+  cell $assert $assert$reqwalker.v:134$241
+    connect \A $0$formal$reqwalker.v:134$34_CHECK[0:0]$114
     connect \EN 1'1
-  end
-  attribute \src "reqwalker.v:138.8-138.36"
-  cell $assert $assert$reqwalker.v:138$242
-    connect \A $0$formal$reqwalker.v:138$35_CHECK[0:0]$118
-    connect \EN $0$formal$reqwalker.v:138$35_EN[0:0]$119
-  end
-  attribute \src "reqwalker.v:139.8-139.36"
-  cell $assert $assert$reqwalker.v:139$243
-    connect \A $0$formal$reqwalker.v:139$36_CHECK[0:0]$120
-    connect \EN $0$formal$reqwalker.v:139$36_EN[0:0]$121
-  end
-  attribute \src "reqwalker.v:140.8-140.36"
-  cell $assert $assert$reqwalker.v:140$244
-    connect \A $0$formal$reqwalker.v:140$37_CHECK[0:0]$122
-    connect \EN $0$formal$reqwalker.v:140$37_EN[0:0]$123
   end
   attribute \src "reqwalker.v:141.8-141.36"
-  cell $assert $assert$reqwalker.v:141$245
-    connect \A $0$formal$reqwalker.v:141$38_CHECK[0:0]$124
-    connect \EN $0$formal$reqwalker.v:141$38_EN[0:0]$125
+  cell $assert $assert$reqwalker.v:141$242
+    connect \A $0$formal$reqwalker.v:141$35_CHECK[0:0]$118
+    connect \EN $0$formal$reqwalker.v:141$35_EN[0:0]$119
   end
   attribute \src "reqwalker.v:142.8-142.36"
-  cell $assert $assert$reqwalker.v:142$246
-    connect \A $0$formal$reqwalker.v:142$39_CHECK[0:0]$126
-    connect \EN $0$formal$reqwalker.v:142$39_EN[0:0]$127
+  cell $assert $assert$reqwalker.v:142$243
+    connect \A $0$formal$reqwalker.v:142$36_CHECK[0:0]$120
+    connect \EN $0$formal$reqwalker.v:142$36_EN[0:0]$121
   end
   attribute \src "reqwalker.v:143.8-143.36"
-  cell $assert $assert$reqwalker.v:143$247
-    connect \A $0$formal$reqwalker.v:143$40_CHECK[0:0]$128
-    connect \EN $0$formal$reqwalker.v:143$40_EN[0:0]$129
+  cell $assert $assert$reqwalker.v:143$244
+    connect \A $0$formal$reqwalker.v:143$37_CHECK[0:0]$122
+    connect \EN $0$formal$reqwalker.v:143$37_EN[0:0]$123
   end
   attribute \src "reqwalker.v:144.8-144.36"
-  cell $assert $assert$reqwalker.v:144$248
-    connect \A $0$formal$reqwalker.v:144$41_CHECK[0:0]$130
-    connect \EN $0$formal$reqwalker.v:144$41_EN[0:0]$131
+  cell $assert $assert$reqwalker.v:144$245
+    connect \A $0$formal$reqwalker.v:144$38_CHECK[0:0]$124
+    connect \EN $0$formal$reqwalker.v:144$38_EN[0:0]$125
   end
   attribute \src "reqwalker.v:145.8-145.36"
-  cell $assert $assert$reqwalker.v:145$249
-    connect \A $0$formal$reqwalker.v:145$42_CHECK[0:0]$132
-    connect \EN $0$formal$reqwalker.v:145$42_EN[0:0]$133
+  cell $assert $assert$reqwalker.v:145$246
+    connect \A $0$formal$reqwalker.v:145$39_CHECK[0:0]$126
+    connect \EN $0$formal$reqwalker.v:145$39_EN[0:0]$127
   end
   attribute \src "reqwalker.v:146.8-146.36"
-  cell $assert $assert$reqwalker.v:146$250
-    connect \A $0$formal$reqwalker.v:146$43_CHECK[0:0]$134
-    connect \EN $0$formal$reqwalker.v:146$43_EN[0:0]$135
+  cell $assert $assert$reqwalker.v:146$247
+    connect \A $0$formal$reqwalker.v:146$40_CHECK[0:0]$128
+    connect \EN $0$formal$reqwalker.v:146$40_EN[0:0]$129
   end
   attribute \src "reqwalker.v:147.8-147.36"
-  cell $assert $assert$reqwalker.v:147$251
-    connect \A $0$formal$reqwalker.v:147$44_CHECK[0:0]$136
-    connect \EN $0$formal$reqwalker.v:147$44_EN[0:0]$137
+  cell $assert $assert$reqwalker.v:147$248
+    connect \A $0$formal$reqwalker.v:147$41_CHECK[0:0]$130
+    connect \EN $0$formal$reqwalker.v:147$41_EN[0:0]$131
   end
   attribute \src "reqwalker.v:148.8-148.36"
-  cell $assert $assert$reqwalker.v:148$252
-    connect \A $0$formal$reqwalker.v:148$45_CHECK[0:0]$138
-    connect \EN $0$formal$reqwalker.v:148$45_EN[0:0]$139
+  cell $assert $assert$reqwalker.v:148$249
+    connect \A $0$formal$reqwalker.v:148$42_CHECK[0:0]$132
+    connect \EN $0$formal$reqwalker.v:148$42_EN[0:0]$133
   end
-  attribute \src "reqwalker.v:153.13-154.31"
-  cell $assert $assert$reqwalker.v:153$253
-    connect \A $0$formal$reqwalker.v:153$46_CHECK[0:0]$152
+  attribute \src "reqwalker.v:149.8-149.36"
+  cell $assert $assert$reqwalker.v:149$250
+    connect \A $0$formal$reqwalker.v:149$43_CHECK[0:0]$134
+    connect \EN $0$formal$reqwalker.v:149$43_EN[0:0]$135
+  end
+  attribute \src "reqwalker.v:150.8-150.36"
+  cell $assert $assert$reqwalker.v:150$251
+    connect \A $0$formal$reqwalker.v:150$44_CHECK[0:0]$136
+    connect \EN $0$formal$reqwalker.v:150$44_EN[0:0]$137
+  end
+  attribute \src "reqwalker.v:151.8-151.36"
+  cell $assert $assert$reqwalker.v:151$252
+    connect \A $0$formal$reqwalker.v:151$45_CHECK[0:0]$138
+    connect \EN $0$formal$reqwalker.v:151$45_EN[0:0]$139
+  end
+  attribute \src "reqwalker.v:156.13-157.31"
+  cell $assert $assert$reqwalker.v:156$253
+    connect \A $0$formal$reqwalker.v:156$46_CHECK[0:0]$152
     connect \EN 1'1
   end
-  attribute \src "reqwalker.v:160.84-161.22"
-  cell $assert $assert$reqwalker.v:160$255
-    connect \A $formal$reqwalker.v:160$48_CHECK
-    connect \EN $formal$reqwalker.v:160$48_EN
+  attribute \src "reqwalker.v:163.84-164.22"
+  cell $assert $assert$reqwalker.v:163$255
+    connect \A $formal$reqwalker.v:163$48_CHECK
+    connect \EN $formal$reqwalker.v:163$48_EN
   end
-  attribute \src "reqwalker.v:161.23-162.16"
-  cell $assert $assert$reqwalker.v:161$256
-    connect \A $formal$reqwalker.v:161$49_CHECK
-    connect \EN $formal$reqwalker.v:160$48_EN
+  attribute \src "reqwalker.v:164.23-165.16"
+  cell $assert $assert$reqwalker.v:164$256
+    connect \A $formal$reqwalker.v:164$49_CHECK
+    connect \EN $formal$reqwalker.v:163$48_EN
   end
-  attribute \src "reqwalker.v:166.64-167.35"
-  cell $assert $assert$reqwalker.v:166$257
-    connect \A $formal$reqwalker.v:166$50_CHECK
-    connect \EN $formal$reqwalker.v:166$50_EN
+  attribute \src "reqwalker.v:169.64-170.35"
+  cell $assert $assert$reqwalker.v:169$257
+    connect \A $formal$reqwalker.v:169$50_CHECK
+    connect \EN $formal$reqwalker.v:169$50_EN
   end
-  attribute \src "reqwalker.v:198.62-199.17"
-  cell $assert $assert$reqwalker.v:198$266
-    connect \A $formal$reqwalker.v:198$60_CHECK
-    connect \EN $formal$reqwalker.v:198$60_EN
+  attribute \src "reqwalker.v:201.62-202.17"
+  cell $assert $assert$reqwalker.v:201$266
+    connect \A $formal$reqwalker.v:201$60_CHECK
+    connect \EN $formal$reqwalker.v:201$60_EN
   end
-  attribute \src "reqwalker.v:100.9-100.24"
-  cell $assume $assume$reqwalker.v:100$233
-    connect \A $0$formal$reqwalker.v:100$25_CHECK[0:0]$273
-    connect \EN $0$formal$reqwalker.v:100$25_EN[0:0]$274
+  attribute \src "reqwalker.v:103.9-103.24"
+  cell $assume $assume$reqwalker.v:103$233
+    connect \A $0$formal$reqwalker.v:103$25_CHECK[0:0]$273
+    connect \EN $0$formal$reqwalker.v:103$25_EN[0:0]$274
   end
-  attribute \src "reqwalker.v:104.13-105.17"
-  cell $assume $assume$reqwalker.v:104$234
-    connect \A $0$formal$reqwalker.v:104$27_CHECK[0:0]$77
-    connect \EN $0$formal$reqwalker.v:104$27_EN[0:0]$78
+  attribute \src "reqwalker.v:107.13-108.17"
+  cell $assume $assume$reqwalker.v:107$234
+    connect \A $0$formal$reqwalker.v:107$27_CHECK[0:0]$77
+    connect \EN $0$formal$reqwalker.v:107$27_EN[0:0]$78
   end
-  attribute \src "reqwalker.v:110.31-111.16"
-  cell $assume $assume$reqwalker.v:110$235
-    connect \A $formal$reqwalker.v:110$28_CHECK
-    connect \EN $formal$reqwalker.v:110$28_EN
+  attribute \src "reqwalker.v:113.31-114.16"
+  cell $assume $assume$reqwalker.v:113$235
+    connect \A $formal$reqwalker.v:113$28_CHECK
+    connect \EN $formal$reqwalker.v:113$28_EN
   end
-  attribute \src "reqwalker.v:115.7-116.16"
-  cell $assume $assume$reqwalker.v:115$236
-    connect \A $formal$reqwalker.v:115$29_CHECK
-    connect \EN $formal$reqwalker.v:115$29_EN
+  attribute \src "reqwalker.v:118.7-119.16"
+  cell $assume $assume$reqwalker.v:118$236
+    connect \A $formal$reqwalker.v:118$29_CHECK
+    connect \EN $formal$reqwalker.v:118$29_EN
   end
-  attribute \src "reqwalker.v:116.17-117.30"
-  cell $assume $assume$reqwalker.v:116$237
-    connect \A $formal$reqwalker.v:116$30_CHECK
-    connect \EN $formal$reqwalker.v:115$29_EN
+  attribute \src "reqwalker.v:119.17-120.30"
+  cell $assume $assume$reqwalker.v:119$237
+    connect \A $formal$reqwalker.v:119$30_CHECK
+    connect \EN $formal$reqwalker.v:118$29_EN
   end
-  attribute \src "reqwalker.v:117.31-118.34"
-  cell $assume $assume$reqwalker.v:117$238
-    connect \A $formal$reqwalker.v:117$31_CHECK
-    connect \EN $formal$reqwalker.v:115$29_EN
+  attribute \src "reqwalker.v:120.31-121.34"
+  cell $assume $assume$reqwalker.v:120$238
+    connect \A $formal$reqwalker.v:120$31_CHECK
+    connect \EN $formal$reqwalker.v:118$29_EN
   end
-  attribute \src "reqwalker.v:119.12-120.35"
-  cell $assume $assume$reqwalker.v:119$239
-    connect \A $formal$reqwalker.v:119$32_CHECK
-    connect \EN $formal$reqwalker.v:119$32_EN
+  attribute \src "reqwalker.v:122.12-123.35"
+  cell $assume $assume$reqwalker.v:122$239
+    connect \A $formal$reqwalker.v:122$32_CHECK
+    connect \EN $formal$reqwalker.v:122$32_EN
   end
-  attribute \src "reqwalker.v:184.32-185.17"
-  cell $assume $assume$reqwalker.v:184$261
-    connect \A $formal$reqwalker.v:184$55_CHECK
-    connect \EN $formal$reqwalker.v:184$55_EN
+  attribute \src "reqwalker.v:187.32-188.17"
+  cell $assume $assume$reqwalker.v:187$261
+    connect \A $formal$reqwalker.v:187$55_CHECK
+    connect \EN $formal$reqwalker.v:187$55_EN
   end
-  attribute \src "reqwalker.v:188.67-190.17"
-  cell $assume $assume$reqwalker.v:188$262
-    connect \A $formal$reqwalker.v:188$56_CHECK
-    connect \EN $formal$reqwalker.v:188$56_EN
+  attribute \src "reqwalker.v:191.67-193.17"
+  cell $assume $assume$reqwalker.v:191$262
+    connect \A $formal$reqwalker.v:191$56_CHECK
+    connect \EN $formal$reqwalker.v:191$56_EN
   end
-  attribute \src "reqwalker.v:190.18-191.31"
-  cell $assume $assume$reqwalker.v:190$263
-    connect \A $formal$reqwalker.v:190$57_CHECK
-    connect \EN $formal$reqwalker.v:188$56_EN
+  attribute \src "reqwalker.v:193.18-194.31"
+  cell $assume $assume$reqwalker.v:193$263
+    connect \A $formal$reqwalker.v:193$57_CHECK
+    connect \EN $formal$reqwalker.v:191$56_EN
   end
-  attribute \src "reqwalker.v:191.32-192.35"
-  cell $assume $assume$reqwalker.v:191$264
-    connect \A $formal$reqwalker.v:191$58_CHECK
-    connect \EN $formal$reqwalker.v:188$56_EN
+  attribute \src "reqwalker.v:194.32-195.35"
+  cell $assume $assume$reqwalker.v:194$264
+    connect \A $formal$reqwalker.v:194$58_CHECK
+    connect \EN $formal$reqwalker.v:191$56_EN
   end
-  attribute \src "reqwalker.v:193.12-194.36"
-  cell $assume $assume$reqwalker.v:193$265
-    connect \A $formal$reqwalker.v:193$59_CHECK
-    connect \EN $formal$reqwalker.v:193$59_EN
+  attribute \src "reqwalker.v:196.12-197.36"
+  cell $assume $assume$reqwalker.v:196$265
+    connect \A $formal$reqwalker.v:196$59_CHECK
+    connect \EN $formal$reqwalker.v:196$59_EN
   end
   cell $reduce_or $auto$opt_reduce.cc:128:opt_pmux$704
     parameter \A_SIGNED 0
@@ -595,15 +595,15 @@ module \reqwalker
     connect \A { $procmux$485_CMP $procmux$457_CMP }
     connect \Y $auto$opt_reduce.cc:134:opt_pmux$711
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $not $auto$proc_dlatch.cc:244:make_hold$574
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $eq$reqwalker.v:161$171_Y
+    connect \A $eq$reqwalker.v:164$171_Y
     connect \Y $auto$rtlil.cc:2461:Not$575
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $not $auto$proc_dlatch.cc:244:make_hold$576
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -611,7 +611,7 @@ module \reqwalker
     connect \A $procmux$400_CMP
     connect \Y $auto$rtlil.cc:2461:Not$577
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $not $auto$proc_dlatch.cc:244:make_hold$578
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -619,7 +619,7 @@ module \reqwalker
     connect \A $procmux$421_CMP
     connect \Y $auto$rtlil.cc:2461:Not$579
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $not $auto$proc_dlatch.cc:244:make_hold$580
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -627,7 +627,7 @@ module \reqwalker
     connect \A $procmux$440_CMP
     connect \Y $auto$rtlil.cc:2461:Not$581
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $not $auto$proc_dlatch.cc:244:make_hold$582
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -635,7 +635,7 @@ module \reqwalker
     connect \A $procmux$457_CMP
     connect \Y $auto$rtlil.cc:2461:Not$583
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $not $auto$proc_dlatch.cc:244:make_hold$584
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -643,7 +643,7 @@ module \reqwalker
     connect \A $procmux$472_CMP
     connect \Y $auto$rtlil.cc:2461:Not$585
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $not $auto$proc_dlatch.cc:244:make_hold$586
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -651,7 +651,7 @@ module \reqwalker
     connect \A $procmux$485_CMP
     connect \Y $auto$rtlil.cc:2461:Not$587
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $not $auto$proc_dlatch.cc:244:make_hold$588
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -659,7 +659,7 @@ module \reqwalker
     connect \A $procmux$496_CMP
     connect \Y $auto$rtlil.cc:2461:Not$589
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $not $auto$proc_dlatch.cc:244:make_hold$590
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -667,7 +667,7 @@ module \reqwalker
     connect \A $procmux$505_CMP
     connect \Y $auto$rtlil.cc:2461:Not$591
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $not $auto$proc_dlatch.cc:244:make_hold$592
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -675,7 +675,7 @@ module \reqwalker
     connect \A $procmux$512_CMP
     connect \Y $auto$rtlil.cc:2461:Not$593
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $not $auto$proc_dlatch.cc:244:make_hold$594
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -683,7 +683,7 @@ module \reqwalker
     connect \A $procmux$517_CMP
     connect \Y $auto$rtlil.cc:2461:Not$595
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $and $auto$proc_dlatch.cc:257:make_hold$602
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -694,7 +694,7 @@ module \reqwalker
     connect \B $auto$rtlil.cc:2461:Not$595
     connect \Y $auto$rtlil.cc:2465:ReduceOr$605
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $and $auto$proc_dlatch.cc:257:make_hold$606
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -705,7 +705,7 @@ module \reqwalker
     connect \B $auto$rtlil.cc:2465:ReduceOr$605
     connect \Y $auto$rtlil.cc:2465:ReduceOr$609
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $and $auto$proc_dlatch.cc:257:make_hold$610
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -716,7 +716,7 @@ module \reqwalker
     connect \B $auto$rtlil.cc:2465:ReduceOr$609
     connect \Y $auto$rtlil.cc:2465:ReduceOr$613
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $and $auto$proc_dlatch.cc:257:make_hold$614
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -727,7 +727,7 @@ module \reqwalker
     connect \B $auto$rtlil.cc:2465:ReduceOr$613
     connect \Y $auto$rtlil.cc:2465:ReduceOr$617
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $and $auto$proc_dlatch.cc:257:make_hold$618
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -738,7 +738,7 @@ module \reqwalker
     connect \B $auto$rtlil.cc:2465:ReduceOr$617
     connect \Y $auto$rtlil.cc:2465:ReduceOr$621
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $and $auto$proc_dlatch.cc:257:make_hold$622
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -749,7 +749,7 @@ module \reqwalker
     connect \B $auto$rtlil.cc:2465:ReduceOr$621
     connect \Y $auto$rtlil.cc:2465:ReduceOr$625
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $and $auto$proc_dlatch.cc:257:make_hold$626
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -760,7 +760,7 @@ module \reqwalker
     connect \B $auto$rtlil.cc:2465:ReduceOr$625
     connect \Y $auto$rtlil.cc:2465:ReduceOr$629
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $and $auto$proc_dlatch.cc:257:make_hold$630
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -771,7 +771,7 @@ module \reqwalker
     connect \B $auto$rtlil.cc:2465:ReduceOr$629
     connect \Y $auto$rtlil.cc:2465:ReduceOr$633
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $and $auto$proc_dlatch.cc:257:make_hold$634
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -782,7 +782,7 @@ module \reqwalker
     connect \B $auto$rtlil.cc:2465:ReduceOr$633
     connect \Y $auto$rtlil.cc:2465:ReduceOr$637
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $and $auto$proc_dlatch.cc:257:make_hold$638
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -793,7 +793,7 @@ module \reqwalker
     connect \B $auto$rtlil.cc:2465:ReduceOr$637
     connect \Y $auto$rtlil.cc:2465:ReduceOr$641
   end
-  attribute \src "reqwalker.v:61.2-74.9"
+  attribute \src "reqwalker.v:62.2-76.9"
   cell $dlatch $auto$proc_dlatch.cc:427:proc_dlatch$572
     parameter \EN_POLARITY 0
     parameter \WIDTH 6
@@ -801,51 +801,51 @@ module \reqwalker
     connect \EN $auto$rtlil.cc:2465:ReduceOr$641
     connect \Q \o_led
   end
-  attribute \src "reqwalker.v:170.20-171.33"
-  cell $cover $cover$reqwalker.v:170$258
-    connect \A $formal$reqwalker.v:170$51_CHECK
-    connect \EN $formal$reqwalker.v:202$61_EN
+  attribute \src "reqwalker.v:173.20-174.33"
+  cell $cover $cover$reqwalker.v:173$258
+    connect \A $formal$reqwalker.v:173$51_CHECK
+    connect \EN $formal$reqwalker.v:205$61_EN
   end
-  attribute \src "reqwalker.v:202.19-203.37"
-  cell $cover $cover$reqwalker.v:202$267
-    connect \A $formal$reqwalker.v:202$61_CHECK
-    connect \EN $formal$reqwalker.v:202$61_EN
+  attribute \src "reqwalker.v:205.19-206.37"
+  cell $cover $cover$reqwalker.v:205$267
+    connect \A $formal$reqwalker.v:205$61_CHECK
+    connect \EN $formal$reqwalker.v:205$61_EN
   end
-  attribute \src "reqwalker.v:117.10-117.29"
-  cell $eq $eq$reqwalker.v:117$102
+  attribute \src "reqwalker.v:120.10-120.29"
+  cell $eq $eq$reqwalker.v:120$102
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \i_we
-    connect \B $past$reqwalker.v:117$4$0
-    connect \Y $eq$reqwalker.v:117$102_Y
+    connect \B $past$reqwalker.v:120$4$0
+    connect \Y $eq$reqwalker.v:120$102_Y
   end
-  attribute \src "reqwalker.v:118.10-118.33"
-  cell $eq $eq$reqwalker.v:118$103
+  attribute \src "reqwalker.v:121.10-121.33"
+  cell $eq $eq$reqwalker.v:121$103
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \i_addr
-    connect \B $past$reqwalker.v:118$5$0
-    connect \Y $eq$reqwalker.v:118$103_Y
+    connect \B $past$reqwalker.v:121$5$0
+    connect \Y $eq$reqwalker.v:121$103_Y
   end
-  attribute \src "reqwalker.v:120.11-120.34"
-  cell $eq $eq$reqwalker.v:120$104
+  attribute \src "reqwalker.v:123.11-123.34"
+  cell $eq $eq$reqwalker.v:123$104
     parameter \A_SIGNED 0
     parameter \A_WIDTH 32
     parameter \B_SIGNED 0
     parameter \B_WIDTH 32
     parameter \Y_WIDTH 1
     connect \A \i_data
-    connect \B $past$reqwalker.v:120$6$0
-    connect \Y $eq$reqwalker.v:120$104_Y
+    connect \B $past$reqwalker.v:123$6$0
+    connect \Y $eq$reqwalker.v:123$104_Y
   end
-  attribute \src "reqwalker.v:138.16-138.35"
-  cell $eq $eq$reqwalker.v:138$140
+  attribute \src "reqwalker.v:141.16-141.35"
+  cell $eq $eq$reqwalker.v:141$140
     parameter \A_SIGNED 0
     parameter \A_WIDTH 6
     parameter \B_SIGNED 0
@@ -853,10 +853,10 @@ module \reqwalker
     parameter \Y_WIDTH 1
     connect \A \o_led
     connect \B 1'1
-    connect \Y $eq$reqwalker.v:138$140_Y
+    connect \Y $eq$reqwalker.v:141$140_Y
   end
-  attribute \src "reqwalker.v:139.16-139.35"
-  cell $eq $eq$reqwalker.v:139$141
+  attribute \src "reqwalker.v:142.16-142.35"
+  cell $eq $eq$reqwalker.v:142$141
     parameter \A_SIGNED 0
     parameter \A_WIDTH 6
     parameter \B_SIGNED 0
@@ -864,10 +864,10 @@ module \reqwalker
     parameter \Y_WIDTH 1
     connect \A \o_led
     connect \B 2'10
-    connect \Y $eq$reqwalker.v:139$141_Y
+    connect \Y $eq$reqwalker.v:142$141_Y
   end
-  attribute \src "reqwalker.v:140.16-140.35"
-  cell $eq $eq$reqwalker.v:140$142
+  attribute \src "reqwalker.v:143.16-143.35"
+  cell $eq $eq$reqwalker.v:143$142
     parameter \A_SIGNED 0
     parameter \A_WIDTH 6
     parameter \B_SIGNED 0
@@ -875,10 +875,10 @@ module \reqwalker
     parameter \Y_WIDTH 1
     connect \A \o_led
     connect \B 3'100
-    connect \Y $eq$reqwalker.v:140$142_Y
+    connect \Y $eq$reqwalker.v:143$142_Y
   end
-  attribute \src "reqwalker.v:141.16-141.35"
-  cell $eq $eq$reqwalker.v:141$143
+  attribute \src "reqwalker.v:144.16-144.35"
+  cell $eq $eq$reqwalker.v:144$143
     parameter \A_SIGNED 0
     parameter \A_WIDTH 6
     parameter \B_SIGNED 0
@@ -886,10 +886,10 @@ module \reqwalker
     parameter \Y_WIDTH 1
     connect \A \o_led
     connect \B 4'1000
-    connect \Y $eq$reqwalker.v:141$143_Y
+    connect \Y $eq$reqwalker.v:144$143_Y
   end
-  attribute \src "reqwalker.v:142.16-142.35"
-  cell $eq $eq$reqwalker.v:142$144
+  attribute \src "reqwalker.v:145.16-145.35"
+  cell $eq $eq$reqwalker.v:145$144
     parameter \A_SIGNED 0
     parameter \A_WIDTH 6
     parameter \B_SIGNED 0
@@ -897,10 +897,10 @@ module \reqwalker
     parameter \Y_WIDTH 1
     connect \A \o_led
     connect \B 5'10000
-    connect \Y $eq$reqwalker.v:142$144_Y
+    connect \Y $eq$reqwalker.v:145$144_Y
   end
-  attribute \src "reqwalker.v:143.16-143.35"
-  cell $eq $eq$reqwalker.v:143$145
+  attribute \src "reqwalker.v:146.16-146.35"
+  cell $eq $eq$reqwalker.v:146$145
     parameter \A_SIGNED 0
     parameter \A_WIDTH 6
     parameter \B_SIGNED 0
@@ -908,18 +908,18 @@ module \reqwalker
     parameter \Y_WIDTH 1
     connect \A \o_led
     connect \B 6'100000
-    connect \Y $eq$reqwalker.v:143$145_Y
+    connect \Y $eq$reqwalker.v:146$145_Y
   end
-  attribute \src "reqwalker.v:154.19-154.29"
-  cell $logic_not $eq$reqwalker.v:154$154
+  attribute \src "reqwalker.v:157.19-157.29"
+  cell $logic_not $eq$reqwalker.v:157$154
     parameter \A_SIGNED 0
     parameter \A_WIDTH 4
     parameter \Y_WIDTH 1
     connect \A \state
-    connect \Y $eq$reqwalker.v:154$154_Y
+    connect \Y $eq$reqwalker.v:157$154_Y
   end
-  attribute \src "reqwalker.v:161.11-161.21"
-  cell $eq $eq$reqwalker.v:161$171
+  attribute \src "reqwalker.v:164.11-164.21"
+  cell $eq $eq$reqwalker.v:164$171
     parameter \A_SIGNED 0
     parameter \A_WIDTH 4
     parameter \B_SIGNED 0
@@ -927,51 +927,51 @@ module \reqwalker
     parameter \Y_WIDTH 1
     connect \A \state
     connect \B 1'1
-    connect \Y $eq$reqwalker.v:161$171_Y
+    connect \Y $eq$reqwalker.v:164$171_Y
   end
-  attribute \src "reqwalker.v:167.11-167.34"
-  cell $eq $eq$reqwalker.v:167$182
+  attribute \src "reqwalker.v:170.11-170.34"
+  cell $eq $eq$reqwalker.v:170$182
     parameter \A_SIGNED 0
     parameter \A_WIDTH 4
     parameter \B_SIGNED 0
     parameter \B_WIDTH 5
     parameter \Y_WIDTH 1
     connect \A \state
-    connect \B $add$reqwalker.v:167$181_Y
-    connect \Y $eq$reqwalker.v:167$182_Y
+    connect \B $add$reqwalker.v:170$181_Y
+    connect \Y $eq$reqwalker.v:170$182_Y
   end
-  attribute \src "reqwalker.v:191.11-191.30"
-  cell $eq $eq$reqwalker.v:191$216
+  attribute \src "reqwalker.v:194.11-194.30"
+  cell $eq $eq$reqwalker.v:194$216
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \i_we
-    connect \B $past$reqwalker.v:191$19$0
-    connect \Y $eq$reqwalker.v:191$216_Y
+    connect \B $past$reqwalker.v:194$19$0
+    connect \Y $eq$reqwalker.v:194$216_Y
   end
-  attribute \src "reqwalker.v:192.11-192.34"
-  cell $eq $eq$reqwalker.v:192$217
+  attribute \src "reqwalker.v:195.11-195.34"
+  cell $eq $eq$reqwalker.v:195$217
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \i_addr
-    connect \B $past$reqwalker.v:192$20$0
-    connect \Y $eq$reqwalker.v:192$217_Y
+    connect \B $past$reqwalker.v:195$20$0
+    connect \Y $eq$reqwalker.v:195$217_Y
   end
-  attribute \src "reqwalker.v:194.12-194.35"
-  cell $eq $eq$reqwalker.v:194$218
+  attribute \src "reqwalker.v:197.12-197.35"
+  cell $eq $eq$reqwalker.v:197$218
     parameter \A_SIGNED 0
     parameter \A_WIDTH 32
     parameter \B_SIGNED 0
     parameter \B_WIDTH 32
     parameter \Y_WIDTH 1
     connect \A \i_data
-    connect \B $past$reqwalker.v:194$21$0
-    connect \Y $eq$reqwalker.v:194$218_Y
+    connect \B $past$reqwalker.v:197$21$0
+    connect \Y $eq$reqwalker.v:197$218_Y
   end
   attribute \src "reqwalker.v:56.11-56.25"
   cell $ge $ge$reqwalker.v:56$66
@@ -987,10 +987,10 @@ module \reqwalker
   attribute \module_not_derived 1
   attribute \src "reqwalker.v:0.0-0.0"
   cell $initstate $initstate$26
-    connect \Y $0$formal$reqwalker.v:100$25_EN[0:0]$274
+    connect \Y $0$formal$reqwalker.v:103$25_EN[0:0]$274
   end
-  attribute \src "reqwalker.v:132.10-132.24"
-  cell $le $le$reqwalker.v:132$116
+  attribute \src "reqwalker.v:135.10-135.24"
+  cell $le $le$reqwalker.v:135$116
     parameter \A_SIGNED 0
     parameter \A_WIDTH 4
     parameter \B_SIGNED 0
@@ -998,183 +998,183 @@ module \reqwalker
     parameter \Y_WIDTH 1
     connect \A \state
     connect \B 4'1011
-    connect \Y $0$formal$reqwalker.v:131$34_CHECK[0:0]$114
+    connect \Y $0$formal$reqwalker.v:134$34_CHECK[0:0]$114
   end
-  attribute \src "reqwalker.v:110.6-110.30"
-  cell $logic_and $logic_and$reqwalker.v:110$86
+  attribute \src "reqwalker.v:113.6-113.30"
+  cell $logic_and $logic_and$reqwalker.v:113$86
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $logic_not$reqwalker.v:110$85_Y
+    connect \A $logic_not$reqwalker.v:113$85_Y
     connect \B \i_cyc
-    connect \Y $logic_and$reqwalker.v:110$86_Y
+    connect \Y $logic_and$reqwalker.v:113$86_Y
   end
-  attribute \src "reqwalker.v:114.6-114.38"
-  cell $logic_and $logic_and$reqwalker.v:114$101
+  attribute \src "reqwalker.v:117.6-117.38"
+  cell $logic_and $logic_and$reqwalker.v:117$101
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $past$reqwalker.v:114$2$0
-    connect \B $past$reqwalker.v:114$3$0
-    connect \Y $logic_and$reqwalker.v:114$101_Y
+    connect \A $past$reqwalker.v:117$2$0
+    connect \B $past$reqwalker.v:117$3$0
+    connect \Y $logic_and$reqwalker.v:117$101_Y
   end
-  attribute \src "reqwalker.v:124.6-124.36"
-  cell $logic_and $logic_and$reqwalker.v:124$110
-    parameter \A_SIGNED 0
-    parameter \A_WIDTH 1
-    parameter \B_SIGNED 0
-    parameter \B_WIDTH 1
-    parameter \Y_WIDTH 1
-    connect \A \f_past_valid
-    connect \B $past$reqwalker.v:124$7$0
-    connect \Y $logic_and$reqwalker.v:124$110_Y
-  end
-  attribute \src "reqwalker.v:124.6-124.55"
-  cell $logic_and $logic_and$reqwalker.v:124$112
-    parameter \A_SIGNED 0
-    parameter \A_WIDTH 1
-    parameter \B_SIGNED 0
-    parameter \B_WIDTH 1
-    parameter \Y_WIDTH 1
-    connect \A $logic_and$reqwalker.v:124$110_Y
-    connect \B $logic_not$reqwalker.v:124$111_Y
-    connect \Y $logic_and$reqwalker.v:124$112_Y
-  end
-  attribute \src "reqwalker.v:160.7-160.39"
-  cell $logic_and $logic_and$reqwalker.v:160$168
+  attribute \src "reqwalker.v:127.6-127.36"
+  cell $logic_and $logic_and$reqwalker.v:127$110
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \f_past_valid
-    connect \B $past$reqwalker.v:160$9$0
-    connect \Y $logic_and$reqwalker.v:160$168_Y
+    connect \B $past$reqwalker.v:127$7$0
+    connect \Y $logic_and$reqwalker.v:127$110_Y
   end
-  attribute \src "reqwalker.v:160.7-160.56"
-  cell $logic_and $logic_and$reqwalker.v:160$169
+  attribute \src "reqwalker.v:127.6-127.55"
+  cell $logic_and $logic_and$reqwalker.v:127$112
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $logic_and$reqwalker.v:160$168_Y
-    connect \B $past$reqwalker.v:160$10$0
-    connect \Y $logic_and$reqwalker.v:160$169_Y
+    connect \A $logic_and$reqwalker.v:127$110_Y
+    connect \B $logic_not$reqwalker.v:127$111_Y
+    connect \Y $logic_and$reqwalker.v:127$112_Y
   end
-  attribute \src "reqwalker.v:160.7-160.77"
-  cell $logic_and $logic_and$reqwalker.v:160$170
-    parameter \A_SIGNED 0
-    parameter \A_WIDTH 1
-    parameter \B_SIGNED 0
-    parameter \B_WIDTH 1
-    parameter \Y_WIDTH 1
-    connect \A $logic_and$reqwalker.v:160$169_Y
-    connect \B $past$reqwalker.v:160$11$0
-    connect \Y $logic_and$reqwalker.v:160$170_Y
-  end
-  attribute \src "reqwalker.v:166.7-166.38"
-  cell $logic_and $logic_and$reqwalker.v:166$179
+  attribute \src "reqwalker.v:163.7-163.39"
+  cell $logic_and $logic_and$reqwalker.v:163$168
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \f_past_valid
-    connect \B $past$reqwalker.v:166$12$0
-    connect \Y $logic_and$reqwalker.v:166$179_Y
+    connect \B $past$reqwalker.v:163$9$0
+    connect \Y $logic_and$reqwalker.v:163$168_Y
   end
-  attribute \src "reqwalker.v:166.7-166.63"
-  cell $logic_and $logic_and$reqwalker.v:166$180
+  attribute \src "reqwalker.v:163.7-163.56"
+  cell $logic_and $logic_and$reqwalker.v:163$169
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $logic_and$reqwalker.v:166$179_Y
-    connect \B $past$reqwalker.v:166$13$0
-    connect \Y $logic_and$reqwalker.v:166$180_Y
+    connect \A $logic_and$reqwalker.v:163$168_Y
+    connect \B $past$reqwalker.v:163$10$0
+    connect \Y $logic_and$reqwalker.v:163$169_Y
   end
-  attribute \src "reqwalker.v:171.10-171.32"
-  cell $logic_and $logic_and$reqwalker.v:171$189
+  attribute \src "reqwalker.v:163.7-163.77"
+  cell $logic_and $logic_and$reqwalker.v:163$170
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $logic_not$reqwalker.v:171$188_Y
-    connect \B $past$reqwalker.v:171$15$0
-    connect \Y $logic_and$reqwalker.v:171$189_Y
+    connect \A $logic_and$reqwalker.v:163$169_Y
+    connect \B $past$reqwalker.v:163$11$0
+    connect \Y $logic_and$reqwalker.v:163$170_Y
   end
-  attribute \src "reqwalker.v:184.6-184.31"
-  cell $logic_and $logic_and$reqwalker.v:184$199
+  attribute \src "reqwalker.v:169.7-169.38"
+  cell $logic_and $logic_and$reqwalker.v:169$179
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $past$reqwalker.v:184$16$0
+    connect \A \f_past_valid
+    connect \B $past$reqwalker.v:169$12$0
+    connect \Y $logic_and$reqwalker.v:169$179_Y
+  end
+  attribute \src "reqwalker.v:169.7-169.63"
+  cell $logic_and $logic_and$reqwalker.v:169$180
+    parameter \A_SIGNED 0
+    parameter \A_WIDTH 1
+    parameter \B_SIGNED 0
+    parameter \B_WIDTH 1
+    parameter \Y_WIDTH 1
+    connect \A $logic_and$reqwalker.v:169$179_Y
+    connect \B $past$reqwalker.v:169$13$0
+    connect \Y $logic_and$reqwalker.v:169$180_Y
+  end
+  attribute \src "reqwalker.v:174.10-174.32"
+  cell $logic_and $logic_and$reqwalker.v:174$189
+    parameter \A_SIGNED 0
+    parameter \A_WIDTH 1
+    parameter \B_SIGNED 0
+    parameter \B_WIDTH 1
+    parameter \Y_WIDTH 1
+    connect \A $logic_not$reqwalker.v:174$188_Y
+    connect \B $past$reqwalker.v:174$15$0
+    connect \Y $logic_and$reqwalker.v:174$189_Y
+  end
+  attribute \src "reqwalker.v:187.6-187.31"
+  cell $logic_and $logic_and$reqwalker.v:187$199
+    parameter \A_SIGNED 0
+    parameter \A_WIDTH 1
+    parameter \B_SIGNED 0
+    parameter \B_WIDTH 1
+    parameter \Y_WIDTH 1
+    connect \A $past$reqwalker.v:187$16$0
     connect \B \i_cyc
-    connect \Y $logic_and$reqwalker.v:184$199_Y
+    connect \Y $logic_and$reqwalker.v:187$199_Y
   end
-  attribute \src "reqwalker.v:188.7-188.39"
-  cell $logic_and $logic_and$reqwalker.v:188$214
+  attribute \src "reqwalker.v:191.7-191.39"
+  cell $logic_and $logic_and$reqwalker.v:191$214
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \f_past_valid
-    connect \B $past$reqwalker.v:188$17$0
-    connect \Y $logic_and$reqwalker.v:188$214_Y
+    connect \B $past$reqwalker.v:191$17$0
+    connect \Y $logic_and$reqwalker.v:191$214_Y
   end
-  attribute \src "reqwalker.v:188.7-188.59"
-  cell $logic_and $logic_and$reqwalker.v:188$215
+  attribute \src "reqwalker.v:191.7-191.59"
+  cell $logic_and $logic_and$reqwalker.v:191$215
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $logic_and$reqwalker.v:188$214_Y
-    connect \B $past$reqwalker.v:188$18$0
-    connect \Y $logic_and$reqwalker.v:188$215_Y
+    connect \A $logic_and$reqwalker.v:191$214_Y
+    connect \B $past$reqwalker.v:191$18$0
+    connect \Y $logic_and$reqwalker.v:191$215_Y
   end
-  attribute \src "reqwalker.v:198.7-198.39"
-  cell $logic_and $logic_and$reqwalker.v:198$224
+  attribute \src "reqwalker.v:201.7-201.39"
+  cell $logic_and $logic_and$reqwalker.v:201$224
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \f_past_valid
-    connect \B $past$reqwalker.v:198$22$0
-    connect \Y $logic_and$reqwalker.v:198$224_Y
+    connect \B $past$reqwalker.v:201$22$0
+    connect \Y $logic_and$reqwalker.v:201$224_Y
   end
-  attribute \src "reqwalker.v:198.7-198.60"
-  cell $logic_and $logic_and$reqwalker.v:198$226
+  attribute \src "reqwalker.v:201.7-201.60"
+  cell $logic_and $logic_and$reqwalker.v:201$226
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $logic_and$reqwalker.v:198$224_Y
-    connect \B $logic_not$reqwalker.v:198$225_Y
-    connect \Y $logic_and$reqwalker.v:198$226_Y
+    connect \A $logic_and$reqwalker.v:201$224_Y
+    connect \B $logic_not$reqwalker.v:201$225_Y
+    connect \Y $logic_and$reqwalker.v:201$226_Y
   end
-  attribute \src "reqwalker.v:203.11-203.35"
-  cell $logic_and $logic_and$reqwalker.v:203$232
+  attribute \src "reqwalker.v:206.11-206.35"
+  cell $logic_and $logic_and$reqwalker.v:206$232
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $logic_not$reqwalker.v:171$188_Y
-    connect \B $past$reqwalker.v:203$24$0
-    connect \Y $logic_and$reqwalker.v:203$232_Y
+    connect \A $logic_not$reqwalker.v:174$188_Y
+    connect \B $past$reqwalker.v:206$24$0
+    connect \Y $logic_and$reqwalker.v:206$232_Y
   end
   attribute \src "reqwalker.v:54.7-54.24"
   cell $logic_and $logic_and$reqwalker.v:54$63
@@ -1195,22 +1195,22 @@ module \reqwalker
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $logic_and$reqwalker.v:54$63_Y
-    connect \B $0$past$reqwalker.v:160$11$0[0:0]$163
+    connect \B $0$past$reqwalker.v:163$11$0[0:0]$163
     connect \Y $logic_and$reqwalker.v:54$65_Y
   end
-  attribute \src "reqwalker.v:80.12-80.31"
-  cell $logic_and $logic_and$reqwalker.v:80$73
+  attribute \src "reqwalker.v:83.12-83.31"
+  cell $logic_and $logic_and$reqwalker.v:83$73
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \i_stb
-    connect \B $0$past$reqwalker.v:160$11$0[0:0]$163
+    connect \B $0$past$reqwalker.v:163$11$0[0:0]$163
     connect \Y $0\o_ack[0:0]
   end
-  attribute \src "reqwalker.v:82.19-82.33"
-  cell $logic_and $logic_and$reqwalker.v:82$74
+  attribute \src "reqwalker.v:85.19-85.33"
+  cell $logic_and $logic_and$reqwalker.v:85$74
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
@@ -1220,64 +1220,64 @@ module \reqwalker
     connect \B \i_we
     connect \Y \o_stall
   end
-  attribute \src "reqwalker.v:100.17-100.23"
-  cell $logic_not $logic_not$reqwalker.v:100$275
+  attribute \src "reqwalker.v:103.17-103.23"
+  cell $logic_not $logic_not$reqwalker.v:103$275
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \i_cyc
-    connect \Y $0$formal$reqwalker.v:100$25_CHECK[0:0]$273
+    connect \Y $0$formal$reqwalker.v:103$25_CHECK[0:0]$273
   end
-  attribute \src "reqwalker.v:105.10-105.16"
-  cell $logic_not $logic_not$reqwalker.v:105$80
+  attribute \src "reqwalker.v:108.10-108.16"
+  cell $logic_not $logic_not$reqwalker.v:108$80
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \i_stb
-    connect \Y $logic_not$reqwalker.v:105$80_Y
+    connect \Y $logic_not$reqwalker.v:108$80_Y
   end
-  attribute \src "reqwalker.v:110.7-110.20"
-  cell $logic_not $logic_not$reqwalker.v:110$85
+  attribute \src "reqwalker.v:113.7-113.20"
+  cell $logic_not $logic_not$reqwalker.v:113$85
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $past$reqwalker.v:110$1$0
-    connect \Y $logic_not$reqwalker.v:110$85_Y
+    connect \A $past$reqwalker.v:113$1$0
+    connect \Y $logic_not$reqwalker.v:113$85_Y
   end
-  attribute \src "reqwalker.v:124.39-124.54"
-  cell $logic_not $logic_not$reqwalker.v:124$111
+  attribute \src "reqwalker.v:127.39-127.54"
+  cell $logic_not $logic_not$reqwalker.v:127$111
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $past$reqwalker.v:124$8$0
-    connect \Y $logic_not$reqwalker.v:124$111_Y
+    connect \A $past$reqwalker.v:127$8$0
+    connect \Y $logic_not$reqwalker.v:127$111_Y
   end
-  attribute \src "reqwalker.v:160.67-160.75"
-  cell $logic_not $logic_not$reqwalker.v:160$172
+  attribute \src "reqwalker.v:163.67-163.75"
+  cell $logic_not $logic_not$reqwalker.v:163$172
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \o_stall
-    connect \Y $0$past$reqwalker.v:160$11$0[0:0]$163
+    connect \Y $0$past$reqwalker.v:163$11$0[0:0]$163
   end
-  attribute \src "reqwalker.v:171.11-171.16"
-  cell $logic_not $logic_not$reqwalker.v:171$188
+  attribute \src "reqwalker.v:174.11-174.16"
+  cell $logic_not $logic_not$reqwalker.v:174$188
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \busy
-    connect \Y $logic_not$reqwalker.v:171$188_Y
+    connect \Y $logic_not$reqwalker.v:174$188_Y
   end
-  attribute \src "reqwalker.v:198.44-198.59"
-  cell $logic_not $logic_not$reqwalker.v:198$225
+  attribute \src "reqwalker.v:201.44-201.59"
+  cell $logic_not $logic_not$reqwalker.v:201$225
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $past$reqwalker.v:198$23$0
-    connect \Y $logic_not$reqwalker.v:198$225_Y
+    connect \A $past$reqwalker.v:201$23$0
+    connect \Y $logic_not$reqwalker.v:201$225_Y
   end
-  attribute \src "reqwalker.v:166.49-166.61"
-  cell $lt $lt$reqwalker.v:166$183
+  attribute \src "reqwalker.v:169.49-169.61"
+  cell $lt $lt$reqwalker.v:169$183
     parameter \A_SIGNED 0
     parameter \A_WIDTH 4
     parameter \B_SIGNED 0
@@ -1285,18 +1285,18 @@ module \reqwalker
     parameter \Y_WIDTH 1
     connect \A \state
     connect \B 4'1011
-    connect \Y $0$past$reqwalker.v:166$13$0[0:0]$175
+    connect \Y $0$past$reqwalker.v:169$13$0[0:0]$175
   end
-  attribute \src "reqwalker.v:154.10-154.30"
-  cell $ne $ne$reqwalker.v:154$155
+  attribute \src "reqwalker.v:157.10-157.30"
+  cell $ne $ne$reqwalker.v:157$155
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \busy
-    connect \B $eq$reqwalker.v:154$154_Y
-    connect \Y $0$formal$reqwalker.v:153$46_CHECK[0:0]$152
+    connect \B $eq$reqwalker.v:157$154_Y
+    connect \Y $0$formal$reqwalker.v:156$46_CHECK[0:0]$152
   end
   attribute \src "reqwalker.v:58.11-58.21"
   cell $reduce_bool $ne$reqwalker.v:58$67
@@ -1306,423 +1306,423 @@ module \reqwalker
     connect \A \state
     connect \Y \busy
   end
-  attribute \src "reqwalker.v:201.2-203.38"
+  attribute \src "reqwalker.v:204.2-206.38"
   cell $dff $procdff$643
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \busy
-    connect \Q $past$reqwalker.v:203$24$0
+    connect \Q $past$reqwalker.v:206$24$0
   end
-  attribute \src "reqwalker.v:201.2-203.38"
+  attribute \src "reqwalker.v:204.2-206.38"
   cell $dff $procdff$644
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:202$61_CHECK[0:0]$229
-    connect \Q $formal$reqwalker.v:202$61_CHECK
+    connect \D $0$formal$reqwalker.v:205$61_CHECK[0:0]$229
+    connect \Q $formal$reqwalker.v:205$61_CHECK
   end
-  attribute \src "reqwalker.v:201.2-203.38"
+  attribute \src "reqwalker.v:204.2-206.38"
   cell $dff $procdff$645
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:170$51_EN[0:0]$187
-    connect \Q $formal$reqwalker.v:202$61_EN
+    connect \D $0$formal$reqwalker.v:173$51_EN[0:0]$187
+    connect \Q $formal$reqwalker.v:205$61_EN
   end
-  attribute \src "reqwalker.v:197.2-199.18"
+  attribute \src "reqwalker.v:200.2-202.18"
   cell $dff $procdff$646
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \i_stb
-    connect \Q $past$reqwalker.v:198$22$0
+    connect \Q $past$reqwalker.v:201$22$0
   end
-  attribute \src "reqwalker.v:197.2-199.18"
+  attribute \src "reqwalker.v:200.2-202.18"
   cell $dff $procdff$647
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \o_stall
-    connect \Q $past$reqwalker.v:198$23$0
+    connect \Q $past$reqwalker.v:201$23$0
   end
-  attribute \src "reqwalker.v:197.2-199.18"
+  attribute \src "reqwalker.v:200.2-202.18"
   cell $dff $procdff$648
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:198$60_CHECK[0:0]$222
-    connect \Q $formal$reqwalker.v:198$60_CHECK
+    connect \D $0$formal$reqwalker.v:201$60_CHECK[0:0]$222
+    connect \Q $formal$reqwalker.v:201$60_CHECK
   end
-  attribute \src "reqwalker.v:197.2-199.18"
+  attribute \src "reqwalker.v:200.2-202.18"
   cell $dff $procdff$649
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:198$60_EN[0:0]$223
-    connect \Q $formal$reqwalker.v:198$60_EN
+    connect \D $0$formal$reqwalker.v:201$60_EN[0:0]$223
+    connect \Q $formal$reqwalker.v:201$60_EN
   end
-  attribute \src "reqwalker.v:187.2-195.6"
+  attribute \src "reqwalker.v:190.2-198.6"
   cell $dff $procdff$650
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \i_stb
-    connect \Q $past$reqwalker.v:188$17$0
+    connect \Q $past$reqwalker.v:191$17$0
   end
-  attribute \src "reqwalker.v:187.2-195.6"
+  attribute \src "reqwalker.v:190.2-198.6"
   cell $dff $procdff$651
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \o_stall
-    connect \Q $past$reqwalker.v:188$18$0
+    connect \Q $past$reqwalker.v:191$18$0
   end
-  attribute \src "reqwalker.v:187.2-195.6"
+  attribute \src "reqwalker.v:190.2-198.6"
   cell $dff $procdff$652
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \i_we
-    connect \Q $past$reqwalker.v:191$19$0
+    connect \Q $past$reqwalker.v:194$19$0
   end
-  attribute \src "reqwalker.v:187.2-195.6"
+  attribute \src "reqwalker.v:190.2-198.6"
   cell $dff $procdff$653
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \i_addr
-    connect \Q $past$reqwalker.v:192$20$0
+    connect \Q $past$reqwalker.v:195$20$0
   end
-  attribute \src "reqwalker.v:187.2-195.6"
+  attribute \src "reqwalker.v:190.2-198.6"
   cell $dff $procdff$654
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 32
     connect \CLK \i_clk
     connect \D \i_data
-    connect \Q $past$reqwalker.v:194$21$0
+    connect \Q $past$reqwalker.v:197$21$0
   end
-  attribute \src "reqwalker.v:187.2-195.6"
+  attribute \src "reqwalker.v:190.2-198.6"
   cell $dff $procdff$655
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:188$56_CHECK[0:0]$206
-    connect \Q $formal$reqwalker.v:188$56_CHECK
+    connect \D $0$formal$reqwalker.v:191$56_CHECK[0:0]$206
+    connect \Q $formal$reqwalker.v:191$56_CHECK
   end
-  attribute \src "reqwalker.v:187.2-195.6"
+  attribute \src "reqwalker.v:190.2-198.6"
   cell $dff $procdff$656
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:188$56_EN[0:0]$207
-    connect \Q $formal$reqwalker.v:188$56_EN
+    connect \D $0$formal$reqwalker.v:191$56_EN[0:0]$207
+    connect \Q $formal$reqwalker.v:191$56_EN
   end
-  attribute \src "reqwalker.v:187.2-195.6"
+  attribute \src "reqwalker.v:190.2-198.6"
   cell $dff $procdff$657
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:190$57_CHECK[0:0]$208
-    connect \Q $formal$reqwalker.v:190$57_CHECK
+    connect \D $0$formal$reqwalker.v:193$57_CHECK[0:0]$208
+    connect \Q $formal$reqwalker.v:193$57_CHECK
   end
-  attribute \src "reqwalker.v:187.2-195.6"
+  attribute \src "reqwalker.v:190.2-198.6"
   cell $dff $procdff$659
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:191$58_CHECK[0:0]$210
-    connect \Q $formal$reqwalker.v:191$58_CHECK
+    connect \D $0$formal$reqwalker.v:194$58_CHECK[0:0]$210
+    connect \Q $formal$reqwalker.v:194$58_CHECK
   end
-  attribute \src "reqwalker.v:187.2-195.6"
+  attribute \src "reqwalker.v:190.2-198.6"
   cell $dff $procdff$661
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:193$59_CHECK[0:0]$212
-    connect \Q $formal$reqwalker.v:193$59_CHECK
+    connect \D $0$formal$reqwalker.v:196$59_CHECK[0:0]$212
+    connect \Q $formal$reqwalker.v:196$59_CHECK
   end
-  attribute \src "reqwalker.v:187.2-195.6"
+  attribute \src "reqwalker.v:190.2-198.6"
   cell $dff $procdff$662
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:193$59_EN[0:0]$213
-    connect \Q $formal$reqwalker.v:193$59_EN
+    connect \D $0$formal$reqwalker.v:196$59_EN[0:0]$213
+    connect \Q $formal$reqwalker.v:196$59_EN
   end
-  attribute \src "reqwalker.v:183.2-185.18"
+  attribute \src "reqwalker.v:186.2-188.18"
   cell $dff $procdff$663
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \i_cyc
-    connect \Q $past$reqwalker.v:184$16$0
+    connect \Q $past$reqwalker.v:187$16$0
   end
-  attribute \src "reqwalker.v:183.2-185.18"
+  attribute \src "reqwalker.v:186.2-188.18"
   cell $dff $procdff$664
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:184$55_CHECK[0:0]$197
-    connect \Q $formal$reqwalker.v:184$55_CHECK
+    connect \D $0$formal$reqwalker.v:187$55_CHECK[0:0]$197
+    connect \Q $formal$reqwalker.v:187$55_CHECK
   end
-  attribute \src "reqwalker.v:183.2-185.18"
+  attribute \src "reqwalker.v:186.2-188.18"
   cell $dff $procdff$665
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:184$55_EN[0:0]$198
-    connect \Q $formal$reqwalker.v:184$55_EN
+    connect \D $0$formal$reqwalker.v:187$55_EN[0:0]$198
+    connect \Q $formal$reqwalker.v:187$55_EN
   end
-  attribute \src "reqwalker.v:169.2-171.34"
+  attribute \src "reqwalker.v:172.2-174.34"
   cell $dff $procdff$666
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \busy
-    connect \Q $past$reqwalker.v:171$15$0
+    connect \Q $past$reqwalker.v:174$15$0
   end
-  attribute \src "reqwalker.v:169.2-171.34"
+  attribute \src "reqwalker.v:172.2-174.34"
   cell $dff $procdff$667
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:170$51_CHECK[0:0]$186
-    connect \Q $formal$reqwalker.v:170$51_CHECK
+    connect \D $0$formal$reqwalker.v:173$51_CHECK[0:0]$186
+    connect \Q $formal$reqwalker.v:173$51_CHECK
   end
-  attribute \src "reqwalker.v:165.2-167.36"
+  attribute \src "reqwalker.v:168.2-170.36"
   cell $dff $procdff$669
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \busy
-    connect \Q $past$reqwalker.v:166$12$0
+    connect \Q $past$reqwalker.v:169$12$0
   end
-  attribute \src "reqwalker.v:165.2-167.36"
+  attribute \src "reqwalker.v:168.2-170.36"
   cell $dff $procdff$670
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$past$reqwalker.v:166$13$0[0:0]$175
-    connect \Q $past$reqwalker.v:166$13$0
+    connect \D $0$past$reqwalker.v:169$13$0[0:0]$175
+    connect \Q $past$reqwalker.v:169$13$0
   end
-  attribute \src "reqwalker.v:165.2-167.36"
+  attribute \src "reqwalker.v:168.2-170.36"
   cell $dff $procdff$671
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 4
     connect \CLK \i_clk
     connect \D \state
-    connect \Q $past$reqwalker.v:167$14$0
+    connect \Q $past$reqwalker.v:170$14$0
   end
-  attribute \src "reqwalker.v:165.2-167.36"
+  attribute \src "reqwalker.v:168.2-170.36"
   cell $dff $procdff$672
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:166$50_CHECK[0:0]$177
-    connect \Q $formal$reqwalker.v:166$50_CHECK
+    connect \D $0$formal$reqwalker.v:169$50_CHECK[0:0]$177
+    connect \Q $formal$reqwalker.v:169$50_CHECK
   end
-  attribute \src "reqwalker.v:165.2-167.36"
+  attribute \src "reqwalker.v:168.2-170.36"
   cell $dff $procdff$673
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:166$50_EN[0:0]$178
-    connect \Q $formal$reqwalker.v:166$50_EN
+    connect \D $0$formal$reqwalker.v:169$50_EN[0:0]$178
+    connect \Q $formal$reqwalker.v:169$50_EN
   end
-  attribute \src "reqwalker.v:159.2-163.6"
+  attribute \src "reqwalker.v:162.2-166.6"
   cell $dff $procdff$674
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \i_stb
-    connect \Q $past$reqwalker.v:160$9$0
+    connect \Q $past$reqwalker.v:163$9$0
   end
-  attribute \src "reqwalker.v:159.2-163.6"
+  attribute \src "reqwalker.v:162.2-166.6"
   cell $dff $procdff$675
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \i_we
-    connect \Q $past$reqwalker.v:160$10$0
+    connect \Q $past$reqwalker.v:163$10$0
   end
-  attribute \src "reqwalker.v:159.2-163.6"
+  attribute \src "reqwalker.v:162.2-166.6"
   cell $dff $procdff$676
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$past$reqwalker.v:160$11$0[0:0]$163
-    connect \Q $past$reqwalker.v:160$11$0
+    connect \D $0$past$reqwalker.v:163$11$0[0:0]$163
+    connect \Q $past$reqwalker.v:163$11$0
   end
-  attribute \src "reqwalker.v:159.2-163.6"
+  attribute \src "reqwalker.v:162.2-166.6"
   cell $dff $procdff$677
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:160$48_CHECK[0:0]$164
-    connect \Q $formal$reqwalker.v:160$48_CHECK
+    connect \D $0$formal$reqwalker.v:163$48_CHECK[0:0]$164
+    connect \Q $formal$reqwalker.v:163$48_CHECK
   end
-  attribute \src "reqwalker.v:159.2-163.6"
+  attribute \src "reqwalker.v:162.2-166.6"
   cell $dff $procdff$678
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:160$48_EN[0:0]$165
-    connect \Q $formal$reqwalker.v:160$48_EN
+    connect \D $0$formal$reqwalker.v:163$48_EN[0:0]$165
+    connect \Q $formal$reqwalker.v:163$48_EN
   end
-  attribute \src "reqwalker.v:159.2-163.6"
+  attribute \src "reqwalker.v:162.2-166.6"
   cell $dff $procdff$679
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:161$49_CHECK[0:0]$166
-    connect \Q $formal$reqwalker.v:161$49_CHECK
+    connect \D $0$formal$reqwalker.v:164$49_CHECK[0:0]$166
+    connect \Q $formal$reqwalker.v:164$49_CHECK
   end
-  attribute \src "reqwalker.v:123.2-125.17"
+  attribute \src "reqwalker.v:126.2-128.17"
   cell $dff $procdff$681
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \i_stb
-    connect \Q $past$reqwalker.v:124$7$0
+    connect \Q $past$reqwalker.v:127$7$0
   end
-  attribute \src "reqwalker.v:123.2-125.17"
+  attribute \src "reqwalker.v:126.2-128.17"
   cell $dff $procdff$682
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \o_stall
-    connect \Q $past$reqwalker.v:124$8$0
+    connect \Q $past$reqwalker.v:127$8$0
   end
-  attribute \src "reqwalker.v:123.2-125.17"
+  attribute \src "reqwalker.v:126.2-128.17"
   cell $dff $procdff$683
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:124$33_CHECK[0:0]$108
-    connect \Q $formal$reqwalker.v:124$33_CHECK
+    connect \D $0$formal$reqwalker.v:127$33_CHECK[0:0]$108
+    connect \Q $formal$reqwalker.v:127$33_CHECK
   end
-  attribute \src "reqwalker.v:123.2-125.17"
+  attribute \src "reqwalker.v:126.2-128.17"
   cell $dff $procdff$684
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:124$33_EN[0:0]$109
-    connect \Q $formal$reqwalker.v:124$33_EN
+    connect \D $0$formal$reqwalker.v:127$33_EN[0:0]$109
+    connect \Q $formal$reqwalker.v:127$33_EN
   end
-  attribute \src "reqwalker.v:113.2-121.5"
+  attribute \src "reqwalker.v:116.2-124.5"
   cell $dff $procdff$685
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \i_stb
-    connect \Q $past$reqwalker.v:114$2$0
+    connect \Q $past$reqwalker.v:117$2$0
   end
-  attribute \src "reqwalker.v:113.2-121.5"
+  attribute \src "reqwalker.v:116.2-124.5"
   cell $dff $procdff$686
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \o_stall
-    connect \Q $past$reqwalker.v:114$3$0
+    connect \Q $past$reqwalker.v:117$3$0
   end
-  attribute \src "reqwalker.v:113.2-121.5"
+  attribute \src "reqwalker.v:116.2-124.5"
   cell $dff $procdff$687
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \i_we
-    connect \Q $past$reqwalker.v:117$4$0
+    connect \Q $past$reqwalker.v:120$4$0
   end
-  attribute \src "reqwalker.v:113.2-121.5"
+  attribute \src "reqwalker.v:116.2-124.5"
   cell $dff $procdff$688
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \i_addr
-    connect \Q $past$reqwalker.v:118$5$0
+    connect \Q $past$reqwalker.v:121$5$0
   end
-  attribute \src "reqwalker.v:113.2-121.5"
+  attribute \src "reqwalker.v:116.2-124.5"
   cell $dff $procdff$689
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 32
     connect \CLK \i_clk
     connect \D \i_data
-    connect \Q $past$reqwalker.v:120$6$0
+    connect \Q $past$reqwalker.v:123$6$0
   end
-  attribute \src "reqwalker.v:113.2-121.5"
+  attribute \src "reqwalker.v:116.2-124.5"
   cell $dff $procdff$690
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:115$29_CHECK[0:0]$93
-    connect \Q $formal$reqwalker.v:115$29_CHECK
+    connect \D $0$formal$reqwalker.v:118$29_CHECK[0:0]$93
+    connect \Q $formal$reqwalker.v:118$29_CHECK
   end
-  attribute \src "reqwalker.v:113.2-121.5"
+  attribute \src "reqwalker.v:116.2-124.5"
   cell $dff $procdff$691
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:115$29_EN[0:0]$94
-    connect \Q $formal$reqwalker.v:115$29_EN
+    connect \D $0$formal$reqwalker.v:118$29_EN[0:0]$94
+    connect \Q $formal$reqwalker.v:118$29_EN
   end
-  attribute \src "reqwalker.v:113.2-121.5"
+  attribute \src "reqwalker.v:116.2-124.5"
   cell $dff $procdff$692
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:116$30_CHECK[0:0]$95
-    connect \Q $formal$reqwalker.v:116$30_CHECK
+    connect \D $0$formal$reqwalker.v:119$30_CHECK[0:0]$95
+    connect \Q $formal$reqwalker.v:119$30_CHECK
   end
-  attribute \src "reqwalker.v:113.2-121.5"
+  attribute \src "reqwalker.v:116.2-124.5"
   cell $dff $procdff$694
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:117$31_CHECK[0:0]$97
-    connect \Q $formal$reqwalker.v:117$31_CHECK
+    connect \D $0$formal$reqwalker.v:120$31_CHECK[0:0]$97
+    connect \Q $formal$reqwalker.v:120$31_CHECK
   end
-  attribute \src "reqwalker.v:113.2-121.5"
+  attribute \src "reqwalker.v:116.2-124.5"
   cell $dff $procdff$696
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:119$32_CHECK[0:0]$99
-    connect \Q $formal$reqwalker.v:119$32_CHECK
+    connect \D $0$formal$reqwalker.v:122$32_CHECK[0:0]$99
+    connect \Q $formal$reqwalker.v:122$32_CHECK
   end
-  attribute \src "reqwalker.v:113.2-121.5"
+  attribute \src "reqwalker.v:116.2-124.5"
   cell $dff $procdff$697
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:119$32_EN[0:0]$100
-    connect \Q $formal$reqwalker.v:119$32_EN
+    connect \D $0$formal$reqwalker.v:122$32_EN[0:0]$100
+    connect \Q $formal$reqwalker.v:122$32_EN
   end
-  attribute \src "reqwalker.v:109.2-111.17"
+  attribute \src "reqwalker.v:112.2-114.17"
   cell $dff $procdff$698
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
     connect \D \i_cyc
-    connect \Q $past$reqwalker.v:110$1$0
+    connect \Q $past$reqwalker.v:113$1$0
   end
-  attribute \src "reqwalker.v:109.2-111.17"
+  attribute \src "reqwalker.v:112.2-114.17"
   cell $dff $procdff$699
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:110$28_CHECK[0:0]$83
-    connect \Q $formal$reqwalker.v:110$28_CHECK
+    connect \D $0$formal$reqwalker.v:113$28_CHECK[0:0]$83
+    connect \Q $formal$reqwalker.v:113$28_CHECK
   end
-  attribute \src "reqwalker.v:109.2-111.17"
+  attribute \src "reqwalker.v:112.2-114.17"
   cell $dff $procdff$700
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
     connect \CLK \i_clk
-    connect \D $0$formal$reqwalker.v:110$28_EN[0:0]$84
-    connect \Q $formal$reqwalker.v:110$28_EN
+    connect \D $0$formal$reqwalker.v:113$28_EN[0:0]$84
+    connect \Q $formal$reqwalker.v:113$28_EN
   end
-  attribute \src "reqwalker.v:93.2-94.24"
+  attribute \src "reqwalker.v:96.2-97.24"
   cell $dff $procdff$701
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
@@ -1730,7 +1730,7 @@ module \reqwalker
     connect \D 1'1
     connect \Q \f_past_valid
   end
-  attribute \src "reqwalker.v:79.2-80.32"
+  attribute \src "reqwalker.v:82.2-83.32"
   cell $dff $procdff$702
     parameter \CLK_POLARITY 1'1
     parameter \WIDTH 1
@@ -1746,71 +1746,71 @@ module \reqwalker
     connect \D $0\state[3:0]
     connect \Q \state
   end
-  attribute \src "reqwalker.v:202.6-202.18|reqwalker.v:202.3-203.38"
+  attribute \src "reqwalker.v:205.6-205.18|reqwalker.v:205.3-206.38"
   cell $mux $procmux$314
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
     connect \S \f_past_valid
-    connect \Y $0$formal$reqwalker.v:170$51_EN[0:0]$187
+    connect \Y $0$formal$reqwalker.v:173$51_EN[0:0]$187
   end
-  attribute \src "reqwalker.v:202.6-202.18|reqwalker.v:202.3-203.38"
+  attribute \src "reqwalker.v:205.6-205.18|reqwalker.v:205.3-206.38"
   cell $mux $procmux$316
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $logic_and$reqwalker.v:203$232_Y
+    connect \B $logic_and$reqwalker.v:206$232_Y
     connect \S \f_past_valid
-    connect \Y $0$formal$reqwalker.v:202$61_CHECK[0:0]$229
+    connect \Y $0$formal$reqwalker.v:205$61_CHECK[0:0]$229
   end
-  attribute \src "reqwalker.v:198.7-198.60|reqwalker.v:198.3-199.18"
+  attribute \src "reqwalker.v:201.7-201.60|reqwalker.v:201.3-202.18"
   cell $mux $procmux$318
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
-    connect \S $logic_and$reqwalker.v:198$226_Y
-    connect \Y $0$formal$reqwalker.v:198$60_EN[0:0]$223
+    connect \S $logic_and$reqwalker.v:201$226_Y
+    connect \Y $0$formal$reqwalker.v:201$60_EN[0:0]$223
   end
-  attribute \src "reqwalker.v:198.7-198.60|reqwalker.v:198.3-199.18"
+  attribute \src "reqwalker.v:201.7-201.60|reqwalker.v:201.3-202.18"
   cell $mux $procmux$320
     parameter \WIDTH 1
     connect \A 1'x
     connect \B \o_ack
-    connect \S $logic_and$reqwalker.v:198$226_Y
-    connect \Y $0$formal$reqwalker.v:198$60_CHECK[0:0]$222
+    connect \S $logic_and$reqwalker.v:201$226_Y
+    connect \Y $0$formal$reqwalker.v:201$60_CHECK[0:0]$222
   end
-  attribute \src "reqwalker.v:188.7-188.59|reqwalker.v:188.3-195.6"
+  attribute \src "reqwalker.v:191.7-191.59|reqwalker.v:191.3-198.6"
   cell $mux $procmux$322
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
-    connect \S $logic_and$reqwalker.v:188$215_Y
-    connect \Y $0$formal$reqwalker.v:188$56_EN[0:0]$207
+    connect \S $logic_and$reqwalker.v:191$215_Y
+    connect \Y $0$formal$reqwalker.v:191$56_EN[0:0]$207
   end
-  attribute \src "reqwalker.v:188.7-188.59|reqwalker.v:188.3-195.6"
+  attribute \src "reqwalker.v:191.7-191.59|reqwalker.v:191.3-198.6"
   cell $mux $procmux$324
     parameter \WIDTH 1
     connect \A 1'x
     connect \B \i_stb
-    connect \S $logic_and$reqwalker.v:188$215_Y
-    connect \Y $0$formal$reqwalker.v:188$56_CHECK[0:0]$206
+    connect \S $logic_and$reqwalker.v:191$215_Y
+    connect \Y $0$formal$reqwalker.v:191$56_CHECK[0:0]$206
   end
-  attribute \src "reqwalker.v:188.7-188.59|reqwalker.v:188.3-195.6"
+  attribute \src "reqwalker.v:191.7-191.59|reqwalker.v:191.3-198.6"
   cell $mux $procmux$328
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:191$216_Y
-    connect \S $logic_and$reqwalker.v:188$215_Y
-    connect \Y $0$formal$reqwalker.v:190$57_CHECK[0:0]$208
+    connect \B $eq$reqwalker.v:194$216_Y
+    connect \S $logic_and$reqwalker.v:191$215_Y
+    connect \Y $0$formal$reqwalker.v:193$57_CHECK[0:0]$208
   end
-  attribute \src "reqwalker.v:188.7-188.59|reqwalker.v:188.3-195.6"
+  attribute \src "reqwalker.v:191.7-191.59|reqwalker.v:191.3-198.6"
   cell $mux $procmux$332
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:192$217_Y
-    connect \S $logic_and$reqwalker.v:188$215_Y
-    connect \Y $0$formal$reqwalker.v:191$58_CHECK[0:0]$210
+    connect \B $eq$reqwalker.v:195$217_Y
+    connect \S $logic_and$reqwalker.v:191$215_Y
+    connect \Y $0$formal$reqwalker.v:194$58_CHECK[0:0]$210
   end
-  attribute \src "reqwalker.v:193.7-193.11|reqwalker.v:193.4-194.37"
+  attribute \src "reqwalker.v:196.7-196.11|reqwalker.v:196.4-197.37"
   cell $mux $procmux$334
     parameter \WIDTH 1
     connect \A 1'0
@@ -1818,135 +1818,135 @@ module \reqwalker
     connect \S \i_we
     connect \Y $procmux$334_Y
   end
-  attribute \src "reqwalker.v:188.7-188.59|reqwalker.v:188.3-195.6"
+  attribute \src "reqwalker.v:191.7-191.59|reqwalker.v:191.3-198.6"
   cell $mux $procmux$336
     parameter \WIDTH 1
     connect \A 1'0
     connect \B $procmux$334_Y
-    connect \S $logic_and$reqwalker.v:188$215_Y
-    connect \Y $0$formal$reqwalker.v:193$59_EN[0:0]$213
+    connect \S $logic_and$reqwalker.v:191$215_Y
+    connect \Y $0$formal$reqwalker.v:196$59_EN[0:0]$213
   end
-  attribute \src "reqwalker.v:193.7-193.11|reqwalker.v:193.4-194.37"
+  attribute \src "reqwalker.v:196.7-196.11|reqwalker.v:196.4-197.37"
   cell $mux $procmux$338
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:194$218_Y
+    connect \B $eq$reqwalker.v:197$218_Y
     connect \S \i_we
     connect \Y $procmux$338_Y
   end
-  attribute \src "reqwalker.v:188.7-188.59|reqwalker.v:188.3-195.6"
+  attribute \src "reqwalker.v:191.7-191.59|reqwalker.v:191.3-198.6"
   cell $mux $procmux$340
     parameter \WIDTH 1
     connect \A 1'x
     connect \B $procmux$338_Y
-    connect \S $logic_and$reqwalker.v:188$215_Y
-    connect \Y $0$formal$reqwalker.v:193$59_CHECK[0:0]$212
+    connect \S $logic_and$reqwalker.v:191$215_Y
+    connect \Y $0$formal$reqwalker.v:196$59_CHECK[0:0]$212
   end
-  attribute \src "reqwalker.v:184.6-184.31|reqwalker.v:184.3-185.18"
+  attribute \src "reqwalker.v:187.6-187.31|reqwalker.v:187.3-188.18"
   cell $mux $procmux$342
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
-    connect \S $logic_and$reqwalker.v:184$199_Y
-    connect \Y $0$formal$reqwalker.v:184$55_EN[0:0]$198
+    connect \S $logic_and$reqwalker.v:187$199_Y
+    connect \Y $0$formal$reqwalker.v:187$55_EN[0:0]$198
   end
-  attribute \src "reqwalker.v:184.6-184.31|reqwalker.v:184.3-185.18"
+  attribute \src "reqwalker.v:187.6-187.31|reqwalker.v:187.3-188.18"
   cell $mux $procmux$344
     parameter \WIDTH 1
     connect \A 1'x
     connect \B \i_stb
-    connect \S $logic_and$reqwalker.v:184$199_Y
-    connect \Y $0$formal$reqwalker.v:184$55_CHECK[0:0]$197
+    connect \S $logic_and$reqwalker.v:187$199_Y
+    connect \Y $0$formal$reqwalker.v:187$55_CHECK[0:0]$197
   end
-  attribute \src "reqwalker.v:179.6-179.12|reqwalker.v:179.3-180.19"
+  attribute \src "reqwalker.v:182.6-182.12|reqwalker.v:182.3-183.19"
   cell $mux $procmux$346
     parameter \WIDTH 1
     connect \A 1'1
     connect \B 1'0
     connect \S \i_cyc
-    connect \Y $0$formal$reqwalker.v:104$27_EN[0:0]$78
+    connect \Y $0$formal$reqwalker.v:107$27_EN[0:0]$78
   end
-  attribute \src "reqwalker.v:179.6-179.12|reqwalker.v:179.3-180.19"
+  attribute \src "reqwalker.v:182.6-182.12|reqwalker.v:182.3-183.19"
   cell $mux $procmux$348
     parameter \WIDTH 1
-    connect \A $logic_not$reqwalker.v:105$80_Y
+    connect \A $logic_not$reqwalker.v:108$80_Y
     connect \B 1'x
     connect \S \i_cyc
-    connect \Y $0$formal$reqwalker.v:104$27_CHECK[0:0]$77
+    connect \Y $0$formal$reqwalker.v:107$27_CHECK[0:0]$77
   end
-  attribute \src "reqwalker.v:170.7-170.19|reqwalker.v:170.3-171.34"
+  attribute \src "reqwalker.v:173.7-173.19|reqwalker.v:173.3-174.34"
   cell $mux $procmux$352
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $logic_and$reqwalker.v:171$189_Y
+    connect \B $logic_and$reqwalker.v:174$189_Y
     connect \S \f_past_valid
-    connect \Y $0$formal$reqwalker.v:170$51_CHECK[0:0]$186
+    connect \Y $0$formal$reqwalker.v:173$51_CHECK[0:0]$186
   end
-  attribute \src "reqwalker.v:166.7-166.63|reqwalker.v:166.3-167.36"
+  attribute \src "reqwalker.v:169.7-169.63|reqwalker.v:169.3-170.36"
   cell $mux $procmux$354
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
-    connect \S $logic_and$reqwalker.v:166$180_Y
-    connect \Y $0$formal$reqwalker.v:166$50_EN[0:0]$178
+    connect \S $logic_and$reqwalker.v:169$180_Y
+    connect \Y $0$formal$reqwalker.v:169$50_EN[0:0]$178
   end
-  attribute \src "reqwalker.v:166.7-166.63|reqwalker.v:166.3-167.36"
+  attribute \src "reqwalker.v:169.7-169.63|reqwalker.v:169.3-170.36"
   cell $mux $procmux$356
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:167$182_Y
-    connect \S $logic_and$reqwalker.v:166$180_Y
-    connect \Y $0$formal$reqwalker.v:166$50_CHECK[0:0]$177
+    connect \B $eq$reqwalker.v:170$182_Y
+    connect \S $logic_and$reqwalker.v:169$180_Y
+    connect \Y $0$formal$reqwalker.v:169$50_CHECK[0:0]$177
   end
-  attribute \src "reqwalker.v:160.7-160.77|reqwalker.v:160.3-163.6"
+  attribute \src "reqwalker.v:163.7-163.77|reqwalker.v:163.3-166.6"
   cell $mux $procmux$358
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
-    connect \S $logic_and$reqwalker.v:160$170_Y
-    connect \Y $0$formal$reqwalker.v:160$48_EN[0:0]$165
+    connect \S $logic_and$reqwalker.v:163$170_Y
+    connect \Y $0$formal$reqwalker.v:163$48_EN[0:0]$165
   end
-  attribute \src "reqwalker.v:160.7-160.77|reqwalker.v:160.3-163.6"
+  attribute \src "reqwalker.v:163.7-163.77|reqwalker.v:163.3-166.6"
   cell $mux $procmux$360
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:161$171_Y
-    connect \S $logic_and$reqwalker.v:160$170_Y
-    connect \Y $0$formal$reqwalker.v:160$48_CHECK[0:0]$164
+    connect \B $eq$reqwalker.v:164$171_Y
+    connect \S $logic_and$reqwalker.v:163$170_Y
+    connect \Y $0$formal$reqwalker.v:163$48_CHECK[0:0]$164
   end
-  attribute \src "reqwalker.v:160.7-160.77|reqwalker.v:160.3-163.6"
+  attribute \src "reqwalker.v:163.7-163.77|reqwalker.v:163.3-166.6"
   cell $mux $procmux$364
     parameter \WIDTH 1
     connect \A 1'x
     connect \B \busy
-    connect \S $logic_and$reqwalker.v:160$170_Y
-    connect \Y $0$formal$reqwalker.v:161$49_CHECK[0:0]$166
+    connect \S $logic_and$reqwalker.v:163$170_Y
+    connect \Y $0$formal$reqwalker.v:164$49_CHECK[0:0]$166
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$376
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
-    connect \S $eq$reqwalker.v:161$171_Y
-    connect \Y $0$formal$reqwalker.v:138$35_EN[0:0]$119
+    connect \S $eq$reqwalker.v:164$171_Y
+    connect \Y $0$formal$reqwalker.v:141$35_EN[0:0]$119
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$388
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:138$140_Y
-    connect \S $eq$reqwalker.v:161$171_Y
-    connect \Y $0$formal$reqwalker.v:138$35_CHECK[0:0]$118
+    connect \B $eq$reqwalker.v:141$140_Y
+    connect \S $eq$reqwalker.v:164$171_Y
+    connect \Y $0$formal$reqwalker.v:141$35_CHECK[0:0]$118
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$399
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
     connect \S $procmux$400_CMP
-    connect \Y $0$formal$reqwalker.v:139$36_EN[0:0]$121
+    connect \Y $0$formal$reqwalker.v:142$36_EN[0:0]$121
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $eq $procmux$400_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 4
@@ -1957,23 +1957,23 @@ module \reqwalker
     connect \B 2'10
     connect \Y $procmux$400_CMP
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$410
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:139$141_Y
+    connect \B $eq$reqwalker.v:142$141_Y
     connect \S $procmux$400_CMP
-    connect \Y $0$formal$reqwalker.v:139$36_CHECK[0:0]$120
+    connect \Y $0$formal$reqwalker.v:142$36_CHECK[0:0]$120
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$420
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
     connect \S $procmux$421_CMP
-    connect \Y $0$formal$reqwalker.v:140$37_EN[0:0]$123
+    connect \Y $0$formal$reqwalker.v:143$37_EN[0:0]$123
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $eq $procmux$421_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 4
@@ -1984,23 +1984,23 @@ module \reqwalker
     connect \B 2'11
     connect \Y $procmux$421_CMP
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$430
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:140$142_Y
+    connect \B $eq$reqwalker.v:143$142_Y
     connect \S $procmux$421_CMP
-    connect \Y $0$formal$reqwalker.v:140$37_CHECK[0:0]$122
+    connect \Y $0$formal$reqwalker.v:143$37_CHECK[0:0]$122
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$439
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
     connect \S $procmux$440_CMP
-    connect \Y $0$formal$reqwalker.v:141$38_EN[0:0]$125
+    connect \Y $0$formal$reqwalker.v:144$38_EN[0:0]$125
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $eq $procmux$440_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 4
@@ -2011,23 +2011,23 @@ module \reqwalker
     connect \B 3'100
     connect \Y $procmux$440_CMP
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$448
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:141$143_Y
+    connect \B $eq$reqwalker.v:144$143_Y
     connect \S $procmux$440_CMP
-    connect \Y $0$formal$reqwalker.v:141$38_CHECK[0:0]$124
+    connect \Y $0$formal$reqwalker.v:144$38_CHECK[0:0]$124
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$456
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
     connect \S $procmux$457_CMP
-    connect \Y $0$formal$reqwalker.v:142$39_EN[0:0]$127
+    connect \Y $0$formal$reqwalker.v:145$39_EN[0:0]$127
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $eq $procmux$457_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 4
@@ -2038,23 +2038,23 @@ module \reqwalker
     connect \B 3'101
     connect \Y $procmux$457_CMP
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$464
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:142$144_Y
+    connect \B $eq$reqwalker.v:145$144_Y
     connect \S $procmux$457_CMP
-    connect \Y $0$formal$reqwalker.v:142$39_CHECK[0:0]$126
+    connect \Y $0$formal$reqwalker.v:145$39_CHECK[0:0]$126
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$471
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
     connect \S $procmux$472_CMP
-    connect \Y $0$formal$reqwalker.v:143$40_EN[0:0]$129
+    connect \Y $0$formal$reqwalker.v:146$40_EN[0:0]$129
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $eq $procmux$472_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 4
@@ -2065,23 +2065,23 @@ module \reqwalker
     connect \B 3'110
     connect \Y $procmux$472_CMP
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$478
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:143$145_Y
+    connect \B $eq$reqwalker.v:146$145_Y
     connect \S $procmux$472_CMP
-    connect \Y $0$formal$reqwalker.v:143$40_CHECK[0:0]$128
+    connect \Y $0$formal$reqwalker.v:146$40_CHECK[0:0]$128
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$484
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
     connect \S $procmux$485_CMP
-    connect \Y $0$formal$reqwalker.v:144$41_EN[0:0]$131
+    connect \Y $0$formal$reqwalker.v:147$41_EN[0:0]$131
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $eq $procmux$485_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 4
@@ -2092,23 +2092,23 @@ module \reqwalker
     connect \B 3'111
     connect \Y $procmux$485_CMP
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$490
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:142$144_Y
+    connect \B $eq$reqwalker.v:145$144_Y
     connect \S $procmux$485_CMP
-    connect \Y $0$formal$reqwalker.v:144$41_CHECK[0:0]$130
+    connect \Y $0$formal$reqwalker.v:147$41_CHECK[0:0]$130
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$495
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
     connect \S $procmux$496_CMP
-    connect \Y $0$formal$reqwalker.v:145$42_EN[0:0]$133
+    connect \Y $0$formal$reqwalker.v:148$42_EN[0:0]$133
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $eq $procmux$496_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 4
@@ -2119,23 +2119,23 @@ module \reqwalker
     connect \B 4'1000
     connect \Y $procmux$496_CMP
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$500
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:141$143_Y
+    connect \B $eq$reqwalker.v:144$143_Y
     connect \S $procmux$496_CMP
-    connect \Y $0$formal$reqwalker.v:145$42_CHECK[0:0]$132
+    connect \Y $0$formal$reqwalker.v:148$42_CHECK[0:0]$132
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$504
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
     connect \S $procmux$505_CMP
-    connect \Y $0$formal$reqwalker.v:146$43_EN[0:0]$135
+    connect \Y $0$formal$reqwalker.v:149$43_EN[0:0]$135
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $eq $procmux$505_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 4
@@ -2146,23 +2146,23 @@ module \reqwalker
     connect \B 4'1001
     connect \Y $procmux$505_CMP
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$508
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:140$142_Y
+    connect \B $eq$reqwalker.v:143$142_Y
     connect \S $procmux$505_CMP
-    connect \Y $0$formal$reqwalker.v:146$43_CHECK[0:0]$134
+    connect \Y $0$formal$reqwalker.v:149$43_CHECK[0:0]$134
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$511
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
     connect \S $procmux$512_CMP
-    connect \Y $0$formal$reqwalker.v:147$44_EN[0:0]$137
+    connect \Y $0$formal$reqwalker.v:150$44_EN[0:0]$137
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $eq $procmux$512_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 4
@@ -2173,23 +2173,23 @@ module \reqwalker
     connect \B 4'1010
     connect \Y $procmux$512_CMP
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$514
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:139$141_Y
+    connect \B $eq$reqwalker.v:142$141_Y
     connect \S $procmux$512_CMP
-    connect \Y $0$formal$reqwalker.v:147$44_CHECK[0:0]$136
+    connect \Y $0$formal$reqwalker.v:150$44_CHECK[0:0]$136
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$516
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
     connect \S $procmux$517_CMP
-    connect \Y $0$formal$reqwalker.v:148$45_EN[0:0]$139
+    connect \Y $0$formal$reqwalker.v:151$45_EN[0:0]$139
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $eq $procmux$517_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 4
@@ -2200,103 +2200,103 @@ module \reqwalker
     connect \B 4'1011
     connect \Y $procmux$517_CMP
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:137.3-149.10"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:140.3-152.10"
   cell $mux $procmux$518
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:138$140_Y
+    connect \B $eq$reqwalker.v:141$140_Y
     connect \S $procmux$517_CMP
-    connect \Y $0$formal$reqwalker.v:148$45_CHECK[0:0]$138
+    connect \Y $0$formal$reqwalker.v:151$45_CHECK[0:0]$138
   end
-  attribute \src "reqwalker.v:124.6-124.55|reqwalker.v:124.2-125.17"
+  attribute \src "reqwalker.v:127.6-127.55|reqwalker.v:127.2-128.17"
   cell $mux $procmux$520
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
-    connect \S $logic_and$reqwalker.v:124$112_Y
-    connect \Y $0$formal$reqwalker.v:124$33_EN[0:0]$109
+    connect \S $logic_and$reqwalker.v:127$112_Y
+    connect \Y $0$formal$reqwalker.v:127$33_EN[0:0]$109
   end
-  attribute \src "reqwalker.v:124.6-124.55|reqwalker.v:124.2-125.17"
+  attribute \src "reqwalker.v:127.6-127.55|reqwalker.v:127.2-128.17"
   cell $mux $procmux$522
     parameter \WIDTH 1
     connect \A 1'x
     connect \B \o_ack
-    connect \S $logic_and$reqwalker.v:124$112_Y
-    connect \Y $0$formal$reqwalker.v:124$33_CHECK[0:0]$108
+    connect \S $logic_and$reqwalker.v:127$112_Y
+    connect \Y $0$formal$reqwalker.v:127$33_CHECK[0:0]$108
   end
-  attribute \src "reqwalker.v:114.6-114.38|reqwalker.v:114.2-121.5"
+  attribute \src "reqwalker.v:117.6-117.38|reqwalker.v:117.2-124.5"
   cell $mux $procmux$524
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
-    connect \S $logic_and$reqwalker.v:114$101_Y
-    connect \Y $0$formal$reqwalker.v:115$29_EN[0:0]$94
+    connect \S $logic_and$reqwalker.v:117$101_Y
+    connect \Y $0$formal$reqwalker.v:118$29_EN[0:0]$94
   end
-  attribute \src "reqwalker.v:114.6-114.38|reqwalker.v:114.2-121.5"
+  attribute \src "reqwalker.v:117.6-117.38|reqwalker.v:117.2-124.5"
   cell $mux $procmux$526
     parameter \WIDTH 1
     connect \A 1'x
     connect \B \i_stb
-    connect \S $logic_and$reqwalker.v:114$101_Y
-    connect \Y $0$formal$reqwalker.v:115$29_CHECK[0:0]$93
+    connect \S $logic_and$reqwalker.v:117$101_Y
+    connect \Y $0$formal$reqwalker.v:118$29_CHECK[0:0]$93
   end
-  attribute \src "reqwalker.v:114.6-114.38|reqwalker.v:114.2-121.5"
+  attribute \src "reqwalker.v:117.6-117.38|reqwalker.v:117.2-124.5"
   cell $mux $procmux$530
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:117$102_Y
-    connect \S $logic_and$reqwalker.v:114$101_Y
-    connect \Y $0$formal$reqwalker.v:116$30_CHECK[0:0]$95
+    connect \B $eq$reqwalker.v:120$102_Y
+    connect \S $logic_and$reqwalker.v:117$101_Y
+    connect \Y $0$formal$reqwalker.v:119$30_CHECK[0:0]$95
   end
-  attribute \src "reqwalker.v:114.6-114.38|reqwalker.v:114.2-121.5"
+  attribute \src "reqwalker.v:117.6-117.38|reqwalker.v:117.2-124.5"
   cell $mux $procmux$534
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:118$103_Y
-    connect \S $logic_and$reqwalker.v:114$101_Y
-    connect \Y $0$formal$reqwalker.v:117$31_CHECK[0:0]$97
+    connect \B $eq$reqwalker.v:121$103_Y
+    connect \S $logic_and$reqwalker.v:117$101_Y
+    connect \Y $0$formal$reqwalker.v:120$31_CHECK[0:0]$97
   end
-  attribute \src "reqwalker.v:114.6-114.38|reqwalker.v:114.2-121.5"
+  attribute \src "reqwalker.v:117.6-117.38|reqwalker.v:117.2-124.5"
   cell $mux $procmux$538
     parameter \WIDTH 1
     connect \A 1'0
     connect \B $procmux$334_Y
-    connect \S $logic_and$reqwalker.v:114$101_Y
-    connect \Y $0$formal$reqwalker.v:119$32_EN[0:0]$100
+    connect \S $logic_and$reqwalker.v:117$101_Y
+    connect \Y $0$formal$reqwalker.v:122$32_EN[0:0]$100
   end
-  attribute \src "reqwalker.v:119.7-119.11|reqwalker.v:119.3-120.36"
+  attribute \src "reqwalker.v:122.7-122.11|reqwalker.v:122.3-123.36"
   cell $mux $procmux$540
     parameter \WIDTH 1
     connect \A 1'x
-    connect \B $eq$reqwalker.v:120$104_Y
+    connect \B $eq$reqwalker.v:123$104_Y
     connect \S \i_we
     connect \Y $procmux$540_Y
   end
-  attribute \src "reqwalker.v:114.6-114.38|reqwalker.v:114.2-121.5"
+  attribute \src "reqwalker.v:117.6-117.38|reqwalker.v:117.2-124.5"
   cell $mux $procmux$542
     parameter \WIDTH 1
     connect \A 1'x
     connect \B $procmux$540_Y
-    connect \S $logic_and$reqwalker.v:114$101_Y
-    connect \Y $0$formal$reqwalker.v:119$32_CHECK[0:0]$99
+    connect \S $logic_and$reqwalker.v:117$101_Y
+    connect \Y $0$formal$reqwalker.v:122$32_CHECK[0:0]$99
   end
-  attribute \src "reqwalker.v:110.6-110.30|reqwalker.v:110.2-111.17"
+  attribute \src "reqwalker.v:113.6-113.30|reqwalker.v:113.2-114.17"
   cell $mux $procmux$544
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
-    connect \S $logic_and$reqwalker.v:110$86_Y
-    connect \Y $0$formal$reqwalker.v:110$28_EN[0:0]$84
+    connect \S $logic_and$reqwalker.v:113$86_Y
+    connect \Y $0$formal$reqwalker.v:113$28_EN[0:0]$84
   end
-  attribute \src "reqwalker.v:110.6-110.30|reqwalker.v:110.2-111.17"
+  attribute \src "reqwalker.v:113.6-113.30|reqwalker.v:113.2-114.17"
   cell $mux $procmux$546
     parameter \WIDTH 1
     connect \A 1'x
     connect \B \i_stb
-    connect \S $logic_and$reqwalker.v:110$86_Y
-    connect \Y $0$formal$reqwalker.v:110$28_CHECK[0:0]$83
+    connect \S $logic_and$reqwalker.v:113$86_Y
+    connect \Y $0$formal$reqwalker.v:113$28_CHECK[0:0]$83
   end
-  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:62.3-74.9"
+  attribute \src "reqwalker.v:0.0-0.0|reqwalker.v:63.3-76.9"
   cell $pmux $procmux$552
     parameter \S_WIDTH 5
     parameter \WIDTH 6

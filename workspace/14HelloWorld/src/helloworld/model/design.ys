@@ -1,0 +1,8 @@
+# running in helloworld/src/
+read_verilog -formal helloworld.v
+read_verilog -DTXUART -formal txuart.v
+prep -top helloworld
+
+hierarchy -smtcheck
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

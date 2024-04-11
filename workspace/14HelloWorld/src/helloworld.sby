@@ -8,7 +8,7 @@ smtbmc yices
 
 [script]
 read_verilog -formal helloworld.v
-read_verilog -formal txuart.v
+read_verilog -DTXUART -formal txuart.v
 prep -top helloworld
 
 [files]

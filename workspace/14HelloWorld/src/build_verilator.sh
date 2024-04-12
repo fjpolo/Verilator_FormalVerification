@@ -9,7 +9,7 @@ make
 ### && cd .. && 
 
 ## Run formal verification
-sby -f helloworld.sby
+sby -f txuart.sby ## && sby -f helloworld.sby
 
 ## Load wave
 ### gtkwave helloworld/engine_0/trace0.vcd

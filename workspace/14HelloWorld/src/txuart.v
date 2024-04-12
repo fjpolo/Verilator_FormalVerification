@@ -220,34 +220,53 @@ module txuart(i_clk, i_wr, i_data, o_uart_tx, o_busy);
 		fv_data <= i_data;
 
 	always @(posedge i_clk)
-	case(state)
-	IDLE:		assert(o_uart_tx == 1'b1);
-	START:		assert(o_uart_tx == 1'b0);
-	BIT_ZERO:	assert(o_uart_tx == fv_data[0]);
-	BIT_ONE:	assert(o_uart_tx == fv_data[1]);
-	BIT_TWO:	assert(o_uart_tx == fv_data[2]);
-	BIT_THREE:	assert(o_uart_tx == fv_data[3]);
-	BIT_FOUR:	assert(o_uart_tx == fv_data[4]);
-	BIT_FIVE:	assert(o_uart_tx == fv_data[5]);
-	BIT_SIX:	assert(o_uart_tx == fv_data[6]);
-	BIT_SEVEN:	assert(o_uart_tx == fv_data[7]);
-	default: assert(0);
-	endcase
+		case(state)
+			IDLE:		assert(o_uart_tx == 1'b1);
+			START:		assert(o_uart_tx == 1'b0);
+			BIT_ZERO:	assert(o_uart_tx == fv_data[0]);
+			BIT_ONE:	assert(o_uart_tx == fv_data[1]);
+			BIT_TWO:	assert(o_uart_tx == fv_data[2]);
+			BIT_THREE:	assert(o_uart_tx == fv_data[3]);
+			BIT_FOUR:	assert(o_uart_tx == fv_data[4]);
+			BIT_FIVE:	assert(o_uart_tx == fv_data[5]);
+			BIT_SIX:	assert(o_uart_tx == fv_data[6]);
+			BIT_SEVEN:	assert(o_uart_tx == fv_data[7]);
+			default: assert(0);
+		endcase
 
 	always @(*) begin
 		case(state)
-			IDLE:			assert(lcl_data == 9'h1FF);
+			IDLE:		assert(lcl_data == 9'h1FF);
 		endcase
 	end
+
+	// always @(posedge i_clk) begin
+	// 	case(state)
+	// 		IDLE:		assert(lcl_data == 9'h1FF);
+	// 		START: 		assert(lcl_data == 9'h1FF);
+	// 		BIT_ZERO: 	assert(lcl_data == { fv_data, 1'b0 });
+	// 		BIT_ONE:	assert(lcl_data == { fv_data[7:1], 2'b00 });
+	// 		BIT_TWO:	assert(lcl_data == { fv_data[7:2], 3'b000 });
+	// 		BIT_THREE:	assert(lcl_data == { fv_data[7:3], 4'b0000 });
+	// 		BIT_FOUR:	assert(lcl_data == { fv_data[7:4], 5'b00000 });
+	// 		BIT_FIVE:	assert(lcl_data == { fv_data[7:5], 6'b000000 });
+	// 		BIT_SIX:	assert(lcl_data == { fv_data[7:6], 7'b000_0000 });
+	// 		BIT_SEVEN:	assert(lcl_data == { fv_data[7], 8'b0000_0000 });
+	// 	endcase
+	// end
+
+	// always @(posedge i_clk)
+	// if ((i_wr)&&(!o_busy))
+	// 	assert(fv_data == i_data);
 
 	// always @(*) begin
 	// 	if(state == IDLE) begin
 	// 		assert(lcl_data == 9'h1FF);
-	// 	end else begin
+	// 	end else if(state == (BIT_ZERO || BIT_ONE ||BIT_TWO ||BIT_THREE ||BIT_FOUR ||BIT_FIVE ||BIT_SIX || BIT_SEVEN) ) begin
 	// 		if ((i_wr)&&(!o_busy))
 	// 			assert(lcl_data == { i_data, 1'b0 });
-	// 		else if (baud_stb)
-	// 			assert(lcl_data == { 1'b1, lcl_data[8:1] });
+	// 		// else if (baud_stb)
+	// 		// 	assert(lcl_data == { 1'b1, lcl_data[8:1] });
 	// 	end
 	// end
 

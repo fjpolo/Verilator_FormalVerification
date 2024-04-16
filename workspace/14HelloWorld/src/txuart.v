@@ -53,16 +53,16 @@ module txuart(i_clk, i_wr, i_data, o_uart_tx, o_busy);
 
 	// Define several states
 	localparam [3:0] START	= 4'h0,
-		BIT_ZERO	= 4'h1,
-		BIT_ONE		= 4'h2,
-		BIT_TWO		= 4'h3,
-		BIT_THREE	= 4'h4,
-		BIT_FOUR	= 4'h5,
-		BIT_FIVE	= 4'h6,
-		BIT_SIX		= 4'h7,
-		BIT_SEVEN	= 4'h8,
-		LAST		= 4'h8,
-		IDLE		= 4'hf;
+					BIT_ZERO	= 4'h1,
+					BIT_ONE		= 4'h2,
+					BIT_TWO		= 4'h3,
+					BIT_THREE	= 4'h4,
+					BIT_FOUR	= 4'h5,
+					BIT_FIVE	= 4'h6,
+					BIT_SIX		= 4'h7,
+					BIT_SEVEN	= 4'h8,
+					LAST		= 4'h8,
+					IDLE		= 4'hf;
 
 	reg	[23:0]	counter;
 	reg	[3:0]	state;
@@ -82,8 +82,7 @@ module txuart(i_clk, i_wr, i_data, o_uart_tx, o_busy);
 	if ((i_wr)&&(!o_busy))
 		// Immediately start us off with a start bit
 		{ o_busy, state } <= { 1'b1, START };
-	else if (baud_stb)
-	begin
+	else if (baud_stb) begin
 		if (state == IDLE) // Stay in IDLE
 			{ o_busy, state } <= { 1'b0, IDLE };
 		else if (state < LAST) begin
@@ -97,7 +96,7 @@ module txuart(i_clk, i_wr, i_data, o_uart_tx, o_busy);
 
 	// lcl_data
 	//
-	// This is our working copy of the i_data register which we use
+	//  This is our working copy of the i_data register which we use
 	// when transmitting.  It is only of interest during transmit, and is
 	// allowed to be whatever at any other time.  Hence, if o_busy isn't
 	// true, we can always set it.  On the one clock where o_busy isn't
@@ -105,11 +104,12 @@ module txuart(i_clk, i_wr, i_data, o_uart_tx, o_busy);
 	// Then, on any baud_stb (i.e. change between baud intervals)
 	// we simple logically shift the register right to grab the next bit.
 	initial	lcl_data = 9'h1ff;
-	always @(posedge i_clk)
-	if ((i_wr)&&(!o_busy))
-		lcl_data <= { i_data, 1'b0 };
-	else if (baud_stb)
-		lcl_data <= { 1'b1, lcl_data[8:1] };
+	always @(posedge i_clk) begin
+		if ((i_wr)&&(!o_busy))
+			lcl_data <= { i_data, 1'b0 };
+		else if (baud_stb)
+			lcl_data <= { 1'b1, lcl_data[8:1] };
+	end
 
 	// o_uart_tx
 	//
@@ -163,16 +163,13 @@ module txuart(i_clk, i_wr, i_data, o_uart_tx, o_busy);
 	initial	baud_stb = 1'b1;
 	initial	counter = 0;
 	always @(posedge i_clk)
-	if ((i_wr)&&(!o_busy))
-	begin
+	if ((i_wr)&&(!o_busy)) begin
 		counter  <= CLOCKS_PER_BAUD - 1'b1;
 		baud_stb <= 1'b0;
-	end else if (!baud_stb)
-	begin
+	end else if (!baud_stb) begin
 		baud_stb <= (counter == 24'h01);
 		counter  <= counter - 1'b1;
-	end else if (state != IDLE)
-	begin
+	end else if (state != IDLE) begin
 		counter <= CLOCKS_PER_BAUD - 1'b1;
 		baud_stb <= 1'b0;
 	end
@@ -215,6 +212,7 @@ module txuart(i_clk, i_wr, i_data, o_uart_tx, o_busy);
 	//////////////////////////////////
 
 	reg	[7:0]	fv_data;
+	initial fv_data = 8'h00;
 	always @(posedge i_clk)
 	if ((i_wr)&&(!o_busy))
 		fv_data <= i_data;
@@ -234,41 +232,11 @@ module txuart(i_clk, i_wr, i_data, o_uart_tx, o_busy);
 			default: assert(0);
 		endcase
 
-	always @(*) begin
-		case(state)
-			IDLE:		assert(lcl_data == 9'h1FF);
-		endcase
-	end
+	// i_data
+	always @(posedge i_clk)
+	if(f_past_valid)
+		`ASSUME(i_data == $past(i_data));
 
-	// always @(posedge i_clk) begin
-	// 	case(state)
-	// 		IDLE:		assert(lcl_data == 9'h1FF);
-	// 		START: 		assert(lcl_data == 9'h1FF);
-	// 		BIT_ZERO: 	assert(lcl_data == { fv_data, 1'b0 });
-	// 		BIT_ONE:	assert(lcl_data == { fv_data[7:1], 2'b00 });
-	// 		BIT_TWO:	assert(lcl_data == { fv_data[7:2], 3'b000 });
-	// 		BIT_THREE:	assert(lcl_data == { fv_data[7:3], 4'b0000 });
-	// 		BIT_FOUR:	assert(lcl_data == { fv_data[7:4], 5'b00000 });
-	// 		BIT_FIVE:	assert(lcl_data == { fv_data[7:5], 6'b000000 });
-	// 		BIT_SIX:	assert(lcl_data == { fv_data[7:6], 7'b000_0000 });
-	// 		BIT_SEVEN:	assert(lcl_data == { fv_data[7], 8'b0000_0000 });
-	// 	endcase
-	// end
-
-	// always @(posedge i_clk)
-	// if ((i_wr)&&(!o_busy))
-	// 	assert(fv_data == i_data);
-
-	// always @(*) begin
-	// 	if(state == IDLE) begin
-	// 		assert(lcl_data == 9'h1FF);
-	// 	end else if(state == (BIT_ZERO || BIT_ONE ||BIT_TWO ||BIT_THREE ||BIT_FOUR ||BIT_FIVE ||BIT_SIX || BIT_SEVEN) ) begin
-	// 		if ((i_wr)&&(!o_busy))
-	// 			assert(lcl_data == { i_data, 1'b0 });
-	// 		// else if (baud_stb)
-	// 		// 	assert(lcl_data == { 1'b1, lcl_data[8:1] });
-	// 	end
-	// end
 
 	//////////////////////////////////
 	//
@@ -299,6 +267,45 @@ module txuart(i_clk, i_wr, i_data, o_uart_tx, o_busy);
 	if (!baud_stb)
 		assert(o_busy);
 
+	//
+	// state
+	//
+	initial assert(state == IDLE);
+	always @(posedge i_clk) begin
+		if ((f_past_valid)&&(!i_wr)&&(o_busy)) begin
+			assert( (state >= START) && (state <= BIT_SEVEN)||(state == IDLE));
+		end
+	end
+
+	//
+	// lcl_data
+	//
+	always @(*) begin
+		case(state)
+			IDLE:		assert(lcl_data == 9'h1FF);
+		endcase
+	end
+
+	always @(posedge i_clk) begin
+		if(!o_busy)
+			case(state)
+				IDLE:		assert(lcl_data == 9'h1FF);
+				START:		assert(lcl_data == {i_data, 1'b0});
+				default:	assert(lcl_data == $past(lcl_data));	
+			endcase
+	end
+
+	//
+	// fv_data
+	//
+	initial assert(fv_data == 8'h00);
+	always @(posedge i_clk)
+		if (((f_past_valid) && $past(i_wr)) && (o_busy)) begin
+			assume(!i_wr);
+			assert(fv_data == i_data);
+		end
+
 `endif	// FORMAL
+
 endmodule
 

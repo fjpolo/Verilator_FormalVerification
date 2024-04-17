@@ -1,0 +1,19 @@
+[options]
+mode prove
+
+[engines]
+smtbmc
+# abc pdr
+# aiger avy
+# aiger suprove
+
+[script]
+read -vhdl   lfsr_fib.vhd
+read -vhdl   dblpipe.vhd
+read -formal dblpipe_vhd.sv
+prep -top dblpipe
+
+[files]
+lfsr_fib.vhd
+dblpipe.vhd
+dblpipe_vhd.sv

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2024-04-16T13:45:25" hostname="DESKTOP-T1I841S" package="txuart" id="0" name="default" tests="25" errors="0" failures="2" time="0" skipped="24">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="UNKNOWN"/>
+</properties>
+<testcase classname="default" name="build execution" time="0">
+<failure type="UNKNOWN" message="Task returned status UNKNOWN." />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:220.9-220.34" time="0" type="ASSERT" location="txuart.v:220.9-220.34" id="$assert$txuart.v:220$209">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:227.53-229.36" time="0" type="ASSERT" location="txuart.v:227.53-229.36" id="$assert$txuart.v:227$210">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:230.45-232.37" time="0" type="ASSERT" location="txuart.v:230.45-232.37" id="$assert$txuart.v:230$211">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:236.70-237.36" time="0" type="ASSERT" location="txuart.v:236.70-237.36" id="$assert$txuart.v:236$212">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:242.9-242.36" time="0" type="ASSERT" location="txuart.v:242.9-242.36" id="$assert$txuart.v:242$213">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:243.10-243.37" time="0" type="ASSERT" location="txuart.v:243.10-243.37" id="$assert$txuart.v:243$214">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:244.13-244.45" time="0" type="ASSERT" location="txuart.v:244.13-244.45" id="$assert$txuart.v:244$215">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:245.12-245.44" time="0" type="ASSERT" location="txuart.v:245.12-245.44" id="$assert$txuart.v:245$216">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:246.12-246.44" time="0" type="ASSERT" location="txuart.v:246.12-246.44" id="$assert$txuart.v:246$217">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:247.14-247.46" time="0" type="ASSERT" location="txuart.v:247.14-247.46" id="$assert$txuart.v:247$218">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:248.13-248.45" time="0" type="ASSERT" location="txuart.v:248.13-248.45" id="$assert$txuart.v:248$219">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:249.13-249.45" time="0" type="ASSERT" location="txuart.v:249.13-249.45" id="$assert$txuart.v:249$220">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:250.12-250.44" time="0" type="ASSERT" location="txuart.v:250.12-250.44" id="$assert$txuart.v:250$221">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:251.14-251.46" time="0" type="ASSERT" location="txuart.v:251.14-251.46" id="$assert$txuart.v:251$222">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:252.12-252.22" time="0" type="ASSERT" location="txuart.v:252.12-252.22" id="$assert$txuart.v:252$223">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:273.25-274.37" time="0" type="ASSERT" location="txuart.v:273.25-274.37" id="$assert$txuart.v:273$225">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:278.44-279.43" time="0" type="ASSERT" location="txuart.v:278.44-279.43" id="$assert$txuart.v:278$226">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:282.25-283.36" time="0" type="ASSERT" location="txuart.v:282.25-283.36" id="$assert$txuart.v:282$227">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:287.16-288.17" time="0" type="ASSERT" location="txuart.v:287.16-288.17" id="$assert$txuart.v:287$228">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:293.9-293.31" time="0" type="ASSERT" location="txuart.v:293.9-293.31" id="$assert$txuart.v:293$229">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:295.47-296.72" time="0" type="ASSERT" location="txuart.v:295.47-296.72" id="$assert$txuart.v:295$230">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:305.9-305.37" time="0" type="ASSERT" location="txuart.v:305.9-305.37" id="$assert$txuart.v:305$231" tracefile="engine_0/trace_induct.vcd">
+<failure type="ASSERT" message="Property ASSERT in txuart at txuart.v:305.9-305.37 failed. Trace file: engine_0/trace_induct.vcd" />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:315.10-315.38" time="0" type="ASSERT" location="txuart.v:315.10-315.38" id="$assert$txuart.v:315$232">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:316.11-316.48" time="0" type="ASSERT" location="txuart.v:316.11-316.48" id="$assert$txuart.v:316$233">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in txuart at txuart.v:318.26-319.57" time="0" type="ASSERT" location="txuart.v:318.26-319.57" id="$assert$txuart.v:318$234">
+<skipped />
+</testcase>
+<system-out>SBY 13:45:24 [txuart] Removing directory '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/14HelloWorld/src/txuart'.
+SBY 13:45:24 [txuart] Copy '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/14HelloWorld/src/txuart.v' to '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/14HelloWorld/src/txuart/src/txuart.v'.
+SBY 13:45:24 [txuart] engine_0: smtbmc yices
+SBY 13:45:24 [txuart] base: starting process &quot;cd txuart/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 13:45:24 [txuart] base: finished (returncode=0)
+SBY 13:45:24 [txuart] prep: starting process &quot;cd txuart/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 13:45:24 [txuart] prep: finished (returncode=0)
+SBY 13:45:24 [txuart] smt2: starting process &quot;cd txuart/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 13:45:24 [txuart] smt2: finished (returncode=0)
+SBY 13:45:24 [txuart] engine_0.basecase: starting process &quot;cd txuart; yosys-smtbmc -s yices --presat --unroll --noprogress -t 5  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 13:45:24 [txuart] engine_0.induction: starting process &quot;cd txuart; yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 5  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Solver: yices
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Solver: yices
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Trying induction in step 5..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Trying induction in step 4..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Trying induction in step 3..
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Trying induction in step 2..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Trying induction in step 1..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Status: passed
+SBY 13:45:25 [txuart] engine_0.basecase: finished (returncode=0)
+SBY 13:45:25 [txuart] engine_0.basecase: Status returned by engine for basecase: pass
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Trying induction in step 0..
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Temporal induction failed!
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Assert failed in txuart: txuart.v:305.9-305.37 ($assert$txuart.v:305$231)
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Writing trace to VCD file: engine_0/trace_induct.vcd
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_induct_tb.v
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Writing trace to constraints file: engine_0/trace_induct.smtc
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace_induct.yw
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Status: failed
+SBY 13:45:25 [txuart] engine_0.induction: finished (returncode=1)
+SBY 13:45:25 [txuart] engine_0.induction: Status returned by engine for induction: FAIL
+SBY 13:45:25 [txuart] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 13:45:25 [txuart] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 13:45:25 [txuart] summary: engine_0 (smtbmc yices) returned pass for basecase
+SBY 13:45:25 [txuart] summary: engine_0 (smtbmc yices) returned FAIL for induction
+SBY 13:45:25 [txuart] summary: counterexample trace [induction]: txuart/engine_0/trace_induct.vcd
+SBY 13:45:25 [txuart] summary:   failed assertion txuart.$assert$txuart.v:305$231 at txuart.v:305.9-305.37 in step 0
+SBY 13:45:25 [txuart] DONE (UNKNOWN, rc=4)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

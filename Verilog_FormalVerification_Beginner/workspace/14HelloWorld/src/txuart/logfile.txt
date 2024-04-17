@@ -1,0 +1,48 @@
+SBY 13:45:24 [txuart] Removing directory '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/14HelloWorld/src/txuart'.
+SBY 13:45:24 [txuart] Copy '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/14HelloWorld/src/txuart.v' to '/mnt/c/Workspace/NES/NESTang/Verilator_FormalVerification/workspace/14HelloWorld/src/txuart/src/txuart.v'.
+SBY 13:45:24 [txuart] engine_0: smtbmc yices
+SBY 13:45:24 [txuart] base: starting process "cd txuart/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 13:45:24 [txuart] base: finished (returncode=0)
+SBY 13:45:24 [txuart] prep: starting process "cd txuart/model; yosys -ql design_prep.log design_prep.ys"
+SBY 13:45:24 [txuart] prep: finished (returncode=0)
+SBY 13:45:24 [txuart] smt2: starting process "cd txuart/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 13:45:24 [txuart] smt2: finished (returncode=0)
+SBY 13:45:24 [txuart] engine_0.basecase: starting process "cd txuart; yosys-smtbmc -s yices --presat --unroll --noprogress -t 5  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 13:45:24 [txuart] engine_0.induction: starting process "cd txuart; yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 5  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Solver: yices
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Solver: yices
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Trying induction in step 5..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Trying induction in step 4..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Trying induction in step 3..
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Trying induction in step 2..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Trying induction in step 1..
+SBY 13:45:25 [txuart] engine_0.basecase: ##   0:00:00  Status: passed
+SBY 13:45:25 [txuart] engine_0.basecase: finished (returncode=0)
+SBY 13:45:25 [txuart] engine_0.basecase: Status returned by engine for basecase: pass
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Trying induction in step 0..
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Temporal induction failed!
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Assert failed in txuart: txuart.v:305.9-305.37 ($assert$txuart.v:305$231)
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Writing trace to VCD file: engine_0/trace_induct.vcd
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_induct_tb.v
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Writing trace to constraints file: engine_0/trace_induct.smtc
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace_induct.yw
+SBY 13:45:25 [txuart] engine_0.induction: ##   0:00:00  Status: failed
+SBY 13:45:25 [txuart] engine_0.induction: finished (returncode=1)
+SBY 13:45:25 [txuart] engine_0.induction: Status returned by engine for induction: FAIL
+SBY 13:45:25 [txuart] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 13:45:25 [txuart] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 13:45:25 [txuart] summary: engine_0 (smtbmc yices) returned pass for basecase
+SBY 13:45:25 [txuart] summary: engine_0 (smtbmc yices) returned FAIL for induction
+SBY 13:45:25 [txuart] summary: counterexample trace [induction]: txuart/engine_0/trace_induct.vcd
+SBY 13:45:25 [txuart] summary:   failed assertion txuart.$assert$txuart.v:305$231 at txuart.v:305.9-305.37 in step 0
+SBY 13:45:25 [txuart] DONE (UNKNOWN, rc=4)

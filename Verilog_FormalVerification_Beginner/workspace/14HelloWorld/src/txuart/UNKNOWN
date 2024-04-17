@@ -1,0 +1,6 @@
+Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+engine_0 (smtbmc yices) returned pass for basecase
+engine_0 (smtbmc yices) returned FAIL for induction
+counterexample trace [induction]: engine_0/trace_induct.vcd
+  failed assertion txuart.$assert$txuart.v:305$231 at txuart.v:305.9-305.37 in step 0

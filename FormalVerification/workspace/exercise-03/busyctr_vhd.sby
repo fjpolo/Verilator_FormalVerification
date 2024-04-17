@@ -1,0 +1,14 @@
+[options]
+mode bmc
+
+[engines]
+smtbmc
+
+[script]
+read -vhdl   busyctr.vhd
+read -formal busyctr_vhd.sv
+prep -top busyctr
+
+[files]
+busyctr.vhd
+busyctr_vhd.sv

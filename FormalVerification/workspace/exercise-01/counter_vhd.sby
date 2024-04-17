@@ -1,0 +1,14 @@
+[options]
+mode bmc
+
+[engines]
+smtbmc
+
+[script]
+read -vhdl   counter.vhd
+read -formal counter_vhd.sv
+prep -top counter
+
+[files]
+counter.vhd
+counter_vhd.sv

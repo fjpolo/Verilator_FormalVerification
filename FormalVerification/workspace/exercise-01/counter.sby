@@ -1,0 +1,17 @@
+[options]
+mode bmc
+depth 20
+
+[engines]
+smtbmc yices
+# smtbmc boolector
+# smtbmc z3
+
+[script]
+read -formal counter.v
+# Other .v files
+prep -top counter
+opt_merge -share_all
+
+[files]
+counter.v

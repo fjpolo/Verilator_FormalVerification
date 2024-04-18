@@ -1,0 +1,18 @@
+[options]
+mode prove
+depth 12
+
+[engines]
+smtbmc
+# abc pdr
+# aiger avy
+# aiger suprove
+
+[script]
+read -vhdl   reqarb.vhd
+read -formal reqarb_vhd.sv
+prep -top reqarb
+
+[files]
+reqarb.vhd
+reqarb_vhd.sv

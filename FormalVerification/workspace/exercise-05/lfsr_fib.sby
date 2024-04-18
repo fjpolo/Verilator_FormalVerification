@@ -1,0 +1,15 @@
+[options]
+mode prove
+
+[engines]
+smtbmc
+# abc pdr
+# aiger avy
+# aiger suprove
+
+[script]
+read_verilog -DLFSR_FIB -formal lfsr_fib.v
+prep -top lfsr_fib
+
+[files]
+lfsr_fib.v

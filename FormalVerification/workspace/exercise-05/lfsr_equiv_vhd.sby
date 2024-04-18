@@ -1,0 +1,24 @@
+[options]
+mode prove
+depth 24
+
+[engines]
+smtbmc
+# abc pdr
+# aiger avy
+# aiger suprove
+
+[script]
+read -vhdl   lfsr_fib.vhd
+read -vhdl   lfsr_gal.vhd
+read -vhdl   lfsr_equiv.vhd
+read -formal lfsr_equiv_vhd.sv
+prep -top lfsr_equiv
+
+[files]
+lfsr_equiv.vhd
+lfsr_fib.vhd
+lfsr_gal.vhd
+lfsr_equiv_vhd.sv
+
+

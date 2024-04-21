@@ -1,89 +1,79 @@
-////////////////////////////////////////////////////////////////////////////////
-//
-// Filename: 	reqarb.v
-// {{{
-// Project:	A set of Yosys Formal Verification exercises
-//
-// Background:	This is a request arbiter.  It accepts requests from channels
-//		A and B, and outputs one request at a time.  Any time there is
-//	a valid request, the *_req line will be high and the requested data
-//	will be placed onto *_data.  Each channel source has a series of
-//	requests, possibly bursty requests, they would like to send to the
-//	output.  However, only one request can go through at a time.  Hence,
-//	the need for an arbiter to decide whose request goes through.
-//
-// To Prove:
-//	1. No data will be lost
-//		ASSUME: all incoming requests will remain stable until accepted
-//		ASSERT: all outgoing requests will remain stable until accepted
-//	2. Only one source will ever have access to the channel at any given
-//		time
-//		ASSERT: one busy line will always be high
-//	3. All requests will go through
-//		Note that this isn't a starvation check.  This arbiter as
-//		written will suffer from starvation.  Instead, this should
-//		follow from the properties above.  No additional assertions
-//		or assumptions are required here, given that those above will
-//		pass.
-//
-// You will need to make some assumptions in order to formally verify that this
-// core meets the above conditions.  What assumptions you choose to make will
-// be up to you--as long as they maintain the spirit of the description outlined
-// above.
-//
-//
-// Creator:	Dan Gisselquist, Ph.D.
-//		Gisselquist Technology, LLC
-//
-////////////////////////////////////////////////////////////////////////////////
-// }}}
-// Copyright (C) 2017-2021, Gisselquist Technology, LLC
-// {{{
-// This program is free software (firmware): you can redistribute it and/or
-// modify it under the terms of  the GNU General Public License as published
-// by the Free Software Foundation, either version 3 of the License, or (at
-// your option) any later version.
-//
-// This program is distributed in the hope that it will be useful, but WITHOUT
-// ANY WARRANTY; without even the implied warranty of MERCHANTIBILITY or
-// FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-// for more details.
-//
-// You should have received a copy of the GNU General Public License along
-// with this program.  (It's in the $(ROOT)/doc directory.  Run make with no
-// target there if the PDF file isn't present.)  If not, see
-// <http://www.gnu.org/licenses/> for a copy.
-// }}}
-// License:	GPL, v3, as defined and found on www.gnu.org,
-// {{{
-//		http://www.gnu.org/licenses/gpl.html
-//
-////////////////////////////////////////////////////////////////////////////////
-//
+/*******************************************************************************
+/*
+/* Filename: 	reqarb.v
+/* 
+/* Project:	A set of Yosys Formal Verification exercises
+/*
+/* Background:	This is a request arbiter.  It accepts requests from channels
+/*		A and B, and outputs one request at a time.  Any time there is
+/*	a valid request, the *_req line will be high and the requested data
+/*	will be placed onto *_data.  Each channel source has a series of
+/*	requests, possibly bursty requests, they would like to send to the
+/*	output.  However, only one request can go through at a time.  Hence,
+/*	the need for an arbiter to decide whose request goes through.
+/*
+/* To Prove:
+/*	1. No data will be lost
+/*		ASSUME: all incoming requests will remain stable until accepted
+/*		ASSERT: all outgoing requests will remain stable until accepted
+/*	2. Only one source will ever have access to the channel at any given
+/*		time
+/*		ASSERT: one busy line will always be high
+/*	3. All requests will go through
+/*		Note that this isn't a starvation check.  This arbiter as
+/*		written will suffer from starvation.  Instead, this should
+/*		follow from the properties above.  No additional assertions
+/*		or assumptions are required here, given that those above will
+/*		pass.
+/*
+/* You will need to make some assumptions in order to formally verify that this
+/* core meets the above conditions.  What assumptions you choose to make will
+/* be up to you--as long as they maintain the spirit of the description outlined
+/* above.
+/*
+/*
+/* Creator:	Dan Gisselquist, Ph.D.
+/*		Gisselquist Technology, LLC
+/*
+/*******************************************************************************
+/* 
+/* Copyright (C) 2017-2021, Gisselquist Technology, LLC
+/* 
+/* This program is free software (firmware): you can redistribute it and/or
+/* modify it under the terms of  the GNU General Public License as published
+/* by the Free Software Foundation, either version 3 of the License, or (at
+/* your option) any later version.
+/*
+/* This program is distributed in the hope that it will be useful, but WITHOUT
+/* ANY WARRANTY; without even the implied warranty of MERCHANTIBILITY or
+/* FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+/* for more details.
+/*
+/* You should have received a copy of the GNU General Public License along
+/* with this program.  (It's in the $(ROOT)/doc directory.  Run make with no
+/* target there if the PDF file isn't present.)  If not, see
+/* <http://www.gnu.org/licenses/> for a copy.
+/* 
+/* License:	GPL, v3, as defined and found on www.gnu.org,
+/* 
+/*		http://www.gnu.org/licenses/gpl.html
+/*
+/******************************************************************************/
 `default_nettype	none
-// }}}
+
 module	reqarb(
-		// {{{
 		input	wire	i_clk, i_reset,
-		//
 		// A's channel to make requests to send data.
-		// {{{
 		//	If i_a_req is true, A wishes to send i_a_data
 		//	If o_a_busy is true, A must wait
 		input	wire	i_a_req, i_a_data,
 		output	wire	o_a_busy,
-		// }}}
 		// Slave channel B
-		// {{{
 		input	wire	i_b_req, i_b_data,
 		output	wire	o_b_busy,
-		// }}}
 		// Outoing master channel
-		// {{{
 		output	wire	o_req, o_data,
 		input	wire	i_busy
-		// }}}
-		// }}}
 	);
 
 	reg	a_is_the_owner;
@@ -103,6 +93,55 @@ module	reqarb(
 	assign	o_req  = (a_is_the_owner) ? i_a_req  : i_b_req;
 	assign	o_data = (a_is_the_owner) ? i_a_data : i_b_data;
 
+
+//
+// FORMAL VERIFICATION
+//
 `ifdef	FORMAL
+
+	// f_past_valid
+	reg	f_past_valid;
+	initial	f_past_valid = 1'b0;
+	always @(posedge i_clk)
+		f_past_valid <= 1'b1;
+
+	//
+	// Slides
+	//
+	always @(posedge i_a_data) begin
+		if((f_past_valid)&&($past(f_past_valid))&&(!i_reset)) begin
+			// If(∗_req)&&(!∗_busy), the request is accepted
+			if(((i_a_req)||(i_b_req))&&(!i_busy)&&(!o_a_busy)&&(!o_b_busy))
+				assert(o_req);		
+
+			// Only one source ever gets access at a time
+			// Assert one busy line is always high
+			if((i_a_req || i_b_req)&&(i_busy)) begin
+				if(a_is_the_owner)
+					assert(o_a_busy);
+				if(!a_is_the_owner)
+					assert(o_b_busy);
+			end
+		end
+	end
+
+	// // If(∗_req)&&(∗_busy), the request may not change, except on reset
+	always @(posedge i_clk) begin
+		if((f_past_valid)&&($past(f_past_valid))&&(!i_reset)) begin
+			if((i_a_req)&&($past(i_a_req))&&(o_a_busy)&&(!o_b_busy)&&(a_is_the_owner)) begin
+					assert(o_req == $past(o_req));
+			end
+			if((i_b_req)&&($past(i_b_req))&&(o_b_busy)&&(!o_a_busy)&&(!a_is_the_owner)) begin
+					assert(o_req == $past(o_req));
+			end
+		end
+
+	end
+
+	// No data will be lost, no requests will be dropped
+	// Assume all requests remain stable until accepted
+	
+
 `endif
+
 endmodule

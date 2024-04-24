@@ -1,64 +1,61 @@
-////////////////////////////////////////////////////////////////////////////////
-//
-// Filename:	fwb_slave.v
-// {{{
-// Project:	Zip CPU -- a small, lightweight, RISC CPU soft core
-//
-// Purpose:	This file describes the rules of a wishbone interaction from the
-//		perspective of a wishbone slave.  These formal rules may be used
-//	with yosys-smtbmc to *prove* that the slave properly handles outgoing
-//	responses to (assumed correct) incoming requests.
-//
-//	This module contains no functional logic.  It is intended for formal
-//	verification only.  The outputs returned, the number of requests that
-//	have been made, the number of acknowledgements received, and the number
-//	of outstanding requests, are designed for further formal verification
-//	purposes *only*.
-//
-//	This file is different from a companion formal_master.v file in that
-//	assumptions are made about the inputs to the slave: i_wb_cyc,
-//	i_wb_stb, i_wb_we, i_wb_addr, i_wb_data, and i_wb_sel, while full
-//	assertions are made about the outputs: o_wb_stall, o_wb_ack, o_wb_data,
-//	o_wb_err.  In the formal_master.v, assertions are made about the
-//	master outputs (slave inputs)), and assumptions are made about the
-//	master inputs (the slave outputs).
-//
-//
-//
-//
-// Creator:	Dan Gisselquist, Ph.D.
-//		Gisselquist Technology, LLC
-//
-////////////////////////////////////////////////////////////////////////////////
-// }}}
-// Copyright (C) 2017-2021, Gisselquist Technology, LLC
-// {{{
-// This program is free software (firmware): you can redistribute it and/or
-// modify it under the terms of  the GNU General Public License as published
-// by the Free Software Foundation, either version 3 of the License, or (at
-// your option) any later version.
-//
-// This program is distributed in the hope that it will be useful, but WITHOUT
-// ANY WARRANTY; without even the implied warranty of MERCHANTIBILITY or
-// FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-// for more details.
-//
-// You should have received a copy of the GNU General Public License along
-// with this program.  (It's in the $(ROOT)/doc directory.  Run make with no
-// target there if the PDF file isn't present.)  If not, see
-// <http://www.gnu.org/licenses/> for a copy.
-//
-// License:	GPL, v3, as defined and found on www.gnu.org,
-//		http://www.gnu.org/licenses/gpl.html
-//
-//
-////////////////////////////////////////////////////////////////////////////////
-//
-//
+/*******************************************************************************
+/*
+/* Filename:	fwb_slave.v
+/* 
+/* Project:	Zip CPU -- a small, lightweight, RISC CPU soft core
+/*
+/* Purpose:	This file describes the rules of a wishbone interaction from the
+/*		perspective of a wishbone slave.  These formal rules may be used
+/*	with yosys-smtbmc to *prove* that the slave properly handles outgoing
+/*	responses to (assumed correct) incoming requests.
+/*
+/*	This module contains no functional logic.  It is intended for formal
+/*	verification only.  The outputs returned, the number of requests that
+/*	have been made, the number of acknowledgements received, and the number
+/*	of outstanding requests, are designed for further formal verification
+/*	purposes *only*.
+/*
+/*	This file is different from a companion formal_master.v file in that
+/*	assumptions are made about the inputs to the slave: i_wb_cyc,
+/*	i_wb_stb, i_wb_we, i_wb_addr, i_wb_data, and i_wb_sel, while full
+/*	assertions are made about the outputs: o_wb_stall, o_wb_ack, o_wb_data,
+/*	o_wb_err.  In the formal_master.v, assertions are made about the
+/*	master outputs (slave inputs)), and assumptions are made about the
+/*	master inputs (the slave outputs).
+/*
+/*
+/*
+/*
+/* Creator:	Dan Gisselquist, Ph.D.
+/*		Gisselquist Technology, LLC
+/*
+/*******************************************************************************
+/* 
+/* Copyright (C) 2017-2021, Gisselquist Technology, LLC
+/* 
+/* This program is free software (firmware): you can redistribute it and/or
+/* modify it under the terms of  the GNU General Public License as published
+/* by the Free Software Foundation, either version 3 of the License, or (at
+/* your option) any later version.
+/*
+/* This program is distributed in the hope that it will be useful, but WITHOUT
+/* ANY WARRANTY; without even the implied warranty of MERCHANTIBILITY or
+/* FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+/* for more details.
+/*
+/* You should have received a copy of the GNU General Public License along
+/* with this program.  (It's in the $(ROOT)/doc directory.  Run make with no
+/* target there if the PDF file isn't present.)  If not, see
+/* <http://www.gnu.org/licenses/> for a copy.
+/*
+/* License:	GPL, v3, as defined and found on www.gnu.org,
+/*		http://www.gnu.org/licenses/gpl.html
+/*
+/*
+/******************************************************************************/
 `default_nettype none
-// }}}
+
 module	fwb_slave #(
-		// {{{
 		parameter		AW=32, DW=32,
 		parameter		F_MAX_STALL = 0,
 					F_MAX_ACK_DELAY = 0,
@@ -98,9 +95,7 @@ module	fwb_slave #(
 		localparam	DLYBITS= (MAX_DELAY < 4) ? 2
 				: (MAX_DELAY >= 65536) ? 32
 				: $clog2(MAX_DELAY+1)
-		// }}}
 	) (
-		// {{{
 		input	wire			i_clk, i_reset,
 		// The Wishbone bus
 		input	wire			i_wb_cyc, i_wb_stb, i_wb_we,
@@ -115,17 +110,13 @@ module	fwb_slave #(
 		// Some convenience output parameters
 		output	reg	[(F_LGDEPTH-1):0]	f_nreqs, f_nacks,
 		output	wire	[(F_LGDEPTH-1):0]	f_outstanding
-		// }}}
 	);
 
-	//
 	// Let's just make sure our parameters are set up right
-	// {{{
 	initial	assert(F_MAX_REQUESTS < {(F_LGDEPTH){1'b1}});
-	// }}}
 
 	// f_request
-	// {{{
+	// 
 	// Wrap the request line in a bundle.  The top bit, named STB_BIT,
 	// is the bit indicating whether the request described by this vector
 	// is a valid request or not.
@@ -133,10 +124,9 @@ module	fwb_slave #(
 	localparam	STB_BIT = 2+AW+DW+DW/8-1;
 	wire	[STB_BIT:0]	f_request;
 	assign	f_request = { i_wb_stb, i_wb_we, i_wb_addr, i_wb_data, i_wb_sel };
-	// }}}
 
 	// f_past_valid and i_reset
-	// {{{
+	// 
 	// A quick register to be used later to know if the $past() operator
 	// will yield valid result
 	reg	f_past_valid;
@@ -147,16 +137,12 @@ module	fwb_slave #(
 	always @(*)
 	if (!f_past_valid)
 		assert(i_reset);
-	// }}}
-	////////////////////////////////////////////////////////////////////////
-	//
-	// Assertions regarding the initial (and reset) state
-	// {{{
-	////////////////////////////////////////////////////////////////////////
-	//
-	//
+	/***********************************************************************
+	/*
+	/* Assertions regarding the initial (and reset) state
+	/* 
+	/**********************************************************************/
 
-	//
 	// Assume we start from a reset condition
 	initial assert(i_reset);
 	initial assume(!i_wb_cyc);
@@ -178,14 +164,12 @@ module	fwb_slave #(
 	always @(*)
 	if (!f_past_valid)
 		assume(!i_wb_cyc);
-	// }}}
-	////////////////////////////////////////////////////////////////////////
-	//
-	// Bus requests
-	// {{{
-	////////////////////////////////////////////////////////////////////////
-	//
-	//
+	
+	/***********************************************************************
+	/*
+	/* Bus requests
+	/* 
+	/**********************************************************************/
 
 	// Following any bus error, the CYC line should be dropped to abort
 	// the transaction
@@ -248,14 +232,12 @@ module	fwb_slave #(
 	// if ((i_wb_stb)&&(i_wb_we))
 	//	assume(|i_wb_sel);
 
-	// }}}
-	////////////////////////////////////////////////////////////////////////
-	//
-	// Bus responses
-	// {{{
-	////////////////////////////////////////////////////////////////////////
-	//
-	//
+	
+	/***********************************************************************
+	/*
+	/* Bus responses
+	/* 
+	/**********************************************************************/
 
 	// If CYC was low on the last clock, then both ACK and ERR should be
 	// low on this clock.
@@ -295,14 +277,12 @@ module	fwb_slave #(
 	// ACK and ERR may never both be true at the same time
 	always @(*)
 		assert((!i_wb_ack)||(!i_wb_err));
-	// }}}
-	////////////////////////////////////////////////////////////////////////
-	//
-	// Stall checking
-	// {{{
-	////////////////////////////////////////////////////////////////////////
-	//
-	//
+
+	/***********************************************************************
+	/*
+	/* Stall checking
+	/* 
+	/**********************************************************************/
 	generate if (F_MAX_STALL > 0)
 	begin : MXSTALL
 		//
@@ -323,14 +303,12 @@ module	fwb_slave #(
 		if (i_wb_cyc)
 			assert(f_stall_count < F_MAX_STALL);
 	end endgenerate
-	// }}}
-	////////////////////////////////////////////////////////////////////////
-	//
-	// Maximum delay in any response
-	// {{{
-	////////////////////////////////////////////////////////////////////////
-	//
-	//
+
+	/***********************************************************************
+	/*
+	/* Maximum delay in any response
+	/* 
+	/**********************************************************************/
 
 	generate if (F_MAX_ACK_DELAY > 0)
 	begin : MXWAIT
@@ -356,14 +334,12 @@ module	fwb_slave #(
 					&&(f_outstanding > 0))
 			assert(f_ackwait_count < F_MAX_ACK_DELAY);
 	end endgenerate
-	// }}}
-	////////////////////////////////////////////////////////////////////////
-	//
-	// Count outstanding requests vs acknowledgments
-	// {{{
-	////////////////////////////////////////////////////////////////////////
-	//
-	//
+
+	/***********************************************************************
+	/*
+	/* Count outstanding requests vs acknowledgments
+	/* 
+	/**********************************************************************/
 
 	// Count the number of requests that have been received
 	//
@@ -428,14 +404,12 @@ module	fwb_slave #(
 		assert(!i_wb_ack);
 		assert(!i_wb_err);
 	end
-	// }}}
-	////////////////////////////////////////////////////////////////////////
-	//
-	// Bus direction
-	// {{{
-	////////////////////////////////////////////////////////////////////////
-	//
-	//
+
+	/***********************************************************************
+	/*
+	/* Bus direction
+	/* 
+	/**********************************************************************/
 	generate if (!F_OPT_RMW_BUS_OPTION)
 	begin
 		// If we aren't waiting for anything, and we aren't issuing
@@ -450,15 +424,12 @@ module	fwb_slave #(
 		// transactions, even though nothing is outstanding.  For
 		// these busses, turn F_OPT_RMW_BUS_OPTION on.
 	end endgenerate
-	// }}}
-	////////////////////////////////////////////////////////////////////////
-	//
-	// Discontinuous request checking
-	// {{{
-	////////////////////////////////////////////////////////////////////////
-	//
-	//
 
+	/***********************************************************************
+	/*
+	/* Discontinuous request checking
+	/* 
+	/**********************************************************************/
 	generate if ((!F_OPT_DISCONTINUOUS)&&(!F_OPT_RMW_BUS_OPTION))
 	begin : INSIST_ON_NO_DISCONTINUOUS_STBS
 		// Within my own code, once a request begins it goes to
@@ -473,5 +444,5 @@ module	fwb_slave #(
 		if ((f_past_valid)&&($past(i_wb_cyc))&&(!$past(i_wb_stb)))
 			assume(!i_wb_stb);
 	end endgenerate
-	// }}}
+
 endmodule

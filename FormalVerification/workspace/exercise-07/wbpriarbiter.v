@@ -1,58 +1,56 @@
-////////////////////////////////////////////////////////////////////////////////
-//
-// Filename: 	wbpriarbiter.v
-// {{{
-// Project:	A set of Yosys Formal Verification exercises
-//
-// Purpose:	This is a priority bus arbiter.  It allows two separate wishbone
-//		masters to connect to the same bus, while also guaranteeing
-//	that one master can have the bus with no delay any time the other
-//	master is not using the bus.  The goal is to eliminate the combinatorial
-//	logic required in the other wishbone arbiter, while still guarateeing
-//	access time for the priority channel.
-//
-//	The core logic works like this:
-//
-//	1. When no one requests the bus, 'A' is granted the bus and guaranteed
-//		that any access will go right through.
-//	2. If 'B' requests the bus (asserts cyc), and the bus is idle, then
-//		'B' will be granted the bus.
-//	3. Bus grants last as long as the 'cyc' line is high.
-//	4. Once 'cyc' is dropped, the bus returns to 'A' as the owner.
-//
-//
-// Creator:	Dan Gisselquist, Ph.D.
-//		Gisselquist Technology, LLC
-//
-////////////////////////////////////////////////////////////////////////////////
-// }}}
-// Copyright (C) 2015-2021, Gisselquist Technology, LLC
-// {{{
-// This program is free software (firmware): you can redistribute it and/or
-// modify it under the terms of the GNU General Public License as published
-// by the Free Software Foundation, either version 3 of the License, or (at
-// your option) any later version.
-//
-// This program is distributed in the hope that it will be useful, but WITHOUT
-// ANY WARRANTY; without even the implied warranty of MERCHANTIBILITY or
-// FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-// for more details.
-//
-// You should have received a copy of the GNU General Public License along
-// with this program.  (It's in the $(ROOT)/doc directory.  Run make with no
-// target there if the PDF file isn't present.)  If not, see
-// <http://www.gnu.org/licenses/> for a copy.
-// }}}
-// License:	GPL, v3, as defined and found on www.gnu.org,
-// {{{
-//		http://www.gnu.org/licenses/gpl.html
-//
-////////////////////////////////////////////////////////////////////////////////
-//
+/*******************************************************************************
+/*
+/* Filename: 	wbpriarbiter.v
+/* 
+/* Project:	A set of Yosys Formal Verification exercises
+/*
+/* Purpose:	This is a priority bus arbiter.  It allows two separate wishbone
+/*		masters to connect to the same bus, while also guaranteeing
+/*	that one master can have the bus with no delay any time the other
+/*	master is not using the bus.  The goal is to eliminate the combinatorial
+/*	logic required in the other wishbone arbiter, while still guarateeing
+/*	access time for the priority channel.
+/*
+/*	The core logic works like this:
+/*
+/*	1. When no one requests the bus, 'A' is granted the bus and guaranteed
+/*		that any access will go right through.
+/*	2. If 'B' requests the bus (asserts cyc), and the bus is idle, then
+/*		'B' will be granted the bus.
+/*	3. Bus grants last as long as the 'cyc' line is high.
+/*	4. Once 'cyc' is dropped, the bus returns to 'A' as the owner.
+/*
+/*
+/* Creator:	Dan Gisselquist, Ph.D.
+/*		Gisselquist Technology, LLC
+/*
+/*******************************************************************************
+/* 
+/* Copyright (C) 2015-2021, Gisselquist Technology, LLC
+/* 
+/* This program is free software (firmware): you can redistribute it and/or
+/* modify it under the terms of the GNU General Public License as published
+/* by the Free Software Foundation, either version 3 of the License, or (at
+/* your option) any later version.
+/*
+/* This program is distributed in the hope that it will be useful, but WITHOUT
+/* ANY WARRANTY; without even the implied warranty of MERCHANTIBILITY or
+/* FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+/* for more details.
+/*
+/* You should have received a copy of the GNU General Public License along
+/* with this program.  (It's in the $(ROOT)/doc directory.  Run make with no
+/* target there if the PDF file isn't present.)  If not, see
+/* <http://www.gnu.org/licenses/> for a copy.
+/* 
+/* License:	GPL, v3, as defined and found on www.gnu.org,
+/* 
+/*		http://www.gnu.org/licenses/gpl.html
+/*
+/******************************************************************************/
 `default_nettype	none
-// }}}
+
 module	wbpriarbiter #(
-		// {{{
 		parameter			DW=32, AW=32,
 		//
 		// ZERO_ON_IDLE uses more logic than the alternative.  It
@@ -63,35 +61,26 @@ module	wbpriarbiter #(
 		// make them stand out all the more when staring at wires and
 		// dumps and such.
 		parameter	[0:0]		OPT_ZERO_ON_IDLE = 1'b0
-		// }}}
 	) (
-		// {{{
 		input	wire			i_clk,
 		// Bus A
-		// {{{
 		input	wire			i_a_cyc, i_a_stb, i_a_we,
 		input	wire	[(AW-1):0]	i_a_adr,
 		input	wire	[(DW-1):0]	i_a_dat,
 		input	wire	[(DW/8-1):0]	i_a_sel,
 		output	wire			o_a_ack, o_a_stall, o_a_err,
-		// }}}
 		// Bus B
-		// {{{
 		input	wire			i_b_cyc, i_b_stb, i_b_we,
 		input	wire	[(AW-1):0]	i_b_adr,
 		input	wire	[(DW-1):0]	i_b_dat,
 		input	wire	[(DW/8-1):0]	i_b_sel,
 		output	wire			o_b_ack, o_b_stall, o_b_err,
-		// }}}
 		// The outgoing bus
-		// {{{
 		output	wire			o_cyc, o_stb, o_we,
 		output	wire	[(AW-1):0]	o_adr,
 		output	wire	[(DW-1):0]	o_dat,
 		output	wire	[(DW/8-1):0]	o_sel,
 		input	wire			i_ack, i_stall, i_err
-		// }}}
-		// }}}
 	);
 
 	// Go high immediately (new cycle) if ...
@@ -146,15 +135,18 @@ module	wbpriarbiter #(
 		assign	o_a_stall = ( r_a_owner) ? i_stall : 1'b1;
 		assign	o_b_stall = (!r_a_owner) ? i_stall : 1'b1;
 
-		//
-		//
 		assign	o_a_err = ( r_a_owner) ? i_err : 1'b0;
 		assign	o_b_err = (!r_a_owner) ? i_err : 1'b0;
 	end endgenerate
 
 `ifdef	FORMAL
-	//
-	// Your properties go here
-	//
+
+	// f_past_valid
+	reg	f_past_valid;
+	initial	f_past_valid = 1'b0;
+	always @(posedge i_clk)
+		f_past_valid <= 1'b1;	
+
 `endif
+
 endmodule

@@ -1,0 +1,22 @@
+[options]
+mode prove
+depth 12
+
+[engines]
+smtbmc
+# abc pdr
+# aiger avy
+# aiger suprove
+
+[script]
+read -vhdl   wbpriarbiter.vhd
+read -formal fwb_slave.v
+read -formal fwb_master.v
+read -formal wbpriarbiter_vhd.sv
+prep -top wbpriarbiter
+
+[files]
+fwb_slave.v
+fwb_master.v
+wbpriarbiter.vhd
+wbpriarbiter_vhd.sv

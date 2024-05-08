@@ -1,0 +1,16 @@
+[options]
+mode prove
+depth  55
+multiclock on
+
+[engines]
+smtbmc
+
+[script]
+read -vhdl   clkswitch.vhd
+read -formal clkswitch_vhd.sv
+prep -top clkswitch
+
+[files]
+clkswitch.vhd
+clkswitch_vhd.sv

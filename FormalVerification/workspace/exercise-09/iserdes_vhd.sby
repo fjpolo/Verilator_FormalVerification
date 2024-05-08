@@ -1,0 +1,20 @@
+[options]
+mode prove
+multiclock on
+depth 25
+
+[engines]
+smtbmc
+# abc pdr
+# abc pdr
+# aiger avy
+# aiger suprove
+
+[script]
+read -vhdl iserdes.vhd
+read -sv   iserdes_vhd.sv
+prep -top iserdes
+
+[files]
+iserdes.vhd
+iserdes_vhd.sv

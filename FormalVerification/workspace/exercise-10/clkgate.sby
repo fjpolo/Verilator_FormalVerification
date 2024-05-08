@@ -9,7 +9,7 @@ smtbmc
 # aiger suprove
 
 [script]
-read -formal clkgate.v
+read_verilog -DCLKGATE_STANDALONE -formal clkgate.v
 prep -top clkgate
 
 [files]

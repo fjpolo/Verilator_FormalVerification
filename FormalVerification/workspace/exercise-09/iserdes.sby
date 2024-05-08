@@ -6,7 +6,7 @@ multiclock on
 smtbmc
 
 [script]
-read -formal iserdes.v
+read_verilog -DSERDES_STANDALONE -formal iserdes.v
 prep -top iserdes
 
 [files]

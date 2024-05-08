@@ -1,0 +1,14 @@
+[options]
+mode prove
+
+[engines]
+smtbmc
+
+[script]
+read -vhdl   absoneup.vhd
+read -formal absoneup_vhd.sv
+prep -top absoneup
+
+[files]
+absoneup.vhd
+absoneup_vhd.sv

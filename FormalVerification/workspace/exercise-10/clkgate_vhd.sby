@@ -1,0 +1,15 @@
+[options]
+mode prove
+multiclock on
+
+[engines]
+smtbmc
+
+[script]
+read -vhdl   clkgate.vhd
+read -formal clkgate_vhd.sv
+prep -top clkgate
+
+[files]
+clkgate.vhd
+clkgate_vhd.sv

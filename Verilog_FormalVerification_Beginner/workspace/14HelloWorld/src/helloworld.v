@@ -45,7 +45,7 @@
 module	helloworld(
         input   i_clk,
 `ifdef	VERILATOR
-		o_setup,
+		output [31:0] o_setup,
 `endif
 		output  o_uart_tx
 		);
@@ -63,7 +63,6 @@ module	helloworld(
 	// Let our Verilator .cpp file know what parameter was selected for
 	// the baud rate.  This output word will be read by the Verilator
 	// test bench, so it knows how to match the baud rate we are using.
-	output	wire	[31:0]	o_setup;
 	assign	o_setup = INITIAL_UART_SETUP;
 `endif
 

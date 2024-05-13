@@ -7,6 +7,6 @@
     <FileList>
         <File path="src/helloworld.v" type="file.verilog" enable="1"/>
         <File path="src/txuart.v" type="file.verilog" enable="1"/>
-        <File path="src/tangnano20k.sby" type="file.other" enable="1"/>
+        <File path="src/tangnano20k.cst" type="file.cst" enable="1"/>
     </FileList>
 </Project>

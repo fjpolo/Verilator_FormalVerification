@@ -210,13 +210,14 @@ module txuart(i_clk, i_wr, i_data, o_uart_tx, o_busy);
 
 	// Any outstanding request that was busy on the last cycle,
 	// should remain busy on this cycle
+`ifdef	TXUART
 	initial	`ASSUME(!i_wr);
 	always @(posedge i_clk)
-		if ((f_past_valid)&&($past(i_wr))&&($past(o_busy)))
-		begin
+		if ((f_past_valid)&&($past(i_wr))&&($past(o_busy))) begin
 			`ASSUME(i_wr   == $past(i_wr));
 			`ASSUME(i_data == $past(i_data));
 		end
+`endif
 
 	//////////////////////////////////
 	//

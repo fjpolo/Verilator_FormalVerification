@@ -35,11 +35,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //
-`default_nettype	none
+`ifdef FORMAL
+`default_nettype none
+`endif
 
 `ifndef VERILATOR
 `ifndef FORMAL
-`define NANO20K
+`define NANO_9K_20K
 `endif
 `endif
 

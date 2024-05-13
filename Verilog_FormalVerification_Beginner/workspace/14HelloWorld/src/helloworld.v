@@ -31,29 +31,30 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //
+`ifdef FORMAL
 `default_nettype none
-
+`endif
 
 `ifndef VERILATOR
 `ifndef FORMAL
-`define NANO20K
+`define NANO_9K_20K
 `endif
 `endif
 
 //
-module	helloworld(i_clk,
+module	helloworld(
+        input   i_clk,
 `ifdef	VERILATOR
 		o_setup,
 `endif
-		o_uart_tx);
-`ifdef NANO20K
+		output  o_uart_tx
+		);
+`ifdef NANO_9K_20K
     parameter	CLOCK_RATE_HZ = 27_000_000; // 27MHz clock
 `else
 	parameter	CLOCK_RATE_HZ = 100_000_000; // 100MHz clock
 `endif
 	parameter	BAUD_RATE = 115_200; // 115.2 KBaud
-	input		i_clk;
-	output	wire	o_uart_tx;
 
 	// Here we set the number of clocks per baud to something appropriate
 	// to create a 115200 Baud UART system from a 100MHz clock.

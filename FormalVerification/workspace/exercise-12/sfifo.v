@@ -1,58 +1,54 @@
-////////////////////////////////////////////////////////////////////////////////
-//
-// Filename: 	sfifo.v
-// {{{
-// Project:	A set of Yosys Formal Verification exercises
-//
-// Purpose:	A synchronous data FIFO.
-//
-// To Prove:
-//	1. That the FIFO will never suddenly go from full to empty except on
-//		a reset (i.e. on an overrun)
-//	2. That the FIFO will never suddenly go from empty to FULL (i.e. on a
-//		underrun)
-//	3. That the two outputs, o_empty and o_full, properly reflect the
-//		size of the FIFO.
-//	4. BONUS: That given two subsequent inputs, the may be read out later
-//		in the same order.
-//
-// Creator:	Dan Gisselquist, Ph.D.
-//		Gisselquist Technology, LLC
-//
-////////////////////////////////////////////////////////////////////////////////
-// }}}
-// Copyright (C) 2015-2021, Gisselquist Technology, LLC
-// {{{
-// This program is free software (firmware): you can redistribute it and/or
-// modify it under the terms of  the GNU General Public License as published
-// by the Free Software Foundation, either version 3 of the License, or (at
-// your option) any later version.
-//
-// This program is distributed in the hope that it will be useful, but WITHOUT
-// ANY WARRANTY; without even the implied warranty of MERCHANTIBILITY or
-// FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-// for more details.
-//
-// You should have received a copy of the GNU General Public License along
-// with this program.  (It's in the $(ROOT)/doc directory.  Run make with no
-// target there if the PDF file isn't present.)  If not, see
-// <http://www.gnu.org/licenses/> for a copy.
-// }}}
-// License:	GPL, v3, as defined and found on www.gnu.org,
-// {{{
-//		http://www.gnu.org/licenses/gpl.html
-//
-////////////////////////////////////////////////////////////////////////////////
-//
+/*******************************************************************************
+/*
+/* Filename: 	sfifo.v
+/*
+/* Project:	A set of Yosys Formal Verification exercises
+/*
+/* Purpose:	A synchronous data FIFO.
+/*
+/* To Prove:
+/*	1. That the FIFO will never suddenly go from full to empty except on
+/*		a reset (i.e. on an overrun)
+/*	2. That the FIFO will never suddenly go from empty to FULL (i.e. on a
+/*		underrun)
+/*	3. That the two outputs, o_empty and o_full, properly reflect the
+/*		size of the FIFO.
+/*	4. BONUS: That given two subsequent inputs, the may be read out later
+/*		in the same order.
+/*
+/* Creator:	Dan Gisselquist, Ph.D.
+/*		Gisselquist Technology, LLC
+/*
+/*******************************************************************************
+/*
+/* Copyright (C) 2015-2021, Gisselquist Technology, LLC
+/*
+/* This program is free software (firmware): you can redistribute it and/or
+/* modify it under the terms of  the GNU General Public License as published
+/* by the Free Software Foundation, either version 3 of the License, or (at
+/* your option) any later version.
+/*
+/* This program is distributed in the hope that it will be useful, but WITHOUT
+/* ANY WARRANTY; without even the implied warranty of MERCHANTIBILITY or
+/* FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+/* for more details.
+/*
+/* You should have received a copy of the GNU General Public License along
+/* with this program.  (It's in the $(ROOT)/doc directory.  Run make with no
+/* target there if the PDF file isn't present.)  If not, see
+/* <http://www.gnu.org/licenses/> for a copy.
+/*
+/* License:	GPL, v3, as defined and found on www.gnu.org,
+/*
+/*		http://www.gnu.org/licenses/gpl.html
+/*
+/******************************************************************************/
 `default_nettype	none
-// }}}
+
 module sfifo #(
-		// {{{
 		parameter	DW=8,		// Byte/data width
 		parameter	LGFLEN=4	// Log of the buffer size
-		// }}}
 	) (
-		// {{{
 		input	wire		i_clk, i_reset,
 		// Write interface
 		input	wire		i_wr,
@@ -64,7 +60,6 @@ module sfifo #(
 		output	reg		o_empty,	// The FIFO is empty
 		//
 		output	wire		o_err	 // True after under/overflw
-		// }}}
 	);
 
 
@@ -105,23 +100,20 @@ module sfifo #(
 			&&(wraddr[LGFLEN]!=rdaddr[LGFLEN]))
 		o_full <= 1'b1;
 
-	//
 	// Adjust the Write pointer, and catch any overflows.
 	initial	wraddr = 0;
 	initial	r_ovfl  = 0;
 	always @(posedge i_clk)
-	if (i_reset)
-	begin
-		r_ovfl  <= 1'b0;
-		wraddr <= 0;
-	end else if (i_wr)
-	begin // Cowardly refuse to overflow
-		if ((i_rd)||(!o_full))
-			wraddr <= wraddr + 1'b1;
-		else
-			// Set the error flag on any overflow
-			r_ovfl <= 1'b1;
-	end
+		if (i_reset) begin
+			r_ovfl  <= 1'b0;
+			wraddr <= 0;
+		end else if (i_wr) begin // Cowardly refuse to overflow
+			if ((i_rd)||(!o_full))
+				wraddr <= wraddr + 1'b1;
+			else
+				// Set the error flag on any overflow
+				r_ovfl <= 1'b1;
+		end
 
 	// Actually write to the FIFO
 	always @(posedge i_clk)
@@ -135,14 +127,14 @@ module sfifo #(
 	//
 	initial	o_empty = 1'b1;
 	always @(posedge i_clk)
-	if (i_reset)
-		o_empty <= 1'b1;
-	else if (i_wr)
-		o_empty <= 1'b0;
-	else if (i_rd)
-		o_empty <= (o_empty)||(w_rdaddr_plus_one == wraddr);
-	else
-		o_empty <= (rdaddr == wraddr);
+		if (i_reset)
+			o_empty <= 1'b1;
+		else if (i_wr)
+			o_empty <= 1'b0;
+		else if (i_rd)
+			o_empty <= (o_empty)||(w_rdaddr_plus_one == wraddr);
+		else
+			o_empty <= (rdaddr == wraddr);
 
 
 	//
@@ -151,19 +143,17 @@ module sfifo #(
 	initial	r_unfl = 1'b0;
 	initial	rdaddr = 0;
 	always @(posedge i_clk)
-	if (i_reset)
-	begin
-		rdaddr <= 0;
-		r_unfl <= 1'b0;
-	end else if (i_rd)
-	begin
-		if (!o_empty) // (wraddr != rdaddr)
-			rdaddr <= rdaddr + 1;
-		else
-			// Set the error flag on any attempt to read
-			// from an empty fifo
-			r_unfl <= 1'b1;
-	end
+		if (i_reset) begin
+			rdaddr <= 0;
+			r_unfl <= 1'b0;
+		end else if (i_rd) begin
+			if (!o_empty) // (wraddr != rdaddr)
+				rdaddr <= rdaddr + 1;
+			else
+				// Set the error flag on any attempt to read
+				// from an empty fifo
+				r_unfl <= 1'b1;
+		end
 
 	// Actually read from the FIFO here.
 	assign	o_data = fifo[rdaddr[LGFLEN-1:0]];
@@ -171,15 +161,12 @@ module sfifo #(
 	// Overflow is an error, as is underflow.
 	assign o_err = (r_ovfl)||(r_unfl);
 
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
+
 //
 //
 // FORMAL METHODS
 //
-//
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
+
 `ifdef	FORMAL
 
 	reg	f_past_valid;
@@ -194,8 +181,8 @@ module sfifo #(
 	//
 	initial assume(i_reset);
 	always @(posedge i_clk)
-	if (!f_past_valid)
-		assume(i_reset);
+		if (!f_past_valid)
+			assume(i_reset);
 
 	//
 	// Assertions about our outputs
@@ -214,19 +201,43 @@ module sfifo #(
 	// Test #1
 	// Create a property to make sure the design doesn't suddenly go from
 	// full to empty.
+	always @(posedge i_clk)
+		if((f_past_valid)&&(!$past(f_past_valid))&&(!$past(i_reset))&&($past(o_full)))
+			assert(!o_empty);
 
 	// Test #2
 	// Create a property to make sure the design never goes from empty
 	//	to full
+	always @(posedge i_clk)
+		if((f_past_valid)&&(!$past(i_reset))&&($past(o_empty)))
+			assert(!o_full);
 
 	// Test #3, any other basic assertions you feel you might need
 	// Examples include:
 	//	A. That the FIFO never has more than 2^N elements in it
+	// always @(*)
+	// 	assert(f_fill <= FLEN);
+
 	//	B. o_full should be equivalent to the FIFO having 2^N elements
 	//		within it
+	always @(*)
+		if(o_full)
+			assert(f_fill == FLEN);
+
 	//	C. o_empty should be true if and only if the fill level is zero
+	always @(*)
+		if(o_empty)
+			assert(f_fill == 0);
+
 	//	D. Reads on an empty FIFO will set the error flag
+	always @(posedge i_clk)
+		if((f_past_valid)&&(!$past(i_reset))&&($past(i_rd))&&(!$past(i_wr))&&($past(o_empty)))
+			assert(o_err);
+
 	//	E. Writes to an full FIFO will also set the error flag
+	always @(posedge i_clk)
+		if((f_past_valid)&&(!$past(i_reset))&&($past(i_wr))&&(!$past(i_rd))&&($past(o_full)))
+			assert(o_err);
 
 	// Extra--check the error flag.
 	always @(posedge i_clk)

@@ -121,6 +121,13 @@ module	helloworld(i_clk,
 	txuart #(INITIAL_UART_SETUP[23:0])
 		transmitter(i_clk, tx_stb, tx_data, o_uart_tx, tx_busy);
 
+
+//
+//
+// FORMAL METHODS
+//
+//
+//
 `ifdef	FORMAL
 	reg	f_past_valid;
 	initial	f_past_valid = 1'b0;
@@ -155,16 +162,16 @@ module	helloworld(i_clk,
 	end
 
 	always @(posedge i_clk)
-	if ((f_past_valid)&&($changed(tx_index)))
-		assert(($past(tx_stb))&&(!$past(tx_busy))
-				&&(tx_index == $past(tx_index)+1));
-	else if (f_past_valid)
-		assert(($stable(tx_index))
-				&&((!$past(tx_stb))||($past(tx_busy))));
+		if ((f_past_valid)&&($changed(tx_index)))
+			assert(($past(tx_stb))&&(!$past(tx_busy))
+					&&(tx_index == $past(tx_index)+1));
+		else if (f_past_valid)
+			assert(($stable(tx_index))
+					&&((!$past(tx_stb))||($past(tx_busy))));
 
 	always @(posedge i_clk)
-	if (tx_index != 4'h0)
-		assert(tx_stb);
+		if (tx_index != 4'h0)
+			assert(tx_stb);
 
-`endif
+`endif // FORMAL
 endmodule

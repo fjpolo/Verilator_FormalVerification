@@ -32,13 +32,25 @@
 //
 //
 `default_nettype none
+
+
+`ifndef VERILATOR
+`ifndef FORMAL
+`define NANO20K
+`endif
+`endif
+
 //
 module	helloworld(i_clk,
 `ifdef	VERILATOR
 		o_setup,
 `endif
 		o_uart_tx);
+`ifdef NANO20K
+    parameter	CLOCK_RATE_HZ = 27_000_000; // 27MHz clock
+`else
 	parameter	CLOCK_RATE_HZ = 100_000_000; // 100MHz clock
+`endif
 	parameter	BAUD_RATE = 115_200; // 115.2 KBaud
 	input		i_clk;
 	output	wire	o_uart_tx;

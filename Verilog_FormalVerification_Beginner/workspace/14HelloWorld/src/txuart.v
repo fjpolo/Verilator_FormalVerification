@@ -36,6 +36,13 @@
 //
 //
 `default_nettype	none
+
+`ifndef VERILATOR
+`ifndef FORMAL
+`define NANO20K
+`endif
+`endif
+
 //
 //
 //

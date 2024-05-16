@@ -1,0 +1,13 @@
+[options]
+mode prove
+depth 15
+
+[engines]
+smtbmc yices
+
+[script]
+read_verilog -DCHANGE_DETECTOR -formal chgdetector.v
+prep -top chgdetector
+
+[files]
+chgdetector.v

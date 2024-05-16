@@ -1,40 +1,53 @@
-/********************************************************************************
-/*
-/* Filename: 	txuart.v
-/*
-/* Project:	Verilog Tutorial Example file
-/*
-/* Purpose:	Transmit outputs over a single UART line.  This particular UART
-/*		implementation has been extremely simplified: it does not handle
-/*	generating break conditions, nor does it handle anything other than the
-/*	8N1 (8 data bits, no parity, 1 stop bit) UART sub-protocol.
-/*
-/*	To interface with this module, connect it to your system clock, and
-/*	pass it the byte of data you wish to transmit.  Strobe the i_wr line
-/*	high for one cycle, and your data will be off.  Wait until the 'o_busy'
-/*	line is low before strobing the i_wr line again--this implementation
-/*	has NO BUFFER, so strobing i_wr while the core is busy will just
-/*	get ignored.  The output will be placed on the o_txuart output line.
-/*
-/*	There are known deficiencies in the formal proof found within this
-/*	module.  These have been left behind for you (the student) to fix.
-/*
-/* Creator:	Dan Gisselquist, Ph.D.
-/*		Gisselquist Technology, LLC
-/*
-/********************************************************************************
-/*
-/* Written and distributed by Gisselquist Technology, LLC
-/*
-/* This program is hereby granted to the public domain.
-/*
-/* This program is distributed in the hope that it will be useful, but WITHOUT
-/* ANY WARRANTY; without even the implied warranty of MERCHANTIBILITY or
-/* FITNESS FOR A PARTICULAR PURPOSE.
-/*
-/*******************************************************************************/
-`default_nettype	none
+////////////////////////////////////////////////////////////////////////////////
+//
+// Filename: 	txuart.v
+//
+// Project:	Verilog Tutorial Example file
+//
+// Purpose:	Transmit outputs over a single UART line.  This particular UART
+//		implementation has been extremely simplified: it does not handle
+//	generating break conditions, nor does it handle anything other than the
+//	8N1 (8 data bits, no parity, 1 stop bit) UART sub-protocol.
+//
+//	To interface with this module, connect it to your system clock, and
+//	pass it the byte of data you wish to transmit.  Strobe the i_wr line
+//	high for one cycle, and your data will be off.  Wait until the 'o_busy'
+//	line is low before strobing the i_wr line again--this implementation
+//	has NO BUFFER, so strobing i_wr while the core is busy will just
+//	get ignored.  The output will be placed on the o_txuart output line.
+//
+//	There are known deficiencies in the formal proof found within this
+//	module.  These have been left behind for you (the student) to fix.
+//
+// Creator:	Dan Gisselquist, Ph.D.
+//		Gisselquist Technology, LLC
+//
+////////////////////////////////////////////////////////////////////////////////
+//
+// Written and distributed by Gisselquist Technology, LLC
+//
+// This program is hereby granted to the public domain.
+//
+// This program is distributed in the hope that it will be useful, but WITHOUT
+// ANY WARRANTY; without even the implied warranty of MERCHANTIBILITY or
+// FITNESS FOR A PARTICULAR PURPOSE.
+//
+////////////////////////////////////////////////////////////////////////////////
+//
+//
+`ifdef FORMAL
+`default_nettype none
+`endif
 
+`ifndef VERILATOR
+`ifndef FORMAL
+`define NANO_9K_20K
+`endif
+`endif
+
+//
+//
+//
 module txuart(i_clk, i_wr, i_data, o_uart_tx, o_busy);
 	parameter	[23:0]	CLOCKS_PER_BAUD = 24'd868;
 	input	wire		i_clk;
@@ -100,7 +113,7 @@ module txuart(i_clk, i_wr, i_data, o_uart_tx, o_busy);
 	// true and i_wr is, we set it and o_busy is true thereafter.
 	// Then, on any baud_stb (i.e. change between baud intervals)
 	// we simple logically shift the register right to grab the next bit.
-	initial	lcl_data = 9'h1ff;
+	initial	lcl_data = 9'h1FF;
 	always @(posedge i_clk)
 	if ((i_wr)&&(!o_busy))
 		lcl_data <= { i_data, 1'b0 };
@@ -169,7 +182,7 @@ module txuart(i_clk, i_wr, i_data, o_uart_tx, o_busy);
 		counter  <= counter - 1'b1;
 	end else if (state != IDLE)
 	begin
-		counter <= CLOCKS_PER_BAUD - 24'h01;
+		counter <= CLOCKS_PER_BAUD - 1'b1;
 		baud_stb <= 1'b0;
 	end
 
@@ -197,13 +210,14 @@ module txuart(i_clk, i_wr, i_data, o_uart_tx, o_busy);
 
 	// Any outstanding request that was busy on the last cycle,
 	// should remain busy on this cycle
+`ifdef	TXUART
 	initial	`ASSUME(!i_wr);
 	always @(posedge i_clk)
-		if ((f_past_valid)&&($past(i_wr))&&($past(o_busy)))
-		begin
+		if ((f_past_valid)&&($past(i_wr))&&($past(o_busy))) begin
 			`ASSUME(i_wr   == $past(i_wr));
 			`ASSUME(i_data == $past(i_data));
 		end
+`endif
 
 	//////////////////////////////////
 	//
@@ -213,23 +227,23 @@ module txuart(i_clk, i_wr, i_data, o_uart_tx, o_busy);
 
 	reg	[7:0]	fv_data;
 	always @(posedge i_clk)
-	if ((i_wr)&&(!o_busy))
-		fv_data <= i_data;
+		if ((i_wr)&&(!o_busy))
+			fv_data <= i_data;
 
 	always @(posedge i_clk)
-	case(state)
-	IDLE:		assert(o_uart_tx == 1'b1);
-	START:		assert(o_uart_tx == 1'b0);
-	BIT_ZERO:	assert(o_uart_tx == fv_data[0]);
-	BIT_ONE:	assert(o_uart_tx == fv_data[1]);
-	BIT_TWO:	assert(o_uart_tx == fv_data[2]);
-	BIT_THREE:	assert(o_uart_tx == fv_data[3]);
-	BIT_FOUR:	assert(o_uart_tx == fv_data[4]);
-	BIT_FIVE:	assert(o_uart_tx == fv_data[5]);
-	BIT_SIX:	assert(o_uart_tx == fv_data[6]);
-	BIT_SEVEN:	assert(o_uart_tx == fv_data[7]);
-	default: assert(0);
-	endcase
+		case(state)
+			IDLE:		assert(o_uart_tx == 1'b1);
+			START:		assert(o_uart_tx == 1'b0);
+			BIT_ZERO:	assert(o_uart_tx == fv_data[0]);
+			BIT_ONE:	assert(o_uart_tx == fv_data[1]);
+			BIT_TWO:	assert(o_uart_tx == fv_data[2]);
+			BIT_THREE:	assert(o_uart_tx == fv_data[3]);
+			BIT_FOUR:	assert(o_uart_tx == fv_data[4]);
+			BIT_FIVE:	assert(o_uart_tx == fv_data[5]);
+			BIT_SIX:	assert(o_uart_tx == fv_data[6]);
+			BIT_SEVEN:	assert(o_uart_tx == fv_data[7]);
+			default: assert(0);
+		endcase
 
 	//////////////////////////////////
 	//
@@ -246,37 +260,37 @@ module txuart(i_clk, i_wr, i_data, o_uart_tx, o_busy);
 	always @(posedge i_clk)
 		assert(baud_stb == (counter == 0));
 
-
 	always @(posedge i_clk)
-	if ((f_past_valid)&&($past(counter != 0)))
-		assert(counter == $past(counter - 1'b1));
+		if ((f_past_valid)&&($past(counter != 0)))
+			assert(counter == $past(counter - 1'b1));
 
 	always @(posedge i_clk)
 		assert(counter < CLOCKS_PER_BAUD);
 
 	always @(posedge i_clk)
-	if (!baud_stb)
-		assert(o_busy);
+		if (!baud_stb)
+			assert(o_busy);
 
 	always @(posedge i_clk)
-	if (state != IDLE)
-		assert(o_busy);
+		if (state != IDLE)
+			assert(o_busy);
 
 	always @(posedge i_clk)
-	case(state)
-	IDLE:		assert(lcl_data == 9'h1ff);
-	START:		assert(lcl_data == { fv_data[7:0], 1'b0 });
-	BIT_ZERO:	assert(lcl_data == { 1'b1, fv_data[7:0]});
-	BIT_ONE:	assert(lcl_data == { 2'h3, fv_data[7:1]});
-	BIT_TWO:	assert(lcl_data == { 3'h7, fv_data[7:2]});
-	BIT_THREE:	assert(lcl_data == { 4'hf, fv_data[7:3]});
-	BIT_FOUR:	assert(lcl_data == { 5'h1f, fv_data[7:4]});
-	BIT_FIVE:	assert(lcl_data == { 6'h3f, fv_data[7:5]});
-	BIT_SIX:	assert(lcl_data == { 7'h7f, fv_data[7:6]});
-	BIT_SEVEN:	assert(lcl_data == { 8'hff, fv_data[7:7]});
-	default: assert(0);
-	endcase
+		case(state)
+			IDLE:		assert(lcl_data == 9'h1ff);
+			START:		assert(lcl_data == { fv_data[7:0], 1'b0 });
+			BIT_ZERO:	assert(lcl_data == { 1'b1, fv_data[7:0]});
+			BIT_ONE:	assert(lcl_data == { 2'h3, fv_data[7:1]});
+			BIT_TWO:	assert(lcl_data == { 3'h7, fv_data[7:2]});
+			BIT_THREE:	assert(lcl_data == { 4'hf, fv_data[7:3]});
+			BIT_FOUR:	assert(lcl_data == { 5'h1f, fv_data[7:4]});
+			BIT_FIVE:	assert(lcl_data == { 6'h3f, fv_data[7:5]});
+			BIT_SIX:	assert(lcl_data == { 7'h7f, fv_data[7:6]});
+			BIT_SEVEN:	assert(lcl_data == { 8'hff, fv_data[7:7]});
+			default: assert(0);
+		endcase
 
 `endif	// FORMAL
+
 endmodule
 

@@ -1,88 +1,83 @@
-/********************************************************************************
-/*
-/* Filename: 	txdata.v
-/*
-/* Project:	Verilog Tutorial Example file
-/*
-/* Purpose:	To transmit a given number, in 0x%08x format, out the serial
-/*		port.
-/*
-/* Be aware: I have left bugs left within this design, and kept the formal
-/* verification from being complete.  The purpose of this file is not to give
-/* you the solution, but to give you enough of it that you don't need to spend
-/* all your time writing.
-/*
-/* Creator:	Dan Gisselquist, Ph.D.
-/*		Gisselquist Technology, LLC
-/*
-/********************************************************************************
-/*
-/* Written and distributed by Gisselquist Technology, LLC
-/*
-/* This program is hereby granted to the public domain.
-/*
-/* This program is distributed in the hope that it will be useful, but WITHOUT
-/* ANY WARRANTY; without even the implied warranty of MERCHANTIBILITY or
-/* FITNESS FOR A PARTICULAR PURPOSE.
-/*
-/*******************************************************************************/
+////////////////////////////////////////////////////////////////////////////////
+//
+// Filename: 	txdata.v
+//
+// Project:	Verilog Tutorial Example file
+//
+// Purpose:	To transmit a given number, in 0x%08x format, out the serial
+//		port.
+//
+// Be aware: I have left bugs left within this design, and kept the formal
+// verification from being complete.  The purpose of this file is not to give
+// you the solution, but to give you enough of it that you don't need to spend
+// all your time writing.
+//
+// Creator:	Dan Gisselquist, Ph.D.
+//		Gisselquist Technology, LLC
+//
+////////////////////////////////////////////////////////////////////////////////
+//
+// Written and distributed by Gisselquist Technology, LLC
+//
+// This program is hereby granted to the public domain.
+//
+// This program is distributed in the hope that it will be useful, but WITHOUT
+// ANY WARRANTY; without even the implied warranty of MERCHANTIBILITY or
+// FITNESS FOR A PARTICULAR PURPOSE.
+//
+////////////////////////////////////////////////////////////////////////////////
+//
+//
 `default_nettype	none
-
-module	txdata(
-				input	wire			i_clk,
-				input	wire			i_reset,
-				input	wire			i_stb,
-				input	wire	[31:0]	i_data,
-				output	wire			o_busy,
-				output	wire			o_uart_tx
-			  );
+//
+module	txdata(i_clk, i_reset, i_stb, i_data, o_busy, o_uart_tx);
 	parameter	UART_SETUP = 868;
+	input	wire		i_clk, i_reset;
+	input	wire		i_stb;
+	input	wire	[31:0]	i_data;
+	output	wire		o_busy;
+	output	wire		o_uart_tx;
 
 	reg	[31:0]	sreg;
 	reg	[7:0]	hex, tx_data;
 	reg	[3:0]	state;
-	reg			tx_stb;
-
+	reg		tx_stb;
 	wire		tx_busy;
 
-	// FSM
 	initial	tx_stb = 1'b0;
 	initial	state  = 0;
-	always @(posedge i_clk) begin
-		if (i_reset) begin
-			state      <= 0;
-			tx_stb     <= 1'b0;
-		end else if (!o_busy) begin
-			// state <= 0;
-			if (i_stb) begin
-				state <= 1;
-				tx_stb <= 1;
-			end
-		end else if ( (tx_stb) && (!tx_busy) ) begin
-			state <= state + 1;
-			if (state >= 4'hD) begin
-				tx_stb <= 1'b0;
-				state <= 0;
-			end
+
+	always @(posedge i_clk)
+	if (i_reset) begin
+		state      <= 0;
+		tx_stb     <= 1'b0;
+	end else if (!o_busy) begin
+		// state <= 0;
+		if (i_stb) begin
+			state <= 1;
+			tx_stb <= 1;
+		end
+	end else if ((tx_stb)&&(!tx_busy)) begin
+		state <= state + 1;
+		if (state >= 4'hd) begin
+			tx_stb <= 1'b0;
+			state <= 0;
 		end
 	end
 
-	// sreg
-	// 
-	// The outgoing data is just a shift register
-	initial	sreg = 0;
-	always @(posedge i_clk) begin
-		if (!o_busy) // && (i_stb)
-			sreg <= i_data;
-		else if ((!tx_busy)&&(state > 4'h1))
-			sreg <= { sreg[27:0], 4'h0 };
-	end
+	assign	o_busy = tx_stb;
 
-	// Convert ASCII to hex
-	always @(posedge i_clk) begin
+	initial	sreg = 0;
+	always @(posedge i_clk)
+	if ((!o_busy)&&(i_stb))
+		sreg <= i_data;
+	else if ((!tx_busy)&&(state > 4'h1))
+		sreg <= { sreg[27:0], 4'h0 };
+
+	always @(posedge i_clk)
 		case(sreg[31:28])
-			4'h0: hex <= "0";	// Values in "" specify literal
-			4'h1: hex <= "1";	// 8bit values with an ASCII encoding
+			4'h0: hex <= "0";
+			4'h1: hex <= "1";
 			4'h2: hex <= "2";
 			4'h3: hex <= "3";
 			4'h4: hex <= "4";
@@ -91,23 +86,21 @@ module	txdata(
 			4'h7: hex <= "7";
 			4'h8: hex <= "8";
 			4'h9: hex <= "9";
-			4'ha: hex <= "a";	// Strings work similarly
-			4'hb: hex <= "b";	// with the only difference
-			4'hc: hex <= "c";	// being that string
-			4'hd: hex <= "d";	// literals may be much
-			4'he: hex <= "e";	// longer than 8bits
-			4'hf: hex <= "f";	// Ex: A >= "1234"
+			4'ha: hex <= "a";
+			4'hb: hex <= "b";
+			4'hc: hex <= "c";
+			4'hd: hex <= "d";
+			4'he: hex <= "e";
+			4'hf: hex <= "f";
 			default: begin end
 		endcase
-	end
 
-	// Transmit a byte 
-	always @(posedge i_clk) begin
-		if (!tx_busy) begin
+	always @(posedge i_clk)
+		if (!tx_busy)
 			case(state)
-				4'h1: tx_data <= "0";		// These are the values
-				4'h2: tx_data <= "x";		// We'll want to output
-				4'h3: tx_data <= hex;		// at each state
+				4'h1: tx_data <= "0";
+				4'h2: tx_data <= "x";
+				4'h3: tx_data <= hex;
 				4'h4: tx_data <= hex;
 				4'h5: tx_data <= hex;
 				4'h6: tx_data <= hex;
@@ -115,38 +108,32 @@ module	txdata(
 				4'h8: tx_data <= hex;
 				4'h9: tx_data <= hex;
 				4'ha: tx_data <= hex;
-				4'hb: tx_data <= "\r";		// Carriage return
-				4'hc: tx_data <= "\n";		// Line feed
-				default: tx_data <= "Q"; 	// A bad value	
+				4'hb: tx_data <= "\r";
+				4'hc: tx_data <= "\n";
+				default: tx_data <= "0";
 			endcase
-		end
-	end
 
-	// o_busy
-	always @(posedge i_clk) begin
-		if( (!i_stb) && !(tx_busy) && (f_minbusy[0] == 0) ) begin
-			o_busy <= 1'b0;
-		end
-	end
-
-//
-// Formal Verification
-//
 `ifndef	FORMAL
-	txuart	#(UART_SETUP[23:0])
-		txuarti(i_clk, tx_stb, tx_data, o_uart_tx, tx_busy);
+	txuart	#(UART_SETUP[23:0]) txuarti(i_clk, tx_stb, tx_data, o_uart_tx, tx_busy);
 `else
 	(* anyseq *) wire serial_busy, serial_out;
 	assign	o_uart_tx = serial_out;
 	assign	tx_busy = serial_busy;
 `endif
 
-//
-// Formal Verification
-//
 `ifdef	FORMAL
+	
+	// Initial assuzmptions
 	initial	assume(i_reset);
+	initial	assume(!tx_busy);
 
+	// fv_data
+	reg	[7:0]	fv_data;
+	always @(posedge i_clk)
+		if ((!o_busy)&&(i_stb))
+			fv_data <= i_data;
+
+	// f_past_valid
 	reg	f_past_valid;
 	initial	f_past_valid = 1'b0;
 	always @(posedge i_clk)
@@ -158,29 +145,21 @@ module	txdata(
 	// it needs to become busy upon a request given to it
 	// but not before.  Upon a request, it needs to stay
 	// busy for a minimum period of time
-	initial	assume(!tx_busy);							// Starts IDLE
 	always @(posedge i_clk)
-		if ($past(i_reset))								// Becomes IDLE after reset
+		if ($past(i_reset))
 			assume(!tx_busy);
-		else if (($past(tx_stb))&&(!$past(tx_busy)))	// Must become BUSY after a new request
+		else if (($past(tx_stb))&&(!$past(tx_busy)))
 			assume(tx_busy);
-		else if (!$past(tx_busy))						// Otherwise it cannot become busy without a request
+		else if (!$past(tx_busy))
 			assume(!tx_busy);
 
-	//  We can usef_minbusy to force any transmit request to take at
-	// least four cycles before dropping the busy line
-	//		- f_minbusyis just a 2-bit counter
-	//		- After passing 3, it waits at zero for the next byte
 	reg	[1:0]	f_minbusy;
 	initial	f_minbusy = 0;
 	always @(posedge i_clk)
-		if ( (tx_stb) && (!tx_busy) )
+		if ((tx_stb)&&(!tx_busy))
 			f_minbusy <= 2'b01;
 		else if (f_minbusy != 2'b00)
 			f_minbusy <= f_minbusy + 1'b1;
-
-	//  Since(∗anyseq∗)values act like inputs to our design,
-	// constraining them by an assumption is appropriate
 
 	always @(*)
 		if (f_minbusy != 0)
@@ -190,101 +169,112 @@ module	txdata(
 	//
 	// Some cover statements
 	//
+
 	// You should be able to "see" your design working from these
 	// If not ... modify them until you can.
 	//
-	// Don't forget to set the mode to cover
-	// in your SBY file!
 	always @(posedge i_clk)
-		if (f_past_valid)
+		if ((f_past_valid)&&(!$past(i_reset))&&(o_busy))
 			cover($fell(o_busy));
-	always @(posedge i_clk) begin
-		if ( (f_past_valid) && (!$past(i_reset)) ) begin
-			cover($fell(o_busy));
-		end
-	end
 
-	// What if we look for 0x12345678\r\n?
+	// Look for0x12345678\r\n
 	reg f_seen_data;
 	initial f_seen_data = 0;
-	always @(posedge i_clk) begin
-		if(i_reset) begin
+	always @(posedge i_clk)
+		if(i_reset)
 			f_seen_data <= 1'b0;
-		end else if( (i_stb) && (!o_busy) && (i_data == 32'h12345678) ) begin
-			f_seen_data = 1'b1;
-		end
-	end
-	always @(posedge i_clk) begin
-		if( (f_past_valid) && ($past(i_reset)) && (f_seen_data) ) begin
+		else if((i_stb)&&(!o_busy)&&(i_data == 32'h12345678))
+			f_seen_data <= 1'b1;
+
+	always @(posedge i_clk)
+		if((f_past_valid)&&(!$past(i_reset))&&(f_seen_data))
 			cover($fell(o_busy));
-		end
-	end
 
 	//
 	// Some assertions about our sequence of states
 	//
-	// f_p1reg is a shift register
-	//		- f_p1reg[x]is true anytime we are in stagexof our sequence
-	//		- We can use this when constructing formal properties
-	// 
-	// Usingf_p1reg[x]we can make assertions about the different
-	// states in our sequence
-	//
-	// f_p1reg[x]allows us to represent general sequence states
-	reg	[12:0]	f_p1reg;
-	initial	f_p1reg = 0;
-	reg [7:0]	fv_data;
-	always @(posedge i_clk) begin
-		if ((i_stb)&&(!o_busy)) begin
-			f_p1reg <= 1;
-			assume(f_p1reg[12:0] == 0);
-		end else if (f_p1reg) begin
-			if (f_p1reg != 1)
-				assert($stable(fv_data));
-			if (!tx_busy)
-				f_p1reg <= { f_p1reg[12:0], 1'b0 };
-			if ((!tx_busy)||(f_minbusy==0)) begin
-				if (f_p1reg[0]) begin
-					assert((tx_data == "0") && (state == 4'h1));
-					assert((sreg == i_data));
+	reg	[15:0]	p1reg;
+	initial	p1reg = 0;									// p1reg is one clock cycle behind state, so it's synchronized with tx_data, sreg
+	always @(posedge i_clk)
+		if((f_past_valid)&&(!$past(i_reset)))
+			if ((i_stb)&&(!o_busy)) begin
+				p1reg <= 1;								// Start Tx
+				assert(p1reg[11:1] == 0);				// p1reg = 0000_0000_0001
+			end else if(p1reg) begin
+				if (p1reg != 1)
+					assert($stable(fv_data));
+				if (!tx_busy)
+					p1reg <= { p1reg[14:0], 1'b0 };		// Tx finished - Move to next char
+				if ((!tx_busy)||(!f_minbusy)) begin		// Transmitting..
+					if ($past(p1reg[0])) begin
+						assert(tx_data == "0");
+						assert(state == 2);
+						assert(sreg == i_data);
+					end
+					if ($past(p1reg[1])) begin
+						assert(tx_data == "x");
+						assert(state == 3);
+						assert(sreg == i_data);
+					end
+					if ($past(p1reg[2])) begin
+						assert(tx_data == $past(fv_data[31:28]));
+						assert(state == 4);
+						assert(sreg == i_data);
+					end
+					if ($past(p1reg[3])) begin
+						assert(tx_data == $past(fv_data[27:24]));
+						assert(state == 5);
+						assert(sreg == i_data);
+					end
+					if ($past(p1reg[4])) begin
+						assert(tx_data == $past(fv_data[23:20]));
+						assert(state == 6);
+						assert(sreg == i_data);
+					end
+					if ($past(p1reg[5])) begin
+						assert(tx_data == $past(fv_data[19:16]));
+						assert(state == 6);
+						assert(sreg == i_data);
+					end
+					if ($past(p1reg[6])) begin
+						assert(tx_data == $past(fv_data[15:12]));
+						assert(state == 7);
+						assert(sreg == i_data);
+					end
+					if ($past(p1reg[7])) begin
+						assert(tx_data == $past(fv_data[11:8]));
+						assert(state == 8);
+						assert(sreg == i_data);
+					end
+					if ($past(p1reg[8])) begin
+						assert(tx_data == $past(fv_data[7:4]));
+						assert(state == 9);
+						assert(sreg == i_data);
+					end
+					if ($past(p1reg[9])) begin
+						assert(tx_data == $past(fv_data[3:0]));
+						assert(state == 10);
+						assert(sreg == i_data);
+					end
+					if ($past(p1reg[10])) begin
+						assert(tx_data == "\r");
+						assert(state == 11);
+						assert(sreg == i_data);
+					end
+					if ($past(p1reg[11])) begin
+						assert(tx_data == "\n");
+						assert(state == 0);
+						assert(sreg == i_data);
+					end
+
 				end
-				if(f_p1reg[1]) begin
-					assert((tx_data == "x") && (state == 4'h2));
-				end
-				if(f_p1reg[2]) begin
-					assert((tx_data == hex) && (state == 4'h3));
-				end
-				if(f_p1reg[4]) begin
-					assert((tx_data == hex) && (state == 4'h4));
-				end
-				if(f_p1reg[5]) begin
-					assert((tx_data == hex) && (state == 4'h5));
-				end
-				if(f_p1reg[6]) begin
-					assert((tx_data == hex) && (state == 4'h6));
-				end
-				if(f_p1reg[7]) begin
-					assert((tx_data == hex) && (state == 4'h7));
-				end
-				if(f_p1reg[8]) begin
-					assert((tx_data == hex) && (state == 4'h8));
-				end
-				if(f_p1reg[9]) begin
-					assert((tx_data == hex) && (state == 4'h9));
-				end
-				if(f_p1reg[10]) begin
-					assert((tx_data == hex) && (state == 4'hA));
-				end
-				if(f_p1reg[11]) begin
-					assert((tx_data == "\r") && (state == 4'hB));
-				end
-				if(f_p1reg[12]) begin
-					assert((tx_data == "\n") && (state == 4'hB));
-				end
+			// end else // if((!i_stb)&&(o_busy)||(!p1reg))// if(!p1reg) // if(($past(tx_stb))&&(!$past(tx_busy))&&($past(state)==4'hd))
+			// 	assert(state == 0);
 			end
-		end else
-			assert(state == 0);
-	end
+
+		// always @(posedge i_clk)
+		// 	if((f_past_valid)&&(!$past(i_reset)))
+		// 		assert(p1reg == $past(state));
 
 `endif
 endmodule

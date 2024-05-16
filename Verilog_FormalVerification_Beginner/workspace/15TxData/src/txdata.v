@@ -139,20 +139,7 @@ module	txdata(i_clk, i_reset, i_stb, i_data, o_busy, o_uart_tx);
 	always @(posedge i_clk)
 		f_past_valid = 1'b1;
 
-	//
-	// Make some assumptions about tx_busy
-	//
-	// it needs to become busy upon a request given to it
-	// but not before.  Upon a request, it needs to stay
-	// busy for a minimum period of time
-	always @(posedge i_clk)
-		if ($past(i_reset))
-			assume(!tx_busy);
-		else if (($past(tx_stb))&&(!$past(tx_busy)))
-			assume(tx_busy);
-		else if (!$past(tx_busy))
-			assume(!tx_busy);
-
+	// We'll insist that our abstract UART is busy following any request
 	reg	[1:0]	f_minbusy;
 	initial	f_minbusy = 0;
 	always @(posedge i_clk)
@@ -160,11 +147,24 @@ module	txdata(i_clk, i_reset, i_stb, i_data, o_busy, o_uart_tx);
 			f_minbusy <= 2'b01;
 		else if (f_minbusy != 2'b00)
 			f_minbusy <= f_minbusy + 1'b1;
-
 	always @(*)
 		if (f_minbusy != 0)
 			assume(tx_busy);
 
+	//
+	// Make some assumptions about tx_busy
+	//
+	// it needs to become busy upon a request given to it
+	// but not before.  Upon a request, it needs to stay
+	// busy for a minimum period of time
+	initial assume(!tx_busy);	// Starts idle
+	always @(posedge i_clk)
+		if ($past(i_reset))
+			assume(!tx_busy);	// 
+		else if (($past(tx_stb))&&(!$past(tx_busy)))
+			assume(tx_busy);	// Must become busy after a new request
+		else if (!$past(tx_busy))
+			assume(!tx_busy);	// Otherwise, it cannot become busy without a request
 
 	//
 	// Some cover statements
@@ -173,8 +173,14 @@ module	txdata(i_clk, i_reset, i_stb, i_data, o_busy, o_uart_tx);
 	// You should be able to "see" your design working from these
 	// If not ... modify them until you can.
 	//
+
+	// // It works, but it’s not very informative
+	// always @(posedge i_clk)
+	// 	if (f_past_valid)
+	// 		cover($fell(o_busy));
+
 	always @(posedge i_clk)
-		if ((f_past_valid)&&(!$past(i_reset))&&(o_busy))
+		if ((f_past_valid)&&(!$past(i_reset)))
 			cover($fell(o_busy));
 
 	// Look for0x12345678\r\n

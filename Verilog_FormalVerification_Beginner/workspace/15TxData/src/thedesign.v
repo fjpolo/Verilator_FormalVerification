@@ -24,7 +24,7 @@
 //
 `default_nettype none
 //
-module thedesign(i_clk, i_reset, i_event,
+module thedesign(i_clk, i_event,
 `ifdef	VERILATOR
 		o_setup,
 `endif

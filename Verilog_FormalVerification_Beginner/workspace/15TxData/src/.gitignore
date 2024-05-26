@@ -2,6 +2,7 @@ obj_dir/
 txuart/
 txdata/
 txdata_cover/
+txdata_bound/
 txdata_cvr/
 txdata_prf/
 chgdetector/

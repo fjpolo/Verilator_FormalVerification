@@ -1,16 +1,20 @@
 [tasks]
+bound
 prf
 cvr
 
 [options]
+bound:  mode bmc
+bound:  depth 128
 prf:    mode prove
+prf:    depth 64
 cvr:    mode cover
-prf:    depth 30
 cvr:    depth 250
 cvr:    append 20
 
 
 [engines]
+bound:  smtbmc
 prf:    smtbmc yices
 cvr:    smtbmc
 

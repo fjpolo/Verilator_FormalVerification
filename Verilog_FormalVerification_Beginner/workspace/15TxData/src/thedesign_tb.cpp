@@ -87,7 +87,7 @@ int	main(int argc, char **argv) {
 		else if (chv != ERR)
 			tb->m_core->i_event = 1;
 
-		for(int k=0; k<1000; k++) {
+		for(int k=0; k<10000; k++) {
 			tb->tick();
 			(*uart)(tb->m_core->o_uart_tx);
 			keypresses += tb->m_core->i_event;

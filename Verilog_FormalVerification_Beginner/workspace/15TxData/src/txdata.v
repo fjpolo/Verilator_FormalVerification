@@ -38,6 +38,20 @@ module	txdata(i_clk, i_reset, i_stb, i_data, o_busy, o_uart_tx);
 	output	wire		o_busy;
 	output	wire		o_uart_tx;
 
+	parameter STATE_SEND_0 = 4'h0;
+	parameter STATE_SEND_X = 4'h1;
+	parameter STATE_SEND_CHAR0 = 4'h2;
+	parameter STATE_SEND_CHAR1 = 4'h3;
+	parameter STATE_SEND_CHAR2 = 4'h4;
+	parameter STATE_SEND_CHAR3 = 4'h5;
+	parameter STATE_SEND_CHAR4 = 4'h6;
+	parameter STATE_SEND_CHAR5 = 4'h7;
+	parameter STATE_SEND_CHAR6 = 4'h8;
+	parameter STATE_SEND_CHAR7 = 4'h9;
+	parameter STATE_SEND_CAR_RET = 4'hA;
+	parameter STATE_SEND_RET = 4'hB;
+	parameter STATE_LAST = STATE_SEND_RET + 1;
+
 	reg	[31:0]	sreg;
 	reg	[7:0]	hex, tx_data;
 	reg	[3:0]	state;
@@ -45,7 +59,7 @@ module	txdata(i_clk, i_reset, i_stb, i_data, o_busy, o_uart_tx);
 	wire		tx_busy;
 
 	initial	tx_stb = 1'b0;
-	initial	state  = 0;
+	initial state  = 0;
 
 	always @(posedge i_clk)
 	if (i_reset) begin
@@ -59,7 +73,7 @@ module	txdata(i_clk, i_reset, i_stb, i_data, o_busy, o_uart_tx);
 		end
 	end else if ((tx_stb)&&(!tx_busy)) begin
 		state <= state + 1;
-		if (state >= 4'hd) begin
+		if (state >= 4'hc) begin
 			tx_stb <= 1'b0;
 			state <= 0;
 		end
@@ -69,10 +83,10 @@ module	txdata(i_clk, i_reset, i_stb, i_data, o_busy, o_uart_tx);
 
 	initial	sreg = 0;
 	always @(posedge i_clk)
-	if ((!o_busy)&&(i_stb))
-		sreg <= i_data;
-	else if ((!tx_busy)&&(state > 4'h1))
-		sreg <= { sreg[27:0], 4'h0 };
+		if ((!o_busy)&&(i_stb))
+			sreg <= i_data;
+		else if ((!tx_busy)&&(state > 4'h1))
+			sreg <= { sreg[27:0], 4'h0 };
 
 	always @(posedge i_clk)
 		case(sreg[31:28])
@@ -98,8 +112,9 @@ module	txdata(i_clk, i_reset, i_stb, i_data, o_busy, o_uart_tx);
 	always @(posedge i_clk)
 		if (!tx_busy)
 			case(state)
-				4'h1: tx_data <= "0";
-				4'h2: tx_data <= "x";
+				4'h0: tx_data <= "0";
+				4'h1: tx_data <= "x";
+				4'h2: tx_data <= hex;
 				4'h3: tx_data <= hex;
 				4'h4: tx_data <= hex;
 				4'h5: tx_data <= hex;
@@ -107,10 +122,9 @@ module	txdata(i_clk, i_reset, i_stb, i_data, o_busy, o_uart_tx);
 				4'h7: tx_data <= hex;
 				4'h8: tx_data <= hex;
 				4'h9: tx_data <= hex;
-				4'ha: tx_data <= hex;
-				4'hb: tx_data <= "\r";
-				4'hc: tx_data <= "\n";
-				default: tx_data <= "0";
+				4'ha: tx_data <= "\r";
+				4'hb: tx_data <= "\n";
+				default: tx_data <= "Q";	// Random data
 			endcase
 
 `ifndef	FORMAL
@@ -128,14 +142,21 @@ module	txdata(i_clk, i_reset, i_stb, i_data, o_busy, o_uart_tx);
 	initial	assume(!tx_busy);
 
 	// fv_data
-	reg	[7:0]	fv_data;
+	reg	[31:0]	fv_data;
+	initial fv_data = 32'h0000;
 	always @(posedge i_clk)
 		if ((!o_busy)&&(i_stb))
 			fv_data <= i_data;
 
+	always @(posedge i_clk) begin
+		assume(i_data == 32'h12345678);
+		assume($stable(i_data));
+	end
+
 	// f_past_valid
 	reg	f_past_valid;
 	initial	f_past_valid = 1'b0;
+	initial assert(!f_past_valid);
 	always @(posedge i_clk)
 		f_past_valid = 1'b1;
 
@@ -196,91 +217,108 @@ module	txdata(i_clk, i_reset, i_stb, i_data, o_busy, o_uart_tx);
 		if((f_past_valid)&&(!$past(i_reset))&&(f_seen_data))
 			cover($fell(o_busy));
 
+	// Some assertions
+	always @(posedge i_clk)
+		if(!f_past_valid)
+			assume(i_reset);
+
+	initial assert(state == 0);
+	always @ (posedge i_clk)
+		if((f_past_valid)&&(!$past(i_reset)))
+			assert((state >= 4'h0)&&(state <= 4'hc));
+
+	always @(posedge i_clk)
+		if((f_past_valid)&&(!$past(i_reset)))
+			assert(tx_stb != (state == 0));
+
+	always @(posedge i_clk)
+		if((f_past_valid)&&(!$past(i_reset))&&(i_stb)&&(!o_busy))
+			assume(i_data == 32'h1234_5678);
+
 	//
 	// Some assertions about our sequence of states
 	//
-	reg	[15:0]	p1reg;
-	initial	p1reg = 0;									// p1reg is one clock cycle behind state, so it's synchronized with tx_data, sreg
+	reg	[12:0]	f_p1reg;									// Shift register to represent a sequence
+	initial	f_p1reg = 0;									// f_p1reg is one clock cycle behind state, so it's synchronized with tx_data, sreg
+	initial assert(state == 0);
 	always @(posedge i_clk)
-		if((f_past_valid)&&(!$past(i_reset)))
-			if ((i_stb)&&(!o_busy)) begin
-				p1reg <= 1;								// Start Tx
-				assert(p1reg[11:1] == 0);				// p1reg = 0000_0000_0001
-			end else if(p1reg) begin
-				if (p1reg != 1)
-					assert($stable(fv_data));
-				if (!tx_busy)
-					p1reg <= { p1reg[14:0], 1'b0 };		// Tx finished - Move to next char
-				if ((!tx_busy)||(!f_minbusy)) begin		// Transmitting..
-					if ($past(p1reg[0])) begin
-						assert(tx_data == "0");
-						assert(state == 2);
-						assert(sreg == i_data);
-					end
-					if ($past(p1reg[1])) begin
-						assert(tx_data == "x");
-						assert(state == 3);
-						assert(sreg == i_data);
-					end
-					if ($past(p1reg[2])) begin
-						assert(tx_data == $past(fv_data[31:28]));
-						assert(state == 4);
-						assert(sreg == i_data);
-					end
-					if ($past(p1reg[3])) begin
-						assert(tx_data == $past(fv_data[27:24]));
-						assert(state == 5);
-						assert(sreg == i_data);
-					end
-					if ($past(p1reg[4])) begin
-						assert(tx_data == $past(fv_data[23:20]));
-						assert(state == 6);
-						assert(sreg == i_data);
-					end
-					if ($past(p1reg[5])) begin
-						assert(tx_data == $past(fv_data[19:16]));
-						assert(state == 6);
-						assert(sreg == i_data);
-					end
-					if ($past(p1reg[6])) begin
-						assert(tx_data == $past(fv_data[15:12]));
-						assert(state == 7);
-						assert(sreg == i_data);
-					end
-					if ($past(p1reg[7])) begin
-						assert(tx_data == $past(fv_data[11:8]));
-						assert(state == 8);
-						assert(sreg == i_data);
-					end
-					if ($past(p1reg[8])) begin
-						assert(tx_data == $past(fv_data[7:4]));
-						assert(state == 9);
-						assert(sreg == i_data);
-					end
-					if ($past(p1reg[9])) begin
-						assert(tx_data == $past(fv_data[3:0]));
-						assert(state == 10);
-						assert(sreg == i_data);
-					end
-					if ($past(p1reg[10])) begin
-						assert(tx_data == "\r");
-						assert(state == 11);
-						assert(sreg == i_data);
-					end
-					if ($past(p1reg[11])) begin
-						assert(tx_data == "\n");
-						assert(state == 0);
-						assert(sreg == i_data);
-					end
+		if(i_reset)
+			f_p1reg <= 0;
+		else if ((i_stb)&&(!o_busy)) begin
+			f_p1reg <= 1;							// Start Tx
+		end else if(!tx_busy)
+			f_p1reg <= {f_p1reg[11:0], 1'b0};
 
-				end
-			// end else // if((!i_stb)&&(o_busy)||(!p1reg))// if(!p1reg) // if(($past(tx_stb))&&(!$past(tx_busy))&&($past(state)==4'hd))
-			// 	assert(state == 0);
+	always @(posedge i_clk)
+		if((!$past(f_past_valid))&&(f_past_valid)&&(!$past(i_reset))&&(!i_reset))
+			if ((i_stb)&&(!o_busy))
+				assert(f_p1reg == 0);
+
+	always @(posedge i_clk)
+		if((!$past(f_past_valid))&&(f_past_valid)&&(!$past(i_reset))) begin
+			if((!tx_busy)||(f_minbusy == 0))
+				if(f_p1reg) begin
+					if (f_p1reg != 1)
+						assert($stable(fv_data));
+					if (((tx_stb)&&(!tx_busy))||(!f_minbusy)) begin			// Transmitting...
+						if ($past(f_p1reg[0])) begin
+							assert(tx_data == "0");
+							assert(state == 1);
+							assert(sreg == i_data);
+						end
+						if ($past(f_p1reg[1])) begin
+							assert(tx_data == "x");
+							assert(state == 2);
+						end
+						if ($past(f_p1reg[2])) begin
+							assert(tx_data == ($past(fv_data[31:28])+8'h30));
+							assert(state == 3);
+						end
+						if (f_p1reg[3]) begin
+							assert(tx_data == ($past(fv_data[27:24])+8'h30));
+							assert(state == 4);
+						end
+						if (f_p1reg[4]) begin
+							assert(tx_data == ($past(fv_data[23:20])+8'h30));
+							assert(state == 5);
+						end
+						if (f_p1reg[5]) begin
+							assert(tx_data == ($past(fv_data[19:16])+8'h30));
+							assert(state == 6);
+						end
+						if (f_p1reg[6]) begin
+							assert(tx_data == ($past(fv_data[15:12])+8'h30));
+							assert(state == 7);
+						end
+						if (f_p1reg[7]) begin
+							assert(tx_data == ($past(fv_data[11:8])+8'h30));
+							assert(state == 8);
+						end
+						if (f_p1reg[8]) begin
+							assert(tx_data == ($past(fv_data[7:4])+8'h30));
+							assert(state == 9);
+						end
+						if (f_p1reg[9]) begin
+							assert(tx_data == ($past(fv_data[3:0])+8'h30));
+							assert(state == 10);
+						end
+						if (f_p1reg[10]) begin
+							assert(tx_data == "\r");
+							assert(state == 11);
+						end
+						if (f_p1reg[11]) begin
+							assert(tx_data == "\n");
+							assert(state == 12);
+						end
+					end
+				end 
 			end
+			// else // if((!i_stb)&&(o_busy)||(!f_p1reg))// if(!f_p1reg) // if(($past(tx_stb))&&(!$past(tx_busy))&&($past(state)==4'hd))
+			// 	assert(state == 0);
 
 		// always @(posedge i_clk)
 		// 	if((f_past_valid)&&(!$past(i_reset)))
-		// 		assert(p1reg == $past(state));
+		// 		assert(f_p1reg == $past(state));
 
 `endif
 endmodule

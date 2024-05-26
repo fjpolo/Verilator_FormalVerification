@@ -31,10 +31,15 @@ module thedesign(i_clk, i_event,
 `endif
 		o_uart_tx);
 	//
-`ifdef VERILATOR || FORMAL
+`ifdef VERILATOR
 	parameter	CLOCK_RATE_HZ = 100_000_000;
+	parameter 	NANO = 0;
+`else if FORMAL
+	parameter	CLOCK_RATE_HZ = 100_000_000;
+	parameter 	NANO = 0;
 `else
 	parameter	CLOCK_RATE_HZ = 27_000_000;
+	parameter 	NANO = 1;
 `endif
 	parameter	BAUD_RATE = 115_200;
 	//
@@ -50,7 +55,7 @@ module thedesign(i_clk, i_event,
 	wire	[31:0]	counterv, tx_data;
 	wire		tx_busy, tx_stb;
 	
-	counter thecounter(i_clk, 1'b0, !i_event, counterv);
+	counter thecounter(i_clk, 1'b0, (NANO ? !i_event : i_event), counterv);
 
 	chgdetector findchanges(i_clk, counterv, tx_stb, tx_data, tx_busy);
 

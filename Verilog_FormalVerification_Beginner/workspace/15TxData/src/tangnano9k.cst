@@ -1,0 +1,14 @@
+// CLK
+IO_LOC "i_clk" 52;
+IO_PORT "i_clk" PULL_MODE=UP;
+// Reset
+// IO_LOC "i_reset" 25;
+// IO_PORT "i_reset" IO_TYPE=LVCMOS33 PULL_MODE=DOWN DRIVE=8;
+// UART
+IO_LOC "o_uart_tx" 17;
+IO_PORT "o_uart_tx" IO_TYPE=LVCMOS33;
+// IO_LOC "uart_rx_i" 18;
+// IO_PORT "uart_rx_i" IO_TYPE=LVCMOS33;
+// S2
+IO_LOC "i_event" 3
+IO_PORT "i_event" IO_TYPE=LVCMOS33;

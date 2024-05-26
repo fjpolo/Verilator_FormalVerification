@@ -31,7 +31,7 @@
 `default_nettype	none
 //
 module	debouncer(i_clk, i_btn, o_debounced);
-	parameter	TIME_PERIOD = 75000;
+	parameter	TIME_PERIOD = 16'hFFFF;
 	input	wire	i_clk, i_btn;
 	output	reg	o_debounced;
 
@@ -46,16 +46,16 @@ module	debouncer(i_clk, i_btn, o_debounced);
 	// The count-down timer
 	initial	timer = 0;
 	always @(posedge i_clk)
-	if (timer != 0)
-		timer <= timer - 1;
-	else if (r_btn != o_debounced)
-		timer <= TIME_PERIOD[15:0] - 1;
+		if (timer != 0)
+			timer <= timer - 1;
+		else if (r_btn != o_debounced)
+			timer <= TIME_PERIOD[15:0] - 1;
 
 	// Finally, set our output value
 	initial	o_debounced = 0;
 	always @(posedge i_clk)
-	if (timer == 0)
-		o_debounced <= r_btn;
+		if (timer == 0)
+			o_debounced <= r_btn;
 
 `ifdef	FORMAL
 	// f_past_valid
@@ -64,8 +64,40 @@ module	debouncer(i_clk, i_btn, o_debounced);
 	initial assert(!f_past_valid);
 	always @(posedge i_clk)
 		f_past_valid = 1'b1;
+
+	// Some assertions and assumptions
+	initial assert(timer == 0);
+	initial assert({r_btn, r_aux } == 2'b00);
+	initial assert(o_debounced == 0);
+
+	always @(*)
+		assert(timer <= TIME_PERIOD);
+
+	always @(posedge i_clk)
+		if(f_past_valid)
+			if((r_btn != o_debounced)&&($past(timer) != 0))
+				assert(timer == ($past(timer) - 1));
+
+	always @(posedge i_clk)
+		if(f_past_valid)
+			if(($past(timer) == 0)&&($past(r_btn) != $past(o_debounced)))
+				assert(timer == (TIME_PERIOD - 1));
+
+	always @(posedge i_clk)
+		if(f_past_valid)
+			assert({ r_btn, r_aux } == { $past(r_aux), $past(i_btn) });
+
+	// Cover
+	always @(posedge i_clk)
+		if(f_past_valid)
+			cover(timer == 0);
 	//
-	// What properties would you place here?
+	// Contract
 	//
+	always @(posedge i_clk)
+		if(f_past_valid)
+			if ($past(timer) == 0)
+				assert(o_debounced == $past(r_btn));
+
 `endif	// FORMAL
 endmodule

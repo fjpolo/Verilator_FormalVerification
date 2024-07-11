@@ -62,25 +62,25 @@ module	wbpriarbiter #(
 		// dumps and such.
 		parameter	[0:0]		OPT_ZERO_ON_IDLE = 1'b0
 	) (
-		input	wire			i_clk,
+		input	wire					i_clk,
 		// Bus A
-		input	wire			i_a_cyc, i_a_stb, i_a_we,
-		input	wire	[(AW-1):0]	i_a_adr,
-		input	wire	[(DW-1):0]	i_a_dat,
+		input	wire					i_a_cyc, i_a_stb, i_a_we,
+		input	wire	[(AW-1):0]		i_a_adr,
+		input	wire	[(DW-1):0]		i_a_dat,
 		input	wire	[(DW/8-1):0]	i_a_sel,
-		output	wire			o_a_ack, o_a_stall, o_a_err,
+		output	wire					o_a_ack, o_a_stall, o_a_err,
 		// Bus B
-		input	wire			i_b_cyc, i_b_stb, i_b_we,
-		input	wire	[(AW-1):0]	i_b_adr,
-		input	wire	[(DW-1):0]	i_b_dat,
+		input	wire					i_b_cyc, i_b_stb, i_b_we,
+		input	wire	[(AW-1):0]		i_b_adr,
+		input	wire	[(DW-1):0]		i_b_dat,
 		input	wire	[(DW/8-1):0]	i_b_sel,
-		output	wire			o_b_ack, o_b_stall, o_b_err,
+		output	wire					o_b_ack, o_b_stall, o_b_err,
 		// The outgoing bus
-		output	wire			o_cyc, o_stb, o_we,
-		output	wire	[(AW-1):0]	o_adr,
-		output	wire	[(DW-1):0]	o_dat,
+		output	wire					o_cyc, o_stb, o_we,
+		output	wire	[(AW-1):0]		o_adr,
+		output	wire	[(DW-1):0]		o_dat,
 		output	wire	[(DW/8-1):0]	o_sel,
-		input	wire			i_ack, i_stall, i_err
+		input	wire					i_ack, i_stall, i_err
 	);
 
 	// Go high immediately (new cycle) if ...
@@ -146,6 +146,46 @@ module	wbpriarbiter #(
 	initial	f_past_valid = 1'b0;
 	always @(posedge i_clk)
 		f_past_valid <= 1'b1;	
+
+	// if ((STB)&&(!STALL)) te request is accepted
+	always @(posedge i_clk)
+		if(f_past_valid)
+			if(($past(i_a_stb))&&(~$past(o_a_stall))&&(~$past(o_b_stall)))
+				assert(i_a_cyc);
+	always @(posedge i_clk)
+		if(f_past_valid)
+			if(($past(i_b_stb))&&(~$past(o_a_stall))&&(~$past(o_b_stall)))
+				assert(i_b_cyc);
+
+	// if((STB)&&(STALL)) the reques must not change
+	always @(posedge i_clk)
+		if(f_past_valid)
+			if(($past(i_a_stb))&&(~$past(o_a_stall))&&(o_a_stall)&&(~$past(o_b_stall))&&(~o_b_stall))
+				assert($stable(i_a_cyc));
+	always @(posedge i_clk)
+		if(f_past_valid)
+			if(($past(i_b_stb))&&(~$past(o_b_stall))&&(o_b_stall)&&(~$past(o_a_stall))&&(~o_a_stall))
+				assert($stable(i_b_cyc));
+
+	// No Response can be returned without a request
+	always @(posedge i_clk)
+		if(f_past_valid)
+			if((~$past(o_cyc))&&(~o_cyc)&&(~r_a_owner)&&(~$past(i_a_stb))&&(~$past(i_b_stb))&&(~$past(i_a_cyc)&&(~$past(i_b_stb)))&&(~i_a_cyc)&&(~i_b_cyc)&&(~i_a_stb)&&(~i_b_stb))
+				assert((~o_a_ack)&&(~o_b_ack));
+
+	// // The arbiter cannot change during an active transaction
+	// always @(posedge i_clk)
+	// 	if(f_past_valid)
+
+	// All requests get responses
+	always @(posedge i_clk)
+		if(f_past_valid)
+			if((i_ack)&&($past(i_a_stb))&&(i_a_cyc)&&(r_a_owner))
+				assert(o_a_ack);
+	always @(posedge i_clk)
+		if(f_past_valid)
+			if((i_ack)&&($past(i_b_stb))&&(i_b_cyc)&&(~r_a_owner))
+				assert(o_b_ack);
 
 `endif
 

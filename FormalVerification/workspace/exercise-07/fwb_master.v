@@ -1,13 +1,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-// Filename:	fwb_slave.v
+// Filename:	fwb_master.v
 // {{{
 // Project:	WB2AXIPSP: bus bridges and other odds and ends
 //
 // Purpose:	This file describes the rules of a wishbone interaction from the
-//		perspective of a wishbone slave.  These formal rules may be used
-//	with yosys-smtbmc to *prove* that the slave properly handles outgoing
-//	responses to (assumed correct) incoming requests.
+//		perspective of a wishbone master.  These formal rules may be
+//	used with SymbiYosys to *prove* that the master properly handles
+//	outgoing transactions and incoming responses.
 //
 //	This module contains no functional logic.  It is intended for formal
 //	verification only.  The outputs returned, the number of requests that
@@ -15,19 +15,19 @@
 //	of outstanding requests, are designed for further formal verification
 //	purposes *only*.
 //
-//	This file is different from a companion formal_master.v file in that
-//	assumptions are made about the inputs to the slave: i_wb_cyc,
-//	i_wb_stb, i_wb_we, i_wb_addr, i_wb_data, and i_wb_sel, while full
-//	assertions are made about the outputs: o_wb_stall, o_wb_ack, o_wb_data,
-//	o_wb_err.  In the formal_master.v, assertions are made about the
-//	master outputs (slave inputs)), and assumptions are made about the
-//	master inputs (the slave outputs).
+//	This file is different from a companion formal_slave.v file in that the
+//	assertions are made on the outputs of the wishbone master: o_wb_cyc,
+//	o_wb_stb, o_wb_we, o_wb_addr, o_wb_data, and o_wb_sel, while only
+//	assumptions are made about the inputs: i_wb_stall, i_wb_ack, i_wb_data,
+//	i_wb_err.  In the formal_slave.v, assumptions are made about the
+//	slave inputs (the master outputs), and assertions are made about the
+//	slave outputs (the master inputs).
 //
 //	In order to make it easier to compare the slave against the master,
 //	assumptions with respect to the slave have been marked with the
 //	`SLAVE_ASSUME macro.  Similarly, assertions the slave would make have
 //	been marked with `SLAVE_ASSERT.  This allows the master to redefine
-//	these two macros to be from his perspective, and therefore the
+//	these two macros to be from their perspective, and therefore the
 //	diffs between the two files actually show true differences, rather
 //	than just these differences in perspective.
 //
@@ -59,7 +59,7 @@
 //
 `default_nettype none
 // }}}
-module	fwb_slave #(
+module	fwb_master #(
 		// {{{
 		parameter		AW=32, DW=32,
 		parameter		F_MAX_STALL = 0,
@@ -99,29 +99,38 @@ module	fwb_slave #(
 				? F_MAX_STALL : F_MAX_ACK_DELAY,
 		localparam	DLYBITS= (MAX_DELAY < 4) ? 2
 				: (MAX_DELAY >= 65536) ? 32
-				: $clog2(MAX_DELAY+1)
+				: $clog2(MAX_DELAY+1),
+		//
+		parameter [0:0]		F_OPT_SHORT_CIRCUIT_PROOF = 0,
+		//
+		// If this is the source of a request, then we can assume STB and CYC
+		// will initially start out high.  Master interfaces following the
+		// source on the way to the slave may not have this property
+		parameter [0:0]		F_OPT_SOURCE = 0
+		//
+		//
 		// }}}
 	) (
 		// {{{
-		input	wire			i_clk, i_reset,
+		input	wire						i_clk, i_reset,
 		// The Wishbone bus
-		input	wire			i_wb_cyc, i_wb_stb, i_wb_we,
-		input	wire	[(AW-1):0]	i_wb_addr,
-		input	wire	[(DW-1):0]	i_wb_data,
-		input	wire	[(DW/8-1):0]	i_wb_sel,
+		input	wire						i_wb_cyc, i_wb_stb, i_wb_we,
+		input	wire	[(AW-1):0]			i_wb_addr,
+		input	wire	[(DW-1):0]			i_wb_data,
+		input	wire	[(DW/8-1):0]		i_wb_sel,
 		//
-		input	wire			i_wb_ack,
-		input	wire			i_wb_stall,
-		input	wire	[(DW-1):0]	i_wb_idata,
-		input	wire			i_wb_err,
+		input	wire						i_wb_ack,
+		input	wire						i_wb_stall,
+		input	wire	[(DW-1):0]			i_wb_idata,
+		input	wire						i_wb_err,
 		// Some convenience output parameters
-		output	reg	[(F_LGDEPTH-1):0]	f_nreqs, f_nacks,
+		output	reg	[(F_LGDEPTH-1):0]		f_nreqs, f_nacks,
 		output	wire	[(F_LGDEPTH-1):0]	f_outstanding
 		// }}}
 	);
 
-`define	SLAVE_ASSUME	assume
-`define	SLAVE_ASSERT	assert
+`define	SLAVE_ASSUME	assert
+`define	SLAVE_ASSERT	assume
 	//
 	// Let's just make sure our parameters are set up right
 	// {{{
@@ -391,7 +400,7 @@ module	fwb_slave #(
 
 
 	//
-	// Count the number of acknowledgements that have been returned
+	// Count the number of acknowledgements that have been received
 	//
 	initial	f_nacks = 0;
 	always @(posedge i_clk)
@@ -487,6 +496,49 @@ module	fwb_slave #(
 		always @(posedge i_clk)
 		if ((f_past_valid)&&($past(i_wb_cyc))&&(!$past(i_wb_stb)))
 			`SLAVE_ASSUME(!i_wb_stb);
+	end endgenerate
+	// }}}
+	////////////////////////////////////////////////////////////////////////
+	//
+	// Master only checks
+	// {{{
+	////////////////////////////////////////////////////////////////////////
+	//
+	//
+
+	generate if (F_OPT_SHORT_CIRCUIT_PROOF)
+	begin
+		// In many ways, we don't care what happens on the bus return
+		// lines if the cycle line is low, so restricting them to a
+		// known value makes a lot of sense.
+		//
+		// On the other hand, if something above *does* depend upon
+		// these values (when it shouldn't), then we might want to know
+		// about it.
+		//
+		//
+		always @(posedge i_clk)
+		begin
+			if (!i_wb_cyc)
+			begin
+				assume(!i_wb_stall);
+				assume($stable(i_wb_idata));
+			end else if ((!$past(i_wb_ack))&&(!i_wb_ack))
+				assume($stable(i_wb_idata));
+		end
+	end endgenerate
+
+	generate if (F_OPT_SOURCE)
+	begin : SRC
+		// Any opening bus request starts with both CYC and STB high
+		// This is true for the master only, and more specifically
+		// only for those masters that are the initial source of any
+		// transaction.  By the time an interaction gets to the slave,
+		// the CYC line may go high or low without actually affecting
+		// the STB line of the slave.
+		always @(posedge i_clk)
+		if ((f_past_valid)&&(!$past(i_wb_cyc))&&(i_wb_cyc))
+			`SLAVE_ASSUME(i_wb_stb);
 	end endgenerate
 	// }}}
 endmodule

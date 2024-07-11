@@ -1,0 +1,13 @@
+obj_dir/
+txuart/
+txdata/
+txdata_cover/
+txdata_bound/
+txdata_cvr/
+txdata_prf/
+debouncer/
+debouncer_cover/
+debouncer_bound/
+debouncer_cvr/
+debouncer_prf/
+chgdetector/

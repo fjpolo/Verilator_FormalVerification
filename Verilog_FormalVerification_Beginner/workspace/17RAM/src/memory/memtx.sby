@@ -1,0 +1,17 @@
+[options]
+mode prove
+depth 90
+expect pass
+
+[engines]
+smtbmc yices
+
+[script]
+read_verilog -formal memtx.v
+read_verilog -formal txuart.v
+prep -top memtx
+
+[files]
+txuart.v
+memtx.v
+speech.hex

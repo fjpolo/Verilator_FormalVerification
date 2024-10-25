@@ -1,0 +1,9 @@
+linetest_cvr/
+linetest_prf/
+rxuart/
+rxuart_cvr/
+rxuart_prf/
+sfifo/
+sfifo_cvr/
+sfifo_prf/
+txuart/

@@ -1,0 +1,22 @@
+[tasks]
+prf
+cvr
+
+[options]
+prf: mode prove
+prf: depth 5
+cvr: mode cover
+cvr: depth 35
+
+[engines]
+smtbmc
+
+[script]
+read -formal -DLINETEST linetest.v
+prep -top linetest
+
+[files]
+linetest.v
+txuart.v
+rxuart.v
+sfifo.v

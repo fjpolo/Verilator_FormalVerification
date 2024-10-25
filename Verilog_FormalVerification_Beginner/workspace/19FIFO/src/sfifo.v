@@ -128,9 +128,7 @@ module sfifo(i_clk, i_wr, i_data, o_full, o_fill, i_rd, o_data, o_empty);
 	//
 	//
 
-	initial	f_past_valid = 1'b0;
-	always @(posedge i_clk)
-		f_past_valid <= 1'b1;
+
 
 	wire	[LGFLEN:0]	f_fill, f_next, f_empty;
 	assign	f_fill = wr_addr - rd_addr;

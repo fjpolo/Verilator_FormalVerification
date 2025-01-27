@@ -23,18 +23,106 @@
 `default_nettype none
 
 module apb_master(
-    input   wire i_clk,
-    input   wire i_reset_n,
-    output  wire o_paddr,
-    output  wire o_psel,
-    output  wire o_penable,
-    output  wire o_pwrite,
-    output  wire o_pwdata,
-    input   wire i_pready,
-    input   wire i_pslverr,
-    input   wire i_prdata
-);
+    input   wire    [0:0]   i_clk,
+    input   wire    [0:0]   i_reset_n,
+    input   wire    [7:0]   i_addr,
+    input   wire    [7:0]   i_data,
+    input   wire    [0:0]   i_we,       // Write enable
+    input   wire    [0:0]   i_new_data,
+    output  wire    [0:0]   o_error,
+    output  wire    [7:0]   o_data,
 
+
+    // APB
+    output  reg     [7:0]   o_paddr,
+    output  reg     [0:0]   o_psel,
+    output  reg     [0:0]   o_penable,
+    output  reg     [0:0]   o_pwrite,
+    output  reg     [7:0]   o_pwdata,
+    input   wire    [0:0]   i_pready,
+    input   wire    [0:0]   i_pslverr,
+    input   wire    [7:0]   i_prdata
+);
+    localparam [1:0] idle = 0, setup = 1, enable = 2;
+
+    reg [1:0] state, nstate;
+
+    // reset decoder
+    always@(posedge i_clk) begin
+        if(i_reset_n == 1'b0)
+            state <= idle;
+        else
+            state <= nstate;
+        end
+    // state decoder
+    always@(*)begin
+        case(state)
+            idle:begin
+                if (i_new_data)
+                    nstate = idle;
+                else
+                    nstate = setup;
+            end
+            setup: begin
+                    nstate = enable; 
+                end
+            enable: begin
+                if(i_new_data ) begin
+                        if(i_pready == 1'b1)
+                            nstate = setup;
+                        else
+                            nstate = enable;
+                    end
+                else begin
+                        nstate = idle;
+                    end
+                
+                end
+            default : nstate = idle; 
+        endcase
+        
+    end
+
+    //address decoding
+    always@(posedge i_clk) begin
+        if(!i_reset_n) begin
+            o_psel <= 1'b0;
+        end else if (nstate == idle) begin
+            o_psel <= 1'b0;
+        end else if ((nstate == enable)||(nstate == setup)) begin
+            o_psel <= 1'b1;
+        end  else begin
+            o_psel <= 1'b0;
+        end     
+    end
+
+    // error handling
+    assign o_error = i_pslverr;
+
+    // output logic
+    always@(posedge i_clk) begin
+        if(!i_reset_n) begin
+            o_penable <= 1'b0;
+            o_paddr   <= 8'h0;
+            o_pwdata  <= 8'h00;
+            o_pwrite  <= 1'b0;
+        end else if (nstate == idle) begin
+            o_penable <= 1'b0;
+            o_paddr   <= 8'h0;
+            o_pwdata  <= 8'h00;
+            o_pwrite  <= 1'b0;
+        end else if (nstate == setup) begin
+            o_penable <= 1'b0;
+            o_paddr   <= i_addr;
+            o_pwrite  <= i_we;
+            if(i_we == 1'b1)
+            o_pwdata <= i_data;
+        end else if (nstate == enable) begin
+            o_penable <= 1'b1;
+        end
+    end
+
+    assign o_data = ((o_psel)&&(o_penable)&& (!i_we)) ? i_prdata : 8'h00;
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -43,14 +131,13 @@ module apb_master(
 //
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
-
 `ifdef	FORMAL
-`ifdef	APB_MASTER
-`define	ASSUME	assume
-`define	ASSERT	assert
-`else
-`define	ASSUME	assert
-`define	ASSERT	assume
+    `ifdef	APB_MASTER
+        `define	ASSUME	assume
+        `define	ASSERT	assert
+    `else
+        `define	ASSUME	assert
+        `define	ASSERT	assume
 `endif
 
     ////////////////////////////////////////////////////
@@ -59,9 +146,17 @@ module apb_master(
 	//
 	////////////////////////////////////////////////////
 	reg	f_past_valid;
-	initial	f_past_valid_gbl = 0;
-	always @($posedge i_clk)
+	initial	f_past_valid = 0;
+	always @(posedge i_clk)
 		f_past_valid <= 1'b1;
+
+        always @(posedge i_clk)
+        if(!f_past_valid)
+            assume($past(!i_reset_n));
+
+    always @(posedge i_clk)
+        if($past(!i_reset_n))
+            assume(!f_past_valid);
 
     ////////////////////////////////////////////////////
 	//

@@ -19,8 +19,8 @@ prf:    smtbmc yices
 cvr:    smtbmc
 
 [script]
-read_verilog -DAPB_MASTER -formal sdram_nes.v
-prep -top sdram_nes
+read_verilog -DAPB_MASTER -formal apb_master.v
+prep -top apb_master
 
 [files]
-sdram_nes.v
+apb_master.v

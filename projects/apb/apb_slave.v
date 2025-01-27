@@ -43,14 +43,13 @@ module apb_slave(
 //
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
-
 `ifdef	FORMAL
-`ifdef	APB_SLAVE
-`define	ASSUME	assume
-`define	ASSERT	assert
-`else
-`define	ASSUME	assert
-`define	ASSERT	assume
+    `ifdef	APB_SLAVE
+        `define	ASSUME	assume
+        `define	ASSERT	assert
+    `else
+        `define	ASSUME	assert
+        `define	ASSERT	assume
 `endif
 
     ////////////////////////////////////////////////////
@@ -59,8 +58,8 @@ module apb_slave(
 	//
 	////////////////////////////////////////////////////
 	reg	f_past_valid;
-	initial	f_past_valid_gbl = 0;
-	always @($posedge i_clk)
+	initial	f_past_valid = 0;
+	always @(posedge i_clk)
 		f_past_valid <= 1'b1;
 
     ////////////////////////////////////////////////////

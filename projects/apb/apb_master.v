@@ -6,6 +6,8 @@
 // Date:         27.01.2025
 // Email:        fjpolo@gmail.com
 // Github:       @fjpolo
+//
+// Based on: https://github.com/iammituraj/apb/blob/main/apb_master.sv
 // 
 // License: 
 // This code is released under the following terms:
@@ -22,107 +24,105 @@
 // -----------------------------------------------------------------------------
 `default_nettype none
 
-module apb_master(
-    input   wire    [0:0]   i_clk,
-    input   wire    [0:0]   i_reset_n,
-    input   wire    [7:0]   i_addr,
-    input   wire    [7:0]   i_data,
-    input   wire    [0:0]   i_we,       // Write enable
-    input   wire    [0:0]   i_new_data,
-    output  wire    [0:0]   o_error,
-    output  wire    [7:0]   o_data,
+module apb_master #(
+    // Configurable Parameters
+    parameter DW = 32 ,                     // Data width
+    parameter AW = 8  ,                     // Address width; max. 32 as per APB spec
+ 
+    // Derived Parameters
+    localparam SW = 4,                      //  int'($ceil(DW/8)),      // Strobe width
+    localparam CW = 1 + SW + DW + AW ,      // Command width  {pwrite, pstrb, pwdata, paddr}  
+    localparam RW = 1 + DW                  // Response width {pslverr, prdata}
+ )
+ (
+    input   logic    [0:0]       i_clk,
+    input   logic    [0:0]       i_reset_n,
+   
+    // Command & Response Interface
+   input    logic   [CW-1:0]    i_cmd,      // Command
+   input    logic   [0:0]       i_valid,    // Valid
+   output   logic   [RW-1:0]    o_resp,     // Response
+   output   logic   [0:0]       o_ready,    // Ready
 
 
-    // APB
-    output  reg     [7:0]   o_paddr,
-    output  reg     [0:0]   o_psel,
-    output  reg     [0:0]   o_penable,
-    output  reg     [0:0]   o_pwrite,
-    output  reg     [7:0]   o_pwdata,
-    input   wire    [0:0]   i_pready,
-    input   wire    [0:0]   i_pslverr,
-    input   wire    [7:0]   i_prdata
+    // APB Interface
+   output   logic   [AW-1:0]    o_paddr,    // Address 
+   output   logic   [0:0]       o_pwrite,   // Write enable
+   output   logic   [0:0]       o_psel,     // Select
+   output   logic   [0:0]       o_penable,  // Enable
+   output   logic   [DW-1:0]    o_pwdata,   // Write data
+   output   logic   [SW-1:0]    o_pstrb,    // Write strobe
+   input    logic   [DW-1:0]    i_prdata,   // Read data
+   input    logic   [0:0]       i_pslverr,  // Slave error
+   input    logic   [0:0]       i_pready    // Ready
 );
-    localparam [1:0] idle = 0, setup = 1, enable = 2;
+// States
+typedef enum logic [1:0]
+{
+   IDLE   = 2'b00 ,   
+   ACCESS = 2'b10
+}  state_t ;
+// State register, next state 
+state_t state_ff, nxt_state ;
 
-    reg [1:0] state, nstate;
+// Command timing
+// ==============
+// 1. Command valid can be asserted anytime.
+// 2. Once asserted, command valid should remain asserted until ready is asserted
+// 3. Command should be stable while valid is high and should not change value until ready is asserted
+//
+// i_clk   __/``\__/``\__/``\__/``\__/``\__/``\__/``\
+// i_cmd  ______xx______/```C0`````\/```C1`````\__xx
+//                      \__________/\__________/
+// i_valid______________/```````````````````````\___
+// o_ready____________________/`````\_____/`````\___
+// o_resp ______xx________________________/``R1`\_xx
 
-    // reset decoder
-    always@(posedge i_clk) begin
-        if(i_reset_n == 1'b0)
-            state <= idle;
-        else
-            state <= nstate;
-        end
-    // state decoder
-    always@(*)begin
-        case(state)
-            idle:begin
-                if (i_new_data)
-                    nstate = idle;
-                else
-                    nstate = setup;
-            end
-            setup: begin
-                    nstate = enable; 
-                end
-            enable: begin
-                if(i_new_data ) begin
-                        if(i_pready == 1'b1)
-                            nstate = setup;
-                        else
-                            nstate = enable;
-                    end
-                else begin
-                        nstate = idle;
-                    end
-                
-                end
-            default : nstate = idle; 
-        endcase
+// FSM
+always_ff @(posedge i_clk) begin
+   if (!i_reset_n) begin
+      state_ff <= IDLE ;
+   end
+   else begin
+      state_ff <= nxt_state ;
+   end
+end
+always_comb begin
+   case (state_ff)
+      IDLE    : nxt_state = state_t'((i_valid)? ACCESS : IDLE)   ;
+      ACCESS  : nxt_state = state_t'((!i_pready)? ACCESS : IDLE) ;
+      default : nxt_state = state_ff ;
+   endcase
+end
+
+// APB Interface outputs
+assign o_paddr   = i_cmd[0+:AW] ;
+assign o_psel    = (state_ff == IDLE && i_valid);
+assign o_penable = (state_ff == ACCESS);
+
+// Outputs to Command Interface
+assign o_resp  = {i_pslverr, i_prdata} ;
+assign o_ready = o_penable & i_pready ;
+
+always @(posedge i_clk)
+    if(!i_reset_n)
+        o_pwrite  <= 1'b0;
+    else if(state_ff == IDLE)
+        o_pwrite  <= i_cmd[CW-1];
         
-    end
+always @(posedge i_clk)
+    if(!i_reset_n)
+        o_pwdata  <= 'h00;
+    else if(state_ff == IDLE)
+        o_pwdata  <= i_cmd[AW+:DW];
 
-    //address decoding
-    always@(posedge i_clk) begin
-        if(!i_reset_n) begin
-            o_psel <= 1'b0;
-        end else if (nstate == idle) begin
-            o_psel <= 1'b0;
-        end else if ((nstate == enable)||(nstate == setup)) begin
-            o_psel <= 1'b1;
-        end  else begin
-            o_psel <= 1'b0;
-        end     
-    end
+always @(posedge i_clk)
+    if(!i_reset_n)
+        o_pstrb  <= 'h00;
+    else if(state_ff == IDLE)
+        o_pstrb  <= i_cmd[(CW-2)-:SW];
 
-    // error handling
-    assign o_error = i_pslverr;
 
-    // output logic
-    always@(posedge i_clk) begin
-        if(!i_reset_n) begin
-            o_penable <= 1'b0;
-            o_paddr   <= 8'h0;
-            o_pwdata  <= 8'h00;
-            o_pwrite  <= 1'b0;
-        end else if (nstate == idle) begin
-            o_penable <= 1'b0;
-            o_paddr   <= 8'h0;
-            o_pwdata  <= 8'h00;
-            o_pwrite  <= 1'b0;
-        end else if (nstate == setup) begin
-            o_penable <= 1'b0;
-            o_paddr   <= i_addr;
-            o_pwrite  <= i_we;
-            if(i_we == 1'b1)
-            o_pwdata <= i_data;
-        end else if (nstate == enable) begin
-            o_penable <= 1'b1;
-        end
-    end
-
-    assign o_data = ((o_psel)&&(o_penable)&& (!i_we)) ? i_prdata : 8'h00;
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -132,12 +132,12 @@ module apb_master(
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 `ifdef	FORMAL
-    `ifdef	APB_MASTER
-        `define	ASSUME	assume
-        `define	ASSERT	assert
-    `else
-        `define	ASSUME	assert
-        `define	ASSERT	assume
+// Change direction of assumes
+`define	ASSERT	assert
+`ifdef	APB_MASTER
+`define	ASSUME	assume
+`else
+`define	ASSUME	assert
 `endif
 
     ////////////////////////////////////////////////////
@@ -150,7 +150,14 @@ module apb_master(
 	always @(posedge i_clk)
 		f_past_valid <= 1'b1;
 
-        always @(posedge i_clk)
+
+
+    ////////////////////////////////////////////////////
+	//
+	// Reset
+	//
+	////////////////////////////////////////////////////
+    always @(posedge i_clk)
         if(!f_past_valid)
             assume($past(!i_reset_n));
 
@@ -158,11 +165,36 @@ module apb_master(
         if($past(!i_reset_n))
             assume(!f_past_valid);
 
-    ////////////////////////////////////////////////////
-	//
-	// Reset
-	//
-	////////////////////////////////////////////////////
+    // One clock after reset, state must be idle
+    always @(posedge i_clk) begin
+        if((f_past_valid)&&($past(!i_reset_n)))
+            assert(state_ff == IDLE); 
+    end
+    // One clock after reset, o_psel must be low
+    always @(posedge i_clk) begin
+        if((f_past_valid)&&($past(!i_reset_n)))
+            assert(o_psel == 'h0); 
+    end
+    // One clock after reset, o_penable must be low
+    always @(posedge i_clk) begin
+        if((f_past_valid)&&($past(!i_reset_n)))
+            assert(o_penable == 'h0); 
+    end
+    // One clock after reset, o_paddr must be low
+    always @(posedge i_clk) begin
+        if((f_past_valid)&&($past(!i_reset_n)))
+            assert(o_paddr == 'h00); 
+    end
+    // One clock after reset, o_pwdata must be low
+    always @(posedge i_clk) begin
+        if((f_past_valid)&&($past(!i_reset_n)))
+            assert(o_pwdata == 'h00);  
+    end
+    // One clock after reset, o_pwrite must be low
+    always @(posedge i_clk) begin
+        if((f_past_valid)&&($past(!i_reset_n)))
+            assert(o_pwrite == 'h0); 
+    end
 
     ////////////////////////////////////////////////////
 	//
@@ -170,11 +202,61 @@ module apb_master(
 	//
 	////////////////////////////////////////////////////
 
+    // If i_cmd[CW-1] == 1, o_pwrite should be high 
+    always @(posedge i_clk) begin
+        if((f_past_valid)&&($past(i_reset_n))&&($past(state_ff) == IDLE))
+            assert(o_pwrite == ($past(i_cmd[CW-1]) == 1'b1)); 
+    end
+
     ////////////////////////////////////////////////////
 	//
 	// Contract
 	//
-	////////////////////////////////////////////////////
+	////////////////////////////////////////////////////   
+    
+    // o_penable is high only on ACCESS state 
+    always @(posedge i_clk) begin
+        if((f_past_valid)&&($past(i_reset_n))&&(i_reset_n))
+            assert(o_penable == (state_ff == ACCESS)); 
+    end 
+    // Data response: If i_pready -> o_resp  = {i_pslverr, i_prdata}
+    always @(posedge i_clk) begin
+        if((f_past_valid)&&($past(i_reset_n))&&(i_reset_n))
+            if(i_pready)
+                assert(o_resp == {i_pslverr, i_prdata}); 
+    end 
+    // Master should wait for slave when writing
+    // The following signals remain unchanged while PREADY remains LOW:
+    //      • Address signal, PADDR
+    //      • Direction signal, PWRITE
+    //      • Select signal, PSELx
+    //      • Enable signal, PENABLE
+    //      • Write data signal, PWDATA
+    //      • Write strobe signal, PSTRB
+    always @(posedge i_clk)
+        if((f_past_valid)&&($past(i_reset_n))&&(i_reset_n))
+            if((!$past(i_pready))&&(!i_pready)&&($past(state_ff) == ACCESS)) begin
+                `ASSUME($stable(o_paddr));  // 🆗
+                assert($stable(o_pwrite));  // 🆗
+                assert($stable(o_psel));    // 🆗
+                assert($stable(o_penable)); // 🆗
+                assert($stable(o_pwdata));  // 🆗
+                assert($stable(o_pstrb));   // 🆗
+            end
+    // Master should wait for slave when reading
+    // The following signals remain unchanged while PREADY remains LOW:
+    //        • Address signal, PADDR
+    //        • Direction signal, PWRITE
+    //        • Select signal, PSEL
+    //        • Enable signal, PENABLE
+    always @(posedge i_clk)
+        if((f_past_valid)&&($past(i_reset_n))&&(i_reset_n))
+            if((!$past(i_pready))&&(!i_pready)&&($past(state_ff) == ACCESS)) begin
+                `ASSUME($stable(o_paddr));  // 🆗
+                assert($stable(o_pwrite));  // 🆗
+                assert($stable(o_psel));    // 🆗
+                assert($stable(o_penable)); // 🆗
+            end
 
     ////////////////////////////////////////////////////
 	//
@@ -186,8 +268,7 @@ module apb_master(
 	//
 	// Cover
 	//
-	////////////////////////////////////////////////////
-
+	////////////////////////////////////////////////////           
 
 `endif // FORMAL
 

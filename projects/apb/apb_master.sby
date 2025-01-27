@@ -19,7 +19,7 @@ prf:    smtbmc yices
 cvr:    smtbmc
 
 [script]
-read_verilog -DAPB_MASTER -formal apb_master.v
+read_verilog -sv -DAPB_MASTER -formal apb_master.v
 prep -top apb_master
 
 [files]

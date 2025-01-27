@@ -1,0 +1,11 @@
+apb_master
+apb_master_bound
+apb_master_prf
+apb_master_cvr
+
+apb_slave
+apb_slave_bound
+apb_slave_prf
+apb_slave_prf
+
+/obj_dir/

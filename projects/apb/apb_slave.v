@@ -6,8 +6,6 @@
 // Date:         27.01.2025
 // Email:        fjpolo@gmail.com
 // Github:       @fjpolo
-//
-// Based on: https://github.com/iammituraj/apb/blob/main/apb_slave.sv
 // 
 // License: 
 // This code is released under the following terms:
@@ -25,174 +23,84 @@
 `default_nettype none
 
 module apb_slave #(
-	// Configurable Parameters
-	parameter DW = 32 ,  // Data width
-	parameter AW = 5     // Address width; max. 32 as per APB spec
-  )
- (
-	// Clock and Reset
-	input  	logic 	[0:0]		i_clk,  	// Clock
-	input  	logic 	[0:0]		i_reset_n,  // Reset
-	// HW interface
-	output 	logic 	[DW-1:0]	o_hw_ctl ,   // Some control signal from APB registers to external HW...
-	input  	logic 	[DW-1:0]	i_hw_sts,    // Some status signal from external HW to APB registers...
-	// APB Interface
-	input  	logic 	[AW-1:0] 	i_paddr,  	// Address 
-	input  	logic	[0:0]       i_pwrite,  	// Write enable
-	input  	logic	[0:0]       i_psel,  	// Select
-	input  	logic	[0:0]       i_penable,  // Enable
-	input  	logic 	[DW-1:0] 	i_pwdata,  	// Write data
-	output 	logic 	[DW-1:0] 	o_prdata,  	// Read data
-	output 	logic	[0:0]       o_pslverr,  // Slave error
-	output 	logic	[0:0]       o_pready   	// Ready
- 
- );
- 
- // States
- typedef enum logic [1:0] 
- {
-	IDLE     = 2'b00 , 
-	W_ACCESS = 2'b01 , 
-	R_ACCESS = 2'b10 ,
-	R_FINISH = 2'b11
- }  state_t ;
- // State register
- state_t state_ff ;
- 
- // Address LSb index, assuming address space with byte-addressing scheme...
- // 8-bit  => addr[AW-1:0]                        
- // 16-bit => addr[AW-1:1], ie., ignore addr[0:0] bits 
- // 32-bit => addr[AW-1:2], ie., ignore addr[1:0] bits
- localparam ADDR_LSB = $clog2(DW/8)     ;
- 
- //-----------------------------------------------------------------------------------
- //   Register Address Map
- //-----------------------------------------------------------------------------------
- //   1) 0x00 : apb_reg[0] - (RW)   // read-write; drives HW interface
- //   2) 0x04 : apb_reg[1] - (WO)   // write-only
- //   3) 0x08 : apb_reg[2] - (RW)   // read-write
- //   4) 0x0C : apb_reg[3] - (RO)   // read-only
- //   5) 0x10 : apb_reg[4] - (RO+)  // read-only; HW interface drives this
- //   6) <RFU>
- 
- //       ...
- //-----------------------------------------------------------------------------------
- //
-// Block RAM
-//
-`ifdef FORMAL
- reg [DW-1:0] apb_reg[5] ; 
- `else
- (* ram_style = "block" *) 	reg [DW-1:0] apb_reg[5] ; 
- `endif
- 
- // Read/write errors
- logic wr_err, rd_err ;
- 
- // Read/write requests
- logic req_rd, req_wr ;
- assign req_rd = i_psel && ~i_pwrite ;
- assign req_wr = i_psel &&  i_pwrite ;
- 
- // Synchronous logic to read/write registers
- always @(posedge i_clk) begin   
-	// Reset  
-	if (!i_reset_n) begin      
-	   state_ff <= IDLE ;
-	   // RW/WO registers      
-	   apb_reg[0] <= '0 ;
-	   apb_reg[1] <= '0 ;
-	   apb_reg[2] <= '0 ;       
-	   // APB read ports
-	   o_prdata <= '0   ;
-	   o_pready <= 1'b0 ;
-	end else begin       
-		// Out of reset
-	   // APB control FSM
-	   case (state_ff)
-		  
-		  // Idle State : waits for psel signal and decodes access type         
-		  IDLE : begin            
-			 if (req_wr) begin
-				o_pready <= 1'b1     ;    // Write access has no wait states
-				state_ff <= W_ACCESS ;    // Write access required
-			 end       
-			 else if (req_rd) begin
-				o_pready <= 1'b0     ;    // Read access has wait states
-				state_ff <= R_ACCESS ;    // Read access required  
-			 end           
-		  end
-		  
-		  // Write Access State : writes addressed-register
-		  W_ACCESS : begin             
-			 // psel and pwrite expected to be stable and penable to be asserted for successful write               
-			 if (req_wr && i_penable) begin
-				// Address decoding with LSbs masked
-				case (i_paddr [AW-1:ADDR_LSB])
-				   0       : apb_reg[0] <= i_pwdata ;
-				   1       : apb_reg[1] <= i_pwdata ;
-				   2       : apb_reg[2] <= i_pwdata ;
-				   default : ;                 
-				endcase
-			 end 
-			 o_pready <= 1'b0 ;
-			 state_ff <= IDLE ;
-		  end
-		  
-		  // Read Access State : reads addressed-register
-		  R_ACCESS : begin                   
-			 // psel and pwrite expected to be stable and penable to be asserted for successful read               
-			 if (req_rd && i_penable) begin
-				// Address decoding with LSbs masked
-				case (i_paddr [AW-1:ADDR_LSB])
-				   0       : o_prdata <= apb_reg[0] ;                     
-				   2       : o_prdata <= apb_reg[2] ;
-				   3       : o_prdata <= apb_reg[3] ;
-				   4       : o_prdata <= apb_reg[4] ;
-				   default : o_prdata <= '0         ;  // All invalid addresses, write-only registers are read as 0                 
-				endcase         
-			 end
-			 else begin
-				o_prdata <= '0 ;  // Send 0s on unsuccessful read
-			 end
-			 o_pready <= 1'b1     ;  // Induces one wait state
-			 state_ff <= R_FINISH ; 
-		  end
-		  
-		  // Read Finish state : All read accesses finish here          
-		  R_FINISH : begin              
-			 o_pready <= 1'b0 ;
-			 state_ff <= IDLE ;            
-		  end
- 
-		  default : ;         
- 
-	   endcase 
+	parameter MEMORY_LENGTH = 8
+)(
+	input 	wire 	[0:0]	i_clk,      // APB clock
+	input 	wire 	[0:0]	i_reset_n,  // APB reset (active low)
+	input 	wire 	[31:0] 	PADDR,  	// APB address
+	input 	wire 	[0:0]	PWRITE,    	// APB write/read control (1 = write, 0 = read)
+	input 	wire 	[31:0] 	PWDATA, 	// APB write data
+	input 	wire 	[0:0]	PSELx,      // APB slave select
+	input 	wire 	[0:0]	PENABLE,   	// APB enable
+	output 	reg 	[31:0] 	PRDATA, 	// APB read data
+	output 	reg 	[0:0]	PREADY,     // APB ready signal
+	output 	reg 	[0:0]	PSLVERR     // APB slave error signal
+  );
+  
+	// Internal memory (example: 32-bit registers)
+	reg [31:0] memory [0:(MEMORY_LENGTH-1)]; // MEMORY_LENGTH x 32-bit memory
+  
+	// State encoding
+	typedef enum logic [1:0] {
+	  IDLE,
+	  SETUP,
+	  ACCESS
+	} state_t;
+  
+	state_t state;
+
+	wire address_is_valid = (PADDR < MEMORY_LENGTH);
+  
+	// Initialize state and outputs
+	initial begin
+	  state = IDLE;
+	  PRDATA = 32'h0;
+	  PREADY = 1'b0;
+	  PSLVERR = 1'b0;
 	end
- end
- 
- // Assign all RO/RO+ registers
- assign apb_reg[3] = 32'hDEAD_BEEF ;  // Constant value
- assign apb_reg[4] = i_hw_sts      ;  // Driven by HW interface status signal...
- 
- // Drive all HW interface control signals
- assign o_hw_ctl = apb_reg[0] ;
- 
- // Slave error conditions
- assign wr_err    = (state_ff == IDLE)     && req_wr && (i_paddr[AW-1:ADDR_LSB] == 3 || i_paddr[AW-1:ADDR_LSB] == 4);  // Write request to read-only registers = ERROR
- assign rd_err    = (state_ff == R_ACCESS) && req_rd && (i_paddr[AW-1:ADDR_LSB] == 1);                                 // Read request to write-only registers = ERROR
- 
- // Register the Slave error
- always @(posedge i_clk) begin   
-	// Reset  
-	if (!i_reset_n) begin      
-	   o_pslverr <= 1'b0 ;
-	end   
-	// Out of reset
-	else begin
-	   o_pslverr <= wr_err | rd_err ; 
+  
+	// APB slave FSM
+	always @(posedge i_clk or negedge i_reset_n) begin
+	  if (!i_reset_n) begin
+		// Reset state
+		state <= IDLE;
+		PRDATA <= 32'h0;
+		PREADY <= 1'b0;
+		PSLVERR <= 1'b0;
+	  end else begin
+		case (state)
+		  IDLE: begin
+			// Wait for PSELx
+			if (PSELx) begin
+			  state <= SETUP;
+			end
+		  end
+  
+		  SETUP: begin
+			// Wait for PENABLE
+			if (PENABLE) begin
+			  state <= ACCESS;
+			end
+		  end
+  
+		  ACCESS: begin
+			// Handle read/write transaction
+			if (PWRITE) begin
+			  // Write transaction
+			  memory[PADDR[7:0]] <= PWDATA; // Write to memory (example: 8-bit address)
+			  PSLVERR <= 1'b0;              // No error
+			end else begin
+			  // Read transaction
+			  PRDATA <= memory[PADDR[7:0]]; // Read from memory (example: 8-bit address)
+			  PSLVERR <= 1'b0;              // No error
+			end
+			PREADY <= 1'b1; // Assert PREADY
+			PSLVERR <= !address_is_valid;
+			state <= IDLE;  // Return to IDLE
+		  end
+		endcase
+	  end
 	end
- end
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -210,7 +118,7 @@ module apb_slave #(
 `define	ASSUME	assert
 `endif
 
-    ////////////////////////////////////////////////////
+	////////////////////////////////////////////////////
 	//
 	// f_past_valid register
 	//
@@ -220,44 +128,146 @@ module apb_slave #(
 	always @(posedge i_clk)
 		f_past_valid <= 1'b1;
 
-
-
-    ////////////////////////////////////////////////////
+	////////////////////////////////////////////////////
 	//
 	// Reset
 	//
 	////////////////////////////////////////////////////
-    always @(posedge i_clk)
-        if(!f_past_valid)
-            assume($past(!i_reset_n));
 
-    always @(posedge i_clk)
-        if($past(!i_reset_n))
-            assume(!f_past_valid);
-
-    ////////////////////////////////////////////////////
+	////////////////////////////////////////////////////
 	//
 	// BMC
 	//
 	////////////////////////////////////////////////////
 
-    ////////////////////////////////////////////////////
+	////////////////////////////////////////////////////
 	//
 	// Contract
 	//
 	////////////////////////////////////////////////////   
-    
-    ////////////////////////////////////////////////////
+
+	//
+	// 1. Basic APB Protocol Properties
+	// These properties ensure the master and slave adhere to the fundamental APB protocol rules.
+	//
+	
+	// a. Signal Stability During Transfer
+	// 	- Property: During a transfer (PSELx is high), the address (PADDR) and control signals 
+	//	(PWRITE, PENABLE) must remain stable.
+	always @(posedge i_clk) begin
+		if($past(f_past_valid)&&(f_past_valid)&&($past(i_reset_n))&&(i_reset_n))
+		if (PSELx) begin
+			`ASSUME(PADDR == $past(PADDR));
+			`ASSUME(PWRITE == $past(PWRITE));
+			`ASSUME(PENABLE == $past(PENABLE));
+		end
+	end
+	
+	// b. PENABLE Timing
+	// 	-	Property: PENABLE must only be high in the second cycle of a transfer.
+	always @(posedge i_clk) begin
+		if($past(f_past_valid)&&(f_past_valid)&&($past(i_reset_n))&&(i_reset_n))
+			if ((PSELx)&&(!$past(PENABLE)))
+				`ASSUME(PENABLE);
+	end
+
+	// c. Transfer Completion
+	// 	- Property: After PENABLE is high, the transfer completes, and PSELx and PENABLE must deassert in the next cycle.
+	always @(posedge i_clk) begin
+		if($past(f_past_valid)&&(f_past_valid)&&($past(i_reset_n))&&(i_reset_n))
+		if (($past(PSELx))&&($past(PENABLE))&&($past(PREADY)))
+		`ASSUME((!PSELx)&&(!PENABLE));
+	end
+	
+	//
+	// 2. Read/Write Transaction Properties
+	// These properties ensure the master and slave handle read and write transactions correctly.
+	//
+	
+	// a. Write Transaction
+	// 	- Property: During a write transaction (PWRITE is high), the master must drive PWDATA when PENABLE is high.
+	always @(posedge i_clk) begin
+		if($past(f_past_valid)&&(f_past_valid)&&($past(i_reset_n))&&(i_reset_n))
+			if (($past(PSELx))&&(PWRITE)&&(!$past(PENABLE))&&(PREADY))
+				assert(memory[PADDR[7:0]] == $past(PWDATA));
+	end
+	
+	// b. Read Transaction
+	// 	- Property: During a read transaction (PWRITE is low), the slave must drive PRDATA with the correct data when PENABLE is high.
+	always @(posedge i_clk) begin
+		if($past(f_past_valid)&&(f_past_valid)&&($past(i_reset_n))&&(i_reset_n))
+		if (($past(PSELx))&&(!PWRITE)&&(!$past(PENABLE))&&(PREADY))
+		assert(PRDATA == $past(memory[PADDR[7:0]]));
+	end
+
+	//
+	// 3. Error Handling Properties
+	// These properties ensure the master and slave handle error conditions correctly.
+	//
+
+	// a. Invalid Address
+	// 	- Property: If the address (PADDR) is invalid, the slave should not respond or should signal an error.
+	always @(posedge i_clk) begin
+		if($past(f_past_valid)&&(f_past_valid)&&($past(i_reset_n))&&(i_reset_n))
+		if (($past(PSELx))&&(PENABLE)&&(!$past(address_is_valid))&&($past(state) == ACCESS))
+		assert ((PREADY)&&(PSLVERR));
+	end
+
+	//
+	// 4. Timing and Performance Properties
+	// These properties ensure the master and slave meet timing requirements.
+	//
+
+	// // a. PREADY Assertion
+	// // 	- Property: The slave must assert PREADY within a specified number of cycles after PSELx is asserted.
+	// always @(posedge PCLK) begin
+	// if (PSELx) begin
+	// 	assert (##[1:MAX_LATENCY] PREADY);
+	// end
+	// end
+
+	// // b. Back-to-Back Transfers
+	// // 	- Property: The master and slave should handle back-to-back transfers without violating the protocol.
+	// always @(posedge PCLK) begin
+	// if (PSELx && PENABLE) begin
+	// 	assert (##1 PSELx && !PENABLE ##1 PSELx && PENABLE);
+	// end
+	// end
+
+	//
+	// 5. Reset Behavior
+	// These properties ensure the master and slave behave correctly during and after reset.
+	//
+
+	// a. Reset State
+	// 	- Property: All outputs should be in a known state during reset.
+	always @(posedge i_clk) begin
+		if (!$past(i_reset_n))
+			assert ((PREADY == 0)&&(PSLVERR == 0)&&(PRDATA == 'h0));
+	end
+
+	////////////////////////////////////////////////////
 	//
 	// Induction
 	//
 	////////////////////////////////////////////////////
-    
+	
 	////////////////////////////////////////////////////
 	//
 	// Cover
 	//
-	////////////////////////////////////////////////////           
+	////////////////////////////////////////////////////     
+
+	// Read/Write Transactions
+	always @(posedge i_clk) begin
+		cover (PSELx && PWRITE && PENABLE); // Write transaction
+		cover (PSELx && !PWRITE && PENABLE); // Read transaction
+	end
+
+	// Error Conditions
+	always @(posedge i_clk)
+		cover (PSLVERR); // Slave error
+
 
 `endif // FORMAL
 

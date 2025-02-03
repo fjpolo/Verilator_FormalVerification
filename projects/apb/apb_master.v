@@ -6,8 +6,6 @@
 // Date:         27.01.2025
 // Email:        fjpolo@gmail.com
 // Github:       @fjpolo
-//
-// Based on: https://github.com/iammituraj/apb/blob/main/apb_master.sv
 // 
 // License: 
 // This code is released under the following terms:
@@ -196,6 +194,7 @@ module apb_master #(
                 assert (PENABLE == $past(PENABLE));
             end
     end
+
     // b. PENABLE Timing
     //  - Property: PENABLE must only be high in the second cycle of a transfer.
     always @(posedge i_clk) begin

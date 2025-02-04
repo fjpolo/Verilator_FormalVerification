@@ -12,15 +12,18 @@ cvr:    mode cover
 cvr:    depth 64
 cvr:    append 20
 
-
 [engines]
 bound:  smtbmc
 prf:    smtbmc yices
 cvr:    smtbmc
 
 [script]
-read_verilog -sv -DAPB_MASTER -formal apb_master_formal.v
-prep -top apb_master
+read_verilog -sv -DAPB_MASTER -formal test_fm.sv
+read_rtlil mutated.il
+prep -top testbench
+flatten
+opt -fast
 
 [files]
-apb_master_formal.v
+test_fm.sv
+mutated.il

@@ -8,4 +8,9 @@ apb_slave_bound
 apb_slave_prf
 apb_slave_prf
 
-/obj_dir/
+apb_slave_wait
+apb_slave_wait_bound
+apb_slave_wait_prf
+apb_slave_wait_prf
+
+obj_dir

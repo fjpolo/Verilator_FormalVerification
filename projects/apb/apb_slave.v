@@ -60,7 +60,7 @@ module apb_slave #(
 	end
   
 	// APB slave FSM
-	always @(posedge i_clk or negedge i_reset_n) begin
+	always @(posedge i_clk) begin
 	  if (!i_reset_n) begin
 		// Reset state
 		state <= IDLE;
@@ -98,6 +98,7 @@ module apb_slave #(
 			PSLVERR <= !address_is_valid;
 			state <= IDLE;  // Return to IDLE
 		  end
+		  default: ;
 		endcase
 	  end
 	end

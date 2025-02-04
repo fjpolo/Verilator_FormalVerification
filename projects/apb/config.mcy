@@ -1,10 +1,11 @@
 [options]
-size 5
+size 100
 tags COVERED UNCOVERED NOCHANGE EQGAP FMONLY
 
 [script]
 read -sv apb_master.v
 prep -top apb_master
+autoname
 
 [files]
 apb_master.v

@@ -10,18 +10,18 @@ fi
 
 # Input files
 MASTER_FILE="apb_master.v"
-FORMAL_FILE="apb_master_properties.v"
-TB_FILE="apb_master_tb.v"
+MASTER_FORMAL_FILE="apb_master_properties.v"
+MASTER_TB_FILE="apb_master_tb.v"
 MUTATIONS_DIR="mutations"  # Directory to store mutations
 SIMULATOR="iverilog"       # Change to your preferred simulator (e.g., vcs, xrun)
 
 # Generate a timestamp for the temporary file
-TEMP_ORIGINAL_FILE="apb_master_formal.v"
-echo -n > $TEMP_ORIGINAL_FILE
+MASTER_TEMP_ORIGINAL_FILE="apb_master_formal.v"
+echo -n > $MASTER_TEMP_ORIGINAL_FILE
 
 # Check if required files exist
 echo "Checking if required files exist..."
-for FILE in "$MASTER_FILE" "$FORMAL_FILE" "$TB_FILE"; do
+for FILE in "$MASTER_FILE" "$MASTER_FORMAL_FILE" "$MASTER_TB_FILE"; do
     if [ ! -f "$FILE" ]; then
         echo "Error: File $FILE not found. Exiting script."
         exit 1
@@ -29,24 +29,24 @@ for FILE in "$MASTER_FILE" "$FORMAL_FILE" "$TB_FILE"; do
 done
 
 # Insert formal properties into the original master.v before `endmodule`
-sed "/endmodule/e cat $FORMAL_FILE" $MASTER_FILE > $TEMP_ORIGINAL_FILE
+sed "/endmodule/e cat $MASTER_FORMAL_FILE" $MASTER_FILE > $MASTER_TEMP_ORIGINAL_FILE
 
 # Run Verilator on the original master.v
 echo "Running Verilator on original master.v..."
 verilator -Wall -cc $MASTER_FILE
 if [ $? -ne 0 ]; then
     echo "Verilator failed for original master.v. Exiting script."
-    rm $TEMP_ORIGINAL_FILE
+    rm $MASTER_TEMP_ORIGINAL_FILE
     exit 1
 fi
 
 # Run simulation of master_tb.v with the original master.v
 echo "Running simulation for original master.v..."
-$SIMULATOR -o sim_output $TB_FILE $MASTER_FILE
+$SIMULATOR -o sim_output $MASTER_TB_FILE $MASTER_FILE
 if [ $? -ne 0 ]; then
     echo "Simulation compilation failed for original master.v. Exiting script."
     rm -f sim_output
-    rm $TEMP_ORIGINAL_FILE
+    rm $MASTER_TEMP_ORIGINAL_FILE
     exit 1
 fi
 
@@ -56,7 +56,7 @@ SIM_EXIT_STATUS=$?
 if [ $SIM_EXIT_STATUS -ne 0 ]; then
     echo "Simulation failed for original master.v with exit status $SIM_EXIT_STATUS. Exiting script."
     rm -f sim_output
-    rm $TEMP_ORIGINAL_FILE
+    rm $MASTER_TEMP_ORIGINAL_FILE
     exit 1
 fi
 
@@ -71,12 +71,12 @@ sby -f apb_master.sby
 # Check if sby succeeded
 if [ $? -ne 0 ]; then
     echo "sby failed for original master.v. Exiting script."
-    rm $TEMP_ORIGINAL_FILE
+    rm $MASTER_TEMP_ORIGINAL_FILE
     exit 1
 fi
 
 # Clean up the temporary file for the original master.v
-rm $TEMP_ORIGINAL_FILE
+rm $MASTER_TEMP_ORIGINAL_FILE
 
 # Generate mutations using mcy
 echo "Generating mutations using mcy..."

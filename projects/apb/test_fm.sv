@@ -16,30 +16,30 @@
  */
 
 module testbench (
-		input 	wire 	[0:0]	clk,        // APB clock
-		input 	wire 	[0:0]	reset_n,    // APB reset (active low)
+		input 	wire 	[0:0]	i_clk,        // APB clock
+		input 	wire 	[0:0]	i_reset_n,    // APB reset (active low)
 		input 	wire 	[0:0]	start,      // Start signal to initiate a transaction
 		input 	wire 	[31:0] 	addr,   	// Address for the transaction
 		input 	wire 	[31:0] 	wdata,  	// Write data (for write transactions)
 		input 	wire 	[31:0] 	addr,     	// Address for the transaction
 		input 	wire 	[0:0]  	start,    	// Start signal to initiate a transaction
 		input 	wire 	[0:0]  	write,    	// Write/read control (1 = write, 0 = read)
-		output 	reg 	[0:0]  	done,     	// Transaction completion signal
-		output 	reg 	[31:0] 	rdata,    	// Read data (for read transactions)
-		output 	reg 	[0:0]  	slverr,   	// Slave error
-		output  reg     [31:0]  PADDR,      // APB address
-		output  reg     [0:0]   PWRITE,     // APB write/read control (1 = write, 0 = read)
-		output  reg     [31:0]  PWDATA,     // APB write data
-		output  reg     [0:0]   PSELx,      // APB slave select
-		output  reg     [0:0]   PENABLE,    // APB enable
+		output 	wire 	[0:0]  	done,     	// Transaction completion signal
+		output 	wire 	[31:0] 	rdata,    	// Read data (for read transactions)
+		output 	wire 	[0:0]  	slverr,   	// Slave error
+		output  wire    [31:0]  PADDR,      // APB address
+		output  wire    [0:0]   PWRITE,     // APB write/read control (1 = write, 0 = read)
+		output  wire    [31:0]  PWDATA,     // APB write data
+		output  wire    [0:0]   PSELx,      // APB slave select
+		output  wire    [0:0]   PENABLE,    // APB enable
 		input   wire    [31:0]  PRDATA,     // APB read data
 		input   wire    [0:0]   PREADY,     // APB ready signal from slave
 		input   wire    [0:0]   PSLVERR     // APB slave error signal
 	  );  
 		// Instantiate the APB master
 		apb_master master (
-		  .i_clk(clk),
-		  .i_reset_n(reset_n),
+		  .i_clk(i_clk),
+		  .i_reset_n(i_reset_n),
 		  .PADDR(PADDR),
 		  .PWRITE(PWRITE),
 		  .PWDATA(PWDATA),
@@ -56,66 +56,116 @@ module testbench (
 		  .o_rdata(rdata),
 		  .o_slverr(slverr)
 		);
-	  
-		// Assumptions and assertions
-		always @(posedge PCLK) begin
-		  if (!PRESETn) begin
-			// Reset state assumptions
-			assume (PADDR == 32'h0);
-			assume (PWRITE == 1'b0);
-			assume (PWDATA == 32'h0);
-			assume (PSELx == 1'b0);
-			assume (PENABLE == 1'b0);
-			assume (done == 1'b0);
-		  end else begin
-			// Protocol assumptions
-			assume (PREADY == 0 || PREADY == 1); // PREADY is always 0 or 1
-			assume (PSLVERR == 0 || PSLVERR == 1); // PSLVERR is always 0 or 1
-	  
-			// Write transaction assertions
-			if (write && start) begin
-			  assume (PADDR == addr); // Address is stable during write
-			  assume (PWDATA == wdata); // Write data is stable during write
-			  assume (PSELx == 1'b1); // PSELx is asserted during write
-			  assume (PENABLE == 1'b0); // PENABLE is not asserted in the first cycle
-	  
-			  // Check that PENABLE is asserted in the second cycle
-			  if ($past(PSELx) && !$past(PENABLE)) begin
-				assert (PENABLE == 1'b1);
-			  end
-	  
-			  // Check that the transaction completes when PREADY is asserted
-			  if (PENABLE && PREADY) begin
-				assert (done == 1'b1);
-			  end
+
+		// f_past_valid register
+		reg	f_past_valid;
+		initial	f_past_valid = 0;
+		always @(posedge i_clk)
+			f_past_valid <= 1'b1;
+
+		// Property: All outputs should be in a known state after reset
+		always @(posedge i_clk) begin
+			if ((!$past(i_reset_n))&&(i_reset_n)) begin
+				assert(PADDR == 'h0);
+				assert(PWDATA == 'h0);
+				assert(!PWRITE);
+				assert(!PSELx);
+				assert(!PENABLE);
 			end
-	  
-			// Read transaction assertions
-			if (!write && start) begin
-			  assume (PADDR == addr); // Address is stable during read
-			  assume (PSELx == 1'b1); // PSELx is asserted during read
-			  assume (PENABLE == 1'b0); // PENABLE is not asserted in the first cycle
-	  
-			  // Check that PENABLE is asserted in the second cycle
-			  if ($past(PSELx) && !$past(PENABLE)) begin
-				assert (PENABLE == 1'b1);
-			  end
-	  
-			  // Check that the transaction completes when PREADY is asserted
-			  if (PENABLE && PREADY) begin
-				assert (done == 1'b1);
-			  end
-			end
-	  
-			// Wait state assertions
-			if (PSELx && PENABLE && !PREADY) begin
-			  // Signals must remain stable during wait states
-			  assert (PADDR == $past(PADDR));
-			  assert (PWRITE == $past(PWRITE));
-			  assert (PWDATA == $past(PWDATA));
-			  assert (PSELx == $past(PSELx));
-			  assert (PENABLE == $past(PENABLE));
-			end
-		  end
 		end
-	  endmodule
+
+		// Property: After reset, the master and slave should be ready to accept new transactions
+		always @(posedge i_clk) begin
+			if ($rose(i_reset_n))
+			  assert (!PSELx && !PENABLE);
+		end
+
+		//
+		// 1. Basic APB Protocol Properties
+		//
+		// These properties ensure the master and slave adhere to the fundamental APB protocol rules.
+		//
+
+		// a. Signal Stability During Transfer
+		//  -  Property: During a transfer (PSELx is high), the address (PADDR) and control signals 
+		//    (PWRITE, PENABLE) must remain stable.
+		always @(posedge i_clk) begin
+			if($past(f_past_valid)&&(f_past_valid)&&($past(i_reset_n))&&(i_reset_n))
+				if ((PSELx)&&($past(PSELx))) begin
+					assert (PADDR   == $past(PADDR));
+					assert (PSELx   == $past(PSELx));
+					assert (PWRITE  == $past(PWRITE));
+					assert (PENABLE);
+				end
+		end
+	
+		// b. PENABLE Timing
+		//  - Property: PENABLE must only be high in the second cycle of a transfer.
+		always @(posedge i_clk) begin
+			if($past(f_past_valid)&&(f_past_valid)&&($past(i_reset_n))&&(i_reset_n))
+				if ((PSELx)&&($past(PSELx))&&(!$past(PENABLE)))
+					assert (PENABLE);
+		end
+	
+		// c. Transfer Completion
+		//  - Property: After PENABLE is high, the transfer completes, and PSELx and 
+		//  PENABLE must deassert in the next cycle.
+		always @(posedge i_clk) begin
+			if($past(f_past_valid)&&(f_past_valid)&&($past(i_reset_n))&&(i_reset_n))
+				if (($past(PSELx))&&($past(PENABLE))&&($past(PREADY)))
+					assert ((!PSELx)&&!(PENABLE));
+		end
+
+		//
+		// 2. Read/Write Transaction Properties
+		// These properties ensure the master and slave handle read and write transactions correctly.
+		//
+
+		// a. Write Transaction
+		//  - Property: During a write transaction (PWRITE is high), 
+		//  the master must drive PWDATA when PENABLE is high.
+		always @(posedge i_clk) begin
+			if ((PSELx)&&(PWRITE)&&(PENABLE))
+				if($past(f_past_valid)&&(f_past_valid)&&($past(i_reset_n))&&(i_reset_n))
+					assert(PWDATA == $past(PWDATA));
+		end   
+	
+		// b. Read Transaction
+		//  - Property: During a read transaction (PWRITE is low), 
+		//  the slave must drive PRDATA with the correct data when 
+		//  PENABLE is high.
+		always @(posedge i_clk) begin
+			if($past(f_past_valid)&&(f_past_valid)&&($past(i_reset_n))&&(i_reset_n)) 
+				if (($past(PSELx))&&(!$past(PWRITE))&&($past(PENABLE))&&($past(PREADY)))
+					assert (o_rdata == $past(PRDATA));
+		end
+
+		//
+		// 3. Error Handling Properties
+		// These properties ensure the master and slave handle error conditions correctly.
+		//
+		always @(*)
+			assert(o_slverr == PSLVERR);
+
+		//
+		// 4. Timing and Performance Properties
+		// These properties ensure the master and slave meet timing requirements.
+		//
+
+		// // a. PREADY Assertion
+		// //  - Property: The slave must assert PREADY within a specified number of 
+		// //  cycles after PSELx is asserted.
+		// always @(posedge PCLK) begin
+		//     if (PSELx)
+		//       assert (##[1:MAX_LATENCY] PREADY);
+		// end
+		
+		// // b. Back-to-Back Transfers
+		// //  - Property: The master and slave should handle back-to-back transfers without 
+		// //  violating the protocol.
+		// always @(posedge PCLK) begin
+		//     if ((PSELx)&&(PENABLE))
+		//       assert (##1 (PSELx)&&(!PENABLE) ##1 (PSELx)&&(PENABLE));
+		// end
+
+endmodule

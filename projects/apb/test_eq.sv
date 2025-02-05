@@ -33,7 +33,8 @@ module miter (
 		wire ref_PENABLE;
 		wire ref_done;
 		wire [31:0] ref_rdata;
-	  
+		wire ref_slverr;
+		
 		// Unit under test (UUT) APB master signals
 		wire [31:0] uut_PADDR;
 		wire uut_PWRITE;
@@ -42,6 +43,7 @@ module miter (
 		wire uut_PENABLE;
 		wire uut_done;
 		wire [31:0] uut_rdata;
+		wire uut_slverr;
 	  
 		// Instantiate the reference APB master
 		apb_master ref (
@@ -61,7 +63,8 @@ module miter (
 		  .i_write(write),
 		  .o_done(ref_done),
 		  .o_rdata(ref_rdata),
-		  .o_slverr()
+		  .o_slverr(ref_slverr),
+		  .mutsel(1'b0)
 		);
 	  
 		// Instantiate the unit under test (UUT) APB master
@@ -82,7 +85,8 @@ module miter (
 		  .i_write(write),
 		  .o_done(uut_done),
 		  .o_rdata(uut_rdata),
-		  .o_slverr()
+		  .o_slverr(uut_slverr),
+		  .mutsel(1'b1)
 		);
 	  
 		// Assumptions and assertions

@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2020  Claire Wolf <claire@yosyshq.com>
+ *  Copyright (C) 2024 fjpolo <fjpolo@gmail.com>
  *
  *  Permission to use, copy, modify, and/or distribute this software for any
  *  purpose with or without fee is hereby granted, provided that the above
@@ -37,7 +37,7 @@ module testbench (
 		input   wire    [0:0]   PSLVERR     // APB slave error signal
 	  );  
 		// Instantiate the APB master
-		apb_master master (
+		apb_slave master (
 		  .i_clk(i_clk),
 		  .i_reset_n(i_reset_n),
 		  .PADDR(PADDR),

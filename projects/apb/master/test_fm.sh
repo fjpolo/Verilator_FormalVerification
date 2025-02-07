@@ -4,7 +4,7 @@ exec 2>&1
 set -ex
 
 ## create the mutated design
-bash $SCRIPTS/create_mutated.sh -o mutated.il
+bash $SCRIPTS/create_mutated_fm.sh -o mutated.il
 
 ## run formal property check
 ln -s ../../test_fm.sv ../../test_fm.sby .

@@ -1,0 +1,18 @@
+[options]
+mode bmc
+depth 16
+expect pass,fail
+
+[engines]
+smtbmc boolector
+
+[script]
+read_verilog -sv test_fm.sv
+read_rtlil mutated.il
+prep -top testbench
+flatten
+opt -fast
+
+[files]
+test_fm.sv
+mutated.il

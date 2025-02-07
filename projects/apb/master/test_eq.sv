@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2020  Claire Wolf <claire@yosyshq.com>
+ *  Copyright (C) 2024 fjpolo <fjpolo@gmail.com>
  *
  *  Permission to use, copy, modify, and/or distribute this software for any
  *  purpose with or without fee is hereby granted, provided that the above
@@ -99,6 +99,7 @@ module miter (
 			assume (ref_PSELx == 1'b0);
 			assume (ref_PENABLE == 1'b0);
 			assume (ref_done == 1'b0);
+			assume (ref_slverr == 1'b0);
 	  
 			assume (uut_PADDR == 32'h0);
 			assume (uut_PWRITE == 1'b0);
@@ -106,6 +107,7 @@ module miter (
 			assume (uut_PSELx == 1'b0);
 			assume (uut_PENABLE == 1'b0);
 			assume (uut_done == 1'b0);
+			assume (uut_slverr == 1'b0);
 		  end else begin
 			// Protocol assumptions
 			assume (PREADY == 0 || PREADY == 1); // PREADY is always 0 or 1
@@ -134,9 +136,11 @@ module miter (
 			  // Check that the transaction completes when PREADY is asserted
 			  if (ref_PENABLE && PREADY) begin
 				assert (ref_done == 1'b1);
-			  end
-			  if (uut_PENABLE && PREADY) begin
+				assert (ref_slverr == uut_slverr);
+			end
+			if (uut_PENABLE && PREADY) begin
 				assert (uut_done == 1'b1);
+				assert (ref_slverr == uut_slverr);
 			  end
 			end
 	  

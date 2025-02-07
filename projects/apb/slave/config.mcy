@@ -1,14 +1,14 @@
 [options]
-size 500
+size 10
 tags COVERED UNCOVERED NOCHANGE EQGAP FMONLY
 
 [script]
-read -sv apb_master.v
-prep -top apb_master
+read -sv apb_slave.v
+prep -top apb_slave
 autoname
 
 [files]
-apb_master.v
+apb_slave.v
 
 [logic]
 use_formal = True

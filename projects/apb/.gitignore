@@ -8,12 +8,12 @@ apb_master_cvr
 apb_slave
 apb_slave_bound
 apb_slave_prf
-apb_slave_prf
+apb_slave_cvr
 
 apb_slave_wait
 apb_slave_wait_bound
 apb_slave_wait_prf
-apb_slave_wait_prf
+apb_slave_wait_cvr
 
 obj_dir
 database

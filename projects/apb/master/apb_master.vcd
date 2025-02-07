@@ -1,0 +1,279 @@
+$date
+	Fri Feb  7 16:23:12 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module apb_master_tb $end
+$var wire 1 ! o_slverr $end
+$var wire 32 " o_rdata [31:0] $end
+$var wire 1 # o_done $end
+$var wire 1 $ PWRITE $end
+$var wire 32 % PWDATA [31:0] $end
+$var wire 1 & PSELx $end
+$var wire 1 ' PENABLE $end
+$var wire 32 ( PADDR [31:0] $end
+$var reg 32 ) PRDATA [31:0] $end
+$var reg 1 * PREADY $end
+$var reg 1 + PSLVERR $end
+$var reg 32 , i_addr [31:0] $end
+$var reg 1 - i_clk $end
+$var reg 1 . i_reset_n $end
+$var reg 1 / i_start $end
+$var reg 32 0 i_wdata [31:0] $end
+$var reg 1 1 i_write $end
+$scope module master $end
+$var wire 32 2 PRDATA [31:0] $end
+$var wire 1 * PREADY $end
+$var wire 1 + PSLVERR $end
+$var wire 32 3 i_addr [31:0] $end
+$var wire 1 - i_clk $end
+$var wire 1 . i_reset_n $end
+$var wire 1 / i_start $end
+$var wire 32 4 i_wdata [31:0] $end
+$var wire 1 1 i_write $end
+$var parameter 32 5 ACCESS $end
+$var parameter 32 6 IDLE $end
+$var parameter 32 7 SETUP $end
+$var reg 32 8 PADDR [31:0] $end
+$var reg 1 ' PENABLE $end
+$var reg 1 & PSELx $end
+$var reg 32 9 PWDATA [31:0] $end
+$var reg 1 $ PWRITE $end
+$var reg 1 # o_done $end
+$var reg 32 : o_rdata [31:0] $end
+$var reg 1 ! o_slverr $end
+$var reg 2 ; state [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1 7
+b0 6
+b10 5
+$end
+#0
+$dumpvars
+b0 ;
+b0 :
+b0 9
+b0 8
+b0 4
+b0 3
+b0 2
+01
+b0 0
+0/
+0.
+0-
+b0 ,
+0+
+0*
+b0 )
+b0 (
+0'
+0&
+b0 %
+0$
+0#
+b0 "
+0!
+$end
+#5
+1-
+#10
+0-
+#15
+1-
+#20
+0-
+1.
+#25
+1-
+#30
+0-
+11
+b11011110101011011011111011101111 0
+b11011110101011011011111011101111 4
+b1000000000000 ,
+b1000000000000 3
+1/
+#35
+b1 ;
+1&
+b11011110101011011011111011101111 %
+b11011110101011011011111011101111 9
+1$
+b1000000000000 (
+b1000000000000 8
+1-
+#40
+0-
+0/
+#45
+b10 ;
+1'
+1-
+#50
+0-
+#55
+1-
+#60
+0-
+1*
+#65
+b0 ;
+1#
+0'
+0&
+1-
+#70
+0-
+01
+1/
+0*
+#75
+b1 ;
+1&
+0$
+1-
+#80
+0-
+0/
+#85
+b10 ;
+1'
+1-
+#90
+0-
+#95
+1-
+#100
+0-
+1*
+b11011110101011011011111011101111 )
+b11011110101011011011111011101111 2
+#105
+b0 ;
+b11011110101011011011111011101111 "
+b11011110101011011011111011101111 :
+0'
+0&
+1-
+#110
+0-
+11
+b11001010111111101011101010111110 0
+b11001010111111101011101010111110 4
+b10000000000000 ,
+b10000000000000 3
+1/
+0*
+#115
+b1 ;
+1&
+b11001010111111101011101010111110 %
+b11001010111111101011101010111110 9
+1$
+b10000000000000 (
+b10000000000000 8
+1-
+#120
+0-
+0/
+#125
+b10 ;
+1'
+1-
+#130
+0-
+#135
+1-
+#140
+0-
+1*
+#145
+b0 ;
+0'
+0&
+1-
+#150
+0-
+01
+1/
+0*
+#155
+b1 ;
+1&
+0$
+1-
+#160
+0-
+0/
+#165
+b10 ;
+1'
+1-
+#170
+0-
+#175
+1-
+#180
+0-
+1*
+b11001010111111101011101010111110 )
+b11001010111111101011101010111110 2
+#185
+b0 ;
+b11001010111111101011101010111110 "
+b11001010111111101011101010111110 :
+0'
+0&
+1-
+#190
+0-
+11
+b1011101011011111000000001101 0
+b1011101011011111000000001101 4
+b11000000000000 ,
+b11000000000000 3
+1/
+0*
+#195
+b1 ;
+1&
+b1011101011011111000000001101 %
+b1011101011011111000000001101 9
+1$
+b11000000000000 (
+b11000000000000 8
+1-
+#200
+0-
+0/
+#205
+b10 ;
+1'
+1-
+#210
+0-
+#215
+1-
+#220
+0-
+1*
+1+
+#225
+b0 ;
+1!
+0'
+0&
+1-
+#230
+0-
+0*
+0+

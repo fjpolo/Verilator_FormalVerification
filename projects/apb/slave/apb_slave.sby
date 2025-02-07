@@ -19,8 +19,8 @@ prf:    smtbmc yices
 cvr:    smtbmc
 
 [script]
-read_verilog -sv -DAPB_SLAVE -formal apb_slave.v
+read_verilog -sv -DAPB_SLAVE -formal apb_slave_formal.v
 prep -top apb_slave
 
 [files]
-apb_slave.v
+apb_slave_formal.v

@@ -1,9 +1,10 @@
 `default_nettype none
+`timescale 1ns / 1ps
 
 module apb_slave_tb;
 // Clock and reset
-reg i_clk;
-reg i_reset_n;
+reg PCLK;
+reg PRESETn;
 
 // APB slave signals
 reg [31:0] PADDR;
@@ -17,8 +18,8 @@ wire PSLVERR;
 
 // Instantiate the APB slave
 apb_slave slave (
-  .i_clk(i_clk),
-  .i_reset_n(i_reset_n),
+  .i_clk(PCLK),
+  .i_reset_n(PRESETn),
   .PADDR(PADDR),
   .PWRITE(PWRITE),
   .PWDATA(PWDATA),
@@ -34,14 +35,14 @@ reg [31:0] expected_memory [0:255]; // 256 x 32-bit memory
 
 // Clock generation
 initial begin
-  i_clk = 0;
-  forever #5 i_clk = ~i_clk; // 10ns clock period
+  PCLK = 0;
+  forever #5 PCLK = ~PCLK; // 10ns clock period
 end
 
 // Reset generation
 initial begin
-  i_reset_n = 0;
-  #20 i_reset_n = 1; // Assert reset for 20ns, then deassert
+  PRESETn = 0;
+  #20 PRESETn = 1; // Assert reset for 20ns, then deassert
 end
 
 // VCD dumping for waveform analysis

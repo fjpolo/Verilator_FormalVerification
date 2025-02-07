@@ -85,15 +85,20 @@ module apb_slave #(
 			// Handle read/write transaction
 			if (PWRITE) begin
 			  // Write transaction
-			  memory[PADDR[2:0]] <= PWDATA; // Write to memory (example: 8-bit address)
-			  PSLVERR <= 1'b0;              // No error
+			  if(address_is_valid) begin
+			  	memory[PADDR[7:0]] <= PWDATA; // Write to memory (example: 8-bit address)
+			  	PSLVERR <= 1'b0;    
+			  end else
+				PSLVERR <= 1'b1;           // No error
 			end else begin
 			  // Read transaction
-			  PRDATA <= memory[PADDR[2:0]]; // Read from memory (example: 8-bit address)
-			  PSLVERR <= 1'b0;              // No error
+			  if(address_is_valid) begin
+			  	PRDATA <= memory[PADDR[7:0]]; // Read from memory (example: 8-bit address)
+			  	PSLVERR <= 1'b0;              // No error
+			  end else
+				PSLVERR <= 1'b1;              // No error
 			end
 			PREADY <= 1'b1; // Assert PREADY
-			PSLVERR <= !address_is_valid;
 			state <= IDLE;  // Return to IDLE
 		  end
 		  default: ;

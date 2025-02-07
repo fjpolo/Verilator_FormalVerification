@@ -1,31 +1,31 @@
 $date
-	Fri Feb  7 15:18:21 2025
+	Fri Feb  7 17:32:47 2025
 $end
 $version
 	Icarus Verilog
 $end
 $timescale
-	1s
+	1ps
 $end
 $scope module apb_slave_tb $end
 $var wire 1 ! PSLVERR $end
 $var wire 1 " PREADY $end
 $var wire 32 # PRDATA [31:0] $end
 $var reg 32 $ PADDR [31:0] $end
-$var reg 1 % PENABLE $end
-$var reg 1 & PSELx $end
-$var reg 32 ' PWDATA [31:0] $end
-$var reg 1 ( PWRITE $end
-$var reg 1 ) i_clk $end
-$var reg 1 * i_reset_n $end
+$var reg 1 % PCLK $end
+$var reg 1 & PENABLE $end
+$var reg 1 ' PRESETn $end
+$var reg 1 ( PSELx $end
+$var reg 32 ) PWDATA [31:0] $end
+$var reg 1 * PWRITE $end
 $scope module slave $end
 $var wire 32 + PADDR [31:0] $end
-$var wire 1 % PENABLE $end
-$var wire 1 & PSELx $end
+$var wire 1 & PENABLE $end
+$var wire 1 ( PSELx $end
 $var wire 32 , PWDATA [31:0] $end
-$var wire 1 ( PWRITE $end
-$var wire 1 ) i_clk $end
-$var wire 1 * i_reset_n $end
+$var wire 1 * PWRITE $end
+$var wire 1 % i_clk $end
+$var wire 1 ' i_reset_n $end
 $var wire 1 - address_is_valid $end
 $var parameter 32 . ACCESS $end
 $var parameter 32 / IDLE $end
@@ -53,9 +53,9 @@ b0 2
 b0 ,
 b0 +
 0*
-0)
+b0 )
 0(
-b0 '
+0'
 0&
 0%
 b0 $
@@ -63,34 +63,34 @@ b0 #
 0"
 0!
 $end
-#5
-1)
-#10
-0)
-#15
-1)
-#20
-0)
+#5000
+1%
+#10000
+0%
+#15000
+1%
+#20000
+0%
+1'
+#25000
+1%
+#30000
+0%
 1*
-#25
-1)
-#30
-0)
-1(
-b11011110101011011011111011101111 '
+b11011110101011011011111011101111 )
 b11011110101011011011111011101111 ,
 0-
 b10000 $
 b10000 +
-1&
-#35
+1(
+#35000
 b1 3
-1)
-#40
-0)
 1%
-#45
+#40000
+0%
+1&
+#45000
 b10 3
-1)
-#50
-0)
+1%
+#50000
+0%

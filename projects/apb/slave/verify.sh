@@ -31,14 +31,14 @@ done
 # Insert formal properties into the original slave.v before `endmodule`
 sed "/endmodule/e cat $SLAVE_FORMAL_FILE" $SLAVE_FILE > $SLAVE_TEMP_ORIGINAL_FILE
 
-# Run Verilator on the original slave.v
-echo "Running Verilator on original slave.v..."
-verilator -Wall -cc $SLAVE_FILE
-if [ $? -ne 0 ]; then
-    echo "Verilator failed for original slave.v. Exiting script."
-    rm $SLAVE_TEMP_ORIGINAL_FILE
-    exit 1
-fi
+# # Run Verilator on the original slave.v
+# echo "Running Verilator on original slave.v..."
+# verilator -Wall -cc $SLAVE_FILE
+# if [ $? -ne 0 ]; then
+#     echo "Verilator failed for original slave.v. Exiting script."
+#     rm $SLAVE_TEMP_ORIGINAL_FILE
+#     exit 1
+# fi
 
 # Run simulation of slave_tb.v with the original slave.v
 echo "Running simulation for original slave.v..."

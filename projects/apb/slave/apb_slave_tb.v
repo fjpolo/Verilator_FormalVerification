@@ -30,8 +30,8 @@ apb_slave slave (
   .PSLVERR(PSLVERR)
 );
 
-// Internal memory for verification (if the slave has a memory)
-reg [31:0] expected_memory [0:255]; // 256 x 32-bit memory
+// Internal reg_file for verification (if the slave has a reg_file)
+reg [31:0] expected_reg_file [0:255]; // 256 x 32-bit reg_file
 
 // Clock generation
 initial begin
@@ -65,7 +65,7 @@ initial begin
 
   // Test 1: Write transaction (no wait states)
   PSELx = 1;
-  PADDR = 32'h10;
+  PADDR = 32'h1;
   PWDATA = 32'hDEADBEEF;
   PWRITE = 1;
   #10;
@@ -78,9 +78,9 @@ initial begin
     $finish(1);
   end
 
-  // Check if data was written to the slave's memory
-  if (slave.memory[PADDR[7:0]] !== PWDATA) begin // Adjust if your slave uses a different memory model
-    $display("ERROR: Write data mismatch (expected %h, got %h)", PWDATA, slave.memory[PADDR[7:0]]);
+  // Check if data was written to the slave's reg_file
+  if (slave.reg_file_1 !== PWDATA) begin // Adjust if your slave uses a different reg_file model
+    $display("ERROR: Write data mismatch (expected %h, got %h)", PWDATA, slave.reg_file_1);
     $finish(1);
   end
 

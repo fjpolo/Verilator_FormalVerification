@@ -77,16 +77,38 @@
 	// 	- Property: During a write transaction (PWRITE is high), the master must drive PWDATA when PENABLE is high.
 	always @(posedge i_clk) begin
 		if($past(f_past_valid)&&(f_past_valid)&&($past(i_reset_n))&&(i_reset_n))
-			if (($past(PSELx))&&(PWRITE)&&(!$past(PENABLE))&&(PREADY))
-				assert(memory[PADDR[7:0]] == $past(PWDATA));
+			if (($past(PSELx))&&(PWRITE)&&(!$past(PENABLE))&&(PREADY)) begin
+				case(reg_file_addr)
+				0: assert(reg_file_0 == $past(PWDATA));
+				1: assert(reg_file_1 == $past(PWDATA));
+				2: assert(reg_file_2 == $past(PWDATA));
+				3: assert(reg_file_3 == $past(PWDATA));
+				4: assert(reg_file_4 == $past(PWDATA));
+				5: assert(reg_file_5 == $past(PWDATA));
+				6: assert(reg_file_6 == $past(PWDATA));
+				7: assert(reg_file_7 == $past(PWDATA));
+				default: ;
+				endcase
+			end
 	end
 	
 	// b. Read Transaction
 	// 	- Property: During a read transaction (PWRITE is low), the slave must drive PRDATA with the correct data when PENABLE is high.
 	always @(posedge i_clk) begin
 		if($past(f_past_valid)&&(f_past_valid)&&($past(i_reset_n))&&(i_reset_n))
-		if (($past(PSELx))&&(!PWRITE)&&(!$past(PENABLE))&&(PREADY))
-		assert(PRDATA == $past(memory[PADDR[7:0]]));
+		if (($past(PSELx))&&(!PWRITE)&&(!$past(PENABLE))&&(PREADY)) begin
+			case(reg_file_addr)
+				0: assert(PRDATA == $past(reg_file_0));
+				1: assert(PRDATA == $past(reg_file_1));
+				2: assert(PRDATA == $past(reg_file_2));
+				3: assert(PRDATA == $past(reg_file_3));
+				4: assert(PRDATA == $past(reg_file_4));
+				5: assert(PRDATA == $past(reg_file_5));
+				6: assert(PRDATA == $past(reg_file_6));
+				7: assert(PRDATA == $past(reg_file_7));
+				default: ;
+				endcase
+		end
 	end
 
 	//
@@ -132,7 +154,28 @@
 	// 	- Property: All outputs should be in a known state during reset.
 	always @(posedge i_clk) begin
 		if (!$past(i_reset_n))
-			assert ((PREADY == 0)&&(PSLVERR == 0)&&(PRDATA == 'h0));
+		assert ((PREADY == 0)&&(PSLVERR == 0)&&(PRDATA == 'h0));
+	end
+	
+	initial assert(reg_file_0 == 'h0);
+	initial assert(reg_file_1 == 'h0);
+	initial assert(reg_file_2 == 'h0);
+	initial assert(reg_file_3 == 'h0);
+	initial assert(reg_file_4 == 'h0);
+	initial assert(reg_file_5 == 'h0);
+	initial assert(reg_file_6 == 'h0);
+	initial assert(reg_file_7 == 'h0);
+	always @(posedge i_clk) begin
+		if (($past(f_past_valid))&&(f_past_valid)&&(!$past(i_reset_n))&&(i_reset_n)) begin
+			assert(reg_file_0 == 'h0);
+			assert(reg_file_1 == 'h0);
+			assert(reg_file_2 == 'h0);
+			assert(reg_file_3 == 'h0);
+			assert(reg_file_4 == 'h0);
+			assert(reg_file_5 == 'h0);
+			assert(reg_file_6 == 'h0);
+			assert(reg_file_7 == 'h0);
+		end
 	end
 
 	////////////////////////////////////////////////////

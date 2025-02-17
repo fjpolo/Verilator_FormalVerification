@@ -12,5 +12,14 @@ echo "Master verification succeeded :)"
 cd ..
 
 # Verify slave module
-# Verify slave_wait module
+echo "Verifying slave module..."
+cd slave/; ./verify.sh
+if [ $? -ne 0 ]; then
+    echo "Slave verification failed. Exiting script."
+    rm $MASTER_TEMP_ORIGINAL_FILE
+    exit 1
+fi
+echo "Slave verification succeeded :)"
+cd ..
+
 # Verify top module

@@ -1,0 +1,55 @@
+# Read modules from Verilog file
+read_verilog -lib +/gowin/cells_sim.v
+read_verilog apb_master.v
+
+# Elaborate design hierarchy
+hierarchy -check -top apb_master
+
+# Flatten
+proc
+stat
+flatten
+stat
+tribuf -logic
+deminout
+stat
+
+# Coarse
+synth -run coarse
+stat
+
+# Fine
+opt -fast -mux_undef -undriven -fine
+memory_map
+opt -undriven -fine
+stat
+techmap
+stat
+clean -purge
+splitnets -ports
+setundef -undriven -zero
+abc -dff
+stat
+
+# map LUTs
+abc -lut 4
+stat
+techmap
+stat
+clean
+
+# map cells
+techmap -map +/gowin/cells_map.v
+hilomap -hicell VCC V -locell GND G
+iopadmap -inpad IBUF O:I -outpad OBUF I:O
+stat
+clean -purge
+
+# check
+hierarchy -check
+stat
+check -noinit
+show
+
+# Write the current design to a Verilog file
+write_verilog -attr2comment -defparam -renameprefix gen synth-apb_master.v

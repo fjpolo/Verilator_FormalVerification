@@ -1,0 +1,8 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1740261601" />
+    <testcase name="test_apb_master" classname="apb_master_tb" file="/Users/fjpolo/Workspace/Verilator_FormalVerification/projects/apb/master/apb_master_tb.py" lineno="11" time="0.003882884979248047" sim_time_ns="150.001" ratio_time="38631.32717082157">
+      <failure message="Test failed with RANDOM_SEED=1740261601" />
+    </testcase>
+  </testsuite>
+</testsuites>

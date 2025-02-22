@@ -22,6 +22,8 @@
 // -----------------------------------------------------------------------------
 `default_nettype none
 
+`timescale 1ns/1ps
+
 module apb_master(
     input   wire    [0:0]   i_clk,      // APB clock
     input   wire    [0:0]   i_reset_n,  // APB reset (active low)

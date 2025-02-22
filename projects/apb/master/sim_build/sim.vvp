@@ -1,0 +1,178 @@
+#! /Users/fjpolo/oss-cad-suite/bin/vvp
+:ivl_version "13.0 (devel)" "(s20250103-20-g14375567c)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/Users/fjpolo/oss-cad-suite/lib/ivl/system.vpi";
+:vpi_module "/Users/fjpolo/oss-cad-suite/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/Users/fjpolo/oss-cad-suite/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/Users/fjpolo/oss-cad-suite/lib/ivl/v2005_math.vpi";
+:vpi_module "/Users/fjpolo/oss-cad-suite/lib/ivl/va_math.vpi";
+:vpi_module "/Users/fjpolo/oss-cad-suite/lib/ivl/v2009.vpi";
+S_0x7ff1a2904160 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x7ff1a2904300 .scope module, "apb_master" "apb_master" 3 27;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "i_clk";
+    .port_info 1 /INPUT 1 "i_reset_n";
+    .port_info 2 /INPUT 32 "i_addr";
+    .port_info 3 /INPUT 1 "i_start";
+    .port_info 4 /INPUT 1 "i_write";
+    .port_info 5 /INPUT 32 "i_wdata";
+    .port_info 6 /OUTPUT 1 "o_done";
+    .port_info 7 /OUTPUT 32 "o_rdata";
+    .port_info 8 /OUTPUT 1 "o_slverr";
+    .port_info 9 /OUTPUT 32 "PADDR";
+    .port_info 10 /OUTPUT 1 "PWRITE";
+    .port_info 11 /OUTPUT 32 "PWDATA";
+    .port_info 12 /OUTPUT 1 "PSELx";
+    .port_info 13 /OUTPUT 1 "PENABLE";
+    .port_info 14 /INPUT 32 "PRDATA";
+    .port_info 15 /INPUT 1 "PREADY";
+    .port_info 16 /INPUT 1 "PSLVERR";
+P_0x7ff1a2904470 .param/l "ACCESS" 1 3 51, +C4<00000000000000000000000000000010>;
+P_0x7ff1a29044b0 .param/l "IDLE" 1 3 49, +C4<00000000000000000000000000000000>;
+P_0x7ff1a29044f0 .param/l "SETUP" 1 3 50, +C4<00000000000000000000000000000001>;
+v0x7ff1a2904970_0 .var "PADDR", 31 0;
+v0x7ff1a2914a10_0 .var "PENABLE", 0 0;
+o0x7ff1a2832068 .functor BUFZ 32, c4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x7ff1a2914ab0_0 .net "PRDATA", 31 0, o0x7ff1a2832068;  0 drivers
+o0x7ff1a2832098 .functor BUFZ 1, c4<z>; HiZ drive
+v0x7ff1a2914b60_0 .net "PREADY", 0 0, o0x7ff1a2832098;  0 drivers
+v0x7ff1a2914c10_0 .var "PSELx", 0 0;
+o0x7ff1a28320f8 .functor BUFZ 1, c4<z>; HiZ drive
+v0x7ff1a2914d00_0 .net "PSLVERR", 0 0, o0x7ff1a28320f8;  0 drivers
+v0x7ff1a2914db0_0 .var "PWDATA", 31 0;
+v0x7ff1a2914e60_0 .var "PWRITE", 0 0;
+o0x7ff1a2832188 .functor BUFZ 32, c4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x7ff1a2914f10_0 .net "i_addr", 31 0, o0x7ff1a2832188;  0 drivers
+o0x7ff1a28321b8 .functor BUFZ 1, c4<z>; HiZ drive
+v0x7ff1a2915020_0 .net "i_clk", 0 0, o0x7ff1a28321b8;  0 drivers
+o0x7ff1a28321e8 .functor BUFZ 1, c4<z>; HiZ drive
+v0x7ff1a29150d0_0 .net "i_reset_n", 0 0, o0x7ff1a28321e8;  0 drivers
+o0x7ff1a2832218 .functor BUFZ 1, c4<z>; HiZ drive
+v0x7ff1a2915180_0 .net "i_start", 0 0, o0x7ff1a2832218;  0 drivers
+o0x7ff1a2832248 .functor BUFZ 32, c4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x7ff1a2915230_0 .net "i_wdata", 31 0, o0x7ff1a2832248;  0 drivers
+o0x7ff1a2832278 .functor BUFZ 1, c4<z>; HiZ drive
+v0x7ff1a29152e0_0 .net "i_write", 0 0, o0x7ff1a2832278;  0 drivers
+v0x7ff1a2915390_0 .var "o_done", 0 0;
+v0x7ff1a2915440_0 .var "o_rdata", 31 0;
+v0x7ff1a29154f0_0 .var "o_slverr", 0 0;
+v0x7ff1a2915680_0 .var "state", 1 0;
+E_0x7ff1a2904570 .event posedge, v0x7ff1a2915020_0;
+    .scope S_0x7ff1a2904300;
+T_0 ;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x7ff1a2915680_0, 0, 2;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x7ff1a2904970_0, 0, 32;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ff1a2914e60_0, 0, 1;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x7ff1a2914db0_0, 0, 32;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ff1a2914c10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ff1a2914a10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ff1a2915390_0, 0, 1;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x7ff1a2915440_0, 0, 32;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7ff1a29154f0_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x7ff1a2904300;
+T_1 ;
+    %wait E_0x7ff1a2904570;
+    %load/vec4 v0x7ff1a29150d0_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.0, 8;
+    %pushi/vec4 0, 0, 2;
+    %assign/vec4 v0x7ff1a2915680_0, 0;
+    %pushi/vec4 0, 0, 32;
+    %assign/vec4 v0x7ff1a2904970_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x7ff1a2914e60_0, 0;
+    %pushi/vec4 0, 0, 32;
+    %assign/vec4 v0x7ff1a2914db0_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x7ff1a2914c10_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x7ff1a2914a10_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x7ff1a2915390_0, 0;
+    %pushi/vec4 0, 0, 32;
+    %assign/vec4 v0x7ff1a2915440_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x7ff1a29154f0_0, 0;
+    %jmp T_1.1;
+T_1.0 ;
+    %load/vec4 v0x7ff1a2915680_0;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 2;
+    %cmp/u;
+    %jmp/1 T_1.2, 6;
+    %dup/vec4;
+    %pushi/vec4 1, 0, 2;
+    %cmp/u;
+    %jmp/1 T_1.3, 6;
+    %dup/vec4;
+    %pushi/vec4 2, 0, 2;
+    %cmp/u;
+    %jmp/1 T_1.4, 6;
+    %jmp T_1.6;
+T_1.2 ;
+    %load/vec4 v0x7ff1a2915180_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.7, 8;
+    %load/vec4 v0x7ff1a2914f10_0;
+    %assign/vec4 v0x7ff1a2904970_0, 0;
+    %load/vec4 v0x7ff1a29152e0_0;
+    %assign/vec4 v0x7ff1a2914e60_0, 0;
+    %load/vec4 v0x7ff1a2915230_0;
+    %assign/vec4 v0x7ff1a2914db0_0, 0;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x7ff1a2914c10_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x7ff1a2914a10_0, 0;
+    %pushi/vec4 1, 0, 2;
+    %assign/vec4 v0x7ff1a2915680_0, 0;
+T_1.7 ;
+    %jmp T_1.6;
+T_1.3 ;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x7ff1a2914a10_0, 0;
+    %pushi/vec4 2, 0, 2;
+    %assign/vec4 v0x7ff1a2915680_0, 0;
+    %jmp T_1.6;
+T_1.4 ;
+    %load/vec4 v0x7ff1a2914b60_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.9, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x7ff1a2914c10_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x7ff1a2914a10_0, 0;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x7ff1a2915390_0, 0;
+    %load/vec4 v0x7ff1a2914ab0_0;
+    %assign/vec4 v0x7ff1a2915440_0, 0;
+    %load/vec4 v0x7ff1a2914d00_0;
+    %assign/vec4 v0x7ff1a29154f0_0, 0;
+    %pushi/vec4 0, 0, 2;
+    %assign/vec4 v0x7ff1a2915680_0, 0;
+T_1.9 ;
+    %jmp T_1.6;
+T_1.6 ;
+    %pop/vec4 1;
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "/Users/fjpolo/Workspace/Verilator_FormalVerification/projects/apb/master/apb_master.v";
